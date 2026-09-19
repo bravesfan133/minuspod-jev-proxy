@@ -1,0 +1,30 @@
+# Canonical compose file (local + Dockhand).
+# Local: cp .env.example .env, fill keys, then `docker compose up -d --build`.
+# Dockhand: point the stack at this repo and set the same variables in
+# Dockhand's environment UI (JEV_PRIMARY_API_KEY at minimum).
+services:
+  minuspod-jev-proxy:
+    build: .
+    container_name: minuspod-jev-proxy
+    ports:
+      - "8787:8787"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - PORT=${PORT:-8787}
+      - JEV_PRIMARY_BASE_URL=${JEV_PRIMARY_BASE_URL:-https://api.typesafe.ai/v1/systemone}
+      - JEV_PRIMARY_MODEL=${JEV_PRIMARY_MODEL:-jev-latest}
+      - JEV_PRIMARY_API_KEY=${JEV_PRIMARY_API_KEY:-}
+      - JEV_SECONDARY_BASE_URL=${JEV_SECONDARY_BASE_URL:-https://opencode.ai/zen/v1/systemone}
+      - JEV_SECONDARY_MODEL=${JEV_SECONDARY_MODEL:-jev-1.13-free}
+      - JEV_TIMEOUT_SECS=${JEV_TIMEOUT_SECS:-60}
+      - JEV_AD_THRESHOLD=${JEV_AD_THRESHOLD:-0.6}
+      - JEV_REVIEW_THRESHOLD=${JEV_REVIEW_THRESHOLD:-0.5}
+      - JEV_SEGMENT_TARGET_SECS=${JEV_SEGMENT_TARGET_SECS:-30}
+      - JEV_MAX_SEGMENTS_PER_CALL=${JEV_MAX_SEGMENTS_PER_CALL:-16}
+      - JEV_MAX_CONCURRENT_REQS=${JEV_MAX_CONCURRENT_REQS:-4}
+      - JEV_EDGE_PIECE_SECS=${JEV_EDGE_PIECE_SECS:-5}
+      - JEV_EDGE_THRESHOLD=${JEV_EDGE_THRESHOLD:-0.5}
+      - JEV_EDGE_CONTEXT_SECS=${JEV_EDGE_CONTEXT_SECS:-90}
+    restart: unless-stopped

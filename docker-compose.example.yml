@@ -1,0 +1,11 @@
+# Example: run the proxy next to MinusPod. Do NOT edit your existing
+# MinusPod compose file until the proxy is tested independently.
+services:
+  minuspod-jev-proxy:
+    build: .
+    container_name: minuspod-jev-proxy
+    ports:
+      - "8787:8787"
+    env_file:
+      - .env
+    restart: unless-stopped
