@@ -17,7 +17,7 @@ schema name, then stable prompt markers, then transcript structure) and:
 
 | Request type | Handling |
 |---|---|
-| Primary ad detection (`ad_detection` schema, pass 1) | Jev, two levels: L1 classifies ~20–30s blocks (`choice` + `noul` per segment); L2 subdivides only the boundary blocks of each ad run into ~5s pieces and re-asks Jev per piece with tight local context, shrink-only. Consecutive runs merged on existing timestamps, bare JSON array returned exactly as MinusPod expects |
+| Primary ad detection (`ad_detection` schema, pass 1) | Group transcript lines into short spans (~4s, capped at 8s, split on a ~1.25s pause). Each Jev call gets only that batch as `{segments:[{text,before,after}]}`. One `noul` per span decides the cut (`segments[i].text`); one `choice` only labels it. Consecutive ad spans merge on the transcript timestamps. A content span stays, including between two ads |
 | Verification re-scan (pass 2, same schema) | Same Jev path, with transition-tone/orphan-URL guidance |
 | Reviewer (`ad_review`) | Jev yes/no on the candidate span; confirms original bounds or rejects. Bounds are never adjusted (Jev can't emit timestamps) |
 | Category repair (`segment_categories`) | Jev `choice` per listed segment |
@@ -40,11 +40,10 @@ stages degrade gracefully on their own (reviewer keeps candidates,
 verification keeps pass-1 cuts, repair defaults to `sponsor`, chapters go
 generic, trim keeps the span).
 
-Jev thresholds are split by role: L1 (`JEV_AD_THRESHOLD`, default 0.6) is the
-recall gate and deliberately permissive; L2 edge agreement
-(`JEV_EDGE_THRESHOLD`, default 0.5, requires low probability AND non-ad
-choice to trim) is the precision gate. Uncertain segments stay in the
-episode. Tune after measuring.
+A span is cut when its noul is at least `JEV_AD_THRESHOLD` (default 0.5),
+which is "ad is at least as likely as show content." The choice does not
+veto that. Noul and choice answer different questions; requiring both to
+agree drops real reads. Tune the threshold after measuring.
 
 ## Run
 
@@ -78,18 +77,22 @@ span, segments, Jev latency, ads found, total time. No transcripts in logs.
 ## Testing
 
 ```bash
-cargo test   # 19 unit tests: classifier, transcript parse/segment/merge, Jev shapes
+cargo test   # 25 unit tests: classifier, transcript parse/segment/merge, Jev shapes
 ```
 
 For accuracy evaluation, process real episodes and compare against
 MinusPod-on-Gemini results: same real ads found? missed? false flags?
 boundary deltas? detection-stage time? Do not claim improvement until
-measured. Start with `JEV_SEGMENT_TARGET_SECS=30` and thresholds above.
+measured. Start with `JEV_SEGMENT_TARGET_SECS=4`, `JEV_SEGMENT_MAX_SECS=8`,
+`JEV_SEGMENT_GAP_SECS=1.25`, and `JEV_AD_THRESHOLD=0.5`.
 
 ## Notes / limits
 
-- Jev classifies fixed transcript segments; rough boundaries are expected.
-  MinusPod's downstream boundary snap/audio analysis still refines them.
+- Jev classifies a short span of transcript text. Cut times are the
+  transcript line timestamps around the spans it marks, not values Jev
+  emits. MinusPod's downstream boundary snap still refines them. A single
+  Whisper line that mixes show talk and a read cannot be split finer than
+  that line.
 - Reviewer is off by default in MinusPod (`enable_ad_review=false`); if you
   enable it, the proxy confirms/rejects but never adjusts bounds.
 - `jev-1.13-free` on Zen is a limited-time offer; if it disappears, set the

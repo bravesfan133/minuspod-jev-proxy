@@ -16,8 +16,7 @@ use crate::config::Config;
 use crate::jev::{JevError, Question, decide, questions_map};
 use crate::openai::{ChatRequest, chat_response};
 use crate::transcript::{
-    Ad, Segment, context_for, end_text_for, merge_trimmed_run, parse_transcript, round3,
-    runs_of, split_span, to_segments,
+    collect_ads, detection_state, parse_transcript, round3, to_segments,
 };
 
 #[derive(Clone)]
@@ -34,13 +33,12 @@ static REVIEW_BOUNDS_RE: LazyLock<Regex> = LazyLock::new(|| {
 /// Jev choice options for segment classification.
 fn detection_criteria() -> HashMap<String, String> {
     [
-        ("content", "Normal editorial show content: discussion, interviews, news, jokes, stories, or incidental brand mentions without any sales pitch."),
-        ("paid_ad", "A paid sponsor read or produced commercial for an external product/service."),
-        ("host_read_sponsor", "The host personally endorses a sponsor with a call to action (URL, promo code, 'go to')."),
-        ("inserted_ad", "A dynamically/platform-inserted commercial break, jarring topic shift to an advertiser."),
-        ("self_promo", "The show promotes its own other content: Patreon, merch, mailing list, live shows."),
-        ("cross_promo", "Promotion of a different show or network content."),
-        ("uncertain", "Cannot tell from this segment alone whether it is an ad or content."),
+        ("content", "Editorial speech: news, interview, opinion, story, or a brand mentioned with no ask to buy, visit, or use a code."),
+        ("paid_ad", "A paid sponsor read or produced commercial that asks the listener to buy, visit, or use a code."),
+        ("host_read_sponsor", "The host reads a sponsor pitch with a call to action, URL, or promo code."),
+        ("inserted_ad", "A commercial break that is not the host's editorial topic."),
+        ("self_promo", "The show promotes its own Patreon, merch, mailing list, or live event."),
+        ("cross_promo", "A pitch for a different show or network."),
     ]
     .into_iter()
     .map(|(k, v)| (k.to_string(), v.to_string()))
@@ -128,42 +126,48 @@ async fn handle_detection(
         return err(StatusCode::UNPROCESSABLE_ENTITY, "no timestamped transcript lines found".into());
     }
     let span_secs = lines.last().map(|l| l.end).unwrap_or(0.0) - lines.first().map(|l| l.start).unwrap_or(0.0);
-    let segments = to_segments(&lines, cfg.segment_target_secs);
-    let state_text = lines
-        .iter()
-        .map(|l| format!("[{:.1}s - {:.1}s] {}", l.start, l.end, l.text))
-        .collect::<Vec<_>>()
-        .join("\n");
-    let state_value = Value::String(state_text);
+    let segments = to_segments(
+        &lines,
+        cfg.segment_target_secs,
+        cfg.segment_max_secs,
+        cfg.segment_gap_secs,
+    );
 
     let verify_note = if verification {
-        " This audio already had ads removed; [transition tone] markers are edit points, NOT ads. Orphaned URLs, promo codes, or partial sponsor reads ARE missed-ad fragments."
+        " This audio was already edited. The words [transition tone] are an edit marker, not an ad. A leftover promo code, URL, or partial sponsor sentence is still an ad."
     } else {
         ""
     };
 
-    let mut decisions: Vec<(Segment, Option<(f64, String, String)>)> = Vec::new();
+    let mut decisions = Vec::new();
     let mut jev_ms_total: u64 = 0;
     let mut backend_used = "primary";
     let criteria = detection_criteria();
 
+    let mut offset = 0usize;
     for chunk in segments.chunks(cfg.max_segments_per_call.max(1)) {
+        // State is this batch only. Questions name `segments[i].text`.
+        let state_value = detection_state(&segments, offset, chunk);
         let mut qs = Vec::new();
-        for (j, seg) in chunk.iter().enumerate() {
-            let label = format!("[{:.1}s - {:.1}s]: {}", seg.start, seg.end, seg.text);
+        for j in 0..chunk.len() {
+            let path = format!("segments[{j}]");
             qs.push((
                 format!("seg{j}"),
                 Question::choice(
-                    format!("Classify this target segment in its transcript context. Target segment {label}"),
+                    format!(
+                        "Which label best describes `{path}.text`? `{path}.before` and `{path}.after` are only the adjacent speech."
+                    ),
                     criteria.clone(),
                 ),
             ));
             qs.push((
                 format!("ad{j}"),
                 Question::noul_with(
-                    format!("Is this target segment removable advertising/promotional content rather than normal editorial show content? A host discussing a company as normal content is NOT an ad. Paid sponsor reads, inserted commercials, and explicit promotional calls to action ARE ads.{verify_note} Target segment {label}"),
-                    "The segment is primarily an ad/promo that should be removed",
-                    "The segment is normal editorial content that must be kept",
+                    format!(
+                        "Is `{path}.text` a removable advertisement or promo? `{path}.before` and `{path}.after` are only the adjacent speech, to show whether this stretch sits inside a pitch. Judge `{path}.text` itself.{verify_note}"
+                    ),
+                    "A sponsor read, host-read ad, inserted commercial, promo code, URL pitch, self-promo, or cross-promo that should be cut",
+                    "Editorial show content that should stay, including a company mentioned with no call to action",
                 ),
             ));
         }
@@ -176,6 +180,8 @@ async fn handle_detection(
         jev_ms_total += outcome.latency_ms;
         backend_used = outcome.backend;
         for (j, seg) in chunk.iter().enumerate() {
+            // Noul is the cut. Choice only labels it. They answer different
+            // questions; requiring both to agree drops real reads.
             let noul = outcome
                 .answers
                 .get(&format!("ad{j}"))
@@ -185,148 +191,19 @@ async fn handle_detection(
                 .answers
                 .get(&format!("seg{j}"))
                 .and_then(|a| a.choice.clone())
-                .unwrap_or_else(|| "uncertain".to_string());
-            match map_choice(&choice) {
-                Some(cat) if noul >= cfg.ad_threshold => {
-                    let reason = format!("jev:{choice} p={noul:.2}");
-                    decisions.push((seg.clone(), Some((noul, cat.to_string(), reason))));
-                }
-                _ => decisions.push((seg.clone(), None)),
+                .unwrap_or_else(|| "content".to_string());
+            if noul >= cfg.ad_threshold {
+                let cat = map_choice(&choice).unwrap_or("sponsor");
+                let reason = format!("jev:{choice} noul={noul:.2}");
+                decisions.push((seg.clone(), Some((noul, cat.to_string(), reason))));
+            } else {
+                decisions.push((seg.clone(), None));
             }
         }
+        offset += chunk.len();
     }
 
-    // L2 edge pass: subdivide the first/last block of each ad run into
-    // ~5s pieces and re-ask Jev per piece with tight local context.
-    // Shrink-only: edges move inward, never outward.
-    let runs = runs_of(&decisions);
-    let mut ads: Vec<Ad> = Vec::new();
-    let mut l2_pieces = 0usize;
-    let mut l2_trimmed_secs = 0.0f64;
-    for run in &runs {
-        let first = &run[0].0;
-        let last = &run[run.len() - 1].0;
-        let lead = split_span(&lines, first.start, first.end, cfg.edge_piece_secs);
-        let tail = if run.len() > 1 {
-            split_span(&lines, last.start, last.end, cfg.edge_piece_secs)
-        } else {
-            Vec::new()
-        };
-        let state_value =
-            Value::String(context_for(&lines, first.start, last.end, cfg.edge_context_secs));
-        // (question key, piece index within combined edge list)
-        let mut keys: Vec<(String, usize)> = Vec::new();
-        let mut pieces: Vec<Segment> = Vec::new();
-        for p in &lead {
-            keys.push((format!("e{}", pieces.len()), pieces.len()));
-            pieces.push(p.clone());
-        }
-        let tail_off = pieces.len();
-        for p in &tail {
-            keys.push((format!("e{}", pieces.len()), pieces.len()));
-            pieces.push(p.clone());
-        }
-        let mut ad_flags = vec![false; pieces.len()];
-        for group in keys.chunks(16) {
-            let mut qs = Vec::new();
-            for (qkey, pi) in group {
-                let p = &pieces[*pi];
-                qs.push((
-                    format!("{qkey}p"),
-                    Question::noul_with(
-                        format!("This short piece [{:.1}s - {:.1}s]: \"{}\" — is it advertising content that should be removed? Judge ONLY this piece. An incidental brand mention without a sales pitch is content, NOT an ad.{verify_note}", p.start, p.end, p.text),
-                        "The piece is ad content to remove",
-                        "The piece is normal content to keep",
-                    ),
-                ));
-                qs.push((
-                    format!("{qkey}c"),
-                    Question::choice(
-                        format!("Classify this short piece [{:.1}s - {:.1}s]: \"{}\"", p.start, p.end, p.text),
-                        criteria.clone(),
-                    ),
-                ));
-            }
-            let outcome =
-                match decide(&state.client, cfg, &state.sem, &state_value, &questions_map(qs))
-                    .await
-                {
-                    Ok(o) => o,
-                    Err(e) => return jev_err(e),
-                };
-            jev_ms_total += outcome.latency_ms;
-            backend_used = outcome.backend;
-            for (qkey, pi) in group {
-                let noul = outcome
-                    .answers
-                    .get(&format!("{qkey}p"))
-                    .and_then(|a| a.noul)
-                    .unwrap_or(0.0);
-                let choice = outcome
-                    .answers
-                    .get(&format!("{qkey}c"))
-                    .and_then(|a| a.choice.clone())
-                    .unwrap_or_else(|| "uncertain".to_string());
-                // Trim only on agreement: low probability AND non-ad choice.
-                // Either signal alone is too noisy on 5s pieces.
-                ad_flags[*pi] = noul >= cfg.edge_threshold && map_choice(&choice).is_some();
-            }
-        }
-        l2_pieces += pieces.len();
-        // Trim leading content pieces (lead) and trailing content pieces
-        // (tail). Single-segment runs share one piece list for both ends.
-        let lead_keep = &ad_flags[0..lead.len()];
-        let tail_keep: &[bool] = if run.len() > 1 {
-            &ad_flags[tail_off..]
-        } else {
-            &ad_flags[..]
-        };
-        let mut new_start = first.start;
-        let mut new_end = last.end;
-        match lead_keep.iter().position(|&k| k) {
-            Some(k) => {
-                if k > 0 {
-                    l2_trimmed_secs += lead[k].start - first.start;
-                    new_start = lead[k].start;
-                }
-            }
-            None => {
-                // Whole lead block is content: start at next block if any.
-                if run.len() > 1 {
-                    l2_trimmed_secs += run[1].0.start - first.start;
-                    new_start = run[1].0.start;
-                } else {
-                    continue; // entire run is content: drop it.
-                }
-            }
-        }
-        match tail_keep.iter().rposition(|&k| k) {
-            Some(k) => {
-                let tail_pieces = if run.len() > 1 { &tail } else { &lead };
-                if k + 1 < tail_pieces.len() {
-                    l2_trimmed_secs += last.end - tail_pieces[k].end;
-                    new_end = tail_pieces[k].end;
-                }
-            }
-            None => {
-                if run.len() > 1 {
-                    l2_trimmed_secs += last.end - run[run.len() - 2].0.end;
-                    new_end = run[run.len() - 2].0.end;
-                } else {
-                    continue;
-                }
-            }
-        }
-        if new_end > new_start {
-            ads.push(merge_trimmed_run(run, new_start, new_end));
-        }
-    }
-    // end_text must reflect the trimmed span, not the raw edge block.
-    for ad in &mut ads {
-        if let Some(t) = end_text_for(&lines, ad.start, ad.end) {
-            ad.end_text = t;
-        }
-    }
+    let ads = collect_ads(&lines, &decisions);
     let content = serde_json::to_string(&ads).unwrap_or_else(|_| "[]".to_string());
     tracing::info!(
         kind = "detection",
@@ -335,8 +212,6 @@ async fn handle_detection(
         span_secs = round3(span_secs),
         segments = decisions.len(),
         ads = ads.len(),
-        l2_pieces = l2_pieces,
-        l2_trimmed_secs = round3(l2_trimmed_secs),
         jev_ms = jev_ms_total,
         total_ms = t0.elapsed().as_millis() as u64,
         "detection request served"

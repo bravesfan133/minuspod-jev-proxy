@@ -13,22 +13,21 @@ pub struct Config {
     pub primary: JevBackendCfg,
     pub secondary: JevBackendCfg,
     pub timeout_secs: u64,
-    /// noul >= ad_threshold AND ad-ish choice => ad candidate.
+    /// Cut when noul >= ad_threshold. Noul is the yes probability.
+    /// The choice labels a cut; it does not veto one.
     pub ad_threshold: f64,
     /// reviewer noul >= review_threshold => confirm candidate.
     pub review_threshold: f64,
-    /// target seconds per classification segment.
+    /// Flush a span once it reaches this many seconds.
     pub segment_target_secs: f64,
-    /// max segments per Decisions call (2 questions each, limit is 32).
+    /// Never add another line if it would make the span longer than this.
+    pub segment_max_secs: f64,
+    /// Flush before a line when the pause in front of it is at least this.
+    pub segment_gap_secs: f64,
+    /// max segments per Decisions call (one noul and one choice each).
     pub max_segments_per_call: usize,
     /// max concurrent Jev calls (MinusPod fires all windows in parallel).
     pub max_concurrent: usize,
-    /// L2 edge pass: sub-piece seconds for trimming run boundaries.
-    pub edge_piece_secs: f64,
-    /// L2 edge pass: noul >= edge_threshold keeps a piece as ad.
-    pub edge_threshold: f64,
-    /// L2 edge pass: context pad seconds around an ad run.
-    pub edge_context_secs: f64,
 }
 
 fn get(key: &str, default: &str) -> String {
@@ -91,16 +90,15 @@ impl Config {
                 base_url: secondary_url,
             },
             timeout_secs: get_u64("JEV_TIMEOUT_SECS", 60),
-            // L1 is the recall gate: deliberately permissive. L2 edge
-            // agreement is the precision gate. Keep L1 low, tune L2.
-            ad_threshold: get_f64("JEV_AD_THRESHOLD", 0.6),
+            // 0.5 is "ad is at least as likely as content". Clear reads
+            // score well above this once the state is the span itself.
+            ad_threshold: get_f64("JEV_AD_THRESHOLD", 0.5),
             review_threshold: get_f64("JEV_REVIEW_THRESHOLD", 0.5),
-            segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 30.0),
+            segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 4.0),
+            segment_max_secs: get_f64("JEV_SEGMENT_MAX_SECS", 8.0),
+            segment_gap_secs: get_f64("JEV_SEGMENT_GAP_SECS", 1.25),
             max_segments_per_call: get_usize("JEV_MAX_SEGMENTS_PER_CALL", 16),
             max_concurrent: get_usize("JEV_MAX_CONCURRENT_REQS", 4).max(1),
-            edge_piece_secs: get_f64("JEV_EDGE_PIECE_SECS", 5.0),
-            edge_threshold: get_f64("JEV_EDGE_THRESHOLD", 0.5),
-            edge_context_secs: get_f64("JEV_EDGE_CONTEXT_SECS", 90.0),
         }
     }
 }
