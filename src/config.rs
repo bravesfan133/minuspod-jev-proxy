@@ -13,9 +13,12 @@ pub struct Config {
     pub primary: JevBackendCfg,
     pub secondary: JevBackendCfg,
     pub timeout_secs: u64,
-    /// Cut when noul >= ad_threshold. Noul is the yes probability.
-    /// The choice labels a cut; it does not veto one.
+    /// A paid-sponsor span is a core cut when noul >= ad_threshold.
     pub ad_threshold: f64,
+    /// A paid-sponsor neighbor joins a core when noul >= this.
+    pub attach_threshold: f64,
+    /// Max silence, in seconds, between a core and a neighbor that joins it.
+    pub attach_gap_secs: f64,
     /// reviewer noul >= review_threshold => confirm candidate.
     pub review_threshold: f64,
     /// Flush a span once it reaches this many seconds.
@@ -93,6 +96,8 @@ impl Config {
             // 0.5 is "ad is at least as likely as content". Clear reads
             // score well above this once the state is the span itself.
             ad_threshold: get_f64("JEV_AD_THRESHOLD", 0.5),
+            attach_threshold: get_f64("JEV_ATTACH_THRESHOLD", 0.40),
+            attach_gap_secs: get_f64("JEV_ATTACH_GAP_SECS", 8.0),
             review_threshold: get_f64("JEV_REVIEW_THRESHOLD", 0.5),
             segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 4.0),
             segment_max_secs: get_f64("JEV_SEGMENT_MAX_SECS", 8.0),

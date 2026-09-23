@@ -17,7 +17,7 @@ schema name, then stable prompt markers, then transcript structure) and:
 
 | Request type | Handling |
 |---|---|
-| Primary ad detection (`ad_detection` schema, pass 1) | Group transcript lines into short spans (~4s, capped at 8s, split on a ~1.25s pause). Each Jev call gets only that batch as `{segments:[{text,before,after}]}`. One `noul` per span decides the cut (`segments[i].text`); one `choice` only labels it. Consecutive ad spans merge on the transcript timestamps. A content span stays, including between two ads |
+| Primary ad detection (`ad_detection` schema, pass 1) | Group transcript lines into short spans (~4s, capped at 8s, split on a ~1.25s pause). Each Jev call gets only that batch as `{segments:[{text,before,after}]}`. One `noul` asks whether `segments[i].text` is a paid ad; one `choice` labels it. A cut is emitted only when the label is `paid_ad`, `host_read_sponsor`, or `inserted_ad` and noul is at least `JEV_AD_THRESHOLD`. Sign-offs, the show promoting itself, and ordinary talk are not cuts. Neighboring paid-sponsor spans within `JEV_ATTACH_GAP_SECS` join so one read is one cut. Confidence is the strongest noul in that read |
 | Verification re-scan (pass 2, same schema) | Same Jev path, with transition-tone/orphan-URL guidance |
 | Reviewer (`ad_review`) | Jev yes/no on the candidate span; confirms original bounds or rejects. Bounds are never adjusted (Jev can't emit timestamps) |
 | Category repair (`segment_categories`) | Jev `choice` per listed segment |
@@ -40,10 +40,16 @@ stages degrade gracefully on their own (reviewer keeps candidates,
 verification keeps pass-1 cuts, repair defaults to `sponsor`, chapters go
 generic, trim keeps the span).
 
-A span is cut when its noul is at least `JEV_AD_THRESHOLD` (default 0.5),
-which is "ad is at least as likely as show content." The choice does not
-veto that. Noul and choice answer different questions; requiring both to
-agree drops real reads. Tune the threshold after measuring.
+A span is a core cut only when both signals agree: the choice is a paid
+sponsor (`paid_ad`, `host_read_sponsor`, or `inserted_ad`) and its noul is
+at least `JEV_AD_THRESHOLD` (default 0.5). Noul answers "is this a paid ad
+that should be cut?"; the choice answers "what kind of speech is it?"
+Show talk, a sign-off, and the show promoting itself stay even when noul
+is high. A weaker paid-sponsor neighbor (noul at least
+`JEV_ATTACH_THRESHOLD`, default 0.40, gap at most `JEV_ATTACH_GAP_SECS`,
+default 8s) joins that core so one read is one cut instead of a scrap
+MinusPod drops as too short. The confidence sent to MinusPod is the
+strongest noul in the read, which is what its 80% slider compares.
 
 ## Run
 
@@ -84,7 +90,8 @@ For accuracy evaluation, process real episodes and compare against
 MinusPod-on-Gemini results: same real ads found? missed? false flags?
 boundary deltas? detection-stage time? Do not claim improvement until
 measured. Start with `JEV_SEGMENT_TARGET_SECS=4`, `JEV_SEGMENT_MAX_SECS=8`,
-`JEV_SEGMENT_GAP_SECS=1.25`, and `JEV_AD_THRESHOLD=0.5`.
+`JEV_SEGMENT_GAP_SECS=1.25`, `JEV_AD_THRESHOLD=0.5`,
+`JEV_ATTACH_THRESHOLD=0.40`, and `JEV_ATTACH_GAP_SECS=8`.
 
 ## Notes / limits
 

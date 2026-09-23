@@ -152,71 +152,99 @@ pub fn last_words(text: &str, n: usize) -> String {
         .join(" ")
 }
 
-/// Split decisions into consecutive ad-only runs.
-pub fn runs_of(
-    decisions: &[(Segment, Option<(f64, String, String)>)],
-) -> Vec<Vec<(Segment, f64, String, String)>> {
-    let mut runs = Vec::new();
-    let mut cur = Vec::new();
-    for (seg, opt) in decisions {
-        match opt {
-            Some((conf, cat, reason)) => {
-                cur.push((seg.clone(), *conf, cat.clone(), reason.clone()));
-            }
-            None => {
-                if !cur.is_empty() {
-                    runs.push(std::mem::take(&mut cur));
-                }
-            }
-        }
-    }
-    if !cur.is_empty() {
-        runs.push(cur);
-    }
-    runs
+/// One classified stretch. `sponsor` is true only for a paid read
+/// (host-read, produced spot, or inserted commercial). Show talk,
+/// sign-offs, and the show promoting itself are not sponsors.
+#[derive(Debug, Clone)]
+pub struct ClassifiedSpan {
+    pub segment: Segment,
+    pub noul: f64,
+    pub sponsor: bool,
+    pub choice: String,
 }
 
-/// Turn consecutive ad decisions into MinusPod spans.
+/// Build MinusPod cuts from paid-sponsor spans only.
 ///
-/// Bounds are the first and last flagged segment's own timestamps.
-/// A content segment between two ads stays in the episode: it breaks
-/// the run. Silence inside a run is included because the span runs
-/// from the first start to the last end. Confidence is the mean noul
-/// so one borderline edge line does not sink a clear read. Category
-/// and reason come from the strongest line in the run.
-pub fn collect_ads(
+/// A span is a core when it is a sponsor and noul >= `cut_threshold`.
+/// A neighboring sponsor span with noul >= `attach_threshold` joins that
+/// core when the gap is at most `attach_gap_secs`, so one read becomes
+/// one cut instead of a few short scraps. A non-sponsor span never joins,
+/// so show talk between reads stays. Confidence is the strongest noul in
+/// the cut, which is the probability MinusPod compares to its slider.
+pub fn collect_sponsor_ads(
     lines: &[Line],
-    decisions: &[(Segment, Option<(f64, String, String)>)],
+    spans: &[ClassifiedSpan],
+    cut_threshold: f64,
+    attach_threshold: f64,
+    attach_gap_secs: f64,
 ) -> Vec<Ad> {
     let mut ads = Vec::new();
-    for run in runs_of(decisions) {
-        if run.is_empty() {
+    let mut i = 0;
+    while i < spans.len() {
+        if !is_core(&spans[i], cut_threshold) {
+            i += 1;
             continue;
         }
-        let start = run[0].0.start;
-        let end = run[run.len() - 1].0.end;
-        if end <= start {
-            continue;
+        let mut lo = i;
+        let mut hi = i;
+        while lo > 0 && can_attach(&spans[lo - 1], &spans[lo], attach_threshold, attach_gap_secs)
+        {
+            lo -= 1;
         }
-        let mean = run.iter().map(|f| f.1).sum::<f64>() / run.len() as f64;
-        let best = run.iter().max_by(|a, b| {
-            a.1.partial_cmp(&b.1).unwrap_or(std::cmp::Ordering::Equal)
-        });
-        let (category, reason) = best
-            .map(|f| (f.2.clone(), f.3.clone()))
-            .unwrap_or_else(|| ("sponsor".to_string(), "jev".to_string()));
-        let end_text = end_text_for(lines, start, end)
-            .unwrap_or_else(|| last_words(&run[run.len() - 1].0.text, 5));
-        ads.push(Ad {
-            start,
-            end,
-            confidence: round3(mean),
-            category,
-            reason,
-            end_text,
-        });
+        while hi + 1 < spans.len()
+            && can_attach(&spans[hi + 1], &spans[hi], attach_threshold, attach_gap_secs)
+        {
+            hi += 1;
+        }
+        ads.push(ad_from_spans(lines, &spans[lo..=hi]));
+        i = hi + 1;
     }
     ads
+}
+
+fn is_core(span: &ClassifiedSpan, cut_threshold: f64) -> bool {
+    span.sponsor && span.noul >= cut_threshold
+}
+
+fn can_attach(
+    candidate: &ClassifiedSpan,
+    neighbor: &ClassifiedSpan,
+    attach_threshold: f64,
+    attach_gap_secs: f64,
+) -> bool {
+    if !candidate.sponsor || candidate.noul < attach_threshold {
+        return false;
+    }
+    let gap = if candidate.segment.start >= neighbor.segment.start {
+        candidate.segment.start - neighbor.segment.end
+    } else {
+        neighbor.segment.start - candidate.segment.end
+    };
+    (-0.05..=attach_gap_secs).contains(&gap)
+}
+
+fn ad_from_spans(lines: &[Line], spans: &[ClassifiedSpan]) -> Ad {
+    let start = spans[0].segment.start;
+    let end = spans[spans.len() - 1].segment.end;
+    let best = spans.iter().max_by(|a, b| {
+        a.noul
+            .partial_cmp(&b.noul)
+            .unwrap_or(std::cmp::Ordering::Equal)
+    });
+    let (choice, noul) = best
+        .map(|s| (s.choice.as_str(), s.noul))
+        .unwrap_or(("sponsor", 0.0));
+    let end_text = end_text_for(lines, start, end).unwrap_or_else(|| {
+        last_words(&spans[spans.len() - 1].segment.text, 5)
+    });
+    Ad {
+        start,
+        end,
+        confidence: round3(noul),
+        category: "sponsor".to_string(),
+        reason: format!("jev:{choice} noul={noul:.2}"),
+        end_text,
+    }
 }
 
 /// Last words of transcript lines fully inside [start, end].
@@ -319,41 +347,43 @@ mod tests {
         assert!(state["segments"][0]["text"].as_str().unwrap().contains("SAVE"));
     }
 
+    fn span(start: f64, end: f64, text: &str, noul: f64, sponsor: bool, choice: &str) -> ClassifiedSpan {
+        ClassifiedSpan {
+            segment: Segment { start, end, text: text.into() },
+            noul,
+            sponsor,
+            choice: choice.into(),
+        }
+    }
+
     #[test]
-    fn collect_ads_uses_segment_timestamps_and_keeps_content() {
-        let segs = vec![
-            Segment { start: 20.0, end: 30.0, text: "a b c d e f".into() },
-            Segment { start: 30.0, end: 40.0, text: "g h i j k l".into() },
-            Segment { start: 40.0, end: 50.0, text: "m n o p q r".into() },
-            Segment { start: 50.0, end: 60.0, text: "content here stays".into() },
-            Segment { start: 60.0, end: 70.0, text: "s t u v w x".into() },
+    fn collect_sponsor_ads_keeps_show_and_uses_strongest_score() {
+        let spans = vec![
+            span(20.0, 30.0, "a b c d e f", 0.55, true, "host_read_sponsor"),
+            span(30.0, 40.0, "g h i j k l", 0.96, true, "host_read_sponsor"),
+            span(40.0, 50.0, "m n o p q r", 0.42, true, "paid_ad"),
+            span(50.0, 60.0, "content here stays put", 0.91, false, "content"),
+            span(60.0, 70.0, "comment of the day today", 0.93, false, "self_promo"),
+            span(80.0, 90.0, "s t u v w x", 0.88, true, "inserted_ad"),
         ];
-        let decisions: Vec<(Segment, Option<(f64, String, String)>)> = segs
-            .into_iter()
-            .enumerate()
-            .map(|(i, s)| {
-                if i == 3 {
-                    (s, None)
-                } else {
-                    (s, Some((0.9, "sponsor".into(), "r".into())))
-                }
+        let lines: Vec<Line> = spans
+            .iter()
+            .map(|s| Line {
+                start: s.segment.start,
+                end: s.segment.end,
+                text: s.segment.text.clone(),
             })
             .collect();
-        let lines = vec![
-            Line { start: 20.0, end: 30.0, text: "a b c d e f".into() },
-            Line { start: 30.0, end: 40.0, text: "g h i j k l".into() },
-            Line { start: 40.0, end: 50.0, text: "m n o p q r".into() },
-            Line { start: 50.0, end: 60.0, text: "content here stays".into() },
-            Line { start: 60.0, end: 70.0, text: "s t u v w x".into() },
-        ];
-        let ads = collect_ads(&lines, &decisions);
+        let ads = collect_sponsor_ads(&lines, &spans, 0.5, 0.4, 8.0);
         assert_eq!(ads.len(), 2);
         assert_eq!(ads[0].start, 20.0);
         assert_eq!(ads[0].end, 50.0);
+        assert_eq!(ads[0].confidence, 0.96);
+        assert_eq!(ads[0].category, "sponsor");
+        assert!(ads[0].reason.contains("host_read_sponsor"));
         assert_eq!(ads[0].end_text, "n o p q r");
-        assert_eq!(ads[0].confidence, 0.9);
-        assert_eq!(ads[1].start, 60.0);
-        assert_eq!(ads[1].end, 70.0);
+        assert_eq!(ads[1].start, 80.0);
+        assert_eq!(ads[1].end, 90.0);
     }
 
     #[test]

@@ -16,7 +16,8 @@ use crate::config::Config;
 use crate::jev::{JevError, Question, decide, questions_map};
 use crate::openai::{ChatRequest, chat_response};
 use crate::transcript::{
-    collect_ads, detection_state, parse_transcript, round3, to_segments,
+    ClassifiedSpan, collect_sponsor_ads, detection_state, parse_transcript, round3,
+    to_segments,
 };
 
 #[derive(Clone)]
@@ -45,14 +46,10 @@ fn detection_criteria() -> HashMap<String, String> {
     .collect()
 }
 
-/// Map a Jev choice to a MinusPod category. None = not an ad.
-fn map_choice(choice: &str) -> Option<&'static str> {
-    match choice {
-        "paid_ad" | "host_read_sponsor" | "inserted_ad" => Some("sponsor"),
-        "self_promo" => Some("self_promo"),
-        "cross_promo" => Some("cross_promo"),
-        _ => None,
-    }
+/// Paid sponsor reads are the only cuts. The show promoting itself,
+/// a sign-off, or ordinary talk is not a sponsor.
+fn is_paid_sponsor(choice: &str) -> bool {
+    matches!(choice, "paid_ad" | "host_read_sponsor" | "inserted_ad")
 }
 
 fn err(status: StatusCode, msg: String) -> Response {
@@ -139,7 +136,7 @@ async fn handle_detection(
         ""
     };
 
-    let mut decisions = Vec::new();
+    let mut spans: Vec<ClassifiedSpan> = Vec::new();
     let mut jev_ms_total: u64 = 0;
     let mut backend_used = "primary";
     let criteria = detection_criteria();
@@ -164,10 +161,10 @@ async fn handle_detection(
                 format!("ad{j}"),
                 Question::noul_with(
                     format!(
-                        "Is `{path}.text` a removable advertisement or promo? `{path}.before` and `{path}.after` are only the adjacent speech, to show whether this stretch sits inside a pitch. Judge `{path}.text` itself.{verify_note}"
+                        "Is `{path}.text` a paid advertisement that should be cut? `{path}.before` and `{path}.after` are only the adjacent speech, to show whether this stretch sits inside a pitch. Judge `{path}.text` itself.{verify_note}"
                     ),
-                    "A sponsor read, host-read ad, inserted commercial, promo code, URL pitch, self-promo, or cross-promo that should be cut",
-                    "Editorial show content that should stay, including a company mentioned with no call to action",
+                    "A paid sponsor read, host-read ad, or inserted commercial with a call to action, URL, or promo code",
+                    "Show talk that should stay: news, interview, opinion, a sign-off, the show promoting itself, or a brand mentioned with no call to action",
                 ),
             ));
         }
@@ -180,8 +177,6 @@ async fn handle_detection(
         jev_ms_total += outcome.latency_ms;
         backend_used = outcome.backend;
         for (j, seg) in chunk.iter().enumerate() {
-            // Noul is the cut. Choice only labels it. They answer different
-            // questions; requiring both to agree drops real reads.
             let noul = outcome
                 .answers
                 .get(&format!("ad{j}"))
@@ -192,25 +187,33 @@ async fn handle_detection(
                 .get(&format!("seg{j}"))
                 .and_then(|a| a.choice.clone())
                 .unwrap_or_else(|| "content".to_string());
-            if noul >= cfg.ad_threshold {
-                let cat = map_choice(&choice).unwrap_or("sponsor");
-                let reason = format!("jev:{choice} noul={noul:.2}");
-                decisions.push((seg.clone(), Some((noul, cat.to_string(), reason))));
-            } else {
-                decisions.push((seg.clone(), None));
-            }
+            // Both signals have to agree. Noul alone was cutting lines the
+            // label called the show. The label alone was dropping reads
+            // whose yes-probability was already high.
+            spans.push(ClassifiedSpan {
+                segment: seg.clone(),
+                noul,
+                sponsor: is_paid_sponsor(&choice),
+                choice,
+            });
         }
         offset += chunk.len();
     }
 
-    let ads = collect_ads(&lines, &decisions);
+    let ads = collect_sponsor_ads(
+        &lines,
+        &spans,
+        cfg.ad_threshold,
+        cfg.attach_threshold,
+        cfg.attach_gap_secs,
+    );
     let content = serde_json::to_string(&ads).unwrap_or_else(|_| "[]".to_string());
     tracing::info!(
         kind = "detection",
         verification,
         backend = backend_used,
         span_secs = round3(span_secs),
-        segments = decisions.len(),
+        segments = spans.len(),
         ads = ads.len(),
         jev_ms = jev_ms_total,
         total_ms = t0.elapsed().as_millis() as u64,
@@ -241,9 +244,9 @@ async fn handle_review(
     let qs = questions_map(vec![(
         "is_ad".to_string(),
         Question::noul_with(
-            format!("The transcript below marks a candidate ad span [{orig_start:.1}s - {orig_end:.1}s]. Is that span primarily paid/promotional advertising content that should be removed?"),
-            "The span is an ad and should be cut",
-            "The span is normal content and must be kept",
+            format!("The transcript below marks a candidate ad span [{orig_start:.1}s - {orig_end:.1}s]. Is that span primarily a paid sponsor read or inserted commercial that should be removed?"),
+            "The span is a paid ad and should be cut",
+            "The span should stay: show talk, a sign-off, or the show promoting itself",
         ),
     )]);
     let outcome = match decide(&state.client, cfg, &state.sem, &Value::String(user), &qs).await
@@ -451,13 +454,13 @@ mod tests {
 
     #[test]
     fn choice_mapping() {
-        assert_eq!(map_choice("paid_ad"), Some("sponsor"));
-        assert_eq!(map_choice("host_read_sponsor"), Some("sponsor"));
-        assert_eq!(map_choice("inserted_ad"), Some("sponsor"));
-        assert_eq!(map_choice("self_promo"), Some("self_promo"));
-        assert_eq!(map_choice("cross_promo"), Some("cross_promo"));
-        assert_eq!(map_choice("content"), None);
-        assert_eq!(map_choice("uncertain"), None);
+        assert!(is_paid_sponsor("paid_ad"));
+        assert!(is_paid_sponsor("host_read_sponsor"));
+        assert!(is_paid_sponsor("inserted_ad"));
+        assert!(!is_paid_sponsor("self_promo"));
+        assert!(!is_paid_sponsor("cross_promo"));
+        assert!(!is_paid_sponsor("content"));
+        assert!(!is_paid_sponsor("uncertain"));
     }
 
     #[test]
