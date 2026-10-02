@@ -1,0 +1,1056 @@
+# spliced_benedict-evans
+# Conversational transcript with a host read for Asana spliced in at line 625. Ground truth: exactly one cut.
+# source: https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/benedict-evans.md
+
+[0.0s - 7.0s] My most controversial opinion is that I think that AI is as big a deal as the internet or mobile, and only as big a deal as the internet or mobile.
+[7.0s - 9.0s] But you're just on the coming job apocalypse.
+[9.0s - 11.5s] Every time we have a new technology, it automates away a bunch of jobs.
+[11.5s - 13.4s] And then that automation unlocks a bunch of new jobs.
+[13.4s - 15.5s] And you don't know the new job because it doesn't exist yet.
+[15.5s - 17.0s] We've had that process over and over again.
+[17.0s - 23.0s] Even just looking at the most advanced AI companies, throughout big OpenAI, everyone's increasing headcount.
+[23.0s - 30.7s] You talk to these doomers on Twitter and they would act like every big company is going to buy ChatGPT tomorrow, and then in two weeks' time, they'll fire all their stuff.
+[30.7s - 31.9s] These people are more on.
+[31.9s - 34.3s] You can't predict which things are going to be exposed.
+[34.3s - 40.0s] You can't look at a senior partner at a law firm and say, "Well, 17% of their work could be automated." This is horseshit.
+[40.0s - 43.0s] I'm curious if you're following the anti-AI sentiment.
+[43.0s - 44.2s] It's a big fuzzy mess.
+[44.2s - 49.0s] Yes, this will change a bunch of stuff and we'll need to worry about it, but that's kind of a constant.
+[49.0s - 50.0s] We've always had that.
+[50.0s - 56.0s] What would be a couple things you recommend people do to be more successful in this future?
+[56.0s - 58.6s] Don't stick your head in the sand and say,
+[58.6s - 67.5s] "I hate all of this stuff." That gives you a great feeling of all superiority and you can go on BlueSky and chat at everybody about how Evil AI is like, great,
+[67.5s - 68.5s] happy for you.
+[68.5s - 70.2s] But that's not going to help.
+[70.2s - 75.0s] What helps is you diving into this and coming out, understanding what you can do with it.
+[75.0s - 77.8s] Today, my guest is Benedict Evans.
+[77.8s - 84.8s] Benedict was a longtime partner at A16Z as their in house analyst and resident thinker.
+[84.8s - 88.5s] Before that, he was a longtime equity researcher.
+[88.5s - 98.7s] And for the past six years, he's been an independent analyst tracking the most important tech trends and sharing what he's learning.
+[98.7s - 106.6s] Most recently, as you'd expect, he's spending all his time on how AI is changing our lives.
+[106.6s - 112.2s] And in his words, "AI is eating the world." In this conversation,
+[112.2s - 126.1s] we go deep on what we're still not pricing in on the impact that AI is going to have on our lives and our work, the rise of anti-AI sentiment,
+[126.1s - 134.5s] the impact on jobs, where in the value chain most of the value will accrue, and tons more.
+[134.5s - 147.0s] If you are worried about AI, or just confused about where things are heading, this conversation will teach you a lot, and also make you feel better.
+[147.0s - 149.0s] Thank you for inviting me.
+[149.0s - 152.4s] You just put out this deck called AI is Eating the World.
+[152.4s - 157.5s] I want to ask you the flip side of this, of we all know it's a big deal.
+[157.5s - 166.0s] Knowing that, what do you think people are still not fully pricing in when they think about the change that they're going to experience to their lives and their work?
+[166.0s - 167.9s] An interesting way of thinking about it,
+[167.9s - 176.1s] I did a podcast last year with someone where I said my most controversial opinion is that I think that AI is as big a deal as the internet or mobile.
+[176.1s - 184.6s] And only as big a deal as the internet or mobile, because clearly there's a bunch of people in tech who think, no, this is more like the industrial revolution or something.
+[184.6s - 189.7s] And there are a whole bunch of people underneath saying, "Well, he thinks this is just as big as...
+[189.7s - 194.2s] Does he not understand how big this is?" And I'm like, smartphones were quite a big deal.
+[194.2s - 196.1s] The internet was quite a big deal.
+[196.1s - 199.0s] We wouldn't be doing this if it wasn't for the internet.
+[199.0s - 206.2s] But then if you dig into that, if you're going to make the internet comparison, it's like we're a 1997.
+[206.2s - 207.2s] It's very exciting.
+[207.2s - 209.0s] Most stuff doesn't work yet.
+[209.0s - 219.8s] Most of the stuff that people are going to do hasn't been built yet, and it's not really clear how any of it's going to work when it does work.
+[219.8s - 230.2s] And the people who've already got it, who have already taken whichever pill it is, I forget which, sort of imagine that everybody in the world is already there.
+[230.2s - 234.5s] And the truth is you've got this kind of very wide distribution.
+[234.5s - 240.5s] So there's people in tech who bought their cluster of Mac minis, and don't use Google anymore.
+[240.5s - 247.0s] And then you look out side tech and setting aside the idiots who think that this isn't real.
+[247.0s - 252.0s] Most people who are using this are using this every week or shoot, maybe.
+[252.0s - 258.3s] So you've got that kind of spread of adoption and that spread of maturity of how well this works.
+[258.3s - 264.3s] And then within that, you can make specific points about, well, how are the models going to work?
+[264.3s - 267.0s] And do the model labs have pricing power?
+[267.0s - 269.3s] And where's the value going to be?
+[269.3s - 271.7s] And has OpenAI won the whole thing?
+[271.7s - 274.0s] Or is Anthropic got it this week?
+[274.0s - 281.3s] And so then you can kind of get into calling those races where, again, it's like being in 1997 and saying, "Well,
+[281.3s - 286.0s] is it going to be Excite or Yahoo?" And the answer was no, generally.
+[286.0s - 292.9s] So there's a fractual point here.
+[292.9s - 307.9s] There's the super high level that this is going to change absolutely everything.
+[307.9s - 333.3s] I don't think it's particularly productive to say, "Well, is it 20% bigger than the internet or 100%?" Those aren't productive conversations.
+[333.3s - 355.2s] But it's one of those fundamental changes, but then you don't know how any of it's going to work.
+[355.2s - 362.2s] In fact, I just published this.
+[362.2s - 400.2s] I do a presentation every six months and I just published one yesterday, and one of the comments was, "Benedict, this is 80 slides of saying we don't know," which is slightly facetious,
+[400.2s - 406.0s] but also kind of true.
+[406.0s - 415.6s] Well, unquestionably, we are already in that moment in software, and then there's a conversation about, well, what does Agentic and AI software development, three separate things that merge together,
+[415.6s - 418.1s] mean for the future of the software industry?
+[418.1s - 428.0s] There's one extreme which is no one really believes, which is, "hey, you'll just vibe create your in Stripe." And no one actually believes that, although briefly you don't believe that,
+[428.0s - 436.4s] but clearly there's a whole bunch of questions about what this means for the software industry, and how much stuff you'll be able to do yourself,
+[436.4s - 438.9s] or how much more software there will be.
+[438.9s - 440.5s] And that's one whole conversation.
+[440.5s - 447.9s] But the other extreme is, if you're in a law firm, this is all very interesting, but how exactly do we use this,
+[447.9s - 458.1s] and how do we work out how not to be the next story that we've submitted something with hallucinations in it, and how many associates are we going to hire next year?
+[458.1s - 460.0s] What does this mean for us?
+[460.0s - 467.6s] One of the analogies I used in the presentation is, imagine you're an accountant seeing the first software spreadsheets in the late '70s, and this is mind-blowing.
+[467.6s - 471.0s] You change the interest rate here, and all the other numbers change.
+[471.0s - 474.7s] And it does a week of work for you in like 30 seconds.
+[474.7s - 480.9s] And we can talk about what that meant for the accounting industry, but clearly if you're an accountant, this is obviously mind-blowing.
+[480.9s - 489.9s] But if you were a lawyer looking at that, or journalist looking at that, you'd think, "Well, that's very clever and my accountant should see this," but that's not what I do.
+[489.9s - 498.7s] I might use it for my time sheet next week if it didn't cost 10 or $15,000 to get the Apple 2 and the monitor and the printer to run it,
+[498.7s - 501.2s] which is what it costs if you adjust replacing.
+[501.2s - 502.9s] But that's not what I do.
+[502.9s - 506.0s] And you need Word processor, which actually came very shortly afterwards.
+[506.0s - 513.8s] And so that's sort of the moment that we're in of, there's some people like software developers are the accountant seeing VisiCalc.
+[513.8s - 520.1s] "Oh, my God, this changes everything." Before VisiCalc and after VisiCalc, before Claude Code and after Claude Code.
+[520.1s - 526.1s] A lot of other people are picking it up using it to varying degrees, but slightly puzzled.
+[526.1s - 537.0s] So, there's a bunch of survey data that I put in the presentation that, even if you look at like 13 to 18 year olds or something, it's still like 15,
+[537.0s - 542.0s] 20% of people are daily active users, and another 20% are weekly active users.
+[542.0s - 549.0s] And then the other 60% of those people in that demographic how on you say they are not using this.
+[549.0s - 553.6s] So, there's a sort of very widespread of who gets it, and a very wide...
+[553.6s - 561.7s] Which I think also maps, this is kind of almost a separate point, maps to this sort of jagged frontier question of, where does this work?
+[561.7s - 563.2s] Where does it not work?
+[563.2s - 565.7s] Can you tell where it's going to work?
+[565.7s - 568.4s] Is it intuitive to know where it would work?
+[568.4s - 570.3s] Can you tell after it worked?
+[570.3s - 574.0s] Can you work out for yourself what you would do with this?
+[574.0s - 576.5s] And all of those intersect with your software developer.
+[576.5s - 585.0s] There's a lot of other people who are like, people are having a moment or they're not, or again, we're in that kind of 1997 moment of, "Okay, what is this?"
+[585.0s - 598.6s] Along those lines, something you've been writing a bit about is, this unexpected investment in professional services/consulting services/forward deployed engineers, all the AI labs, at least the two big ones, OpenAI and Anthropic,
+[598.6s - 602.3s] are investing in buying massive consultancies and PE firms.
+[602.3s - 606.0s] Talk about just what's happening there, why that's happening.
+[606.0s - 614.3s] Well, it's funny, I was kind of groping for a joke last night when I wrote my newsletter and couldn't quite get to land it.
+[614.3s - 620.9s] But something like, we know the joke that a machine learning scientist is a statistician who lives in San Francisco.
+[620.9s - 630.2s] And there's something in there of like a forward deployed engineer is like an Accenture outsource software developer who lives in San Francisco, or works in San Francisco.
+[630.2s - 639.5s] I mean, joking apart, if you have any experience of professional services, companies do not have lots of people sitting around waiting to build a big new project,
+[639.5s - 649.4s] or do a big new piece of analysis, or build a big new piece of technology, or a new product, or work out how they're going to redesign their stores,
+[649.4s - 655.7s] or work out where the store should be, or try and work out why the churn is too high.
+[655.7s - 665.7s] All of those kinds of questions are reasons why you hire Bain, BCG, McKinsey on one side, or Accenture, Infosys, whoever on the other, or you hire a branding agency,
+[665.7s - 669.0s] or you hire an arch firm of architects or whatever.
+[669.0s - 678.4s] And it's always like, well, we could hire some architects, but why on earth would we want to have 15 architects on staff when we would just go and hire an architecture firm,
+[678.4s - 681.0s] and we just go and hire an ad agency?
+[681.0s - 689.3s] And so we are supposed to completely reimagine all of the internal workflows of your company, and work out which of them could be automated really quickly with AI.
+[689.3s - 690.3s] That's a project.
+[690.3s - 696.7s] That's a project that needs like five or 10 people to sit down and spend a month or two working it out.
+[696.7s - 699.0s] And then actually doing it is another project.
+[699.0s - 707.7s] Okay, so you need to plug these three vertical systems into these two horizontal systems and build a bunch of new workflows and train people to do that.
+[707.7s - 708.7s] Well, guess what?
+[708.7s - 710.2s] Who's going to do that?
+[710.2s - 714.2s] Because you don't have a bunch of people sitting around not doing anything.
+[714.2s - 722.9s] So, on the one side, this is part of the model of some PE firms, which is that they provide support to their portfolio companies to do stuff.
+[722.9s - 733.0s] And on the other side, that's why you hire, depending on what you're trying to do, you hire Bain, or you hire Accenture, or you hire publicists to help you work that out.
+[733.0s - 738.2s] What's really just funny about this trend is you would think consultants were going to be gone.
+[738.2s - 740.7s] No, we don't need all these people anymore.
+[740.7s - 742.8s] AI is going to do their work.
+[742.8s - 747.5s] Instead, the most cutting edge AI labs are the ones most investing in these folks.
+[747.5s - 749.0s] I think it's pretty surprising.
+[749.0s - 753.9s] Well, one of the strands in my presentation, so I split the presentation into three sections.
+[753.9s - 760.9s] There's a section on capital, which is basically, where is all this CapEx going and are the model labs going to have differentiation?
+[760.9s - 766.3s] And then there's a section on deployment, which is basically, what does it mean for the software industry?
+[766.3s - 769.7s] And then the third section is, how does this change stuff?
+[769.7s - 777.3s] And one of the sort of strands I tried to pull together in the section on change is, what's the hard part of the job?
+[777.3s - 781.3s] Is the hard part of the job writing the code line by line?
+[781.3s - 785.8s] Is the hard part of the job giving you the SKU, or making the PowerPoint?
+[785.8s - 788.9s] Or is the hard part of the job something else?
+[788.9s - 791.0s] Is it the task or the job?
+[791.0s - 793.7s] And pulling that apart, sometimes the task is the job.
+[793.7s - 795.8s] The classic example is like an elevator attendant.
+[795.8s - 801.2s] If I live in a building that has an attended elevator, we have a manual elevator, so there's no button.
+[801.2s - 804.1s] There's a lever and the dormant drives you to your floor.
+[804.1s - 805.5s] It's a vertical speed cut.
+[805.5s - 807.9s] It's like one of those cramps in San Francisco.
+[807.9s - 810.3s] They drive you to the store, to your floor.
+[810.3s - 816.2s] And then those all got automated after the '50s, and now you press a button, and pressing the button is a job.
+[816.2s - 821.0s] So there were some things where the button, the job was a task and the task got automated.
+[821.0s - 828.8s] What happens much more, and this is why people talked about the Jevons paradox is this pricey elasticity, because the Jevons paradox is just price elasticity, applied price elasticity.
+[828.8s - 831.4s] If you make it cheaper to do something, what happens?
+[831.4s - 833.6s] Do you do the same for less money?
+[833.6s - 836.5s] Or do you do more for the same amount of money?
+[836.5s - 840.0s] Or do you do more for more money because you've got new ROI?
+[840.0s - 848.4s] And if you look at something like the history of accounting, or indeed professional services, this is a joke I made on Twitter back when it was Twitter, was like,
+[848.4s - 852.8s] young people won't believe this, but before Excel, junior investment bankers worked really long hours.
+[852.8s - 856.7s] And now thanks to Excel, Goldman's associates will work at lunchtime on Fridays.
+[856.7s - 859.3s] It's like, well, why is that not what happened?
+[859.3s - 862.0s] You could make the same point as software development.
+[862.0s - 866.1s] Before IDEs, and libraries, and operating systems, developers had to write all the code.
+[866.1s - 871.1s] Now if you write an iPhone app, 90% of the code is written for you by Apple.
+[871.1s - 874.9s] Apple wrote the modem driver, and the graphics drivers, and the file system.
+[874.9s - 877.3s] You don't need to write any of that.
+[877.3s - 879.6s] So, we've got intents as many engineers now.
+[879.6s - 880.6s] Well, no.
+[880.6s - 888.0s] And so then you kind of have to look at an industry and work out, well, which is it and what is the hard part?
+[888.0s - 893.4s] One of the analogies that occurred to me here is to look at the history of e-commerce,
+[893.4s - 899.5s] which is that what Amazon does is it gets you the SKU if you know what the SKU is.
+[899.5s - 903.3s] If you know what SKU you want, you want that microphone stand.
+[903.3s - 906.8s] This part number, you can go to Amazon and get it.
+[906.8s - 911.0s] If you don't know what microphone to get, probably shouldn't start on Amazon.
+[911.0s - 913.2s] Multiply that by many, many, many product categories.
+[913.2s - 918.6s] And so what Amazon does is get you the SKU, but knowing what SKU you want is another job.
+[918.6s - 922.2s] Claude Code can write you the code, but what code do you want?
+[922.2s - 923.9s] It can make you the features.
+[923.9s - 925.9s] Sure, but what features do you want?
+[925.9s - 926.9s] Who's your customer?
+[926.9s - 928.9s] What's the right product for that customer?
+[928.9s - 931.4s] How are you going to take it to market?
+[931.4s - 934.8s] And long way of answering a question, why do you hire McKinsey?
+[934.8s - 937.3s] Are you hiring them to get a 75-slide deck?
+[937.3s - 940.9s] Well, narrowly, Claude cowork will make a really, really crappy version of that.
+[940.9s - 950.1s] And you'll get all this kind of AI grifters on LinkedIn and Twitter and so on saying, "Hey, I made a McKinsey deck with Claude," and you look at it and you think,
+[950.1s - 954.0s] "Yeah, that's a bunch of doc crap." That's not what you'd get from McKinsey.
+[954.0s - 957.4s] But even if it was, that's not what you paid them for.
+[957.4s - 962.9s] What you actually pay Bain to do is to go and walk all over your company and work out.
+[962.9s - 965.8s] Yes, but why is it that you didn't do that?
+[965.8s - 968.1s] And how do the politics of this work?
+[968.1s - 970.4s] And what do you actually need to do?
+[970.4s - 977.5s] And let's go and talk to your customers and work out what they actually think, as opposed to what's on the first page of Google.
+[977.5s - 979.0s] It's all the other stuff.
+[979.0s - 983.5s] And the PowerPoint is just like the task, but that's not what you hired them for.
+[983.5s - 987.0s] The same with Amazon versus the retailer, the same with software development.
+[987.0s - 989.0s] So you've got that kind of split.
+[989.0s - 995.7s] The other analogy that occurred to me here is looking at the sort of class of industry that got steamrolled by the internet,
+[995.7s - 999.3s] because they had those two things and you could split the part.
+[999.3s - 1005.7s] So you had the physical manufacturing or physical distribution, and then you had the other, the thing, what was the actual thing?
+[1005.7s - 1008.0s] Classic examples would be newspapers and recorded music.
+[1008.0s - 1015.7s] So record companies do not think of themselves as being in the business of manufacturing small pieces of plastic, but that was what they actually did.
+[1015.7s - 1018.0s] And when that went away, they were screwed.
+[1018.0s - 1019.2s] Same thing with newspapers.
+[1019.2s - 1021.6s] Newspapers did not think of themselves as manufacturing.
+[1021.6s - 1022.6s] And trucking companies.
+[1022.6s - 1025.3s] When you decouple that, then that becomes a problem.
+[1025.3s - 1033.5s] But often you can't decouple that, or that wasn't really the problem; or you make that thing cheap and then all this other stuff happens as well.
+[1033.5s - 1042.4s] And so all of this is just vastly more complicated than saying, "Well, hey, we're just going to automate the accountants or we're going to automate the consultants." I mean,
+[1042.4s - 1049.6s] there's two charts in the presentation of the number of people employed as accountants, which went up right the way through the 20th century,
+[1049.6s - 1053.2s] and has gone up again since the beginning of the 21st century.
+[1053.2s - 1061.7s] So you have adding machines, and punch cards, and mainframes, and databases, and ERP, and cloud, with spreadsheets and PCs, and the number of accountants keep going up.
+[1061.7s - 1063.2s] And so why is that?
+[1063.2s - 1065.0s] Well, it's more complicated than automation.
+[1065.0s - 1072.9s] Even just looking at the most advanced AI companies, Anthropic, OpenAI, I just had Dan Shipper from Every on the podcast, everyone's just increasing headcount.
+[1072.9s - 1078.3s] The companies you would think would be least likely to add humans are adding many, many humans.
+[1078.3s - 1080.5s] And since your point, it's really complicated.
+[1080.5s - 1089.0s] What you're just kind just on the job, the coming job apocalypse, like Dario's talking about all the entry level people are no more jobs, just like...
+[1089.0s - 1090.0s] Yeah.
+[1090.0s - 1093.9s] I mean, there's a narrow point here, which is that I would place...
+[1093.9s - 1095.7s] I don't like argument from authority.
+[1095.7s - 1099.9s] And I don't think the fact that you run AI lab suddenly gives you...
+[1099.9s - 1105.3s] Or rather, if you're going to use argument from authority, then it should be relevant to the field.
+[1105.3s - 1110.5s] So, I'm interested in Dario's opinions on where models are going to go in the next six to 12 months.
+[1110.5s - 1115.6s] I'm not particularly interested in it opinions on series of labor and market value and comparative advantage.
+[1115.6s - 1119.5s] Yeah, maybe he had a course on that at university, so did I.
+[1119.5s - 1124.0s] So, I think one needs to be a little bit cautious on what Dario says.
+[1124.0s - 1130.0s] And that's setting aside the cynical view that he's just doing that department stock, which I don't believe at all.
+[1130.0s - 1133.5s] So this kind of comes back to my point about platform shifts.
+[1133.5s - 1137.5s] Every time we have a new technology, it automates away a bunch of jobs.
+[1137.5s - 1144.5s] And then that automation, whether it's price elasticity, and the enablement of the fact that they became automated, unlock so much of new jobs.
+[1144.5s - 1151.4s] And so you go back to 1800, 90% of us were peasants, and our major concern was like, are the crops going to fail?
+[1151.4s - 1153.2s] Because then we'll all go hungry.
+[1153.2s - 1154.2s] Or worse.
+[1154.2s - 1161.0s] And so ever since then, we've been automating jobs and creating new jobs, and you can always see the job that's going to go away,
+[1161.0s - 1166.8s] and you don't know the new job because it doesn't exist yet, and it's like something that sounds dumb anyway.
+[1166.8s - 1168.5s] Like railway engineer, what's a railway?
+[1168.5s - 1170.3s] Why would that be a thing?
+[1170.3s - 1172.3s] Who would want to go that fast?
+[1172.3s - 1175.2s] And so we've had that process over and over again.
+[1175.2s - 1178.1s] This is what any first-year economic student would tell you.
+[1178.1s - 1181.0s] We've had this process over and over again since 1800.
+[1181.0s - 1189.6s] And each time you go through it, you get a bunch of frictional pain and dislocation, and a bunch of people do their jobs, and a bunch of towns get hollowed out,
+[1189.6s - 1190.6s] and it all sucks.
+[1190.6s - 1196.3s] But when you come through on the other side, we're all richer, and we're not worried about the crops failing anymore.
+[1196.3s - 1198.9s] And this is the process of the last 200 years.
+[1198.9s - 1203.7s] So then the question is, is there some a primary reason why this would be different to those?
+[1203.7s - 1207.5s] Because the internet removed a bunch of jobs, PCs removed a bunch of jobs.
+[1207.5s - 1209.6s] There aren't many people working as typesetters anymore.
+[1209.6s - 1211.0s] Or telephone operators, or typists.
+[1211.0s - 1212.8s] The internet removed a bunch of jobs.
+[1212.8s - 1219.0s] And generally the jobs that go away are crap jobs, seen retrospectively, and the new job, the better, because GDP keeps going up.
+[1219.0s - 1220.1s] So, is AI different?
+[1220.1s - 1223.3s] And so then there's kind of a couple of answers to this.
+[1223.3s - 1226.3s] One theory is, well, this is going to be way quicker.
+[1226.3s - 1232.8s] And certainly the adoption of AI is quicker than previous technologies, but this is kind of because you're turning on the shoulders of giants.
+[1232.8s - 1240.8s] So you don't need to wait for everyone to buy a piece of expensive hardware, to buy a phone or a PC, or wait for the telco to deploy broadband.
+[1240.8s - 1241.8s] That's already there.
+[1241.8s - 1246.9s] So of course, ChatGPT can get 900 million chat users, because there's already 900 million people on the internet.
+[1246.9s - 1252.6s] When Mark Andreessen launched Netscape in what was it, '93, '94, there were like 50 to 100 million PCs on earth.
+[1252.6s - 1255.0s] So now you didn't have 900 million users then.
+[1255.0s - 1259.1s] But the point is then he didn't need to wait for phone networks or microchips.
+[1259.1s - 1264.2s] And before that, you didn't need to wait for electricity, and you didn't need to wait for mass production.
+[1264.2s - 1266.7s] So you're always standing on the shoulders of giants.
+[1266.7s - 1268.0s] There's always a compounding effect.
+[1268.0s - 1271.0s] So yeah, this is faster, but the internet was faster too.
+[1271.0s - 1278.0s] I think the other answer to this, and this kind of comes back to the professional services point is, you talk to these doomers on Twitter,
+[1278.0s - 1285.0s] and they would act like every big company is going to buy ChatGPT tomorrow, and then in two weeks time, they'll fire all their staff, and these people are mourners.
+[1285.0s - 1290.6s] This is one of many reasons why the doomers were mourns, but complete failure to understand the way the world works.
+[1290.6s - 1294.4s] And that was like the starting point why they then didn't understand anything else.
+[1294.4s - 1301.5s] Turn to a big company, enterprise software sales cycle, you'll know this better than me, enterprise software sales cycle is like 18 months, if you're lucky.
+[1301.5s - 1302.8s] This is always a problem.
+[1302.8s - 1306.1s] The enterprise sales cycle is shorter than the venture backed funding cycle.
+[1306.1s - 1307.1s] Longer rather.
+[1307.1s - 1308.1s] Longer.
+[1308.1s - 1312.7s] It takes you longer to get an enterprise deal than it takes you to go between raps.
+[1312.7s - 1317.0s] And this was always supporting the building, particularly for sectors like aerospace, or healthcare, or something.
+[1317.0s - 1322.3s] So, I know people aren't just going to tear out SAP and replace it with X, Y, Z.
+[1322.3s - 1331.7s] Maybe in like three, five, 10 years, yes, that whole estate will look radically different, and all those jobs will have changed, but it will take two, three, four, five, 10 years,
+[1331.7s - 1339.0s] and it will take time sector by sector, and it will take time for people to work out, "You could do that thing with this."
+[1339.0s - 1348.8s] And one of the companies I always remember that we looked at when I was at Andreessen Horowitz is a company called Frame.io, which is video editing, video collaboration.
+[1348.8s - 1355.2s] And there's nothing there that you couldn't have done at least five years earlier, and maybe 10 years earlier.
+[1355.2s - 1362.2s] And actually, that's kind of a bad example because that relies on a bunch of stuff like cutting edge web technologies.
+[1362.2s - 1368.6s] But if you go out and pick 10 random SaaS companies that were started the day before ChatGPT launched,
+[1368.6s - 1374.0s] how many of them could have been founded at any point in the previous 15 years?
+[1374.0s - 1381.7s] The delay was somebody realizing, "Oh, that problem exists inside that industry, and this is the way that we would solve it." It didn't all happen the day after Google Docs.
+[1381.7s - 1387.6s] It took like 10, 15, 20 years for people to invent all that stuff, and work out that you could do that with this.
+[1387.6s - 1393.1s] And so all of that is like, the way of saying, well, yes, it is going to be quick, but actually, no,
+[1393.1s - 1398.0s] it will kind of take a while for people to work out how to completely change how their business works.
+[1398.0s - 1408.0s] Your view is so comforting, because basically it's like, okay, this is a huge deal, but we've been through many transformations before, and it's going to be okay.
+[1408.0s - 1417.0s] Well, I have a slide towards the end of the presentation, which I know the title is something like, "This is going to be completely different from everything else,
+[1417.0s - 1426.6s] just like everything else." And then the next slide is an IBM ad from the '50s, which has got this sea of white men holding up in white shirts and ties,
+[1426.6s - 1428.2s] all holding up flood rules.
+[1428.2s - 1436.9s] And the slogan of the title of the ad is, it's an IBM ad, it says, "An IBM electronic calculator..." This before it was called a computer, "...
+[1436.9s - 1441.9s] it's an electronic calculator it's the size of a fridge." Is like having 150 extra engineers.
+[1441.9s - 1448.1s] How many people listening to this company list, like their company slogan is basically will give you 150 extra engineers?
+[1448.1s - 1451.5s] I mean, isn't that like the whole pitch of Claude Code?
+[1451.5s - 1453.0s] 150 expert engineers for free.
+[1453.0s - 1455.8s] Or not free, that's like a lot of money.
+[1455.8s - 1458.0s] And yeah, that's what I gave you.
+[1458.0s - 1463.8s] And so yes, we keep going through this over and over and over again, just to kind of make that tangible.
+[1463.8s - 1466.8s] I mean, obviously we couldn't be doing this without the internet.
+[1466.8s - 1475.8s] So there's a slide in my presentation, which is, we could maybe talk about, but it's a slide of chart showing how many products are stocked in supermarkets in America since the '50s.
+[1475.8s - 1482.7s] And the point of the slide is to say that barcodes allowed supermarkets to stock way more stuff because they could keep track of it.
+[1482.7s - 1487.4s] But making that chart, I had to know there was a thing called the Food Marketing Institute.
+[1487.4s - 1493.4s] And I had to have found out that they published a number for how many scoots there were in supermarkets every year.
+[1493.4s - 1496.7s] And then I had to realize they've been around since the '50s.
+[1496.7s - 1503.0s] And if I could dug long enough, I might be able to make a whole time series, and I could make whole chart.
+[1503.0s - 1504.4s] Now imagine doing that in 1994.
+[1504.4s - 1506.7s] First of all, you would have no idea that exists.
+[1506.7s - 1510.7s] You really need to go and find a library where they publish, and they publish that number.
+[1510.7s - 1513.3s] And that the numbers in that report, you'd have no idea.
+[1513.3s - 1515.6s] Then you need to find a library that had them.
+[1515.6s - 1522.0s] So you're going to spend like three days on the phone, and spend like $50 on long distance phone calls to find a library that has these.
+[1522.0s - 1529.4s] Or maybe you call the Food Marketing Institute and they say, "We'll sell them to you for $500 each." So then you're going to get on, maybe you live in New York,
+[1529.4s - 1530.6s] or someone that has this.
+[1530.6s - 1533.7s] And two weeks later you've got the chart and you look at it.
+[1533.7s - 1540.4s] And then the other side of this is the life of an analyst is you spend all day making a chart and you look at it and go, "Oh,
+[1540.4s - 1547.0s] that's not really interesting." So you spend two weeks to make the chart and then you look at it and go, "Yeah, I'm not going to use that."
+[1547.0s - 1550.0s] And for me, this was like two hours in Google.
+[1550.0s - 1553.3s] And so we forget how big a deal the internet was.
+[1553.3s - 1555.5s] That's a long way of saying it.
+[1555.5s - 1563.0s] But we forget we've had these absolutely enormous changes, and then we don't see it, because it's like that's the world the world's always been.
+[1563.0s - 1575.4s] What's different potentially this time, just even what your quote is, it's different, everything's going to change just like last time, the big difference obviously is AGI might emerge, and super intelligence.
+[1575.4s - 1582.4s] Does the work of humans can do a lot of this stuff for us, can actually replace jobs?
+[1582.4s - 1587.0s] Just like thoughts on that element of this transformation we're going through.
+[1587.0s - 1588.0s] I don't know.
+[1588.0s - 1596.7s] This is one of the ways I've struggled to write about AI is like certainly in 2023, early '24, all the questions were questions you could have asked in December 2022.
+[1596.7s - 1598.5s] And the questions didn't really change.
+[1598.5s - 1600.2s] And the strategies didn't really change.
+[1600.2s - 1603.5s] And I think the AGI question is kind of the same.
+[1603.5s - 1612.4s] I mean, the thing that the observation one can make, we have no theory of what human intelligence is, we have no theory of why these models work so well,
+[1612.4s - 1615.7s] we have no theory of how much better they will get.
+[1615.7s - 1619.5s] So we're all just kind of vibes forecasting as to what will happen.
+[1619.5s - 1626.9s] And then you can have like the 20 AM doped out philosophy students talking about, "Hey man, is this consciousness?" "Maybe we aren't conscious either.
+[1626.9s - 1629.0s] We just think we are." "Yeah, great.
+[1629.0s - 1630.0s] Thank you."
+[1630.0s - 1633.9s] I think the one thing one can observe today is we have no idea.
+[1633.9s - 1634.9s] We don't know.
+[1634.9s - 1639.1s] We can guess, but we don't really know where this is going to end up.
+[1639.1s - 1644.1s] What I think you can say today is that there's a lot of kind of redefinition of terms.
+[1644.1s - 1652.3s] So I think a quote I used in my presentation late last year was an AI scientist called Larry Tesla who said AI is whatever machines can't do yet,
+[1652.3s - 1660.5s] because once machines can do it, people say, "Well, that's your software." And so certainly, I mean, I did do a poll on social media every now and then asking,
+[1660.5s - 1664.7s] "Is machine learning still AI?" Because I've certainly heard people say, "Well, that's not AI.
+[1664.7s - 1666.6s] That's just image recognition" "That's not AI.
+[1666.6s - 1670.3s] That's just sentiment analysis." So AI, it's a bit like the word technology.
+[1670.3s - 1672.5s] It's like if it's new, then it's technology.
+[1672.5s - 1675.3s] But in the '60s airline, jet airlines is the technology.
+[1675.3s - 1677.0s] Now a jet airline isn't tech.
+[1677.0s - 1682.6s] And so there's a sort of sense of AI is like a moving target, is whatever just started working.
+[1682.6s - 1689.0s] And I think the point here is now clearly you can see people redefining AGI to mean the stuff that works now.
+[1689.0s - 1691.2s] So is AEI, what's the definition now?
+[1691.2s - 1694.8s] It's like it can do a certain percentage of economically valuable work.
+[1694.8s - 1697.0s] Well, that's a very different thing too.
+[1697.0s - 1699.4s] It has a soul and it's fucking alive.
+[1699.4s - 1701.3s] Because a database could do that.
+[1701.3s - 1707.7s] Like an IBM mainframe in 1975 could do a meaningful percentage of economically valuable work that was previously done by people.
+[1707.7s - 1715.4s] And it turned out there was a whole bunch of other stuff that it couldn't do that we didn't do then, we didn't know existed.
+[1715.4s - 1717.9s] So there's a lot of creative redefinition here.
+[1717.9s - 1721.9s] Superintelligence, I'm not sure, is superintelligence more than AGI or less than AGI?
+[1721.9s - 1727.1s] Because last year I thought superintelligence was like really good, but not as good, not actual AGI.
+[1727.1s - 1732.0s] And now it's like, "Oh no, no, we've already got AGI, but superintelligence, that's really hard."
+[1732.0s - 1738.5s] It's funny, I was having an argument on Hacker News this morning, you remember the argument, which is never a good use of time,
+[1738.5s - 1743.9s] but you remember the argument of like people would argue about whether crypto is blockchain, or whether blockchain is crypto.
+[1743.9s - 1745.8s] There isn't a right answer to that.
+[1745.8s - 1746.9s] Let's just be sure.
+[1746.9s - 1752.4s] It's important to understand what you mean when you say that, but there isn't like a correct answer to this.
+[1752.4s - 1755.6s] Are we going to get to something that has human level intelligence?
+[1755.6s - 1756.6s] We don't know.
+[1756.6s - 1759.6s] I don't think we have any way of answering that question.
+[1759.6s - 1760.6s] Maybe, maybe not.
+[1760.6s - 1762.2s] You can make arguments either way.
+[1762.2s - 1766.6s] Meantime, in the meanwhile, we've got this thing that's clearly kind of a completely transformative technology.
+[1766.6s - 1772.5s] And maybe the serious point here is like you don't have to believe, even if the model stopped it getting better tomorrow.
+[1772.5s - 1780.8s] If this is it and we hit a brick wall tomorrow, this is an incredibly useful technology that's going to change your world and get rolled out over the next 10 years.
+[1780.8s - 1786.0s] So you don't have to believe in any of that stuff to believe that this is a giant deal.
+[1786.0s - 1793.2s] Something that's definitely changed, I had your former boss, Mark Andreessen on the podcast, and we didn't actually talk about this during the conversation,
+[1793.2s - 1802.5s] and he brought it up before we started recording and I never got to it, is he had this insight that the opportunity set for companies now is so much larger.
+[1802.5s - 1807.4s] We used to have no trillion-dollar companies, now we're going to have dozens of trillion-dollar companies.
+[1807.4s - 1813.7s] Just like the size companies can grow to are going up so much, and valuations also go up along with that.
+[1813.7s - 1818.5s] And his point is just people haven't really grokked just how large companies can get now.
+[1818.5s - 1821.8s] Everyone's hitting a hundred million AR in five months, six months.
+[1821.8s - 1823.0s] Just thoughts on that.
+[1823.0s - 1824.0s] Yeah.
+[1824.0s - 1829.7s] I mean, this was his whole software's eating the world thesis from 15 years ago, whenever it was.
+[1829.7s - 1830.7s] Yeah.
+[1830.7s - 1836.0s] The TAM, it gets progressively bigger, because you can address larger and larger parts of the economy.
+[1836.0s - 1842.9s] And so if you think about the classic platform ship framing that mainframes are, I think peak mainframe install base was something like 70, 80,000 units.
+[1842.9s - 1849.5s] I mean, slightly fuzzy term, what exactly is a mainframe, and at what point does it become two mainframes as one.
+[1849.5s - 1852.0s] But something like that, that order of magnitude.
+[1852.0s - 1858.3s] And then when the internet kicks off, there are, as I said, 50 to 100 million PCs on earth, maybe.
+[1858.3s - 1865.3s] Today there are something over a billion, one to one and a half billion, but obviously a lot of those are corporate.
+[1865.3s - 1868.1s] Like seven, 800 million consumer PCs in the world.
+[1868.1s - 1876.0s] There's about five and a half, six billion smartphones in the world, which is why you can have 900 million weekly active users on ChatGPT.
+[1876.0s - 1880.4s] And so there was this narrative five years ago of like, "Well, we've run out of people.
+[1880.4s - 1886.7s] So the next thing can't be in order of magnitude bigger." Which was true up to a point, but that was the wrong model,
+[1886.7s - 1893.0s] because clearly what's happening now as you're moving in another direction, is you're just branching out and automating big news weights of the economy.
+[1893.0s - 1902.8s] Now, back to your job point, you could argue, well, we're just going to replace all the people with AI and all the money will go to Sam Altman.
+[1902.8s - 1906.5s] And Mark can buy himself another Gulfstream, add to the fleet.
+[1906.5s - 1915.9s] I think the other answer, it's back to the lump of labor fallacy, and the last 200 years, that each of these technologies removes a bunch of jobs,
+[1915.9s - 1926.7s] creates a bunch of new jobs, creates a bunch of new value, unlocks prosperity for all of us, and that's painful as you go through it, but it always creates more value.
+[1926.7s - 1930.1s] And so here you could certainly make an analog to...
+[1930.1s - 1936.1s] The useful analog to the electricity industry is just saying how that electricity became part of absolutely everything.
+[1936.1s - 1939.8s] And software has been kind of slowly working its way out.
+[1939.8s - 1944.5s] Another would be electricity in factories, and then electricity sort of slowly spreads out.
+[1944.5s - 1950.9s] And so that would be the point again, that it slowly spreads out to do more and more things.
+[1950.9s - 1956.0s] And so more and more value and a bigger and bigger contribution to the economy.
+[1956.0s - 1958.0s] Also, of course, disappears inside things.
+[1958.0s - 1965.9s] And the other side, the point of my capital section in the presentation is there's this quote from Sam Altman where he said,
+[1965.9s - 1974.4s] "We're going to be selling AI intelligence on a meter like water or electricity." And you look at this and think, "My dear sweet child,
+[1974.4s - 1980.1s] you need me to explain the margin structure of the utility industry to you." Because guess what?
+[1980.1s - 1986.6s] When you watch television, the TV company isn't paying a percentage of your monthly bill to the electricity company.
+[1986.6s - 1992.4s] When you wash your clothes, Bosch isn't paying a percentage of the price of the washing machine.
+[1992.4s - 1997.5s] And clearly, this is like the much more specific tactical question at the moment, is,
+[1997.5s - 2006.0s] do we even end up with three giant models or does it become hundreds of models and open models and local models and so on?
+[2006.0s - 2015.6s] And even if we do end up with, say, pick a number, three to six to 10 giant foundation models that cost hundreds of billions of dollars a year, fine,
+[2015.6s - 2018.1s] do they get all the value from that?
+[2018.1s - 2023.9s] Now, I started my career as a telecom analyst, and so still pay attention to it a bit.
+[2023.9s - 2029.3s] Global mobile industry has revenue of about a trillion dollars a year, maybe a bit more now.
+[2029.3s - 2033.1s] And it spends about $200 billion a year on CapEx every year.
+[2033.1s - 2034.7s] Total telecoms is about 300.
+[2034.7s - 2036.0s] Mobile is about 200.
+[2036.0s - 2038.6s] It's about 15, 20% of revenue every year.
+[2038.6s - 2045.3s] And if you look at a chart of mobile data consumption, it's an exponential curve, like perfect curve going spread up.
+[2045.3s - 2051.0s] And the number now, I think it's about 1,500 to 2,000 times what it was in 2010 globally.
+[2051.0s - 2057.7s] And the stocks have gone nowhere in 25 years, because it's an X gross low margin commodity utility,
+[2057.7s - 2067.7s] where they're selling this objectively amazing piece of global technology infrastructure that has enormous complexity and enormous sophistication, but all the cool stuff is made by you.
+[2067.7s - 2071.0s] It's made by the people listening to this podcast.
+[2071.0s - 2072.9s] It's made by somebody else.
+[2072.9s - 2081.8s] This was that kind of pivotal moment where the telcos thought that they would do all the stuff that you did on your iPhone.
+[2081.8s - 2087.0s] And not only do they not do it, but Apple doesn't do it either.
+[2087.0s - 2088.4s] It's all further up stack.
+[2088.4s - 2093.8s] And so this is the elemental question right now around foundation models is, does the model do the whole thing?
+[2093.8s - 2098.1s] Do you just go to the chatbot and get the chatbot to do the whole thing?
+[2098.1s - 2106.5s] Can the model companies keep building these like Claude for X, Claude for Y things, which to me look very much like what you see if you hit file new in Excel.
+[2106.5s - 2110.3s] It's like the tablets, but all of those are actually billion-dollar companies as well.
+[2110.3s - 2113.3s] And if not, no, does it all have to be "apps"?
+[2113.3s - 2114.3s] Whatever app means.
+[2114.3s - 2122.4s] And if it all has to be apps who builds those, well, they can't all get built by the model labs, just as they didn't all get built by Microsoft.
+[2122.4s - 2128.4s] And so if they're all built by other companies, does their notion models have leverage up the stack the way Windows did?
+[2128.4s - 2137.0s] Or is this more like AWS where, if you're, I don't know, an engineering company or a law firm buying a piece of software, you don't care which cloud it runs on?
+[2137.0s - 2141.0s] And you don't have to standardize on AWS because that's where all the software is.
+[2141.0s - 2144.6s] And the developers all standardize on AWS because all the customers use AWS.
+[2144.6s - 2145.9s] That's not how it works.
+[2145.9s - 2149.1s] That's how Windows or iOS works, but that's not how AWS works.
+[2149.1s - 2157.5s] And so it does sort of seem to me that if the chatbot isn't the UX, and it needs to be apps, and the model companies aren't going to build that,
+[2157.5s - 2164.2s] and the models themselves are basically commodities, at least as you can see them as users, then why would the model companies have pricing power?
+[2164.2s - 2166.9s] And wouldn't all the value be further up the stack?
+[2166.9s - 2171.5s] Aren't you basically, have you got like three to six companies selling a commodity at marginal cost?
+[2171.5s - 2174.8s] Now, obviously the semi-analyst guys are like, "No, no, no, no, no.
+[2174.8s - 2178.0s] There's going to be infinite pricing power forever." I'm sorry, I'm exaggerating.
+[2178.0s - 2187.9s] But I think you have to really important to draw a distinction between where are we now, where you have radical price disequilibrium, and you've got these, what's the guy,
+[2187.9s - 2192.8s] the OpenClaw guy spent one and a half million dollars on token this last month.
+[2192.8s - 2197.1s] But that's somebody getting like a 50 grand mobile data built in 2010.
+[2197.1s - 2198.1s] That's temporary.
+[2198.1s - 2208.2s] What is the steady state equilibrium point where all of these lines on the chart kind of get lined up, and we don't have this kind of weird, crazy stuff going on?
+[2208.2s - 2216.4s] And then will you have pricing power, or have you got like three or four or five companies kind of all selling the same thing?
+[2216.4s - 2219.4s] And so then you should have a pricing price.
+[2219.4s - 2224.0s] You should have lower pricing and lower margins, and the value you've got stack.
+[2224.0s - 2229.1s] I am so excited to tell you about this season's supporting sponsor Vanta.
+[2229.1s - 2233.7s] Vanta helps over 15,000 companies like Cursor, Ramp, Duolingo, Snowflake, and Atlassian.
+[2233.7s - 2236.4s] Earn and prove trust with their customers.
+[2236.4s - 2241.1s] Teams are building and shipping products faster than ever thanks to AI.
+[2241.1s - 2249.6s] But as a result, the amount of risk being introduced into your product and your business is higher than it's ever been.
+[2249.6s - 2259.1s] Every security leader that I talk to is feeling the increasing weight of protecting their organization, their business, and not to mention their customer data.
+[2259.1s - 2268.1s] Because things are moving so fast, they are constantly reacting, having to guess at priorities, and having to make do with outdated solutions.
+[2268.1s - 2275.8s] Vanta automates compliance and risk management, with over 35 security and privacy frameworks, including SOC 2, ISO 27,001 and HIPAA.
+[2275.8s - 2279.3s] This helps companies get compliant fast and stay compliant.
+[2279.3s - 2284.8s] More than ever before, trust has the power to make or break your business.
+[2284.8s - 2286.3s] Learn more at vanta.com/lenny.
+[2286.3s - 2291.0s] And as a listener of this podcast, you get $1,000 off Vanta.
+[2291.0s - 2292.0s] That's vanta.com/lenny.
+[2292.0s - 2299.7s] A really interesting takeaway here is that your sense is over time the foundational model companies, Anthropic, OpenAI, others, their margins will get squeezed,
+[2299.7s - 2308.0s] they will not be as successful as they are today, and the bigger opportunities in the application layer, the people building on the model, the wrappers.
+[2308.0s - 2309.0s] Yeah.
+[2309.0s - 2318.1s] I mean, this is a very sort of deterministic thesis, which is, the models companies, crucially what I said is the models don't seem to have no after effects.
+[2318.1s - 2325.0s] So there doesn't seem to be a winner takes all effect where one of these will run away ahead of the other.
+[2325.0s - 2326.9s] So you should have competition indefinitely.
+[2326.9s - 2332.3s] If you have competition indefinitely, you don't have primary really radical differentiation of what the product is.
+[2332.3s - 2334.5s] Then why would you have pricing power?
+[2334.5s - 2342.9s] And meanwhile, if you need to have thousands of applications that are all different built by different people, those can't all be built by the model people.
+[2342.9s - 2347.3s] So, it should end up looking more like cloud than it looks like Windows.
+[2347.3s - 2357.0s] Now that may be completely wrong, and one of the points I make in the presentation is like, imagine having this conversation about the internet in 1997, what would you have got right?
+[2357.0s - 2359.5s] Or indeed having it about mobile in 2000.
+[2359.5s - 2361.7s] You would've missed almost all of it.
+[2361.7s - 2367.1s] You certainly would've said that a has-been PC company from [inaudible 00:39:28] would win the whole thing.
+[2367.1s - 2369.0s] And no one would've said that.
+[2369.0s - 2378.4s] And a search company with a weird logo like, "Search, what's that got to do with mobile?" "No, forget it, you're an idiot." So we should presume we don't know,
+[2378.4s - 2384.4s] but they're all this sort of basic building blocks of like, well, but why would they have pricing power?
+[2384.4s - 2394.1s] I don't know, when I was a baby analyst in '99, went to see a dotcom company in the UK that was trying to do online selling computer cars, components online.
+[2394.1s - 2404.5s] And they had this whole model and this whole story in the brand and buy the whole thing and we went up to see them, and we're on the train back from Birmingham,
+[2404.5s - 2407.0s] and this just senior banker called David Tate.
+[2407.0s - 2414.8s] We're all sitting talking about it, and Tate says, "It's a low margin reseller, one time sells." "You can say dotcom all you like,
+[2414.8s - 2420.9s] it's a low margin reseller." And I think that's the crux of this, is they're undifferentiated commodity infrastructure providers.
+[2420.9s - 2425.7s] There's a lot of science to it, but there's a lot of science in mobile.
+[2425.7s - 2429.0s] I mean, what do you pay for flat panel screen?
+[2429.0s - 2431.2s] There's Nobel Prizes in flat panel screens.
+[2431.2s - 2433.2s] There's still a low margin commodity.
+[2433.2s - 2439.0s] I look forward to be proving wrong, proven wrong, but like, hey, that's what it looks like now.
+[2439.0s - 2440.0s] This is great.
+[2440.0s - 2441.7s] So I know you're not an investor.
+[2441.7s - 2445.0s] I know you didn't actually do investing at A16C even though you work for A16Z.
+[2445.0s - 2446.0s] Partner.
+[2446.0s - 2447.0s] Partner.
+[2447.0s - 2449.0s] Just sit around and pontificate partner.
+[2449.0s - 2451.3s] Are there companies you would invest in?
+[2451.3s - 2457.0s] If there are a couple companies you'd invest in now, is there some on that list, or categories even?
+[2457.0s - 2460.0s] I mentioned briefly that I was an analyst.
+[2460.0s - 2462.7s] I was a sell side equity analyst.
+[2462.7s - 2474.1s] I was not a very good sell side equity analyst, but partly because I was not interested in talking to clients, partly because I was not interested in share prices,
+[2474.1s - 2479.0s] which would seem to be like a disqualification to be an equity analyst.
+[2479.0s - 2487.7s] There's a huge difference between being right and being early, and there's a huge difference between the right company and the right price.
+[2487.7s - 2499.9s] Now, deterministically, you can look across the market and say, well, it's like the bell curve IQMium, and the guy with 50 and the guy with 200 are both saying, "Jeff Bezos,
+[2499.9s - 2504.8s] smart guy, I buy stock." And you can certainly overthink all of this.
+[2504.8s - 2516.9s] And you can look at Google, Apple, Facebook, Amazon, and say, "Hard to see a problem for them really with all of this." You can certainly see questions for all of them,
+[2516.9s - 2523.0s] and one of them may drop the ball, but it's worth remembering what happened in mobile.
+[2523.0s - 2525.8s] The internet was just like a big obvious platform shift.
+[2525.8s - 2531.9s] The funny thing about mobile is that some companies missed it completely, and for some of them it really didn't change anything.
+[2531.9s - 2533.5s] For Google, it didn't change anything.
+[2533.5s - 2534.9s] For Meta, this was great.
+[2534.9s - 2542.9s] This is a way better way to do social than on PC, because you've got a camera, and notifications, and it's on your phone all the time with you.
+[2542.9s - 2544.3s] Amazon, what does this change?
+[2544.3s - 2545.4s] It doesn't change everything.
+[2545.4s - 2550.7s] I mean, I'm massively oversimplifying here, but the point is now, meanwhile, Yahoo Mail fails to make the jump,
+[2550.7s - 2555.4s] there are companies that were already kind of dying that failed to make the jump, maybe eBay.
+[2555.4s - 2557.0s] You could argue about individual names.
+[2557.0s - 2562.0s] The point is that we went through that shift and it didn't change anything for half the industry.
+[2562.0s - 2563.1s] Half the internet industry.
+[2563.1s - 2567.0s] And so I think that you could propose a little bit of that here.
+[2567.0s - 2576.0s] While Steven Jay Sinofsky at A16Z who used to run Windows would always say, "Incumbents always try and make the new thing a feature." And sometimes they're right, sometimes it's a feature.
+[2576.0s - 2579.8s] Actually, along those lines, something I wanted to get your take on.
+[2579.8s - 2589.5s] There's this thread that's been happening across a bunch of guests, which is around distribution becoming a bigger and bigger moat, because as software is easier to build, everyone's launching products,
+[2589.5s - 2593.0s] everyone's trying to compete for attention, it's getting harder and harder.
+[2593.0s - 2600.2s] It's always been hard to get people's attention, but it's just like the noise in the market is just going up like crazy.
+[2600.2s - 2605.5s] And to me that tells me distribution is becoming a more and more valuable skill and asset.
+[2605.5s - 2614.0s] And it also tells me incumbents are going to be a lot more successful because they already have distribution versus a startup that's trying to break through.
+[2614.0s - 2615.0s] Yeah.
+[2615.0s - 2620.6s] I mean, there's like a version of the Drake meme of like he says, "I don't like that.
+[2620.6s - 2624.1s] I do like this." It's like, "I don't like GPT wrappers.
+[2624.1s - 2633.4s] I do like harnesses." So yeah, I did spend some time talking about this in the presentation I did at the end of last year, that if the product is a commodity,
+[2633.4s - 2635.2s] then the distribution is what matters.
+[2635.2s - 2640.9s] And I wrote a thing about ChatGPT earlier this year, OpenAI earlier this year, how do they compete.
+[2640.9s - 2645.6s] Well, there's an obvious comparison that a lot of people made is with web browsers.
+[2645.6s - 2655.6s] The fundamentally web browser, and there's a distinction here I think between the web browser as product and web browser rendering engine, in that the rendering engine can be better or worse,
+[2655.6s - 2660.2s] but the browser product is just like a really thin wrapper for a rendering engine.
+[2660.2s - 2662.8s] There's an input box and an output box.
+[2662.8s - 2664.0s] And like, what else?
+[2664.0s - 2666.9s] And which is like, what's the last innovation in browser design?
+[2666.9s - 2669.5s] Tab browsing, which was 20 years ago, 25 years ago.
+[2669.5s - 2675.3s] And every now and then somebody tries to innovate in browser design and it never works because you found the Platonic ideal.
+[2675.3s - 2677.4s] It's like trying to innovate in smartphone design.
+[2677.4s - 2678.7s] It's a glass rate angle.
+[2678.7s - 2680.2s] There's nothing you can do there.
+[2680.2s - 2683.9s] And so what happened, of course, is that Microsoft uses distribution to break in.
+[2683.9s - 2691.5s] Then of course, what also happens is setting aside the lawsuit, is that it turns out the winning browsers doesn't matter anyway because the value is further up stack.
+[2691.5s - 2697.0s] And so Microsoft, we use browsers for like five, six years, and it doesn't matter, and it doesn't get them anything.
+[2697.0s - 2701.8s] So clearly what's happening now is that Google is using distribution to drive Gemini.
+[2701.8s - 2704.6s] And what's the difference between Gemini and Claude?
+[2704.6s - 2710.8s] And if you're using this stuff all day, then you know, but like normal person, there's no difference.
+[2710.8s - 2721.1s] And the same thing with Meta, if you look at survey data on which our M people use, even before the news thing, like the Llama thing, Meta was behind,
+[2721.1s - 2731.5s] it was up there between ChatGPT and Gemini, which if you're in tech, people have completely written it off, but it was like they sprayed it on every service surface.
+[2731.5s - 2732.9s] It wasn't that bad.
+[2732.9s - 2733.9s] It was fine.
+[2733.9s - 2744.9s] So distribution of an adequate product when the field is basically commodity distribution on brand become a big deal, you could see that in the strategy, OpenAI strategy late last year was,
+[2744.9s - 2747.0s] people called it Everything, Everywhere, Yesterday.
+[2747.0s - 2751.2s] And so they were just trying everything to work out how they would get that.
+[2751.2s - 2754.5s] How can we get a flyway or how can we get distribution?
+[2754.5s - 2756.5s] How can we get something that sticks?
+[2756.5s - 2762.9s] How can we get something that people uses before Google, and Meta, and Amazon spray it everywhere and get everybody using that one?
+[2762.9s - 2767.9s] And then you've got the inertia and the power of the default and like, why would you switch?
+[2767.9s - 2771.0s] Obviously Apple is kind of the last penny to drop here.
+[2771.0s - 2776.9s] There was this sort of slightly weird opening idea, and now there's even weirder story that OpenAI want to sue Apple.
+[2776.9s - 2778.0s] Good luck with that.
+[2778.0s - 2786.1s] The funny thing about the Apple deal thing is just, not to go off on a tangent, but if you go back and watch the WWGC from 2024,
+[2786.1s - 2788.7s] the whole second half of it is Apple Intelligence.
+[2788.7s - 2794.2s] That was like the most compelling vision of a personal AI assistant, still the most compelling vision I've seen.
+[2794.2s - 2797.3s] They then couldn't ship it, but then neither was anybody else.
+[2797.3s - 2804.8s] And you watch it again and you're like, "Okay, so you want tool using a Agentic on device, AI with no prompt injection and no hallucinations,
+[2804.8s - 2811.5s] and a completely standardized API system across 10,000 apps with intents that all work perfectly." I'm like, "Well, that sounds good to me,
+[2811.5s - 2815.5s] but I'm not surprised they couldn't ship it." But nobody else would ship that.
+[2815.5s - 2816.9s] But that vision was great.
+[2816.9s - 2820.4s] I really want to see what happens at WWGC in a month.
+[2820.4s - 2823.0s] Do they actually ship that now, powered by Gemini?
+[2823.0s - 2832.8s] But that's also another point, is like, okay, there's going to be the AI intelligence, whatever we call, a Gemini intelligence on Android, and then there's going to be Apple intelligence on iOS,
+[2832.8s - 2837.5s] which is powered by Gemini, but it's not going to be the same set of products.
+[2837.5s - 2844.0s] The model's just like the dumb thing underneath the, funny way of putting it, the dumb thing underneath that power's a feature.
+[2844.0s - 2849.6s] The model is the commodity that powers different decisions about what the feature should be and what different distribution.
+[2849.6s - 2854.6s] And in that situation, of course, Apple's got a billion devices that can run this on edge.
+[2854.6s - 2860.8s] And Google has this wonderful marketing slogan coming soon to our most powerful devices, meaning it will work on those Androids.
+[2860.8s - 2862.0s] So again, distribution questions.
+[2862.0s - 2863.0s] Interesting.
+[2863.0s - 2865.0s] Google AO's next week, so we'll see what they launched.
+[2865.0s - 2870.0s] Oh no, they launched the Android and it just shows how modules it-
+[2870.0s - 2871.0s] As it today?
+[2871.0s - 2877.6s] Well, no, they launched it last week, which it just illustrates how much we start paying attention to Android and iPhone.
+[2877.6s - 2880.4s] Google did had a whole big thing last week.
+[2880.4s - 2889.4s] They're replacing Chromebooks with Google Books, and they've got a new Android intelligence powered by Gemini that will roll out to the five people who bought a Pixel phone.
+[2889.4s - 2891.0s] You don't work for Google.
+[2891.0s - 2892.0s] Yeah.
+[2892.0s - 2894.8s] I want to go in a slightly different direction.
+[2894.8s - 2900.1s] Something that I'm curious if you're following is just the anti-AI sentiment that feels like is growing.
+[2900.1s - 2906.8s] It feels like if you've seen these surveys, AI is less popular than ICE, people are trying to stop data centers from being built.
+[2906.8s - 2912.7s] I think Eric Schmidt just did a commencement speech and people were booing him every time he mentioned AI.
+[2912.7s - 2915.5s] Just like, "What do you think is going on?
+[2915.5s - 2918.0s] Where do you think this goes over time?"
+[2918.0s - 2919.0s] It's interesting.
+[2919.0s - 2924.1s] And it's a big sort of fuzzy mass of different stuff, I think.
+[2924.1s - 2934.7s] There is tangible, like my electricity bill went up, which applies actually in a very small number of places, objectively, but it did, and this is a question.
+[2934.7s - 2938.6s] The water thing is weird because it's just completely fake.
+[2938.6s - 2941.7s] And I should explain what I mean here.
+[2941.7s - 2944.1s] Data centers use water for cooling.
+[2944.1s - 2953.0s] It's mostly closed loop, but the number of data centers relative to the total amount of water use in the USA is tiny.
+[2953.0s - 2961.6s] I actually went and dug into this that the Livermore lab did a study at the end of 2024 where they estimated US data center water consumption.
+[2961.6s - 2965.0s] And it came out at about 0.017% of US water consumption.
+[2965.0s - 2975.5s] Now, obviously if you live in a small town and you've got one well and they capped the well and gave all the water to the data center, then you're really pissed off.
+[2975.5s - 2977.1s] But that's a planning problem.
+[2977.1s - 2979.0s] That's not a data center problem.
+[2979.0s - 2988.8s] In generality, yes, this is data centers of what, like 5% of US energy, and might grow at 1% a year for the next five years, one percentage point a year,
+[2988.8s - 2991.0s] but the water stuff is just nonsense.
+[2991.0s - 2995.2s] And then you get into more tangible like, well, what is happening with this?
+[2995.2s - 2996.8s] Is it taking jobs away?
+[2996.8s - 3004.4s] Where you can watch a bunch of three-hour podcasts of economists talking to each other and the main answer is we really don't know yet.
+[3004.4s - 3010.4s] There's a bunch of charts that kind of say yes and a bunch of charts that kind of say no.
+[3010.4s - 3018.9s] And clearly there's a slowdown in employment of 18 to 24 year olds, but that seems to be the same for people who do and don't have degrees,
+[3018.9s - 3025.0s] and the same for people in fields that look exposed to AI and feels that they look exposed to AI.
+[3025.0s - 3027.6s] So there's a lot of econometric argument about this.
+[3027.6s - 3036.1s] And I mean, there's a broader point here, in fact, which is a different point here, that we have very little data on what's going on in AI, from anyone.
+[3036.1s - 3038.1s] The model labs don't tell us anything.
+[3038.1s - 3040.5s] They don't give us any meaningful usage information.
+[3040.5s - 3045.5s] They give us these weird studies of people, how many people use this for this and that.
+[3045.5s - 3048.1s] They don't give us a daily active use number.
+[3048.1s - 3051.9s] We do not have a daily active user number for us for ChatGPT.
+[3051.9s - 3052.9s] It's crazy.
+[3052.9s - 3055.8s] This segment is brought to you by Asana.
+[3055.8s - 3064.4s] If you have been wondering how to get a real handle on what without adding more work to your week, Asana is the answer.
+[3064.4s - 3072.3s] Lenny has been using it, and it is the reason the prep for this episode took an afternoon instead of a week.
+[3072.3s - 3077.7s] Go to asana.com/lenny and enter code ASANAPOD at checkout to get your first month free.
+[3077.7s - 3080.6s] That is asana.com/lenny. Alright, back to the show.
+[3080.6s - 3085.3s] And all the data comes from academic economists trying to back stuff out of BLS surveys.
+[3085.3s - 3092.7s] Or consultancies and marketing agencies like spending a whole bunch of money to survey 20,000 people and saying, "What are you doing with this stuff?"
+[3092.7s - 3097.8s] We don't have good data on what's going on and how many people are really using this, but to the employment question,
+[3097.8s - 3104.1s] hence there's a lot of people looking through all the stuff that the US census collects and trying to work out, "Well, where can we see this?
+[3104.1s - 3105.1s] Can we see productivity?
+[3105.1s - 3112.1s] What could we see?" And the answer right now I think is there's no clear consensus that we're seeing an impact on jobs, but of course, politically that doesn't matter.
+[3112.1s - 3119.7s] If you're a student and you can't get a job, and that clearly is an issue, whether it's because of AI or whether it's because of Trump and tariffs is a different question.
+[3119.7s - 3133.7s] Then you get niche things like people who draw book covers for young adult romance novels are very upset that now you can get a picture of a naked woman on back of a dragon flying through a volcano without paying them.
+[3133.7s - 3137.0s] I'm sorry, I'm being deliberately unkind, but there's a little...
+[3137.0s - 3143.4s] And particularly novelists, people who write eBooks, there's a huge culture war over whether it's okay to use AI.
+[3143.4s - 3151.7s] There's this whole sort of AI slop question, and obviously you show the number that like 30, 40% of your podcasts are generated by AI.
+[3151.7s - 3153.7s] There's a big fuzzy massive questions.
+[3153.7s - 3159.9s] Some of this, I think it's a little bit like the backlash we had around social, but much more compressed.
+[3159.9s - 3167.2s] And like social, some of the backlash around social was true, and some of it was sort of true, and some of it wasn't.
+[3167.2s - 3177.1s] Always like exemplified in the whole Facebook sells your data thing, which is just, A, not true, and B, the people who believe it are absolutely adamant that of course it's true,
+[3177.1s - 3179.5s] and you're obviously a lunatic for suggesting otherwise.
+[3179.5s - 3185.7s] It's like the line from Jonathan Swift that you can't reason somebody out of an idea that went reasonably to.
+[3185.7s - 3193.8s] So you get this kind of wide, it was a long answer question, but you've got this wide spread of ideas just as you kind of did with social.
+[3193.8s - 3199.2s] There's like 20 different things, some of which are really real, and some of which are really not real.
+[3199.2s - 3203.1s] And a lot of which are kind of a fuzzy mess in the middle.
+[3203.1s - 3211.8s] All of which means that meanwhile, you've got Trump saying he wants a new executive order on dangerous models, which I actually don't think is the thing that drives the backlash.
+[3211.8s - 3219.7s] The worrying about myth or cyber, I don't feel like that's a main street America conversation, but that's the thing that got Trump interested in this stuff again.
+[3219.7s - 3222.0s] Let me go kind of in a tangential direction.
+[3222.0s - 3229.0s] Something that I like to ask folks that have kids that come on the podcast, especially people that are thinking so deeply about where things are going,
+[3229.0s - 3236.8s] knowing what you know about just where the world is heading, what AI is going to do to the future, how are you changing the way you raise your kids?
+[3236.8s - 3240.7s] Just what are you teaching them differently potentially that might help them in the future?
+[3240.7s - 3241.7s] I don't know.
+[3241.7s - 3249.1s] I think there's a curve here in that if you've got kids who are going onto the job market in the next year or two,
+[3249.1s - 3254.3s] then everything is up in the air and no one knows how this is going to work.
+[3254.3s - 3259.8s] If you've got kids who are going onto the job market in like five years, then who knows?
+[3259.8s - 3264.1s] But staff will have settled down a lot by then in probably unpredictable ways.
+[3264.1s - 3268.0s] So, I could be a lot more worried if I had a 21-year-old.
+[3268.0s - 3271.7s] I don't, I've got a kid in his sort of early teens.
+[3271.7s - 3272.7s] Those questions vary.
+[3272.7s - 3281.9s] Then you've got a lot of the questions that were the same before ChatGPT around the collapse of gatekeepers,
+[3281.9s - 3297.3s] "Should you really believe what that influence on TikTok says?" "And where exactly you're getting your understanding of what's going on in Israel?" And all of those kinds of social media, internety,
+[3297.3s - 3299.7s] media consumption kinds of questions.
+[3299.7s - 3300.8s] I don't know.
+[3300.8s - 3306.4s] There are people who are super, super intentional about every minute of their child's life.
+[3306.4s - 3307.4s] I'm not.
+[3307.4s - 3319.4s] I kind of recall the George Carlin line that anyone who drives faster than you is a maniac and anyone who drives slower is an idiot, and that certainly applies to parenting.
+[3319.4s - 3331.5s] And everybody thinks they're somewhere in the middle, but I don't have a deeply systematic and widespread and coherent plan for, "This is what my child is going to be doing in three,
+[3331.5s - 3336.7s] six, 12, 18 months time." I'd settle for him not breaking his Chromebook again.
+[3336.7s - 3341.1s] I like that you're just general vibe is, "It's going to be okay, guys.
+[3341.1s - 3342.7s] It's going to be okay."
+[3342.7s - 3343.7s] Yeah.
+[3343.7s - 3354.2s] I don't know, maybe this is because I'm British and we haven't had political violence in 500 years, and I think maybe if I came from Iran,
+[3354.2s - 3358.4s] I'd have a different attitude to being calm about the future.
+[3358.4s - 3370.2s] I think there's a layer of like, yes, this will change a bunch of stuff and we'll need to worry about it, but that's kind of a constant, we've always had that.
+[3370.2s - 3380.7s] I remember in the whole wave of panic around social media, I dug up, so were a whole bunch of books in the late '70s about databases.
+[3380.7s - 3383.4s] There was a whole panic about databases.
+[3383.4s - 3386.1s] And again, half of it was true.
+[3386.1s - 3393.1s] If everybody's police records, and if all police records and all government records are online, then that's different.
+[3393.1s - 3405.5s] If you think about, for example, the deep fake needs issue, for example, there's like a dumb reaction to this, which is to say, "Haven't you heard of Photoshop?" Which is true,
+[3405.5s - 3416.7s] but a 15-year-old kid couldn't use Photoshop to make hardcore pornographic news of every girl in their high school and send them to the whole school in one afternoon.
+[3416.7s - 3417.7s] And tournament the video.
+[3417.7s - 3418.7s] Exactly.
+[3418.7s - 3419.7s] Even more.
+[3419.7s - 3420.7s] Yeah, even more.
+[3420.7s - 3421.7s] And now they can.
+[3421.7s - 3422.7s] So, that is different.
+[3422.7s - 3424.7s] It's kind of like the challenge of social.
+[3424.7s - 3427.5s] The thing people would say in the '90s is it's great.
+[3427.5s - 3433.2s] You can read the only gay kid in your village, and you can find other gay people, and you can find your tribe.
+[3433.2s - 3434.2s] And guess what?
+[3434.2s - 3439.5s] It turned out you could also be the only Nazi in your village, or the only pedophile in your village, or somebody wanted to look at child porn.
+[3439.5s - 3444.5s] Yeah, now you can find the other people who like looking at child porn and they'll tell you it's great.
+[3444.5s - 3445.7s] So oops, we connected everybody.
+[3445.7s - 3451.2s] And unfortunately, that meant we connected all the bad people, and all of our own worst instincts, and every problem in society.
+[3451.2s - 3453.2s] And so that will happen again with AI.
+[3453.2s - 3456.2s] Deep fake news are like the obvious thing we can see now.
+[3456.2s - 3458.7s] There will be a whole bunch more of this stuff.
+[3458.7s - 3464.7s] But there's also, and something a kind of technical audience should know about, do you know about the post office scandal in the UK?
+[3464.7s - 3465.7s] Okay.
+[3465.7s - 3466.7s] So sidebar here.
+[3466.7s - 3471.1s] So in the UK, post offices are mostly franchises run by small business people.
+[3471.1s - 3475.8s] So they're run by pharmacies classically, very often Indian, Indian immigrants, second generation Indian people.
+[3475.8s - 3480.9s] And the post office 15 years ago rolled out a new point to sell computer system.
+[3480.9s - 3484.9s] So they have a separate counter in the back that's a post office.
+[3484.9s - 3494.1s] And so the post office rolled out this new computer system built by them by Fujitsu that had a bunch of bugs in it that showed shortfalls in cash.
+[3494.1s - 3503.7s] And the post office looks at this and says, "Aha, we knew these people were stealing from us." Hundreds of people get prison, bunch of suicides, bunch of bankruptcies, people lose their homes.
+[3503.7s - 3512.3s] Meanwhile, people from the post office and people from Fujitsu are going to court and swearing there's no bugs in the system and nobody else has had this problem.
+[3512.3s - 3513.5s] This is 1970s technology.
+[3513.5s - 3520.3s] That's really the point, that every wave of technology comes with ways that you can ruin people's lives either deliberately or by accident.
+[3520.3s - 3523.0s] The whole thing of Chinese mass surveillance is deliberate.
+[3523.0s - 3527.4s] Maybe people should go to prison, maybe not, but we have this with every technology.
+[3527.4s - 3535.7s] We have a bunch of ways that you can ruin people's lives, and you have to be conscious of that and also kind of not panic about it.
+[3535.7s - 3542.9s] So maybe following that the right and coming back to the kids thing and the jobs thing, is there a job you are steering your kid away from?
+[3542.9s - 3546.7s] And is there a job you kind of think you want to steer them towards?
+[3546.7s - 3548.2s] I don't know about that.
+[3548.2s - 3550.4s] It's probably a little bit early yet.
+[3550.4s - 3554.7s] He's not quite at the like, "I want to be a fireman stage," but...
+[3554.7s - 3556.7s] That might be a great job.
+[3556.7s - 3557.7s] Yeah.
+[3557.7s - 3563.6s] And certainly if I look at my career, I started as an equity analyst, and then I went and worked in an industry, and then I was a consultant.
+[3563.6s - 3570.4s] The days when you kind of knew what your career was going to be over, there were sickly some people were like, you want to be an architect,
+[3570.4s - 3573.8s] you want to be a software engineer, you want to be X or Y.
+[3573.8s - 3574.8s] I don't know.
+[3574.8s - 3580.5s] I think the only kind of thinking I have here is that you slowly work out, there's a bunch of skills that you have,
+[3580.5s - 3586.3s] and there's a bunch of jobs that makes you good at, and then there's a bunch of stuff that people will pay you for.
+[3586.3s - 3589.7s] And you want to get at least two of those, and preferably all three.
+[3589.7s - 3590.7s] Okay.
+[3590.7s - 3594.9s] So zooming out a little bit, let me ask you a Meta question.
+[3594.9s - 3601.7s] What's a question about AI that you think nobody's asking yet, or not enough people are asking that we should be asking ourselves?
+[3601.7s - 3602.7s] Sure.
+[3602.7s - 3604.7s] I mean, we talked about value capture.
+[3604.7s - 3610.4s] Obviously this is a whole, everyone is asking like, I'm not sure how many people are asking whether model labs have pricing power.
+[3610.4s - 3616.3s] I think a lot of people are just presuming that the situation today will continue, or that of course they will.
+[3616.3s - 3619.7s] So I think that's maybe a question that not enough people ask.
+[3619.7s - 3626.1s] I think the question I pose towards the end of my presentation, which we talked about earlier, is like, what's the task and what's job?
+[3626.1s - 3631.5s] Or what is just the thing that becomes a button or make SKU versus what are people actually hiring you for?
+[3631.5s - 3634.3s] Is that kind of a useful way of thinking about this?
+[3634.3s - 3639.9s] And clearly there are going to be some jobs where no, that is just a task, and that job gets automated away.
+[3639.9s - 3642.7s] But there's a bunch where that kind of isn't the question.
+[3642.7s - 3648.8s] The way I actually pulled that together at the end of the deck was a chart of a global recorded music revenue,
+[3648.8s - 3652.7s] which as you may know is kind of a U-shaped curve more or less.
+[3652.7s - 3660.6s] And so it's dropped by about half from 2000 to 2015 or so, and since then has come back to about 75% of the peak, adjusted for inflation.
+[3660.6s - 3665.0s] And the way that I look at this is to say, and that's driven by streaming.
+[3665.0s - 3670.0s] And I kind of looked at this and said, well, the first half of this chart is saying,
+[3670.0s - 3674.8s] what happens if I don't have to pay $15 to get a CD to get that track?
+[3674.8s - 3681.2s] And the second half of the chart is saying, what happens if $15 a month gets you all the music that there is?
+[3681.2s - 3684.0s] So it's kind of a completely different sort of question.
+[3684.0s - 3690.7s] And that's a way that you could look at Google, or the way you could look at Airbnb or all these kinds of companies.
+[3690.7s - 3699.6s] Is it to begin with you do the old thing but more whether you need technology, you do the old thing, but more of it on the new place.
+[3699.6s - 3706.6s] So you put Flickable mobile, you print out Googles, and then you make new things that are only possible with a new thing.
+[3706.6s - 3714.2s] And then maybe you go a bit further and you kind of completely redefine the question and you make something that isn't that at all.
+[3714.2s - 3716.4s] Spotify is not an online music store.
+[3716.4s - 3717.4s] It's something else.
+[3717.4s - 3718.9s] And right now, those questions,
+[3718.9s - 3728.9s] you only even know what the question is after it's been asked and you've built a billion dollar thing that lots of people use because obviously Spotify look crazy, and people look crazy,
+[3728.9s - 3730.1s] and Airbnb look crazy.
+[3730.1s - 3737.8s] But that's, I think, the way to get at what this means, is you have to get past, we do the old stuff but more,
+[3737.8s - 3742.7s] and you have to get to what do you do that's different that's because of this.
+[3742.7s - 3743.9s] What has this change?
+[3743.9s - 3745.1s] What wasn't possible before?
+[3745.1s - 3749.7s] What gets unlocked as opposed to just doing the old thing but more of it?
+[3749.7s - 3750.7s] Yeah.
+[3750.7s - 3758.9s] Just to support this kind of general theme you have of it's like we don't know what is going to happen, this is unprecedented, if you're to zoom out a few years ago,
+[3758.9s - 3764.1s] maybe three years ago, four years ago, the last profession you think would be automated is engineering and coding.
+[3764.1s - 3769.2s] It's like, that feels like the hardest thing that's like, we're going to need people to build these things.
+[3769.2s - 3771.9s] Now it's like the most transformed role of any role.
+[3771.9s - 3775.7s] You went from writing all your codes to 0% of your code is AI.
+[3775.7s - 3780.2s] It's almost like you didn't realize it was boring manual labor that could be automated.
+[3780.2s - 3782.1s] You thought it was something else.
+[3782.1s - 3783.1s] It's funny.
+[3783.1s - 3790.3s] I mean, I was looking at this, this whole, there's this sort of US government called data set called ONET or something like that,
+[3790.3s - 3799.6s] which tries to analyze every single job and then people try and kind of score it, and they try and say, "Well, this profession is X or Y percent exposed to AI,
+[3799.6s - 3806.0s] and AI can do Z percent of it today." I think this is just the most ridiculous bunch of diluted horseshit.
+[3806.0s - 3807.8s] And there's two reasons for this.
+[3807.8s - 3813.2s] The first reason is that this is, ironically, this is the logical systems problem, the expert system's problem.
+[3813.2s - 3821.7s] The problem with expert systems is, for anyone who doesn't know, you try to recognize a picture of a cat and so you start building up logical steps.
+[3821.7s - 3829.1s] So you make an edge detector, and then you make a third detector, and you make an eye detector and you make an ear detector,
+[3829.1s - 3832.7s] and 15 years later you've got 700 steps and it doesn't work.
+[3832.7s - 3840.2s] And this is what happens when you try and look at a profession and sort of break it down by which bits can be automated and which can't.
+[3840.2s - 3842.1s] You can't describe a profession like that.
+[3842.1s - 3843.2s] But anyway, we can't.
+[3843.2s - 3849.6s] You can't look at a senior partner at a law firm and say, "Well, 17% of their work could be automated." This is horseshit.
+[3849.6s - 3850.7s] You can't do that.
+[3850.7s - 3855.6s] I think the other side of the fallacy though is to talk about taxi drivers.
+[3855.6s - 3860.1s] So, if we'd been having this conversation in 1997, it's like the Uber test.
+[3860.1s - 3863.7s] Imagine we're in 1997, what will be crushed by the internet?
+[3863.7s - 3867.9s] Well, newspapers will be fine because they'll save money on the printing bills.
+[3867.9s - 3870.8s] This is like a jake, but people said that.
+[3870.8s - 3873.4s] Newspaper, the internet will be great for newspapers.
+[3873.4s - 3875.3s] Their printing bills will get down.
+[3875.3s - 3876.6s] Well, yes, but no.
+[3876.6s - 3882.2s] But the other side is, well, obviously our taxi drivers, you couldn't automate that with the internet.
+[3882.2s - 3884.8s] It's got nothing to do with the internet.
+[3884.8s - 3889.3s] Maybe you'd have internet booking, but like, no, that's not going to change anything.
+[3889.3s - 3892.2s] And of course, it completely changes the whole thing.
+[3892.2s - 3897.7s] And so the example I saw the other day was things that won't be affected by AI personal trainers.
+[3897.7s - 3898.7s] Okay.
+[3898.7s - 3903.9s] I take my iPhone and I balance it on the metal piece with the camera pointed at me,
+[3903.9s - 3910.2s] and I ask an AI to build me a training routine and watch me and tell me if I'm doing it right.
+[3910.2s - 3912.2s] Why do I need a personal trainer?
+[3912.2s - 3915.6s] Now, that might be complete nonsense, but that's how these things work.
+[3915.6s - 3920.8s] The stuff that you don't think is, you can't predict which things are going to be exposed necessarily.
+[3920.8s - 3927.4s] Or a lot of the big companies are things that didn't look like that would work and didn't look like I was exposed.
+[3927.4s - 3934.5s] The other side of this, of course, is this is one of the charts at the end of my presentation is comparing Uber and Airbnb,
+[3934.5s - 3941.1s] because this is like the cliche from Mark Andreessen that Uber doesn't sell software to taxi companies, Airbnb doesn't sell software to hotels.
+[3941.1s - 3944.0s] Okay, now let's go and look at the market impact.
+[3944.0s - 3949.1s] Well, a whole bunch of cities were Uber demolished taxi business, and made it much bigger as well.
+[3949.1s - 3951.4s] The TAM became much bigger and everyone switched.
+[3951.4s - 3955.7s] Airbnb's impact hotels, if you actually go and look at the numbers, it's pretty marginal.
+[3955.7s - 3963.2s] They carved out this whole other business, and maybe they slowed down the growth of hotels a bit, but my wife flies to Milwaukee next week.
+[3963.2s - 3965.8s] She's going to land at eight o'clock at night.
+[3965.8s - 3975.2s] She wants to go to a hotel, she wants to have a room service, she needs a bath, she needs a gym at 6:00 in the morning, and then 7:00 in the morning,
+[3975.2s - 3977.5s] she's going to drive to the client's site.
+[3977.5s - 3979.5s] She's not going to stay in Airbnb.
+[3979.5s - 3982.4s] Absolutely zero chance she's going to stay in an Airbnb.
+[3982.4s - 3985.0s] And half of the hotel business is business travel.
+[3985.0s - 3988.7s] And as soon as you actually get into anything, then it gets complicated.
+[3988.7s - 3996.4s] I remember somebody on social media said the problem with Benedict is his answer to everything is it depends.
+[3996.4s - 3998.4s] It's like, yeah, it does.
+[3998.4s - 3999.4s] It depends.
+[3999.4s - 4002.3s] So, it's back to my 1997 point.
+[4002.3s - 4007.7s] You can say some of this, but you have to have that humility.
+[4007.7s - 4012.8s] Coming back to this phrase you use, presume radical uncertainty is a nice core thesis here.
+[4012.8s - 4015.7s] So knowing all this, just it's hard to tell.
+[4015.7s - 4018.0s] We don't know exactly where it's going.
+[4018.0s - 4022.2s] Things are going to change a lot, but it'll probably be okay broadly.
+[4022.2s - 4028.9s] Just a lot of people listening are pretty worried about their jobs and their careers, and how much the world changes.
+[4028.9s - 4035.7s] What would be a couple things you recommend people do knowing what you know to be more successful in this future?
+[4035.7s - 4039.5s] Well, I should just wind back on what you just said.
+[4039.5s - 4044.0s] It's like, as Kim tells us, in the long run, we're all dead.
+[4044.0s - 4047.1s] So on average, nobody died in World War I.
+[4047.1s - 4048.1s] Great.
+[4048.1s - 4054.3s] But if you're a 19-year-old in 1914, you've got a one in three chances of not coming back.
+[4054.3s - 4065.0s] So yes, clearly there's a bunch of professions where this is a major question and particularly if you're an associate, or would've been thinking about being an associate, this is a major question.
+[4065.0s - 4069.1s] And it's very unclear how those professions are going to play out.
+[4069.1s - 4073.3s] It's very unclear what happens to the pyramid structure of professional services.
+[4073.3s - 4079.5s] The only answer I think one can have is, don't stick your head in the sand and say,
+[4079.5s - 4085.0s] "I hate all of this stuff," because that gives you a great feeling of moral superiority.
+[4085.0s - 4091.9s] And you can go on Bluesky and shout at everybody, chat at each other about how evil AI is like.
+[4091.9s - 4095.7s] Great, I'm happy for you, but that's not going to help.
+[4095.7s - 4106.6s] What helps is you diving into this completely submerging yourself in it and coming at understanding what you can do with it, how this changes things, how you can be a great hire.
+[4106.6s - 4108.6s] And that may still not help.
+[4108.6s - 4117.9s] But if you're going to a law firm and they're like, well, we hired a hundred associates last year and this year we're only going to hire 50,
+[4117.9s - 4125.8s] go into the interview and say, "Well, I think AI is and I'm never going to use it," is probably not the right mood.
+[4125.8s - 4136.7s] So, that may not be particularly comforting, but I don't think there's an alternative, is you have to dive into this and absorb it, and internalize it and think about what it means,
+[4136.7s - 4140.7s] just as you and I did with mobile and with the internet.
+[4140.7s - 4151.5s] I think that is actually very actionable and very consistent advice on the podcast, is just, do stuff, build it, don't just sit around and pontificate and be pissed at what's happening.
+[4151.5s - 4157.6s] To close this out, I'm going to take us to AI Corner, a recurring corner of the podcast.
+[4157.6s - 4168.7s] And the question to you is just, what's one way you've used AI and use AI in your work or life that is really interesting, something that other people might be inspired by?
+[4168.7s - 4169.7s] I don't know.
+[4169.7s - 4173.6s] I struggle with this question, because I'm thought of the lawyer looking at ChatGPT.
+[4173.6s - 4182.0s] So, the stuff that I would do that I would automate are sort of precise information retrieval task, which is precisely the thing that this is kind of worse at.
+[4182.0s - 4184.5s] And that's not a criticism, it's just an observation.
+[4184.5s - 4193.0s] The kind of stuff that I would want a machine to do for me is the stuff that AI I can't do for me very, very, very well at the moment.
+[4193.0s - 4199.4s] I use it for proofreading, I use it for images, I used it redecorating my apartment, that worked fantastic, you're aware at that.
+[4199.4s - 4204.1s] Here's a picture of this room, repaint it at this light and this table and this rug.
+[4204.1s - 4205.8s] No change color of the rug.
+[4205.8s - 4208.6s] There's a kind of class of stuff where it works.
+[4208.6s - 4216.7s] But I mean, a couple of years ago, somebody said AI is good at stuff that computers are bad at and bad at stuff that computers are good at.
+[4216.7s - 4221.4s] And I struggle to find many examples of those where I need it.
+[4221.4s - 4224.7s] But then I'm kind of a unique, weird job.
+[4224.7s - 4233.0s] I sit at my desk all day trying to synthesize a whole bunch of other stuff into a whole bunch of new ideas.
+[4233.0s - 4237.0s] That's not particularly common way for people to spend their time.
+[4237.0s - 4239.5s] I struggle to find AI use cases.
+[4239.5s - 4250.7s] I am the accountant looking at the spreadsheet and thinking, "Well, that's very clever, and this is clearly going to completely transform everything, but I actually don't make spreadsheets every day."
+[4250.7s - 4255.0s] I went to a standup comedy show of Pete Holmes, I don't know if you know him.
+[4255.0s - 4263.1s] And he made this joke that we want AI to clean the poop off the street and do all these hard things that nobody wants to do, but instead it's like, "Oh,
+[4263.1s - 4264.4s] let me help you write.
+[4264.4s - 4266.9s] Let me help you create imagery." It's like this bohemian.
+[4266.9s - 4269.9s] It's like, "No, I don't want to do all these ugly things.
+[4269.9s - 4271.7s] I want to be creative, make art."
+[4271.7s - 4272.7s] Yeah.
+[4272.7s - 4275.3s] Well, I mean, there's variations of all of this.
+[4275.3s - 4279.6s] It's like I don't want the AI to do the stuff I do for fun.
+[4279.6s - 4283.7s] I want it to do the boring stuff that I don't do for fun.
+[4283.7s - 4284.8s] And finding that mesh.
+[4284.8s - 4289.8s] I mean, joking apart, this is going to come back to my chatbot point, that the chatbot is a blank screen in a jagged edge.
+[4289.8s - 4292.9s] And what am I supposed to do and what will work?
+[4292.9s - 4294.4s] And that's a big problem.
+[4294.4s - 4298.1s] And the solution to that problem is to wrap it in use cases.
+[4298.1s - 4300.7s] Part of it is also like AI just disappears.
+[4300.7s - 4303.3s] So most of what I write now I dictate.
+[4303.3s - 4305.9s] I dictate as a voicemail, and that's automatically transcribed.
+[4305.9s - 4308.8s] Is that still AI or is that just voice recognition?
+[4308.8s - 4310.5s] There's probably an LLM in there.
+[4310.5s - 4311.5s] Okay.
+[4311.5s - 4312.7s] So maybe that's AI.
+[4312.7s - 4313.7s] Well, okay.
+[4313.7s - 4314.7s] So what?
+[4314.7s - 4316.7s] At a certain point, it's just automation.
+[4316.7s - 4318.7s] What do you use for that, for voice transcription?
+[4318.7s - 4322.6s] So, I actually find that Apple Notes, the app or the one built into the iPhone works fine.
+[4322.6s - 4326.4s] I mean, I'm conscious of the people want others, but I mean, I dictate it.
+[4326.4s - 4327.4s] There it is.
+[4327.4s - 4328.4s] It worked.
+[4328.4s - 4329.7s] So, I'm happy with that.
+[4329.7s - 4330.7s] All right.
+[4330.7s - 4332.7s] Final question before we get to our very exciting lightning round.
+[4332.7s - 4334.8s] Is there anything else that you wanted to share?
+[4334.8s - 4336.7s] Anything else you want to leave listeners with?
+[4336.7s - 4342.6s] No, I think I've monologued plenty, and I've gone through a bunch of stuff in the deck.
+[4342.6s - 4353.5s] Go read the deck, and sign up to my newsletter, and then you will get in many more mags of brilliant Benedict Evans' wisdom, some of which may even be useful.
+[4353.5s - 4362.6s] Someone unsubscribed for my newsletter and they said, "You didn't give me any actionable stock ideas." And I'm like, "Well, on one level, that's completely true.
+[4362.6s - 4364.7s] On the other level, maybe not."
+[4364.7s - 4367.2s] Well, with that, Benedict, we've reached our very exciting lightning round.
+[4367.2s - 4368.7s] I've got five questions for you.
+[4368.7s - 4369.7s] Are you ready?
+[4369.7s - 4370.7s] Sure.
+[4370.7s - 4376.7s] First question, what are two or three books that you find yourself recommending most to other people?
+[4376.7s - 4383.1s] It's a tough one for me, because I just read an enormous amount of books and then I can't remember which ones I've read.
+[4383.1s - 4390.3s] I sometimes often joke that there's a classic British comedy from the late 19th century called Three Men in a Boat, which is like my I Ching.
+[4390.3s - 4391.9s] We're having trouble hanging a picture.
+[4391.9s - 4393.5s] Well, there's a section about that.
+[4393.5s - 4394.8s] We're having trouble doing this.
+[4394.8s - 4398.0s] Oh, well, there's a story about that, all of which are hilarious.
+[4398.0s - 4400.7s] So Three Men in a Boat is my I Ching.
+[4400.7s - 4410.8s] There's a book by, I think William Cronon, about the Economic History of Chicago, which is fascinating and actually very relevant to technology, because it's talking basically about standardization and packetization, and logistics,
+[4410.8s - 4413.6s] and channel conflict, and network dynamics, and network neutrality.
+[4413.6s - 4421.5s] So, when the meat packers of Chicago reach the point that it's cheaper to ship a cow from New York to Chicago, kill it, pack it,
+[4421.5s - 4430.1s] and then ship it back to New York than to kill it in New York, and the pricing of refrigerator cars, and it's exactly like reading about broadband.
+[4430.1s - 4431.9s] It's all the same kind of...
+[4431.9s - 4434.7s] So those kinds of business issues, which is fascinating.
+[4434.7s - 4436.1s] What else have I read?
+[4436.1s - 4437.1s] I don't know.
+[4437.1s - 4439.9s] Read books, read different books, generally read books for grownups.
+[4439.9s - 4444.3s] Please read something other than Lord of the Rings, if you're going to name another company.
+[4444.3s - 4447.7s] I saw this one and what was the latest Peter Thiel company.
+[4447.7s - 4452.2s] I was like, "Read another book." Everything is named after a character from this one book.
+[4452.2s - 4454.5s] There's more than one book in the world.
+[4454.5s - 4457.6s] There is more than one book than all about science fiction.
+[4457.6s - 4460.7s] Read about different things, read about things you don't know about.
+[4460.7s - 4464.7s] Kind of along those lines, you have a favorite recent movie or TV show you've really enjoyed?
+[4464.7s - 4465.7s] I don't know.
+[4465.7s - 4471.2s] I've dropped so badly off the current media treadmill, and I just spend most of my time watching classics,
+[4471.2s - 4475.7s] which are always the ones that you're supposed to have seen and that all seem intimidating.
+[4475.7s - 4484.2s] And then you watch them and you're like, "Oh, that was actually really good." I watched The Seventh Seal recently, which is one of those Woody Allen, terrifying boring movies,
+[4484.2s - 4485.4s] and it was brilliant.
+[4485.4s - 4488.8s] It was really interesting, and it's like it's only like an hour.
+[4488.8s - 4493.7s] So, go watch one of those movies that you are supposed to have seen, or hadn't seen.
+[4493.7s - 4497.8s] Favorite recent product that you recently discovered that I really love.
+[4497.8s - 4500.7s] Could be a gadget, could be an app.
+[4500.7s - 4504.4s] I was speaking at a partner meeting for a company earlier this week.
+[4504.4s - 4509.0s] Monday, no, last week, and met the founder of the company who has a very famous...
+[4509.0s - 4516.4s] The CEO of the company has a famous name and admired his shoes, and didn't say anything, but then went in Google half an hour later.
+[4516.4s - 4518.7s] "Yeah, okay, I'll buy a pair of this."
+[4518.7s - 4522.4s] Do you want to share the brand or you want to keep it secret?
+[4522.4s - 4523.7s] Okay, we'll keep it secret.
+[4523.7s - 4524.7s] I don't know.
+[4524.7s - 4529.6s] I think one comes in waves of new products, and you get into waves of new things.
+[4529.6s - 4534.5s] And when's the last time there was a cool app, iPhone apps, all that white space went.
+[4534.5s - 4537.9s] I mean, it's partly a function of product ships, a platform chips.
+[4537.9s - 4542.2s] All the white space went for cool new apps, and now we haven't quite got...
+[4542.2s - 4549.8s] Actually, this is to the earlier point, we don't have breakout a consumer AI apps yet, but I think because of marginal cost more than anything else,
+[4549.8s - 4554.4s] you can't make it free and get 50 million users and then have a revenue bottle.
+[4554.4s - 4556.7s] But we don't have those breakout things yet.
+[4556.7s - 4557.7s] For consumer.
+[4557.7s - 4558.9s] For consumer, no.
+[4558.9s - 4562.0s] I keep getting these ads for voice recorders.
+[4562.0s - 4565.6s] Somebody's selling a business card size hardware voice recorder.
+[4565.6s - 4567.5s] But I didn't get it.
+[4567.5s - 4570.7s] I've got the voice recorder on my phone.
+[4570.7s - 4571.7s] Yeah.
+[4571.7s - 4573.2s] All kinds of cool stuff coming.
+[4573.2s - 4574.2s] Okay.
+[4574.2s - 4575.2s] Two more questions.
+[4575.2s - 4578.7s] Do you have a favorite life motto that you find yourself coming back to often in work or in life?
+[4578.7s - 4584.7s] I suppose both mentioned earlier, apparently, I mostly say it depends.
+[4584.7s - 4587.7s] That's going to be the title.
+[4587.7s - 4588.7s] It'll probably be okay.
+[4588.7s - 4589.7s] Yeah.
+[4589.7s - 4590.7s] Okay.
+[4590.7s - 4592.2s] That's the vibe I get.
+[4592.2s - 4593.2s] I like that.
+[4593.2s - 4594.2s] I like that.
+[4594.2s - 4595.7s] It's probably going to be okay.
+[4595.7s - 4596.7s] Not for sure.
+[4596.7s - 4597.7s] Okay.
+[4597.7s - 4598.7s] Final question.
+[4598.7s - 4599.7s] I saw someone that you'll own a lot of old phones.
+[4599.7s - 4600.7s] Is that true?
+[4600.7s - 4601.7s] It is, yes.
+[4601.7s - 4607.3s] I mean, I was a telecoms analyst and mobile analyst and I kept all my phones up to a point.
+[4607.3s - 4608.7s] Now they're kind of uninteresting.
+[4608.7s - 4617.7s] But as you may remember, before the iPhone, particularly outside the USA, there was this huge creativity and expansion in what phones looked like, because everyone was basically innovating around a little teeny,
+[4617.7s - 4618.7s] tiny gray square.
+[4618.7s - 4622.6s] So everyone was trying to differentiate from everything else, before it kind of resulted.
+[4622.6s - 4624.3s] It's kind of like cars, actually.
+[4624.3s - 4627.6s] It's like cars before street, before wind tunnels, cars all look different.
+[4627.6s - 4634.9s] And everyone's trying to innovate around, because you've got the same four wheels, and the same engine, and everyone's trying to differentiate based on the shape.
+[4634.9s - 4639.1s] And then everything converges on one shape, and it's kind of the same with phones.
+[4639.1s - 4640.5s] Everything converged on one shape.
+[4640.5s - 4642.5s] Before that, there was all this innovation.
+[4642.5s - 4646.7s] So yeah, I have a whole bunch of PDAs, and smartphones, and things like that.
+[4646.7s - 4649.7s] How many phones are we talking about?
+[4649.7s - 4650.7s] I don't know, like 20 or 30.
+[4650.7s - 4651.7s] Okay.
+[4651.7s - 4652.7s] Okay.
+[4652.7s - 4653.7s] It's not so crazy.
+[4653.7s - 4654.7s] What's the oldest one?
+[4654.7s - 4655.7s] What's the oldest one you got?
+[4655.7s - 4664.7s] So I have one of those, I should have usually told me I'd have got the box down, I have one of those Ericsson shark fin flip phones from '98 or something,
+[4664.7s - 4665.8s] which is very vogue.
+[4665.8s - 4668.2s] Again, hardware design, visual design, trying to differentiate.
+[4668.2s - 4673.2s] I've got an iMade phone from 2001, and a JPhone phone from 2001 that has a camera.
+[4673.2s - 4678.5s] So I came back from Japan in 2001 and my phone had a color screen and a camera.
+[4678.5s - 4684.0s] And I just had endless client meetings and people just wanted to see the phone with a color screen.
+[4684.0s - 4685.0s] It's mind-blowing.
+[4685.0s - 4686.2s] Didn't work outside Japan.
+[4686.2s - 4688.6s] So, I plugged it in the other day.
+[4688.6s - 4689.7s] It still charges up.
+[4689.7s - 4692.4s] I mean, clearly I can't do anything with it.
+[4692.4s - 4699.7s] I mean, there's a little bit of an analogy in there as well in that we thought there'd be all these different shapes and sizes.
+[4699.7s - 4704.6s] And before the iPhone, people kind of imagined, "Well, some people will have a little pocket PC, and some people have a keyboard,
+[4704.6s - 4707.9s] and you have folding..." There were all these different ideas for what it would look like.
+[4707.9s - 4710.7s] And we didn't realize it was all going to converge on one device.
+[4710.7s - 4711.8s] Benedict, this was amazing.
+[4711.8s - 4712.9s] I learned a ton.
+[4712.9s - 4714.5s] I feel better after this conversation.
+[4714.5s - 4715.5s] Two final questions.
+[4715.5s - 4717.1s] Where can folks find you online?
+[4717.1s - 4718.7s] Where do they find this presentation?
+[4718.7s - 4720.7s] And how can listeners be useful to you?
+[4720.7s - 4724.8s] If you can Google me, as I always say, my parents had good SEO.
+[4724.8s - 4726.0s] So, Google Benedict Evans.
+[4726.0s - 4730.2s] And so there's a website where I publish all the presentations that I've done.
+[4730.2s - 4733.4s] And sign up for my newsletter, which comes out every week.
+[4733.4s - 4735.8s] Otherwise, how can they be useful to me?
+[4735.8s - 4739.9s] I'm always trying to understand stuff and I'm always trying to ask different questions.
+[4739.9s - 4744.1s] The worst thing in tech is to carry on talking about the same stuff.
+[4744.1s - 4749.4s] It's like the moment you really understand something, it's the moment you have to push onto something else.
+[4749.4s - 4758.5s] And so I'm always trying to think like, "No, am I just talking about the same thing over and over again?" Last year I just spent probably too much time saying,
+[4758.5s - 4760.0s] "But these models still hallucinate.
+[4760.0s - 4762.6s] Stop telling me they don't hallucinate." And they do.
+[4762.6s - 4763.6s] They still hallucinate.
+[4763.6s - 4771.6s] You push them, push them a little bit further, any question and you'll still get like, "No, that's not true," but that doesn't mean they're not useful.
+[4771.6s - 4773.7s] So you have to keep pushing myself.
+[4773.7s - 4777.1s] So that's always that the challenge for me, is how do I push?
+[4777.1s - 4782.7s] And then yes, if you want me to come and present to your board in the Caribbean, then let me know.
+[4782.7s - 4787.9s] And by the way, the domain is bend-evans.com if folks who want to check you out.
+[4787.9s - 4788.9s] And evans.com.
+[4788.9s - 4791.7s] Benedict, thank you so much for being here.
+[4791.7s - 4793.7s] Thanks a lot.
+[4793.7s - 4794.7s] Bye, everyone.
+[4794.7s - 4796.8s] Thank you so much for listening.
+[4796.8s - 4804.0s] If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+[4804.0s - 4811.1s] Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast.
+[4816.1s - 4818.3s] See you in the next episode.

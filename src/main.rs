@@ -1,10 +1,3 @@
-mod classify;
-mod config;
-mod handlers;
-mod jev;
-mod openai;
-mod transcript;
-
 use axum::{
     Router,
     routing::{get, post},
@@ -12,8 +5,8 @@ use axum::{
 use std::sync::Arc;
 use std::time::Duration;
 
-use crate::config::Config;
-use crate::handlers::AppState;
+use minuspod_jev_proxy::config::{self, Config};
+use minuspod_jev_proxy::handlers::{self, AppState};
 
 #[tokio::main]
 async fn main() {
@@ -22,6 +15,10 @@ async fn main() {
             tracing_subscriber::EnvFilter::try_from_default_env().unwrap_or_else(|_| "info".into()),
         )
         .init();
+
+    // Warn about config this build ignores, before anything is read, so a
+    // threshold tuned against an older build cannot look applied.
+    config::warn_unknown_env_vars();
 
     let cfg = Arc::new(Config::from_env());
     let port = cfg.port;
@@ -42,6 +39,33 @@ async fn main() {
         cfg.secondary.base_url,
         cfg.secondary.model,
         cfg.max_concurrent,
+    );
+    // The third slot is optional, so say so explicitly: an empty base_url here
+    // is normal, not a misconfiguration.
+    if cfg.tertiary.base_url.trim().is_empty() {
+        tracing::info!("tertiary backend: not configured (skipped)");
+    } else {
+        tracing::info!(
+            "tertiary backend: {} ({})",
+            cfg.tertiary.base_url,
+            cfg.tertiary.model,
+        );
+    }
+    tracing::info!(
+        "thresholds: recall={} attach={} edge={} (piece={}s context={}s) review={}",
+        cfg.recall_threshold,
+        cfg.attach_threshold,
+        cfg.edge_threshold,
+        cfg.edge_piece_secs,
+        cfg.edge_context_secs,
+        cfg.review_threshold,
+    );
+    tracing::info!(
+        "segments: target={}s max={}s gap={}s per_call={}",
+        cfg.segment_target_secs,
+        cfg.segment_max_secs,
+        cfg.segment_gap_secs,
+        cfg.max_segments_per_call,
     );
 
     let state = AppState { cfg, client, sem };

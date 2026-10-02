@@ -1,0 +1,1398 @@
+# spliced_amol-avasare
+# Conversational transcript with a host read for Butcher Box spliced in at line 523. Ground truth: exactly one cut.
+# source: https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/amol-avasare.md
+
+[0.0s - 4.2s] A lot of companies claim to be the fastest growing companies of all time.
+[4.2s - 5.2s] Anthropic actually is.
+[5.2s - 8.8s] You guys were at a billion ARR at the start of 2025.
+[8.8s - 11.6s] The last number I've seen is 19 billion ARR.
+[11.6s - 14.0s] That's $1 to $19 billion in 14 months.
+[14.0s - 17.9s] Historically, we were very much the smallest, least well-funded player in this space.
+[17.9s - 22.4s] We didn't have the free cash flow or the distribution of a Meta or Google.
+[22.4s - 25.1s] We didn't have the first-mover advantage of an OpenAI.
+[25.1s - 29.0s] It's a complete miracle that we've gotten to the stage that we have.
+[29.0s - 34.0s] Give us just a glimpse of what is like to be leading growth inside of Anthropic.
+[34.0s - 36.7s] It's the hardest job I've had in my life to come into Anthropic.
+[36.7s - 41.0s] You need to understand that 50%, 60%, 70% of how you operate in the past, just throw it out the door.
+[41.0s - 47.0s] One of the cleverest growth moves you all made was this idea of importing memory from ChatGPT.
+[47.0s - 50.1s] Activation is a really big challenge in AI.
+[50.1s - 54.3s] We are starting to look at how do we automate growth.
+[54.3s - 60.5s] Our growth platform team is driving this effort called CASH, which is Claude accelerate sustainable hypergrowth.
+[60.5s - 64.0s] How can we use Claude to automate growth experimentation?
+[64.0s - 66.0s] And it's delivering results, you're basically living in the future.
+[66.0s - 68.0s] We always talk about the exponential.
+[68.0s - 74.2s] The product value that we will deliver in two years time is probably like 1000X, what it is today.
+[74.2s - 78.4s] The funniest thing is I've noticed internally, linear charts are just not cool.
+[78.4s - 79.7s] Everything is log linear.
+[79.7s - 82.0s] So show me at log linear scale.
+[82.0s - 84.2s] Today, my guest is Amol Avasare.
+[84.2s - 90.3s] Amol is head of growth at Anthropic, which is on the most unprecedented growth run in history.
+[90.3s - 96.8s] In the past 14 months, they grew from 1 billion to over 19 billion in annual recurring revenue.
+[96.8s - 100.1s] Just in the past few months, their revenue doubled.
+[100.1s - 101.9s] They've been growing 10X year-over-year.
+[101.9s - 104.4s] This is unheard of at the scale.
+[104.4s - 109.2s] By the time this episode comes out, their revenue will be even higher.
+[109.2s - 120.7s] To put this scale in perspective, companies like Atlassian, and Palantir, and Snowflake, which have been around for 15 to 20 years, each do something like 4.5 to 6 billion in ARR.
+[120.7s - 124.0s] Anthropic is adding this much ARR every few months.
+[124.0s - 134.7s] And if that isn't interesting enough to you, Amol who leads growth at Anthropic is an incredible human.
+[134.7s - 139.5s] He previously led growth at Mercury and MasterClass.
+[139.5s - 145.4s] Before that, he was a founder and an investment banker.
+[145.4s - 156.7s] And most interestingly, something that most people don't know about him is that Amol suffered a severe brain injury.
+[156.7s - 168.7s] He had to spend nine months relearning how to walk and work and just not be nauseous all the time.
+[168.7s - 178.2s] He shared this story in a guest post in my newsletter a number of years ago.
+[178.2s - 182.9s] We actually chat about this during the conversation.
+[182.9s - 202.0s] These are my favorite kind of conversations because Amol and his team are living in the future and he's come to tell us where things are heading and what's going to change.
+[202.0s - 204.0s] Pleasure to be here.
+[204.0s - 205.7s] Head of growth at Anthropic.
+[205.7s - 206.7s] No big deal.
+[206.7s - 214.6s] I've had a lot of people come on this podcast from companies that claim to be the fastest growing companies of all time.
+[214.6s - 223.5s] And Anthropic actually is, if you look at the trajectory, I just have some of the numbers here just so people understand how absurd this is.
+[223.5s - 233.8s] So you guys were at a billion ARR at the start of 2025, then hit something like 4 billion mid 2025, then 9 billion ARR at the end of 2025.
+[233.8s - 242.0s] And the last number I've seen is you guys are at 19 billion ARR, which just to put a couple pieces of context here,
+[242.0s - 245.8s] one is that's from $1 to $19 billion in 14 months.
+[245.8s - 247.5s] I have so many questions.
+[247.5s - 252.6s] First of all, the story of how you actually landed this role is really interesting.
+[252.6s - 255.0s] Talk about how you got this role.
+[255.0s - 256.6s] Yeah, it's a little unorthodox.
+[256.6s - 266.6s] So it's funny, when I did my onboarding, they walked through what percentage of the cohort came through referrals, what percentage came through applying on the website, what percentage came through sourcing?
+[266.6s - 268.8s] And I was on none of those.
+[268.8s - 278.8s] And I was like, "Okay, this is interesting." And basically the way that I got to Anthropic was that I was actually a user of Claude and I was using a lot.
+[278.8s - 288.8s] I was like, "Man, these guys, great product, great company, but they really obviously don't have a growth team." And what I did was I just sent Mike Krieger a cold email.
+[288.8s - 290.7s] He was the chief product officer.
+[290.7s - 296.0s] I sent him a cold email saying like, "Hey, love what you guys do, love the product.
+[296.0s - 298.9s] I think you guys badly need a growth team.
+[298.9s - 302.0s] Want to chat." And I didn't expect he would respond.
+[302.0s - 304.8s] And he responds and says, "Hey, yeah, I'm interested.
+[304.8s - 307.3s] Let's talk." And it's funny, I didn't know.
+[307.3s - 308.5s] I wouldn't have known.
+[308.5s - 311.0s] They were not hiring for a growth team.
+[311.0s - 317.9s] There were no growth PM roles listed, but they were just at that time starting to think about hiring a growth team.
+[317.9s - 319.8s] So it was very good timing.
+[319.8s - 323.2s] But yeah, spoke to Mike and one thing led to another.
+[323.2s - 331.0s] He said, "I'm the only PM that he's hired from cold email." And I feel very lucky that he decided to respond to my email.
+[331.0s - 332.9s] I did not know the story.
+[332.9s - 334.4s] That is another absurd fact.
+[334.4s - 336.3s] Clearly you're good at cold email.
+[336.3s - 340.0s] What did you do in this cold email to get his attention?
+[340.0s - 343.7s] I would say I've basically perfected cold email over the years.
+[343.7s - 348.8s] So when I was a founder, I had to get really, really good at this.
+[348.8s - 355.5s] So I sent a lot of cold emails out and just honed the subject line, the message, and the tone.
+[355.5s - 363.6s] And so basically in the subject line, the first thing is from a conversion standpoint, someone sees the email, they need to click on it.
+[363.6s - 369.0s] And so I have a copy that I've tested that is very, very high open rate.
+[369.0s - 370.0s] And so-
+[370.0s - 371.0s] Wait, what is this copy?
+[371.0s - 372.0s] Or is this a secret?
+[372.0s - 373.0s] It's a secret.
+[373.0s - 375.0s] So that's one, getting them to open.
+[375.0s - 380.1s] I think the second is then the tactics of you need to understand where are people getting outreach.
+[380.1s - 387.8s] And if everyone's getting outreach in one area and then you reach out to them there, then you're not going to get as high of a response rate.
+[387.8s - 391.2s] So you can think about LinkedIn, you can think about work email.
+[391.2s - 393.2s] These are things that everyone is emailing.
+[393.2s - 396.0s] So there's ways to get people's personal emails out there.
+[396.0s - 398.3s] And so that's one thing that I did.
+[398.3s - 405.9s] And so okay, I've got this personal email, I know the copy that works, and then it's just keeping it very short on here's who I am,
+[405.9s - 409.0s] here's why I'd be a good fit, and we should chat.
+[409.0s - 410.5s] And these things typically don't work.
+[410.5s - 412.9s] And then you should always follow up a few times.
+[412.9s - 419.3s] I think my role of thumb is like, if I really care about it, I should just keep reaching out to them until they tell me,
+[419.3s - 423.0s] "Please stop." And so I would've kept doing that, but he responded the first time.
+[423.0s - 473.5s] It makes sense that a talented growth person would be very good at cold email and getting people's attention.
+[473.5s - 516.0s] So that's almost like an interview step is just, did I want to read this email?
+[516.0s - 518.9s] Yeah, I'd say it's very much a company-wide effort.
+[518.9s - 521.1s] So yes, we are the growth team.
+[521.1s - 522.4s] We have done great.
+[522.4s - 524.9s] I think we've driven a lot of impact.
+[524.9s - 529.7s] But honestly, man, we can't claim too much credit for the success of the company.
+[529.7s - 534.5s] We as Anthropic are really a model company and an intelligence company first and foremost.
+[534.5s - 539.3s] And so the lion's share of what has driven our success is our research team.
+[539.3s - 542.8s] We have, I think, the best research team in the world.
+[542.8s - 552.4s] We have great teams on inference and compute, and then there's many other teams like Claude Code, go to-market, et cetera, who I think deserve much more credit than us.
+[552.4s - 558.8s] I think just zooming out, going to some of what you said earlier, that the growth trajectory's just been insane.
+[558.8s - 562.6s] That 10X year-on-year revenue growth trend has been there since the beginning.
+[562.6s - 569.0s] I think 2023 was 0 to 100 mil, 2024 was 100 to 1, last year was 1 to roughly 10.
+[569.0s - 577.7s] And I look back to when I joined in 2024, revenue was in the hundreds of millions and just that trajectory through the end of 2024 and 2025,
+[577.7s - 579.5s] week two of when I joined,
+[579.5s - 588.7s] we're going into 2025 revenue planning and we have these base case and aggressive case scenarios and Dario's pushing the aggressive case scenario and people are freaking out being like,
+[588.7s - 598.0s] "How the hell are we going to hit that?" And Dario's like, "I think we can actually go much higher than that." And I'm coming in, this place is crazy,
+[598.0s - 599.2s] there's absolutely no way.
+[599.2s - 600.2s] And that happened.
+[600.2s - 605.5s] And then you get to the end of 2025 and it's like, okay, law of large numbers,
+[605.5s - 613.8s] there's going to be a pretty big slowdown here based on your baseline rate of 10 billion, how are you going to keep growing at this rate?
+[613.8s - 616.0s] And it just has not slowed down.
+[616.0s - 617.5s] And those numbers are public.
+[617.5s - 623.1s] The 19 billion number you quoted is from the end of Feb, so that is also out of date.
+[623.1s - 624.5s] And look, it's absolutely insane.
+[624.5s - 629.2s] The funniest thing is something that I've noticed internally is linear charts are just not cool.
+[629.2s - 631.0s] No one cares about linear charts.
+[631.0s - 632.2s] Everything is log linear.
+[632.2s - 636.6s] You have to show me at log linear scale, and that's a scale we think.
+[636.6s - 641.0s] And I think overall, we're just really hanging on by the seat of our pants.
+[641.0s - 646.0s] So we're trying to manage the growth and do the best that we can for our users.
+[646.0s - 653.8s] I was talking to somebody at Anthropic about you, and they said that basically anytime they want something to grow, they ask you to help and it works.
+[653.8s - 662.8s] So you talked about just things are magical and amazing and Claude and all the tools you all built are amazing innately, and that's a big part of the reason they grow.
+[662.8s - 670.4s] I think many people listening to this will be like, "What do you even do, Amol, with a magical microgod that just can do anything for you?
+[670.4s - 672.3s] Why do we need a growth person?
+[672.3s - 681.0s] What do you even do?" Talk about just the stuff that you focus on and maybe a couple of the wins that your team has shipped that has helped accelerate growth.
+[681.0s - 683.2s] I would say they're not fully wrong.
+[683.2s - 687.0s] We're very, very lucky to have the best models in the world.
+[687.0s - 690.5s] We're very lucky to have products like Claude Code and Cowork.
+[690.5s - 692.7s] It certainly makes life a lot easier.
+[692.7s - 702.4s] Having said that, I would say this is the hardest job I've had in my life, and that's having been a founder, having been an investment banker and other things like that,
+[702.4s - 703.4s] it's tough.
+[703.4s - 713.5s] And if I look at what do we do as a growth team here, I think ultimately it's the same categories of things that you would think about at a normal company.
+[713.5s - 720.7s] So we care about acquisition, how are we getting more people in the door, the intent of the people coming through the door.
+[720.7s - 725.8s] We care about activation, the signup flow, funneling people to the right products, making them successful.
+[725.8s - 733.0s] We care about things like monetization, free-to-paid conversion, pricing and packaging, all of that stuff that the categories of work is the same.
+[733.0s - 742.9s] I think then probably the big differences is I would say that roughly 70% of what I spend my time on is what we internally refer to as success disasters.
+[742.9s - 747.8s] And that is where things have gone so well that other things are breaking now.
+[747.8s - 755.7s] And I think anyone who's worked at companies that have gone through rapid growth, you think like Facebook, or Uber, or DoorDash early on,
+[755.7s - 760.3s] they understand this viscerally where scaling this much just brings a lot of challenges.
+[760.3s - 769.5s] So if you think about each of those categories on acquisition, on activation, on monetization, there's just a ton of firefighting jumping from one urgent thing to another.
+[769.5s - 771.2s] And it's often extremely painful.
+[771.2s - 781.4s] And it's funny because you look at all the charts, all the charts are green, fully up onto the right, and everyone's just like, it can be quite tough emotionally still.
+[781.4s - 787.0s] And so you need to step back and just realize we're very lucky to have these problems.
+[787.0s - 791.9s] But that's 70% of my time, I'd say, is just these firefighting of success disasters.
+[791.9s - 798.3s] And I think the 30% remaining is just much more standard bread and butter growth work where it's more proactive.
+[798.3s - 807.1s] So you think about, okay, if we have limited resources, we have many different products, which of the products do we want to put some juice behind?
+[807.1s - 814.9s] What does our long-term pricing and packaging look like, especially given that the technology's changing a lot and behavior and engagement trends are shifting.
+[814.9s - 821.3s] And then things like we have a lot of new products coming up like, okay, you ship Cowork, now what?
+[821.3s - 828.8s] When is the right time that we should lean in as a growth team to start optimizing the core adoption funnel for Cowork?
+[828.8s - 833.0s] So it's probably 70% just crazy firefighting, 30%, more bread and butter stuff.
+[833.0s - 834.0s] Okay.
+[834.0s - 836.9s] I'm going to dig into a lot of that stuff.
+[836.9s - 846.7s] One of the cleverest growth moves you all made recently was this idea of importing memory from ChatGPT where you just made it really easy and jumped on this trend of people getting really excited about Anthropic.
+[846.7s - 851.0s] Is there anything you could share about the behind the scenes story of that feature?
+[851.0s - 857.9s] We're just thinking about what can we do to improve the cold start problem and improve the new user experience.
+[857.9s - 861.7s] I think that activation is a really big challenge in AI.
+[861.7s - 868.2s] And so that's one example of something that we shipped that was very specific to a moment in time.
+[868.2s - 871.3s] But ultimately that you zoom out, it's like, okay,
+[871.3s - 883.0s] how do you really make it easier for people who are signing up to have Claude understand who they are and understand how Claude can help them and get them to the right place?
+[883.0s - 885.0s] I want to follow that thread, activation.
+[885.0s - 890.3s] That's something that comes up a ton when I talk to people leading, driving growth on AI products.
+[890.3s - 897.5s] It's just there are so much stuff trying to get your attention these days for people to get to a place where they, okay, wow,
+[897.5s - 901.0s] this is really going to be something I want to keep using.
+[901.0s - 902.7s] It proves to be really hard.
+[902.7s - 906.2s] And it's also just unreliable sometimes, it's not going to be magical.
+[906.2s - 907.4s] It's AI, it's non-deterministic.
+[907.4s - 913.2s] I guess, one, is just how important is focusing on activation, getting people to that aha moment with AI products?
+[913.2s - 919.0s] And two, what are some things you've learned about how to do that well with Claude or AI in general?
+[919.0s - 920.7s] Yeah, it's a good question.
+[920.7s - 927.6s] I think that activation, it's critical and defining that as early activation, call it day zero, day one product experience.
+[927.6s - 938.7s] I think that historically anyone who's been in growth or been in product understands that that's usually one of the highest levers that you have to actually even increase longer term retention.
+[938.7s - 943.2s] And I think that the importance of that has just gotten exponentially higher.
+[943.2s - 952.2s] Now, zooming out, I feel like one of the biggest problems in the industry is capability overhang where the models are just getting better so quickly.
+[952.2s - 963.3s] And the real challenge is on the product side of how do we start to diffuse those benefits to people where even internally, there's new models coming internally and you're sitting there,
+[963.3s - 964.3s] you're so busy.
+[964.3s - 971.2s] And when a new model's available, you need to really carve out time to be like, "What can this do?
+[971.2s - 974.0s] How do I need to update my priors?"
+[974.0s - 983.8s] And if you think about more broadly for most people, you may have a model that is like, you may have AGI or some model that can do all sorts of crazy things,
+[983.8s - 992.4s] but if people's instinct is to come there and be like, "Hey, what's the weather in SF?" Then they're not going to get the most out of the product.
+[992.4s - 996.9s] And so I think that it's tough because the model capabilities are rising so much.
+[996.9s - 1006.1s] So if I think about, okay, back when we had, I don't know, I want to say Opus 4, there's a series of things the model can do at that point,
+[1006.1s - 1009.0s] and Opus 4.5 unlocked a whole bunch of new things.
+[1009.0s - 1013.2s] You think about, okay, we sit there, we've got this new model, Opus 4.
+[1013.2s - 1023.0s] The time to then go and run a bunch of tests, figure out, okay, there's the capabilities from this new model, what are the right on ramps to guide people to those features?
+[1023.0s - 1027.4s] You run tests, you get the learnings, you then ship a new flow.
+[1027.4s - 1033.7s] By then, you may already have the next model, which unlocks newer capabilities that makes all these learnings irrelevant.
+[1033.7s - 1038.1s] So it's actually just a really difficult problem to stay on top of.
+[1038.1s - 1044.1s] I think that many of the same things, same old trends in growth and activation remain, I think,
+[1044.1s - 1052.5s] accurate where to me it's like ultimately some of the highest leverages from finding the right product or the right feature for the right user.
+[1052.5s - 1063.2s] And I think that one learning, seeing this time and time again across companies, actually the right friction helps and adding more friction usually works if you do it the right way.
+[1063.2s - 1067.6s] I think that's something I've consistently seen that we've seen here as well.
+[1067.6s - 1068.6s] So to me,
+[1068.6s - 1081.3s] I think it's really being able to identify what are the characteristics of a user that allows you to then recommend them to the right feature or product and not being shy about adding friction to do that,
+[1081.3s - 1085.0s] I think is probably the single biggest thing that's important here.
+[1085.0s - 1093.4s] When I asked Ben Mann, one of the co-founders, former podcast guest, what to ask you about, and this is what he highlighted, is your experience,
+[1093.4s - 1096.3s] especially at Mercury redoing onboarding and making it magical.
+[1096.3s - 1108.2s] And basically he's in the same place as you of just how important it is for people to understand what the AI tool is capable of to help people decide to use it and stick with it.
+[1108.2s - 1113.0s] Is there an example of something you changed in onboarding that helped significantly improve activation?
+[1113.0s - 1114.3s] Yeah, it's a great question.
+[1114.3s - 1116.4s] And I like that it brings up Mercury.
+[1116.4s - 1118.3s] I talk about their product a lot.
+[1118.3s - 1122.0s] So worked on the growth team at Mercury, I think it's a fantastic product.
+[1122.0s - 1127.0s] It's something many people use, and the reason they use it is because the better banking experience than its-
+[1127.0s - 1129.0s] Yeah, I'm a very happy customer just to put that out there.
+[1129.0s - 1130.0s] I love it.
+[1130.0s - 1131.0s] It's a great product.
+[1131.0s - 1132.0s] Highly recommend it.
+[1132.0s - 1133.0s] They have personal banking.
+[1133.0s - 1134.0s] Everyone should go and use it.
+[1134.0s - 1135.0s] Right.
+[1135.0s - 1137.0s] They just launched that.
+[1137.0s - 1143.5s] And so I think that the interesting thing about Mercury is the core value is that it's a better experience.
+[1143.5s - 1145.4s] That's the reason you use it.
+[1145.4s - 1149.3s] You're not getting better other things, just it's a better product experience.
+[1149.3s - 1153.1s] And so that ethos is very, very deeply held within the company.
+[1153.1s - 1155.7s] It comes from a number of the founders.
+[1155.7s - 1161.9s] And I think that we had a big push one quarter when I was there on the onboarding flow.
+[1161.9s - 1165.7s] So onboarding flows for banking institutions and regulated entities are extremely complex.
+[1165.7s - 1174.8s] The amount of time I've spent on the difference between a registered agent address and a legal address and a physical address, these things are very, very complex.
+[1174.8s - 1185.1s] And we basically looked at the onboarding flow and we were like, okay, we've invested so much in quality and the rest of the product, but we haven't really done it here.
+[1185.1s - 1188.0s] And this is the first experience that people have.
+[1188.0s - 1191.5s] And so we said, forget metrics, forget growth, forget everything else.
+[1191.5s - 1197.3s] As the growth team on conversion, we're going to spend a whole quarter fixing quality in this flow.
+[1197.3s - 1199.2s] And so that's all we did.
+[1199.2s - 1200.2s] Forget the metrics.
+[1200.2s - 1206.0s] We're just going to make this as good of an experience as we can and fix all these.
+[1206.0s - 1211.4s] You go back from one field to the other field and adding in your beneficial ownership details.
+[1211.4s - 1221.9s] And it actually ended up being, and probably until I joined here, the single most impactful quarter that I've ever had as a growth PM in terms of the impact that it had.
+[1221.9s - 1228.0s] And so we saw a significant uplift on basically our onboarding started to completion from just focusing on quality.
+[1228.0s - 1234.3s] And so that to me is a broader learning around quality drives growth that I think I've tried to bring to Anthropic.
+[1234.3s - 1243.5s] I think for us at Anthropic, some of the things that we've done in the onboarding flow is basically we ask users questions around who they are, what their interest areas are.
+[1243.5s - 1246.7s] And we then use that to recommend different products and features.
+[1246.7s - 1251.3s] And number of people look at the flow and they're like, "You have so much friction.
+[1251.3s - 1254.7s] It's such a long flow." And I'm like, "We have the data.
+[1254.7s - 1257.0s] We're kind of happy with how that's performing."
+[1257.0s - 1261.0s] What is your kind of philosophy on good friction versus bad friction?
+[1261.0s - 1271.9s] I've just seen time and time again at every job I've been in growth that adding friction and adding the right steps leads to higher conversion and higher funnel completion.
+[1271.9s - 1274.5s] So you want to get rid of...
+[1274.5s - 1284.3s] And especially if you have high volume, you should test the majority of this and just learn and see, does this apply to your business as well?
+[1284.3s - 1289.0s] But you want to get rid of annoying friction that doesn't add value.
+[1289.0s - 1298.5s] But I think the most simple understanding people have is just solve time for value, cut all the steps and just get them into the product.
+[1298.5s - 1300.6s] And that doesn't work most times.
+[1300.6s - 1307.2s] I think if you've really thoroughly tested your flows, I look at the companies I've been at, MasterClass.
+[1307.2s - 1317.0s] If you go through MasterClass's purchase flow right now, you'll go through all these steps in this quiz when you land on, when you're trying to buy.
+[1317.0s - 1323.5s] And you're like, "I came here to buy and it's taking me through all these questions, what are you here for,
+[1323.5s - 1329.0s] et cetera." I think it's easy to look at that and be like, "Why do they have this?
+[1329.0s - 1330.6s] This is a terrible thing.
+[1330.6s - 1334.3s] Just cut it all." And it's like, no, that's been thoroughly tested.
+[1334.3s - 1344.4s] And actually that was a significant revenue driver because it helps users feel that the product is for them by understanding what their interests are and then recommending the content and classes there.
+[1344.4s - 1349.4s] One of the growth PMs on our team left to join Calm, Calm.com, the meditation app.
+[1349.4s - 1356.1s] If you go to Calm's, their landing page and you go through their purchase flow, their login flow, you'll see a quiz.
+[1356.1s - 1363.2s] It's not a coincidence that at Mercury we also tested, I think Immad posted on Twitter, we broke out some steps in onboarding.
+[1363.2s - 1372.2s] And just having one screen, if you have five or six different form inputs and you often break that into two screens and reduce the cognitive load to people,
+[1372.2s - 1374.0s] that is something that performs well.
+[1374.0s - 1378.8s] We added steps into the flow there that actually performed well, same at Anthropic.
+[1378.8s - 1388.8s] So I think that the takeaway to me is cut friction when it doesn't add to the experience of helping a user understand why the product is for them.
+[1388.8s - 1399.4s] But if you can help users understand a product, why product is for them and how to use it and what's most relevant to them, and it's going to add friction,
+[1399.4s - 1401.1s] don't shy away from it.
+[1401.1s - 1408.0s] Test it, confirm that it works for you, but I think this is something that most growth practitioners deeply understand.
+[1408.0s - 1418.0s] And for them is really important there, what you described is adding friction to better understand who they are so that you know how to recommend the right thing for them.
+[1418.0s - 1419.0s] Correct.
+[1419.0s - 1420.0s] Yes.
+[1420.0s - 1422.4s] And that done right, it just flows through.
+[1422.4s - 1426.3s] So it helps you with activation, but then it helps you with lifecycle.
+[1426.3s - 1429.3s] You know more about those users and why they're here.
+[1429.3s - 1437.8s] And most sophisticated businesses, you can then, even if someone drops off, you can do lookalike targeting and you can get them at the ad layer as well.
+[1437.8s - 1446.0s] So that initial piece of how you understand who the user is just like it's a juice that just keeps on giving if you then use it right for the down funnel.
+[1446.0s - 1450.7s] Everyone's about to go do a bunch of tear downs of Claude's onboarding, MasterClass onboarding, Mercury onboarding.
+[1450.7s - 1458.5s] As a tangent, I was at this PM dinner recently and I was asking all the PMs, how has your role as a PM changed most with AI?
+[1458.5s - 1460.7s] Where has AI most impacted what you do?
+[1460.7s - 1468.5s] And one of the PM's answer that is actually doing competitive analysis, doing a bunch of teardowns of what other people are doing for pricing pages and onboarding.
+[1468.5s - 1470.1s] So it's easy to do now.
+[1470.1s - 1474.0s] Just, "Hey, Cowork..." I don't know, would you use Cowork for this or Claude?
+[1474.0s - 1475.7s] What would you use for that?
+[1475.7s - 1476.8s] Okay, this is good.
+[1476.8s - 1478.7s] Help people pick which tool to use.
+[1478.7s - 1484.0s] If you want to go do a bunch of teardowns of other competitors' onboarding flows, what would you use?
+[1484.0s - 1486.1s] You can use Cowork for this, right?
+[1486.1s - 1488.5s] So you have Cowork with the Chrome extension.
+[1488.5s - 1495.9s] So if you task Cowork with a Chrome extension, go and look for these flows and give me a view of what's working, what's not.
+[1495.9s - 1498.0s] That's definitely something that Cowork can do.
+[1498.0s - 1499.0s] Cool.
+[1499.0s - 1504.3s] And I imagine that's one of the challenges is you have all these tools now, just which ones for me.
+[1504.3s - 1507.5s] By the way, the Chrome extension, I use it all the time.
+[1507.5s - 1508.5s] It's amazing.
+[1508.5s - 1511.7s] I want to drill a little bit further into the growth org.
+[1511.7s - 1518.0s] There's this whole meme on Twitter the other day of just like you have one growth marketer driving all growth at Anthropic and it's like, okay, that's crazy.
+[1518.0s - 1519.6s] How many growth people are there?
+[1519.6s - 1522.0s] What's the rough org structure of the growth team?
+[1522.0s - 1524.5s] We're roughly maybe 40 people now.
+[1524.5s - 1527.0s] And so we are, I think,
+[1527.0s - 1539.8s] structured very much like a traditional growth team in that we have horizontals of growth platform and monetization who think about the sphere of growth across the entirety of our products.
+[1539.8s - 1543.1s] And then we have more audience-focused growth pods.
+[1543.1s - 1550.5s] You can think about B2B growth, you can think about Claude Code growth, knowledge worker growth, API growth.
+[1550.5s - 1560.5s] So really these audiences to keep a narrow focus, which is the thing you have to do when you have so many different products.
+[1560.5s - 1565.0s] And then these horizontals that think about things across the board.
+[1565.0s - 1568.5s] And is it across a team of engineers, designers, PMs?
+[1568.5s - 1571.0s] What's the functions within this growth org?
+[1571.0s - 1573.8s] Yeah, it's engineers, designers, PMs, data.
+[1573.8s - 1582.6s] I think that overall the shape of the org is quite similar to, I'd say a traditional growth team.
+[1582.6s - 1594.1s] Probably the things that are maybe different is that I think that we index a lot more towards larger swings as opposed to smaller optimizations.
+[1594.1s - 1607.5s] If I think about a traditional growth team, I would've probably done maybe 60%, 70% of my time on small to medium bets, 20% to 30% on larger swings.
+[1607.5s - 1612.6s] And I think that for us, we flip it a lot.
+[1612.6s - 1621.8s] We do much more the other way where it's 70-30 or more like 50-50 rather than indexing towards smaller bets.
+[1621.8s - 1626.0s] That's probably one of the biggest changes, I think.
+[1626.0s - 1633.7s] Just to highlight that, what's interesting there is at the scale you guys are at, a 1% win is massive in the scheme of things.
+[1633.7s - 1639.0s] So it's interesting that even at the scale you're at, you're not focusing on these micro optimizations.
+[1639.0s - 1640.0s] It is easy.
+[1640.0s - 1643.9s] You could easily focus on these small optimizations and then you tally them up at the end of the quarter and you're like,
+[1643.9s - 1646.0s] "Look how much impact we made." And you could do that.
+[1646.0s - 1647.0s] Another billion.
+[1647.0s - 1648.0s] No big deal.
+[1648.0s - 1649.0s] Yeah.
+[1649.0s - 1656.2s] But the thing is we've been tracking at 10X year-on-year, and that's the thing that we keep in mind.
+[1656.2s - 1662.3s] And I think it ultimately comes down to our fixation of this company about the exponential.
+[1662.3s - 1669.9s] I think if you look at anyone who's talking from Anthropic about basically anything, we always talk about the exponential.
+[1669.9s - 1679.6s] It's effectively as model capabilities continue to grow on an exponential and the tools around them enable a better job of diffusing that into useful use cases,
+[1679.6s - 1688.3s] you basically just keep unlocking new markets where the value of those markets significantly dwarfs what the value of the previous markets were.
+[1688.3s - 1690.6s] And agentic coding's a great example.
+[1690.6s - 1694.8s] It didn't exist a year, a year and a half ago.
+[1694.8s - 1702.0s] And then now just the value of agentic coding is bigger than the previous market of AI coding use.
+[1702.0s - 1709.8s] And so I think that is the core thing here where just that the future product value is in order of magnitude higher than it is today.
+[1709.8s - 1718.2s] And I think about, I don't know, a normal business, number of companies that I maybe mentioned, or you think about a trading app or a grocery delivery product,
+[1718.2s - 1720.6s] many of the leading companies, they're great businesses.
+[1720.6s - 1726.9s] But if I think about what is the product value that a company, like a standard, call it a grocery delivery app,
+[1726.9s - 1731.9s] what is the product value you get as an end user today versus two years from now?
+[1731.9s - 1740.0s] I look at it as like, okay, in two years from now, even if you're shipping all these new products, as an end user, the value you get-
+[1740.0s - 1741.8s] You're shipping all these new products.
+[1741.8s - 1750.8s] As an end user, the value you get from that product maybe goes up 30 to 50% if the company's done a really good job of shipping new features.
+[1750.8s - 1752.0s] It's not exponential though.
+[1752.0s - 1755.5s] And so if I think about, "Okay, you're here today.
+[1755.5s - 1767.2s] In two years, you're going to have 30 to 50% more product value." Then as a growth team, the relative differential of the product value in two years from now relative to today,
+[1767.2s - 1776.0s] I can actually capture a decent percentage of that with the small to medium optimizations that typically have higher conviction as opposed to larger bets.
+[1776.0s - 1785.1s] But for Anthropic, it's not really that way, where because of the exponential and our products being very, very, very ...
+[1785.1s - 1798.0s] The product value coming from AI, the product value that we will deliver in two years' time is probably a 1,000x, a 100 to a 1,000x what it is today.
+[1798.0s - 1804.7s] And so if I think about that, and it's like there's so much value on offer, you need to shift more towards, "Okay,
+[1804.7s - 1812.8s] we need to take larger bets and we need to not miss the forest for the trees." And so that's why we still do all the smaller optimizations.
+[1812.8s - 1819.2s] It really matters, and no one else is going to do some of these things and so we need to do it.
+[1819.2s - 1825.0s] The compounding value is not immaterial, but we do take on much larger core productey type of swings as well.
+[1825.0s - 1826.8s] So you mentioned the Chrome Extension.
+[1826.8s - 1832.5s] That is now the thing that underpins a number of use cases on Cowork and Claude Code as well.
+[1832.5s - 1834.9s] And that's something that the growth team built.
+[1834.9s - 1840.4s] That's a very AI-peeled product that is a very research-heavy product that we were just bullish on it.
+[1840.4s - 1847.0s] We had an engineer who was very bullish on it and we were just like, "Hey, no one else is doing it.
+[1847.0s - 1853.0s] We're going to do it." And so that's the sort of thing that I wouldn't have done at another company.
+[1853.0s - 1854.0s] Oh, wow.
+[1854.0s - 1856.1s] I did not know that.
+[1856.1s - 1869.0s] So one takeaway here is there's stuff to extract from your advice that is only true in Anthropic and then there's, what can other companies learn from this experience that you've had?
+[1869.0s - 1880.7s] So one is, is your sense that if you're working in AI, shift more of the pie chart towards bigger bets because in the future, the opportunity is so large,
+[1880.7s - 1885.0s] you want to find those as soon as possible versus micro-optimize?
+[1885.0s - 1895.5s] To be more specific there, I would say that if the primary value that your product delivers is underpinned by AI as a central element of it,
+[1895.5s - 1898.7s] then I think you should operate this way.
+[1898.7s - 1910.0s] So I don't know, companies like Lovable, Cursor, all these great businesses that are, as the exponential rises, their value props are also going to continue to rise significantly.
+[1910.0s - 1915.1s] If you're building a product where it's an AI-first product, then I would definitely operate in this way.
+[1915.1s - 1922.4s] I think if you're building a product where it's not necessarily an AI- first product and you have some AI features that are on the side,
+[1922.4s - 1927.2s] but it's not the core of your value, I don't know that I would operate this way.
+[1927.2s - 1934.0s] It would depend on how is the rest of the product org staffed and how is the growth org staffed in relation to that.
+[1934.0s - 1935.0s] Okay, awesome.
+[1935.0s - 1940.6s] And then in terms of the way you are structured, I thought that was really interesting.
+[1940.6s - 1943.4s] It's a combination of different sorts of things.
+[1943.4s - 1950.8s] So there's the API growth, there's Claude Code growth, but then there's also personas, like a vertical of knowledge workers and B2B.
+[1950.8s - 1955.0s] Is that intentional, some specific bets and one just broad market opportunity?
+[1955.0s - 1960.4s] When you have one product, it's easier to have a growth team that's more purely on the funnel.
+[1960.4s - 1964.0s] It's like you have the conversion, you have activation, you have monetization.
+[1964.0s - 1972.6s] But as you start to get into having multiple products, I think that's harder because if you do that, then if you just have one activation team, for example,
+[1972.6s - 1977.1s] but then you have Claude Code, you have Cowork, you have all the other things.
+[1977.1s - 1981.0s] They're very different audiences and they're very different sets of cross-functional stakeholders internally.
+[1981.0s - 1984.5s] So we're kind of looking at, what is the thing?
+[1984.5s - 1995.2s] And all org structures are not perfect and they're right for a point in time, but we're looking for what is the structure that allows us to have as much focus.
+[1995.2s - 1999.0s] Focus is a really big thing, and on audience and problems.
+[1999.0s - 2002.9s] And also, the tie-ins to cross-functional partners is really, really important.
+[2002.9s - 2010.8s] The folks on our Claude Code growth team, they work extremely closely with Cat and Boris and the others on that team.
+[2010.8s - 2014.0s] And so that tie-in is really important as well.
+[2014.0s - 2020.3s] So you've done growth at a lot of different companies, a lot of basically, let's call it traditional growth before Anthropic.
+[2020.3s - 2027.0s] How else is growth as a function and as a skillset changing with the rise of AI, AI products, and AI startups?
+[2027.0s - 2037.4s] I think if your core product value is very backed by AI, then it is shifting where you're skewing more towards larger bets as opposed to smaller, medium experiments.
+[2037.4s - 2048.8s] I think in other things, it may be a big thing related to this that I think will accelerate this, which I am really interested to see how it will play out,
+[2048.8s - 2056.0s] is we are starting to look at how do we automate growth, which I think is a really interesting area.
+[2056.0s - 2066.4s] So our growth platform team, we're very lucky we have Alexey Komissarouk who teaches growth engineering at Reforge, and he's just the guy on the team.
+[2066.4s - 2069.2s] And so he is driving this effort.
+[2069.2s - 2072.0s] The name is, it's a little cringey.
+[2072.0s - 2074.4s] I didn't come up with it.
+[2074.4s - 2078.4s] And it's called CASH, which is Claude Accelerates Sustainable Hypergrowth.
+[2078.4s - 2088.0s] I did not come up with that, but really it's an effort to look at how can we use Claude to automate growth experimentation?
+[2088.0s - 2090.4s] And it is still very, very small.
+[2090.4s - 2092.1s] It's still very, very early.
+[2092.1s - 2096.1s] We kicked it off only, I think, a couple of months ago.
+[2096.1s - 2099.2s] I think before Opus 4.5, it wasn't really possible.
+[2099.2s - 2101.6s] We were just not seeing the results.
+[2101.6s - 2107.0s] And more recently with Opus 4.6 we're like, "Okay, this is headed in the right direction."
+[2107.0s - 2115.3s] And so this, I think, it will happen more and more across the industry, where basically if you think about, okay ...
+[2115.3s - 2124.8s] I think this can happen all across product, but growth teams in particular because there's this whole body of work that is very small optimizations,
+[2124.8s - 2129.0s] I think are just more inherently suited to tackle this earlier.
+[2129.0s - 2134.7s] I think if you think about the lifecycle of shipping, there's four parts to it.
+[2134.7s - 2136.2s] One is identifying opportunities.
+[2136.2s - 2144.9s] How good is Claude at actually identifying opportunities based on different trends, based on previous trends that Claude has seen in the past?
+[2144.9s - 2149.9s] Second is then building the actual feature and getting it ready to ship.
+[2149.9s - 2155.6s] Third is testing and ensuring that it meets your quality bar and your brand bar.
+[2155.6s - 2162.0s] And then fourth is then once you've actually shipped the thing, analyzing the data, gathering the learnings.
+[2162.0s - 2165.6s] If you think about that as the loop of, "Okay,
+[2165.6s - 2184.0s] these are four things that you can eval and hill climb on each of these areas and understand how good is a model doing for you there." And we basically think about it in that four ways and we are scoring how good is Claude doing in each of those areas.
+[2184.0s - 2187.8s] And so we've been testing this at pretty small scale right now.
+[2187.8s - 2192.0s] It's been a lot of copy changes and some very minor UI tweaks.
+[2192.0s - 2196.5s] It's delivering results and it's like you can push it, press play with it.
+[2196.5s - 2203.8s] And it ultimately prints money where I'd say that the win rate is like, I would expect a senior PM to do better.
+[2203.8s - 2207.7s] I would say this is a junior PM, two, three years in.
+[2207.7s - 2215.6s] I would say this is the win rate that I would expect from a junior PM, but it's not quite at the senior PM level.
+[2215.6s - 2221.4s] Although, I think you look at the exponential, this wasn't available at all a couple of months ago.
+[2221.4s - 2223.0s] So it's getting better rapidly.
+[2223.0s - 2231.7s] And I think that it's going to change where you'll be able to do this for larger and larger types of experiments.
+[2231.7s - 2241.6s] But then you think about the largest types of experiments, I think that I mentioned the four pieces around identifying opportunities, building, testing and shipping.
+[2241.6s - 2246.0s] The one I didn't mention there, Lenny, is cross-functional stakeholder management.
+[2246.0s - 2249.9s] There's still a need for human brains.
+[2249.9s - 2251.0s] There is.
+[2251.0s - 2259.5s] And I think that that one is going to mean that in my eyes, the work of PMs is not going away actually, anytime soon.
+[2259.5s - 2261.8s] And that piece, especially for larger projects.
+[2261.8s - 2266.3s] Usually, you don't need to do as much of it for smaller stuff.
+[2266.3s - 2267.6s] You can skip it.
+[2267.6s - 2271.0s] But for larger stuff, that piece is not going away.
+[2271.0s - 2274.0s] Until the other stakeholders have their own little agents running around.
+[2274.0s - 2275.1s] I think that's right.
+[2275.1s - 2278.0s] I think that would be the point where it changes.
+[2278.0s - 2284.9s] It's funny, we had a difficult meeting a couple of weeks ago, and me and our head of design, Joel, we were debriefing afterwards.
+[2284.9s - 2294.3s] And he pings me, he's just like, "Amol, we will have AGI and it will still be impossible to get six people in a room to get to align." And I'm like, "Yeah,
+[2294.3s - 2296.0s] I think I can say that."
+[2296.0s - 2298.0s] What's the harder alignment problem?
+[2298.0s - 2299.0s] Oh, okay.
+[2299.0s - 2305.0s] This is so interesting and this is exactly where I feel like things are going.
+[2305.0s - 2316.0s] So just to be clear what you shared here, there's basically this tool that comes up with experiments to run, to help grow Claude and all the tools.
+[2316.0s - 2325.4s] So it comes up with idea, somebody looks at them, approves, "Cool, let's do these things." Builds it, ships it, tests the results, see how it's doing, and then comes back of,
+[2325.4s - 2328.0s] "Here's things that are working." Is that roughly right?
+[2328.0s - 2329.0s] It's roughly right.
+[2329.0s - 2336.4s] And right now, we have human in the loop approving, but the amount of time, I kind of think about scale in this way of just week on week,
+[2336.4s - 2338.8s] are things getting better in each of the areas?
+[2338.8s - 2341.4s] Are people spending less time on each of the areas?
+[2341.4s - 2344.0s] Are the results getting better in each of the areas?
+[2344.0s - 2352.8s] And as long as week on week, that's getting better, then you're like, "Okay, this whole initiative is scaling." And so that's roughly right, but you can think about it as,
+[2352.8s - 2357.0s] I think a lot of this can be automated where human review is not needed.
+[2357.0s - 2360.2s] So we care a lot about our brand, right?
+[2360.2s - 2364.2s] So that is something that we do look at right now.
+[2364.2s - 2376.0s] We don't want to be shipping something that goes against the brand, but then you can have a skill that contains your brand guidelines and very clear, yet dos and don'ts on brand.
+[2376.0s - 2380.8s] And so all of these types of accompaniments, I think are going to get better.
+[2380.8s - 2384.6s] The model's going to get better at understanding how to use them.
+[2384.6s - 2390.0s] And so over time, I think that the need to human review this really, really decreases significantly.
+[2390.0s - 2392.6s] Yeah, and you could always unship it if it's like, "Oh yeah,
+[2392.6s - 2397.9s] that was actually not a great idea." And that's such a good point that we think we need people to do these things forever.
+[2397.9s - 2400.5s] And it turns out, "Okay, a skill could do this really well.
+[2400.5s - 2404.5s] Here's our brand guidelines, here's our vision, here's our mission, here's our goals, here's what matters to us.
+[2404.5s - 2406.0s] Okay, no, let's not ship that thing."
+[2406.0s - 2415.8s] So the reason I think this is so interesting, I've just been watching the expansion of AI doing more of the product development process, in this case the growth process of just, okay,
+[2415.8s - 2420.5s] it went from helping you write code, to writing all your code, to reviewing your code.
+[2420.5s - 2423.7s] Now it feels like, what are the two ends around this?
+[2423.7s - 2426.1s] It's kind of going from the middle up.
+[2426.1s - 2432.0s] The top of that is coming up with what to do and then there's the alignment stuff's still very hard.
+[2432.0s - 2436.5s] And then on the other end, it's reviewing the code and then shipping it and then get distribution.
+[2436.5s - 2439.5s] That's a whole other thing I want to talk to you about.
+[2439.5s - 2447.0s] So what I'm hearing here, and this is exactly what I thought was going to start happening, is AI is now getting really good at telling us what to do,
+[2447.0s - 2449.0s] not just taking our orders and building it.
+[2449.0s - 2457.1s] And it feels like the growth version of this is where it starts because it's so much simpler, not that growth is easy, but just like it's data-driven,
+[2457.1s - 2459.1s] there's this loop that you talk about.
+[2459.1s - 2464.0s] So I think this is such an interesting sign of things to come across just generally, product.
+[2464.0s - 2465.0s] Yeah.
+[2465.0s - 2466.8s] Just putting that out there.
+[2466.8s - 2467.8s] Okay.
+[2467.8s - 2478.0s] So something that I'm constantly thinking about along these lines is just the future of product PM engineering, how those roles shift over time based on the stuff we're talking about.
+[2478.0s - 2483.7s] How are you working together as a triad and where do you see these roles going?
+[2483.7s - 2488.0s] What's most going to change, do you think, across these three roles?
+[2488.0s - 2493.0s] This is something that we talk about and think about frequently, and the picture changes rapidly.
+[2493.0s - 2503.1s] So sometimes when things break, execution, like the bottlenecks break, historically in the past it's like, "Okay, now you need to hire more engineers, you need to hire more designers," et cetera.
+[2503.1s - 2511.0s] And it's more just a lifecycle thing of, where is the lifecycle of your team and that specific pod to identify where the bottleneck is?
+[2511.0s - 2515.7s] But now when things break, you need to still look at it, of, "Okay,
+[2515.7s - 2524.0s] is it the actual ratio or is there also underlying technological shifts that are also causing this to break?" And so that's an interesting thing.
+[2524.0s - 2534.0s] I think that smaller companies, if I'm at a 15 or 20-person company, I'm the only PM there working with some designers and engineers, I think in the smaller companies,
+[2534.0s - 2539.3s] you'll see probably the biggest blend, where the PM will be doing all sorts of ...
+[2539.3s - 2544.0s] They'll be designing, shipping, et cetera, and I think you just have extreme bifurcation.
+[2544.0s - 2550.0s] You know, at larger organizations, more scaled organizations, I think the jury is still very much out.
+[2550.0s - 2556.8s] You speak to people even internally here, and different people and different teams will have different views of, "Okay,
+[2556.8s - 2568.2s] how much are these roles coming together versus how much are these roles going to be separate?" I think that it's not to say even the PMs, number of PMs are shipping,
+[2568.2s - 2571.0s] and themselves shipping and pushing PRs, et cetera.
+[2571.0s - 2580.3s] But if I look at, okay, across what I'm seeing, I think that it's clear that while PMs and designers are getting more leverage from AI,
+[2580.3s - 2583.2s] engineering is getting the most leverage right now.
+[2583.2s - 2595.0s] I look at tools like Claude Code, and the amount of leverage engineers are getting from them is higher than, I think the leverage that designers and PMs are getting from them today.
+[2595.0s - 2600.9s] Now, this is rapidly also changing, but that to me is my view today.
+[2600.9s - 2608.9s] And so if you think about, okay, a default team, which is, say five engineers, one designer, one PM.
+[2608.9s - 2613.1s] With Claude Code, that five engineers is two to 3xed.
+[2613.1s - 2622.0s] And the PMs and designers have also increased, but now they're managing what is effectively a much larger group of engineers.
+[2622.0s - 2632.0s] And so even though the headcount and the org structure hasn't changed, you're now just dealing with a situation of maybe 15 to 20 engineers in the old world,
+[2632.0s - 2637.5s] one and a half to two PMs, and maybe one and a half to two designers.
+[2637.5s - 2642.6s] And so we're seeing that that's putting a lot of strain on PM and design.
+[2642.6s - 2644.0s] And it's not everywhere.
+[2644.0s - 2653.9s] I look at teams like Claude Code and I think that, or because that product is so technical, it's probably just the right thing, where the PMs are all basically engineers themselves anyway.
+[2653.9s - 2662.7s] But we had a product, like a PM lead on site the other week, and we were all just talking about this where across the board we're feeling this,
+[2662.7s - 2664.8s] where PM and design is just squeezed.
+[2664.8s - 2666.0s] It's just absolutely squeezed.
+[2666.0s - 2676.5s] And we're like, "Is the right thing here, we just need to actually hire a ton more PMs?" And it could actually be where we land.
+[2676.5s - 2683.4s] On growth, how I think about it is, one, we are hiring a number of growth PMs.
+[2683.4s - 2688.7s] We desperately need people who are very, very good, and we are hiring.
+[2688.7s - 2696.0s] So if you are excited by what we're doing and you know growth, please feel free to apply.
+[2696.0s - 2698.0s] Would love to chat and-
+[2698.0s - 2700.0s] Maybe craft an amazing cold email to you.
+[2700.0s - 2701.1s] Yeah, yeah, yeah.
+[2701.1s - 2703.2s] Feel free to craft that email.
+[2703.2s - 2709.2s] So that's one, is I think we are going to be hiring in a number of PMs.
+[2709.2s - 2714.5s] But then the second thing that we do is we very much hire product-minded engineers.
+[2714.5s - 2719.1s] I think this has always been the best thing to do in growth.
+[2719.1s - 2729.0s] You always want to have the engineers coming up with ideas, et cetera, especially people who can really step in as mini PMs if the PM is absent.
+[2729.0s - 2734.3s] And so we're basically more formally leveraging that right now because we are so stretched.
+[2734.3s - 2745.9s] So, the frame that we have is that if a project is two weeks of engineering time or less, then the engineer is on the hook to effectively be the PM for that.
+[2745.9s - 2754.4s] And so that means things like talking to security, talking to legal, talking to cross-functional stakeholders, and the engineer is very much driving that.
+[2754.4s - 2758.2s] The PM will get looped in and they'll advise if needed.
+[2758.2s - 2765.6s] And if something's wildly going off track, then they'll step in, but they're much more in an advisory capacity versus execution.
+[2765.6s - 2775.5s] If a project is more than two engineering weeks, then the default is that the PM should continue to be on the hook for making that go well.
+[2775.5s - 2779.0s] They'll still delegate more to eng, but they're squarely accountable.
+[2779.0s - 2780.4s] It's not fully clean-cut.
+[2780.4s - 2782.1s] It's like, use your head.
+[2782.1s - 2788.0s] If this is a one-week thing, but it's extremely controversial, the PM should probably still drive it.
+[2788.0s - 2797.0s] But that, I think is the approach that I expect more companies will start to do, which is just deputize the engineers to be mini PMs.
+[2797.0s - 2800.2s] This segment is brought to you by Butcher Box.
+[2800.2s - 2809.1s] If you have been wondering how to get a real handle on this without adding more work to your week, Butcher Box is the answer.
+[2809.1s - 2817.0s] Lenny has been using it, and it is the reason the prep for this episode took an afternoon instead of a week.
+[2817.0s - 2822.4s] Go to butcherbox.com/lenny and enter code BUTCHEPOD at checkout to get your first month free.
+[2822.4s - 2825.3s] That is butcherbox.com/lenny. Alright, back to the show.
+[2825.3s - 2827.6s] Now, not everyone can do it.
+[2827.6s - 2834.9s] So the PMs, the engineers who are more product-minded, suddenly their value goes up significantly in order of magnitude.
+[2834.9s - 2840.3s] And then I think we will probably still be hiring a lot of PMs.
+[2840.3s - 2843.6s] There is so much interesting stuff I want to follow up on here.
+[2843.6s - 2846.4s] Okay, so one is this idea of two weeks, just briefly.
+[2846.4s - 2853.9s] I always joke as a PM, you can go on vacation and be away for a couple of weeks from your team and things are going to be all right.
+[2853.9s - 2861.5s] There's a momentum, there's a plan, people keep operating, and it feels like that's kind of this rule of thumb you use of just, "Okay, if it's a two-week project,
+[2861.5s - 2863.3s] you'll be all right without a PM.
+[2863.3s - 2864.3s] You can handle it."
+[2864.3s - 2865.9s] I love that those two connect.
+[2865.9s - 2866.9s] Okay.
+[2866.9s - 2868.5s] The other here is so interesting.
+[2868.5s - 2874.0s] So you're saying here that because engineers are so accelerated, and this all makes sense, PMs and design are kind of just like,
+[2874.0s - 2877.5s] "Holy." It feels like hard to keep up with this pace of engineering.
+[2877.5s - 2881.3s] And what you're saying is you need more and more PMs to keep up.
+[2881.3s - 2885.1s] That's one route, or it's engineers that can PM essentially, which is so funny.
+[2885.1s - 2890.8s] It's just like, okay, great news for the product managers until more of the PMey stuff can be done by AI.
+[2890.8s - 2892.4s] But that's a really interesting trend.
+[2892.4s - 2897.3s] I don't know, is there anything else there just like, "Oh wow, we actually may need more PMs"?
+[2897.3s - 2900.3s] The ratio of more PMs, fewer engineers might be the future.
+[2900.3s - 2901.3s] Yeah.
+[2901.3s - 2906.5s] I think it just really depends on the industry, the size of company.
+[2906.5s - 2914.6s] Any company where you're building something that's much more developer-focused, you're going to rely on the engineers a lot more.
+[2914.6s - 2925.3s] Earlier companies, you don't have as much of this cross-functional coordination, stakeholder alignment nonsense that you need all these PMs for, so you can get by with less.
+[2925.3s - 2935.6s] But then as a company scales, and if I think about, okay, now you have this ratio where maybe the one PM became two PMs from productivity,
+[2935.6s - 2940.9s] that the five engineers became 20 engineers, the one designer maybe became three designers.
+[2940.9s - 2949.3s] If you think about what is the best use of time for that PM, I think this is a really interesting thing,
+[2949.3s - 2954.3s] of how much should PMs be actually shipping things themselves versus everything else?
+[2954.3s - 2960.1s] I think in the world where you're limited on engineering, the PM should definitely be shipping things.
+[2960.1s - 2966.9s] I think in today's world, it's a good way to get an understanding of the tools, which is really important.
+[2966.9s - 2969.9s] So the PM should be shipping for that reason.
+[2969.9s - 2978.8s] But if I'm one PM or two PMs and there's 20 engineers, I think about what is the incremental value I can add with my time?
+[2978.8s - 2989.3s] And is it actually shipping the 21st PM feature or is it saying, "How am I getting a little bit better at guiding the team on what the right opportunities are?"
+[2989.3s - 2998.1s] And so that's where I think in this world, you may have all these engineers who are like mini PMs, and the better that happens,
+[2998.1s - 3001.7s] that's where I would love to be doing more of.
+[3001.7s - 3013.3s] But still, if you then get a really good PM who can come in and can improve that, the why and the what particularly by 5%, that is such a high leverage higher.
+[3013.3s - 3015.5s] This is such an interesting insight you're making.
+[3015.5s - 3019.3s] It's so counter to how a lot of people are thinking PM is evolving.
+[3019.3s - 3026.9s] What I'm hearing here is, because PMs are so behind, because engineers are just getting so much done, there's many people here, "Okay, you need to be prototyping,
+[3026.9s - 3029.3s] you need to be shipping PRs as a PM."
+[3029.3s - 3038.8s] What you're saying, which I completely agree with, is your time is much better spent helping PM basically, and helping the engineers become better PMs themselves.
+[3038.8s - 3045.3s] And the leverage there is a lot higher than you spending time coding, shipping PRs in most cases.
+[3045.3s - 3047.4s] I think that's true in certain circumstances.
+[3047.4s - 3051.5s] I think that as a smaller company, I don't know that that's the case.
+[3051.5s - 3056.9s] In a smaller company where it's all hands on deck, I think you probably need to be shipping.
+[3056.9s - 3064.2s] I think if you're in a company where budgets are very tight, and engineers are very tight, and you're not able to just hire because money's unlimited,
+[3064.2s - 3069.3s] then you need to do what is needed to accelerate the impact your team's going to have.
+[3069.3s - 3070.3s] Right?
+[3070.3s - 3078.8s] So there's going to be a number of cases, where as a PM, the right thing to do is to be like, "Screw it.
+[3078.8s - 3086.3s] I'm shipping and I'm going it the whole way." But I'm talking here more about the larger companies, more scaled businesses.
+[3086.3s - 3099.4s] Yeah, if you have 20 engineers, is it the highest use leverage of your time to ship an extra feature, or figure out how do I up-level everything that we're doing,
+[3099.4s - 3102.3s] get the user insights better, et cetera?
+[3102.3s - 3103.3s] Yeah.
+[3103.3s - 3108.1s] And I think there's also an element of shipping to learn, building a prototype so that you can have a better opinion.
+[3108.1s - 3113.6s] A lot of people talk about just, "I'm just going to try three things, see how it goes and that'll help inform the roadmap." This is now the PRD,
+[3113.6s - 3115.6s] is look at it instead of talking about it.
+[3115.6s - 3117.3s] So there's a lot of value there still.
+[3117.3s - 3118.3s] That's very true.
+[3118.3s - 3120.0s] I think that's a great point.
+[3120.0s - 3125.2s] So even for me now where we've got number of PMs, we've got many engineers, there are certain times when I'm like,
+[3125.2s - 3131.3s] "I want to articulate the idea I have in my head." It's just better for me to prototype it and show it.
+[3131.3s - 3132.3s] Right?
+[3132.3s - 3134.3s] So I think that is really important.
+[3134.3s - 3136.8s] And then we are very scrappy.
+[3136.8s - 3146.9s] So we're a big company by name, valuation, but we're extremely scrappy, and just the focus internally is just minimize bureaucracy and just go.
+[3146.9s - 3154.1s] And so probably 70%, maybe 60, 70, 80% of what we ship does not have a PRD.
+[3154.1s - 3155.8s] I'm averse to PRDs.
+[3155.8s - 3158.3s] I think I just hate documentation.
+[3158.3s - 3160.2s] I'm just like, "Go, go, go.
+[3160.2s - 3166.4s] Just cut the blockers." 20, 30% of stuff where it's like, it's important, it's really important to get right.
+[3166.4s - 3171.9s] The documentation should be really good and that people should spend a lot of time on it.
+[3171.9s - 3182.3s] But by and large, I think PRDs are just outdated at this point, and you can just kick things off with a good team without needing to do that sort of thing.
+[3182.3s - 3183.3s] Say more about that.
+[3183.3s - 3190.8s] What do you do to help make sure, because people can build so fast, or spend a lot of time going in the wrong direction, ship things that are not what you're asking?
+[3190.8s - 3193.8s] How do you kick off a project and clarify, "Here's what we're doing"?
+[3193.8s - 3196.3s] Is it just a conversation or is there anything beyond that?
+[3196.3s - 3198.7s] It really depends on the size of it.
+[3198.7s - 3201.6s] And this kind of goes back to the two-week thing.
+[3201.6s - 3208.7s] So why we have that two-week thing, it's more like, how do I have some filter to say if we're investing heavily into something,
+[3208.7s - 3214.3s] we should apply more thinking behind it versus if it's a smaller set of investments, just go for it?
+[3214.3s - 3219.8s] And as a growth team, again, you do have a decent amount of these smaller things that you do.
+[3219.8s - 3223.0s] So for very small changes, like, "Oh, there's a thing coming.
+[3223.0s - 3225.3s] We need to have an upsell for it.
+[3225.3s - 3228.8s] What is it the thing we're doing?" This is just on Slack.
+[3228.8s - 3230.6s] This is just purely on Slack.
+[3230.6s - 3232.3s] It's just messages back and forth.
+[3232.3s - 3240.8s] And I think it also depends on having a good caliber of engineer in there, but engineers can understand, like, "Hey, I know you said this,
+[3240.8s - 3251.7s] but what about that for the audience?" And so we're lucky we have good product-minded engineers in that sense, but all these smaller things are very much just on Slack back and forth,
+[3251.7s - 3253.3s] and that's what you do.
+[3253.3s - 3257.0s] For the larger things, I think I very firmly believe in a proper kickoff.
+[3257.0s - 3258.4s] So we still do ...
+[3258.4s - 3260.7s] Just there's so much going on at this place.
+[3260.7s - 3263.4s] No one's got time, no one knows what's going on.
+[3263.4s - 3270.3s] And so doing a cross-functional kickoff, get legal, get safeguards, get everyone in the room and just be like, "This is what we plan to do.
+[3270.3s - 3271.6s] What do you care about?
+[3271.6s - 3273.0s] What do you care about?
+[3273.0s - 3274.3s] What do you care about?"
+[3274.3s - 3285.3s] That 30-minute meeting for larger things is just, I think, still so important to just streamline all the mess that may happen later if you don't do that work early on.
+[3285.3s - 3288.5s] What's your approach to crafting that PRD in those cases?
+[3288.5s - 3290.1s] Is it ramble into Claude?
+[3290.1s - 3292.3s] Is it, do you have a template?
+[3292.3s - 3297.2s] Even in those cases, there are times I don't craft a PRD because everything's moving so quickly, right?
+[3297.2s - 3305.4s] So there's still some of those cases where I just set up the meeting and then five minutes before, I'll put it into Cowork, some of my thoughts, what credit.
+[3305.4s - 3311.1s] "Here are the things that I need to think about," spin up a basic doc and we use it to talk.
+[3311.1s - 3313.3s] Other times I won't even have a doc.
+[3313.3s - 3325.6s] But if I am creating a PRD, I have basically, a skill that they've created, and then there's projects with all the previous PRDs in there, and then it's pretty simple.
+[3325.6s - 3332.0s] It has the format down so I'll just say, "Here are the things I care about.
+[3332.0s - 3333.2s] Here's the why.
+[3333.2s - 3340.3s] Here's the problem," and flesh out the key considerations, flesh out the cross-functional stakeholders, those types of things.
+[3340.3s - 3352.3s] But again, my default is if I can avoid the doc and if we can just jump to action, then that's what we should do and increasingly just jump to prototyping the thing.
+[3352.3s - 3353.3s] Yeah.
+[3353.3s - 3360.9s] And that's where I think it'll get so interesting once we can automate more of that, just like your assistant talking to the legal assistant, just ironing out all these little,
+[3360.9s - 3363.3s] what's important to you, what's important to the ...
+[3363.3s - 3364.6s] Yes, and it's coming.
+[3364.6s - 3368.5s] And I think the legal team has done good enablement around this.
+[3368.5s - 3371.5s] We work as versions of, how do you ...
+[3371.5s - 3376.4s] You can think about how can you mimic what someone might say and set up a Claude.
+[3376.4s - 3377.4s] Right?
+[3377.4s - 3381.3s] So there's things like that, that I think that we have now.
+[3381.3s - 3390.6s] And then as Claude gets more and more context and gets better at parsing long contexts, I think these are things that Claude will just get better at knowing.
+[3390.6s - 3400.5s] One of the things, Lenny, it's a slight tangent, but one of the, I think, most effective ways I use Claude, or one of the most interesting ways I use Claude,
+[3400.5s - 3405.3s] which I see a number of people doing internally is to help you identify misalignment.
+[3405.3s - 3409.0s] This is, I think something that I found really, really helpful.
+[3409.0s - 3415.5s] So with Cowork, you have the Slack MCP, and you can tell Cowork to say basically, "Look across Slack.
+[3415.5s - 3418.2s] You know the projects that I'm working on.
+[3418.2s - 3421.2s] These are the things that are top of mind.
+[3421.2s - 3427.3s] Go and find me areas of potential misalignment right now." And it does a really, really good job.
+[3427.3s - 3429.9s] So this is something that I've scheduled runs every week.
+[3429.9s - 3438.1s] Claude's looking at things and coming back to me and saying, "Hey, I think these things you should be aware of." And so you can think about in that shipping context,
+[3438.1s - 3444.4s] it's a similar thing where Claude can basically be looking at what's happening across the company and say, "You're thinking about shipping this thing.
+[3444.4s - 3446.2s] Here's who you need to talk to.
+[3446.2s - 3448.3s] Here's what you need to keep in mind."
+[3448.3s - 3450.1s] That is so cool.
+[3450.1s - 3455.9s] I am so excited to tell you about this season's supporting sponsor, Vanta.
+[3455.9s - 3464.3s] Vanta helps over 15,000 companies, like Cursor, Ramp, Duolingo, Snowflake, and Atlassian earn and prove trust with their customers.
+[3464.3s - 3468.2s] Teams are building and shipping products faster than ever, thanks to AI.
+[3468.2s - 3475.2s] But as a result, the amount of risk being introduced into your product and your business is higher than it's ever been.
+[3475.2s - 3483.3s] Every security leader that I talk to is feeling the increasing weight of protecting their organization, their business and not to mention, their customer data.
+[3483.3s - 3491.3s] Because things are moving so fast, they are constantly reacting, having to guess at priorities and having to make do with outdated solutions.
+[3491.3s - 3498.2s] Vanta automates compliance and risk management with over 35 security and privacy frameworks, including SOC 2, ISO 27001, and HIPAA.
+[3498.2s - 3501.4s] This helps companies get compliant fast, and stay compliant.
+[3501.4s - 3506.2s] More than ever before, trust has the power to make or break your business.
+[3506.2s - 3508.3s] Learn more at vanta.com/lenny and ...
+[3508.3s - 3509.3s] ...
+[3509.3s - 3510.3s] your business.
+[3510.3s - 3512.2s] Learn more at vanta.com/lenny.
+[3512.2s - 3517.3s] And as a listener of this podcast, you get $1,000 off Vanta.
+[3517.3s - 3518.3s] That's vanta.com/lenny.
+[3518.3s - 3525.7s] I feel like there's this like, what are the jobs of a product manager, and then how are they slowly going to be supported/done by AI?
+[3525.7s - 3531.1s] So there's this misalignment, just like fine misalignment, and then maybe one day, it'll be like, aligned people initially.
+[3531.1s - 3535.4s] You talked about this cash automation for growing, like, how do I grow this product?
+[3535.4s - 3536.5s] That's starting to happen.
+[3536.5s - 3541.9s] Another that I use myself when I'm building stuff is just asking, "How do I make this product better?
+[3541.9s - 3549.3s] How do I make this a better user experience?" And asking the AI to just give me a bunch of ideas, and they're actually really good.
+[3549.3s - 3556.1s] So it's interesting how these little pieces are starting to be put into place to do more and more of this role.
+[3556.1s - 3560.4s] I'm curious what other automations you have and your team have that are effective.
+[3560.4s - 3564.4s] What I love about these conversations is you're basically living in the future.
+[3564.4s - 3570.2s] You're working on the most bleeding edge company with the most talented people, with the most cutting edge tools.
+[3570.2s - 3578.8s] And you can see where things are going and start to actually live in the future, build things that nobody else has even thought about or can do.
+[3578.8s - 3585.3s] I'm curious just what else is working, what else your team has done to help save you time, be more productive?
+[3585.3s - 3588.2s] We use it pretty extensively across the board, right?
+[3588.2s - 3592.4s] So there's this standard PM stuff like writing docs, brainstorming, looking at data.
+[3592.4s - 3598.8s] For data, I personally have like, Coworker runs on a schedule and looks at 20, 25 different charts every morning.
+[3598.8s - 3604.9s] And then so when I come in the morning, there's just so many charts, so many products to track.
+[3604.9s - 3609.8s] Cowork will tell me, "Okay, here are the things that you should pay attention to.
+[3609.8s - 3613.3s] Here's what is concerning, and here are just some interesting insights."
+[3613.3s - 3617.3s] And it sends you an update in Slack, or what's the workflow?
+[3617.3s - 3619.3s] For me, it just shows, it comes up in Cowork.
+[3619.3s - 3620.3s] So Cowork has a schedule-
+[3620.3s - 3621.3s] In the desktop app?
+[3621.3s - 3622.3s] Yeah.
+[3622.3s - 3626.2s] In the desktop app, you can have a scheduled task that you create.
+[3626.2s - 3630.9s] And so I have a bunch of Hex links that it will go and look at.
+[3630.9s - 3638.3s] It uses the Chrome extension for some things and it uses MCP for other things, and then it'll just give me a summary, and then I know...
+[3638.3s - 3645.1s] I saw this one, a few charts that I just like to look at because I was just like, "I'm a numbers guy.
+[3645.1s - 3646.3s] I just like charts."
+[3646.3s - 3647.3s] They all open to the right too.
+[3647.3s - 3648.3s] So that one was, yeah, nice.
+[3648.3s - 3649.3s] Yeah.
+[3649.3s - 3651.1s] I like to see the chart.
+[3651.1s - 3658.6s] But then there's the long tail of things, and even the medium tail where it's like, you don't have time to look at it every day,
+[3658.6s - 3666.5s] that if Claude is proactively looking at it and you start to feel good over time of, okay, it's like the false positive rate is going down,
+[3666.5s - 3674.3s] the false negative rate is going down of the things that Claude brings to you, then you just get a little bit more confidence and peace of mind there.
+[3674.3s - 3684.6s] This touches on an idea I've always had that Teams will have is a strategy bot, which just imagine an agent that's just constantly watching metrics, the market, the roadmap, what's working,
+[3684.6s - 3685.6s] what's not.
+[3685.6s - 3689.6s] And just like, Tamil, "Here's what I think we should do now.
+[3689.6s - 3691.6s] Here's the pivot we should take.
+[3691.6s - 3696.3s] Here's where we're going to win." It feels like we're very close to that.
+[3696.3s - 3697.6s] I think we're close.
+[3697.6s - 3703.1s] I think we'll get there later this year, to the point where that's very, very effective.
+[3703.1s - 3704.1s] That's my gut.
+[3704.1s - 3710.5s] I think that level of proactivity and looking across a bunch of context and distilling insights, I think is...
+[3710.5s - 3716.2s] The thing I mentioned earlier, learning about the alignment piece, that's like a version of it, right?
+[3716.2s - 3719.2s] Now you're just looking at across more data sources.
+[3719.2s - 3721.3s] This is something that I use.
+[3721.3s - 3725.7s] So I talked about some of the standard PM stuff, brainstorming, data, UXR.
+[3725.7s - 3728.0s] There's a lot of like, admin stuff.
+[3728.0s - 3730.4s] I just hate life admin and paperwork.
+[3730.4s - 3731.7s] I just hate it.
+[3731.7s - 3735.1s] And so I get Claude to book my meeting rooms.
+[3735.1s - 3737.1s] I got to book meeting rooms.
+[3737.1s - 3741.5s] Claude archives sort of my email first pass at clearing out my inbox.
+[3741.5s - 3744.6s] I don't do any of my reimbursements and expenses.
+[3744.6s - 3747.6s] Claude will go to Benepass and file the reimbursements.
+[3747.6s - 3750.3s] It'll go to Brex and file the expenses.
+[3750.3s - 3757.1s] So all of that side of things, I'm just like, just hand it to Cowork, just get rid of it.
+[3757.1s - 3764.3s] And then the stuff that's quite interesting, I think is the manager lens, where I talked about alignment is one thing.
+[3764.3s - 3767.0s] So I look also across my direct reports.
+[3767.0s - 3770.4s] Claude can look into what have they done this week.
+[3770.4s - 3776.2s] You look at our team goals and OKRs, look at the transcripts from our discussions and understand.
+[3776.2s - 3785.8s] It can basically ask for like, what are the key takeaways and observations I should keep in mind and what feedback do you think I should give them?
+[3785.8s - 3790.6s] And that's something that is like, again, you can just set that up weekly.
+[3790.6s - 3793.3s] The quality is hit or miss right now.
+[3793.3s - 3794.7s] It's decent on something.
+[3794.7s - 3800.8s] Sometimes you're like, "Holy shit, I am so glad that I caught this." And that's very, very helpful.
+[3800.8s - 3803.9s] And then I do that for myself as well.
+[3803.9s - 3808.3s] My manager, Ami Vora, was I think, a podcast guest of yours, right?
+[3808.3s - 3809.3s] Yeah, yeah.
+[3809.3s - 3817.7s] So I say, "Hey, based on what you know of Ami both publicly, she's written extensively about product, and then internally, and then our discussions,
+[3817.7s - 3826.8s] based on everything that I've done or not done this week, what feedback do you have for me as Ami?" And I get that every week, right?
+[3826.8s - 3830.5s] So a lot of these things can already be done today.
+[3830.5s - 3839.3s] I think that as the models improve, I think it's just the accuracy and the signal of these things is going to continue to improve rapidly.
+[3839.3s - 3844.1s] I don't think you realize just how much awesomeness you're sharing here.
+[3844.1s - 3846.8s] Everyone of these is like, "What?" Okay.
+[3846.8s - 3851.2s] So this Ami example, you have one on ones with her.
+[3851.2s - 3859.9s] Do you ask Claude Cowork to go through all of her writing, basically build like a model of her and you ask,
+[3859.9s - 3865.1s] "What should I be doing differently based on what you know about Ami"?
+[3865.1s - 3866.3s] Is that different?
+[3866.3s - 3867.3s] Yeah.
+[3867.3s - 3870.6s] Effectively, there's a number of ways you can do this.
+[3870.6s - 3877.9s] I think if someone has a public profile where they've written extensively, it's helpful because Claude can just get all that information.
+[3877.9s - 3884.5s] Otherwise, you can have a project or you can have a skill, but increasingly, Claude is better at just understanding.
+[3884.5s - 3893.1s] Because you can tell Claude like, "Look on Cowork." You can say, using the Slack MCP, "Look at everything that this person has said in the last week,
+[3893.1s - 3896.8s] et cetera." And based on that, what are their top priorities?
+[3896.8s - 3902.4s] What are priorities my manager has based on how they're spending their time that I don't know?
+[3902.4s - 3911.7s] And so all of this layer of stuff, which is like, I think about it as soft coaching, I think that that is unlocked, in my opinion already.
+[3911.7s - 3917.7s] I think it's just that you're working with a coach who is kind of like drunk at times.
+[3917.7s - 3922.3s] Not drunk, but sometimes says something, you're like, "Why would you bring that up?
+[3922.3s - 3925.3s] That's clearly wrong." But other times, you're like, "Wow."
+[3925.3s - 3930.1s] There's like, one of the guys, Scott, who leads our enterprise team.
+[3930.1s - 3940.2s] There was a few cases where he found major areas of misalignment that would've caused teams to spin their wheels significantly or do overlapping work.
+[3940.2s - 3943.5s] And you think about the impact of that.
+[3943.5s - 3951.5s] Your shipping in this world as bigger companies is going to be constrained often by all the cross-functional coordination, right?
+[3951.5s - 3963.2s] And I think we're now starting to see at this cross-functional coordination layer, some of that work AI is really being able to be used to reduce that foil.
+[3963.2s - 3967.2s] And I think that six months ago, that wasn't possible.
+[3967.2s - 3973.3s] And I'm like, "Shit, six months from now, what is going to be possible there?"
+[3973.3s - 3974.3s] Oh, man.
+[3974.3s - 3983.3s] And I think the fact that all this data is there, Slack, there's Granola, or whatever people use, all these notes from conversations and discussions are really key to this working.
+[3983.3s - 3984.3s] Yes.
+[3984.3s - 3988.3s] So for someone that wants to do something like this, how do you set this up?
+[3988.3s - 3989.3s] What's the steps?
+[3989.3s - 3990.3s] Yeah.
+[3990.3s - 3996.3s] You go on to Cowork, download the desktop app on Cowork, connect the Slack MCP.
+[3996.3s - 4007.9s] That's where you need to, depending on how big the organization is, you may need to get sort of team or enterprise admin permissions, someone with those permissions to enable that.
+[4007.9s - 4014.3s] But once you have the Slack MCP connected and on [inaudible 01:06:25], you just ask Claude.
+[4014.3s - 4015.3s] That's it.
+[4015.3s - 4016.3s] Amazing.
+[4016.3s - 4017.3s] Okay.
+[4017.3s - 4019.9s] I'm going to go into a different direction.
+[4019.9s - 4024.4s] I want to talk about the focus that Anthropic has had over the years.
+[4024.4s - 4031.2s] So if you look at the numbers that you're all putting up, what's really incredible about it is the focus that you all have had.
+[4031.2s - 4035.4s] And I think this is the reason it has worked out so well.
+[4035.4s - 4043.2s] There's a certain competitor in the market that is realizing they should have done this and are starting to shift to a similar approach.
+[4043.2s - 4050.0s] As an external observer, it feels like Anthropic has been very good at doing very few things, but going super deep.
+[4050.0s - 4057.5s] So B2B, for example, just going deep on B2B, and then going really deep on coding use cases, Claude Code being an example.
+[4057.5s - 4059.8s] And it has worked out really well.
+[4059.8s - 4061.4s] Who's been driving that focus?
+[4061.4s - 4064.3s] Who has helped keep that focus from the beginning?
+[4064.3s - 4065.3s] Yeah.
+[4065.3s - 4068.7s] I think it's a foundational part of the company.
+[4068.7s - 4072.7s] I think it's been there from the very, very early days.
+[4072.7s - 4079.5s] And it really comes from leadership and I think they've just done a phenomenal job of distilling that.
+[4079.5s - 4082.1s] I saw this doc come up recently.
+[4082.1s - 4084.7s] I don't know where it was shared.
+[4084.7s - 4091.7s] It was something that Ben Mann, as one of our founders that you had on the podcast, had written.
+[4091.7s - 4097.0s] It's dated in 2021, I think a few months after they started the company.
+[4097.0s - 4104.4s] And it was like, "Here's why we should just focus on AI coding." And this was like, five years ago.
+[4104.4s - 4109.6s] This was long before anyone knew what the actual market opportunities were around this.
+[4109.6s - 4118.3s] And I think this is just like a deep focus that we have had internally from the start on the importance of coding and B2B.
+[4118.3s - 4120.5s] I think there's two lenses to it.
+[4120.5s - 4126.7s] It's like maybe a view of, "Okay, that this is going to be commercially beneficial to tackle, and then also,
+[4126.7s - 4131.7s] the side of it around accelerating research." So I'd say it's a pretty mainstream view now.
+[4131.7s - 4137.1s] I've now heard people from various labs talking about this, the importance of coding to accelerate research.
+[4137.1s - 4144.9s] But that has just been a very firm view that we have been laser focused on internally of, "Okay, if you have the best models,
+[4144.9s - 4154.2s] that's going to accelerate your researches and that's going to accelerate the research loop." And I think that's something that Dario has seen very clearly for a number of years.
+[4154.2s - 4157.7s] So I would say that that's probably one of a lot.
+[4157.7s - 4159.9s] I think a lot comes from Dario.
+[4159.9s - 4163.3s] I think a lot comes from leadership and just our DNA.
+[4163.3s - 4167.8s] I think the second though is probably just necessity, where it's now changed.
+[4167.8s - 4171.9s] We're a more well-known company, raised lots of money, blah, blah, blah.
+[4171.9s - 4176.4s] But historically, we're very much the smallest, least well-funded player in this space.
+[4176.4s - 4182.6s] In many ways, it's a complete miracle that I think, we've gotten to the stage that we have.
+[4182.6s - 4187.8s] We didn't have the free cash flow or the distribution of a Meta or Google.
+[4187.8s - 4191.2s] We didn't have the first mover advantage of an OpenAI.
+[4191.2s - 4193.3s] And so what do you do?
+[4193.3s - 4202.9s] I think there's this broader principle I have just around life of like, the freedom through constraints, that when you have a bunch of constraints applied on you,
+[4202.9s - 4212.2s] whether that's in personal life or at work, I think that it can bring a lot of freedom because it just frees up all this excess choice.
+[4212.2s - 4215.3s] So you're like, "Okay, this is clearly the path."
+[4215.3s - 4226.1s] And I think for us, it's like, "Okay, you don't have a ton of funding, you're a small player, you don't have distribution." You just have to really pick a very narrow focus,
+[4226.1s - 4231.3s] and even for a very generalizable technology, to maximize your chances of getting to escape velocity.
+[4231.3s - 4235.9s] And I think that that's also just related to how history played out, right?
+[4235.9s - 4240.5s] So it was well before my time, but Anthropic had a version of Claude.
+[4240.5s - 4243.1s] We had a chatbot before ChatGPT was launched.
+[4243.1s - 4247.0s] And we had ultimately chosen not to launch it for safety reasons.
+[4247.0s - 4252.3s] I think the team didn't want to kick off effectively like an AI global arms race.
+[4252.3s - 4258.2s] And ChatGPT launched and they got insane traction and that just naturally sort of pulled them towards consumer.
+[4258.2s - 4265.4s] There's another world where if Anthropic had launched Claude first, maybe did the other way around even with all that focused stuff.
+[4265.4s - 4266.4s] So who knows?
+[4266.4s - 4270.3s] It's always hard to say, looking back at some of these things.
+[4270.3s - 4271.9s] Wow, I didn't know that.
+[4271.9s - 4275.6s] I think also, people just don't realize how far behind Anthropic was.
+[4275.6s - 4278.1s] Right now, it's like, of course, they're amazing.
+[4278.1s - 4282.7s] But like, I just remember when people were talking about Anthropic, we were raising money.
+[4282.7s - 4287.4s] I was like, "There's no way they're going to compete with OpenAI at this point.
+[4287.4s - 4296.4s] It's so over." Just like, "They're so far ahead." And it shows the power of focus and just, I guess, I don't know, all the things you all did.
+[4296.4s - 4302.3s] It is absurd how far you all have come and how successful and how things have changed so quickly.
+[4302.3s - 4303.3s] Yeah.
+[4303.3s - 4305.7s] And I would say, I very much agree.
+[4305.7s - 4309.3s] I think a lot of that comes down to our leadership team.
+[4309.3s - 4315.9s] We have a number of people who've worked at, call it the best companies you know in the world, very senior people.
+[4315.9s - 4323.9s] And I think almost uniformly, everyone was like, "This is the strongest leadership team out of any of those companies." And so I think a lot comes from them,
+[4323.9s - 4326.9s] and then we're just very lucky to have incredible people.
+[4326.9s - 4329.3s] I think that helps a lot as well.
+[4329.3s - 4334.0s] On the coding piece, just to make sure that part is clear, I never thought about this,
+[4334.0s - 4343.1s] that the reason that the bet was so deep on coding is not just that's a huge TAM, but it's that this is a feedback loop that will accelerate us further and further.
+[4343.1s - 4350.3s] So if we get the best at coding, coding will help us do research, it'll help us build better models and it'll accelerate faster and faster.
+[4350.3s - 4351.3s] Yeah, that's correct.
+[4351.3s - 4353.0s] And this is something I checked.
+[4353.0s - 4356.3s] Dario has talked about this publicly, so I'm fine to [inaudible 01:12:07].
+[4356.3s - 4357.8s] Okay, it makes sense.
+[4357.8s - 4360.0s] The safety piece is really interesting.
+[4360.0s - 4363.4s] So I want to spend a little time here.
+[4363.4s - 4369.7s] So famously, Anthropic, I think the official name of Anthropic is Anthropic, an AI safety research company.
+[4369.7s - 4377.9s] As a growth person, there's this balance I imagine you strike between growing and the mission being, don't grow at all costs.
+[4377.9s - 4380.5s] Our goal is AI safety and alignment.
+[4380.5s - 4383.1s] How do you balance those two things?
+[4383.1s - 4385.3s] How does that impact your job?
+[4385.3s - 4393.3s] Look, I think it's something we take very, very seriously, and it is the whole reason the company exists.
+[4393.3s - 4397.6s] And if you think about, it's all the way from...
+[4397.6s - 4401.0s] It's why they left to start the company.
+[4401.0s - 4403.9s] It's deep in our corporate structure itself.
+[4403.9s - 4412.0s] So historically, everyone raising money is like, "Go create a Delaware C Corp." And that's the structure you do.
+[4412.0s - 4419.2s] And with a corporation, you have a fiduciary duty to maximize returns for shareholders, maximize shareholder value.
+[4419.2s - 4423.0s] And from the beginning, they went a different way.
+[4423.0s - 4426.4s] We then created a public benefit corporation, PBC,
+[4426.4s - 4437.4s] which allows you to legally say that maximizing shareholder value is not the overarching umbrella goal of this company and you can optimize for public benefits.
+[4437.4s - 4443.3s] So really, I think it starts from there and it ladders down from there.
+[4443.3s - 4454.3s] For us, our purpose, our mission ultimately, is just to make sure that the transition to powerful AI goes well and is net beneficial for humanity.
+[4454.3s - 4463.0s] I think internally, we are very excited and I think, honestly, we're very, very optimistic about where this can go, but we also understand what the risks are.
+[4463.0s - 4468.3s] And so for us, that top line objective of, " This needs to go well for humanity.
+[4468.3s - 4475.1s] This just needs to go well for humanity," that is something that we are happy to take a significant commercial hit for.
+[4475.1s - 4477.9s] And we've done that time and time again, right?
+[4477.9s - 4485.6s] So we have it like back then, okay, you had Claude, but you don't want to release it because you're like, there's these safety risks.
+[4485.6s - 4494.3s] And so there's time and time again that I've seen, we've been happy to take that hit and it's actually worked out well for us in other ways.
+[4494.3s - 4506.2s] From like a growth lens, I look at it as like, growth teams can often push the boundaries of what is good user X, UX, et cetera, because they're trying to very,
+[4506.2s - 4508.8s] very much eke out metrics at times.
+[4508.8s - 4519.2s] When I think about if a controversial test is brought to me, I sort of look at it as like, there's two types of tests that are controversial.
+[4519.2s - 4525.1s] One is when that test is so controversial that you just should not run the thing,
+[4525.1s - 4533.6s] because the results don't matter because you would not ship it for a combination of brand and sort of customer friendliness and values.
+[4533.6s - 4537.4s] And then the second is where it's like, it's controversial.
+[4537.4s - 4538.8s] I don't like it.
+[4538.8s - 4543.3s] I certainly don't love it, but it's not like a red line.
+[4543.3s - 4551.7s] And so you're like, if someone comes to you with conviction and is like, "I have a really good hypothesis around this," and you're like, "I don't love it,
+[4551.7s - 4558.1s] but you can run the test and see what impact it has." And if it's a high level of cringe or ick,
+[4558.1s - 4562.5s] then I want to see a high level of return for the result for that.
+[4562.5s - 4567.4s] I kind of think about everything and like, is it in one or is it in two?
+[4567.4s - 4570.3s] And for every company, that one and two is different.
+[4570.3s - 4573.7s] I think for us, AI safety is very much in one.
+[4573.7s - 4576.7s] I think that it's like, "Yeah, that's why we exist.
+[4576.7s - 4577.7s] Yeah, it's fine.
+[4577.7s - 4587.5s] We're just not going to do this thing." I think then, there's other things that fall into two, where you're like, heightened sensitivity, but we can try it and see what happens.
+[4587.5s - 4597.5s] I think zooming out though, Lenny, one of the biggest mistakes I feel like I see growth teams make, and particularly just hardcore growth practitioners, is just trying to squeeze every last dollar.
+[4597.5s - 4600.9s] I think this is like a general principle also in life.
+[4600.9s - 4605.2s] If you're a founder raising money, you're just trying to squeeze that last dollar.
+[4605.2s - 4611.3s] You don't want to do that because you want people to come back next time as well, is my view.
+[4611.3s - 4617.7s] And I think in growth, I think it's really important that you just need to be okay leaving money on the table.
+[4617.7s - 4626.8s] And that's a core principle for us as a growth team, where we are very comfortable for going metric impact in order to prioritize safety, in order to protect our brand,
+[4626.8s - 4631.1s] in order to hold a high quality bar and to maintain a great user experience.
+[4631.1s - 4634.3s] And if you look beyond the short term and like, "Okay,
+[4634.3s - 4643.4s] what are the numbers for this quarter?" And you zoom out and you think about what are the very best products out there, you realize this is how they all operate.
+[4643.4s - 4647.5s] And that's actually the thing that's going to drive more growth long-term as well.
+[4647.5s - 4653.6s] And so I think that actually ties back to safety, where as the risks get higher and the stakes get higher,
+[4653.6s - 4660.9s] I think the fact that we are taking a stance and safety is critical to what we do, is actually going to become a significant,
+[4660.9s - 4667.3s] it's going to be a significant competitive advantage for us that I think is going to help us in the long run.
+[4667.3s - 4668.3s] Yeah.
+[4668.3s - 4671.4s] And as you share all this, clearly it's working.
+[4671.4s - 4672.7s] Anthropic is killing it.
+[4672.7s - 4677.9s] So I love when someone doing something, someone approaching the problem that way, it actually works out.
+[4677.9s - 4681.3s] It's the same way I think about with my newsletter.
+[4681.3s - 4684.7s] There's so much more I can do to grow it.
+[4684.7s - 4688.4s] My philosophy is just focus on creating good content, nothing else.
+[4688.4s - 4692.5s] All these micro optimizations are not going to matter in the end.
+[4692.5s - 4696.2s] It'll grow through people sharing it if it's useful to them.
+[4696.2s - 4699.3s] And a very small scale, I have similar philosophy.
+[4699.3s - 4706.2s] One of the things that people are probably thinking about as we talk, we joke about AI replacing parts of jobs here and there.
+[4706.2s - 4711.4s] It is pretty scary to a lot of people, just like, "What is the future of my job?
+[4711.4s - 4712.9s] Will I have a job?
+[4712.9s - 4717.2s] How do I stay relevant in this future?" So there's a couple of questions here.
+[4717.2s - 4725.0s] One is just like, for folks that want to thrive in this approaching AI future, as a PM, as a growth person, do you have any advice,
+[4725.0s - 4727.3s] things that they should be doing right now?
+[4727.3s - 4729.5s] To me, a couple of things come up.
+[4729.5s - 4734.4s] One thing that everyone says, is use the tools, you need to be on top of the tools.
+[4734.4s - 4740.1s] I think you need to be using Claude Code, you need to be using Cowork and understanding just each model release.
+[4740.1s - 4742.8s] What is the new things you can do with this?
+[4742.8s - 4745.0s] How can you apply this to your job?
+[4745.0s - 4748.3s] It'll work well in some things, it'll work terribly in other things.
+[4748.3s - 4755.9s] And then the model launched later, it's like, "Oh shit, that other thing worked." But if you didn't go back to try it, you would not have known.
+[4755.9s - 4759.7s] And now, many months have passed and you didn't know that that was possible.
+[4759.7s - 4767.6s] And so I think that being on top of the tools is really important, both for improving your own productivity, but also for getting product sense around AI products,
+[4767.6s - 4770.3s] which I think is just going to become increasingly important.
+[4770.3s - 4778.4s] I think then, zooming out beyond that, I look at it as like, just leaning into where you'll have a competitive advantage and an unfair advantage.
+[4778.4s - 4784.4s] And so to me, there are some people, some PMs who are really good at like, craft, for example.
+[4784.4s - 4793.5s] And there's others who you'll throw them into a situation with all these stakeholders who have all these strong opinions and there's no way they're going to mediate this.
+[4793.5s - 4797.6s] And they come out and it's like, everyone's swimming in the right direction.
+[4797.6s - 4807.9s] And so if you think about like, what is the major skillset that you have where you spike that can be tied to delivering, driving impact for a company in a product role,
+[4807.9s - 4811.7s] I would just double down on that and almost forget the weaknesses.
+[4811.7s - 4817.3s] Just what can you do to become the best person at that thing, because that's very, very valuable.
+[4817.3s - 4822.0s] And I think that ties to the notion of just leaning into being interdisciplinary.
+[4822.0s - 4833.0s] So going back to some of what we mentioned earlier on where it's like, "Okay, in this world of engineers are mini PMs, that the engineer who is highly product-minded is a unicorn,
+[4833.0s - 4844.1s] is an absolute unicorn." I think the same thing is true for PMs, where it's like, "Okay, now, in this ratio, if the designer's really stretched and you're a PM who can design,
+[4844.1s - 4853.2s] you are also a unicorn now." The chances of a company letting you go has gone down dramatically because you are now just so much more useful.
+[4853.2s - 4856.5s] And so I think that is just really, really important.
+[4856.5s - 4861.5s] I think if I look at what's benefited me, it's probably a version of this.
+[4861.5s - 4865.2s] I think that for me, I came from a founder background.
+[4865.2s - 4868.2s] So the mix of the founder background, the finance.
+[4868.2s - 4871.9s] I was an investment banker, so the finance background and numbers.
+[4871.9s - 4876.6s] And then sales, I almost became an account exec, instead of going into product.
+[4876.6s - 4881.3s] I was right on the edge of, "Should I go into sales or product?"
+[4881.3s - 4893.4s] And I think a combination of those, along with growth is probably what's led to like, there are certain areas and situations where I can just have outsized impact to other people.
+[4893.4s - 4897.6s] And so, understanding what that is for you is really important.
+[4897.6s - 4900.3s] I look at our financial services product.
+[4900.3s - 4903.3s] We've launched Claude for Sheets, Claude for Excel-
+[4903.3s - 4905.3s] They kind of like, tanked the market, by the way.
+[4905.3s - 4906.3s] Everyone went crazy.
+[4906.3s - 4907.3s] I know.
+[4907.3s - 4912.6s] But the guy running that, Nick Lin, he came from investment banking, he came from private equity,
+[4912.6s - 4921.0s] and he just has such a competitive advantage where he is building that product and he's like, "I know this, I know this." He's built for this.
+[4921.0s - 4928.7s] And so I think just understanding what are those interdisciplinary areas you can lean into, to make yourself more just higher impact is really important.
+[4928.7s - 4931.5s] And then the last one is just being adaptable.
+[4931.5s - 4938.4s] Anyone who is trying to just keep applying old playbooks, I think you're going to make life a lot harder for yourself.
+[4938.4s - 4948.2s] So one of the biggest things you come into Anthropic, is you need to understand that probably 50, 60, 70% of how you operate in the past, just throw it out the door.
+[4948.2s - 4950.1s] It's not going to be relevant.
+[4950.1s - 4957.2s] And if you try to stick to that, you're going to have a lot of friction and it's not going to be helpful.
+[4957.2s - 4965.3s] So just being adaptable and understanding, "Okay, the job's changed this way, I'm going to go that way," is I think like, it's so, so important.
+[4965.3s - 4966.5s] That is awesome advice.
+[4966.5s - 4975.9s] It matches a lot of what Jenny shared when she came on the podcast, the design leader on Claude and Cowork and all these things, of just the idea of going deep,
+[4975.9s - 4985.4s] becoming the best or one of the best at a very specific thing, and that not every company will need and you don't need all 10, but just going deep on something.
+[4985.4s - 4987.2s] I forget how she described it.
+[4987.2s - 4989.0s] Marc Andreessen said the same thing.
+[4989.0s - 4993.4s] I think we called it a sideways E, instead of just T-shaped of one thing.
+[4993.4s - 4999.3s] If you could have a couple of things you're really, really good at, there's a lot of power to that.
+[4999.3s - 5000.3s] Oh, man.
+[5000.3s - 5001.3s] Okay.
+[5001.3s - 5010.0s] Before I get into something that I think will blow a lot of people's minds about how we actually met and kind of a big part of your journey,
+[5010.0s - 5012.0s] let me just ask you this.
+[5012.0s - 5017.3s] Is there anything else about Anthropic that might be worth sharing, might be worth talking about?
+[5017.3s - 5023.3s] The thing that maybe comes to mind is just our culture and the people that we have here.
+[5023.3s - 5025.6s] I really think it's our secret sauce.
+[5025.6s - 5032.5s] I think it's the thing that is the most defensible, the thing that no one else is going to be able to replicate.
+[5032.5s - 5034.9s] And I don't think it's an accident.
+[5034.9s - 5037.5s] Leadership has really invested in this a lot.
+[5037.5s - 5044.5s] And Daniela and Dario, they really believe in this a lot, and I think they've just created a very special culture.
+[5044.5s - 5051.8s] So I would say that this is truly a mission-driven company and I was not 100% sure of that when I joined.
+[5051.8s - 5055.4s] I was like, I think that this is an exciting company.
+[5055.4s - 5060.4s] I very much agree with their principles, but I didn't know anyone at the company.
+[5060.4s - 5064.0s] I didn't have any references on what it was like inside.
+[5064.0s - 5067.0s] So I was a little skeptical when I joined.
+[5067.0s - 5071.0s] I'm like, "At least they're talking about it, but I don't know.
+[5071.0s - 5077.6s] Are they serious about this?" And then I came in very early on, and I was like, "Oh, oh shit.
+[5077.6s - 5078.6s] Okay.
+[5078.6s - 5081.3s] Maybe they're even more serious about this internally.
+[5081.3s - 5082.3s] They talk externally."
+[5082.3s - 5089.9s] And so it's a mission-driven company where people viscerally, viscerally understand both the upsides and the downsides of the technology, and therefore,
+[5089.9s - 5096.8s] understand the divergent ranges of how this may go for humanity and how different of a future that could be.
+[5096.8s - 5106.5s] And I think when you understand that, of how different this could be as a future for all of us and our children and our grandchildren, et cetera,
+[5106.5s - 5115.4s] I think it leads to a lot of passion for what we do and it just leads to a lot of belief in what we're doing.
+[5115.4s - 5126.5s] And so I look at every other job I've had in the past, and there's some degree of people at the company who are just checked out, where it's like, "I'm here,
+[5126.5s - 5136.1s] I'm sick of this, but I don't have a better option or I'm getting paid too much to leave, et cetera." That is just not the case here.
+[5136.1s - 5138.6s] I have not met a single person.
+[5138.6s - 5141.7s] I'm saying a single person, who has checked out.
+[5141.7s - 5144.8s] Everyone is putting everything they have on the table.
+[5144.8s - 5150.3s] Everyone is pouring it out and leaving nothing behind and is just fully, fully in it.
+[5150.3s - 5156.3s] And so I think that leads to like, releases energy that is just very, very hard to describe.
+[5156.3s - 5162.3s] I think you have that energy, you have that mission-driven nature, and then it's such an open culture.
+[5162.3s - 5165.6s] So leadership is very, very transparent with us on things.
+[5165.6s - 5167.3s] Slack, it's a whole maze.
+[5167.3s - 5170.3s] There's so many things that play out on Slack.
+[5170.3s - 5171.3s] We're very open.
+[5171.3s - 5179.3s] Everyone has these notebook channels where you have your own Twitter feed in a way, where you're just talking about your thoughts about things.
+[5179.3s - 5186.6s] And so you can go and join the Slack channel, the notebook channels of people on research and all these other areas,
+[5186.6s - 5193.3s] and you can learn whatever you want and you can spend so much time getting lost in that as well.
+[5193.3s - 5197.8s] But that openness where we even encouraged people can just argue with Dario.
+[5197.8s - 5199.5s] There was an all hands.
+[5199.5s - 5206.1s] You said something where someone didn't agree, and the person goes onto Dario's notebook channel and just says, "Hey,
+[5206.1s - 5212.6s] I didn't appreciate how you said this and this and that." And then it sparked a whole big debate.
+[5212.6s - 5222.6s] But that sort of thing where it's encouraged like, "Go to leadership and disagree with them, challenge them publicly," I think that just leads to a level of trust.
+[5222.6s - 5232.3s] And all of that together, I think it just means that we have this very, very deep sense of togetherness that, man, I've never experienced anything like it.
+[5232.3s - 5234.2s] And then you get to the talent, right?
+[5234.2s - 5239.6s] I think that is the thing where the talent density is like, I feel like I'm playing for Real Madrid at times.
+[5239.6s - 5244.9s] I look around, I'm like, "Man, I'm playing for Madrid," where it's like, you just have the best people in the world.
+[5244.9s - 5246.8s] I think it's most the case on research.
+[5246.8s - 5248.3s] We have the very, very best...
+[5248.3s - 5249.3s] ...
+[5249.3s - 5250.6s] the case on research.
+[5250.6s - 5253.9s] We have the very, very best researchers in the world.
+[5253.9s - 5258.1s] But even you look on product, we have Ami Vora, she is phenomenal.
+[5258.1s - 5259.4s] We have Mike Krieger.
+[5259.4s - 5261.4s] You're like, okay, casually started Instagram.
+[5261.4s - 5262.4s] He's here.
+[5262.4s - 5267.6s] On growth, we have John Egan, who's my engineering counterpart, who's the OG in growth engineering.
+[5267.6s - 5268.6s] He's great.
+[5268.6s - 5272.5s] We have Alexey, he's a guy who teaches growth engineering at Reforge.
+[5272.5s - 5274.8s] He's just another dude on the team.
+[5274.8s - 5278.0s] And all of that I think is just very special.
+[5278.0s - 5286.7s] I think my favorite here is in the [inaudible 01:27:33] a couple of months ago we had our onsite, company-wide onsite in October, and I'm walking around, I see this guy,
+[5286.7s - 5289.3s] he's just walking around eating popcorn by himself.
+[5289.3s - 5298.8s] I go up to him and I'm like, "You're Jeff, right?" And he's like, "I am." And I'm like, "You are literally the US ambassador to my country, Australia,
+[5298.8s - 5305.3s] and you are just an employee here." I'm talking to our prime ministers of our country and all these things.
+[5305.3s - 5316.3s] And it's just the talent combined with that culture, I think, is just this secret sauce that is the reason that I think we are as successful as we are.
+[5316.3s - 5320.0s] This notebook channel is so interesting just as a tactical thing.
+[5320.0s - 5322.6s] So the idea there is Dario just shares...
+[5322.6s - 5330.3s] It's a little internal Twitter feed where folks just share what they're thinking about and what their priorities are and things like that.
+[5330.3s - 5332.9s] Yeah, that's basically where it's an internal feed where...
+[5332.9s - 5334.9s] It's not just Dario, everyone has one.
+[5334.9s - 5337.0s] And basically you share your internal thoughts.
+[5337.0s - 5340.5s] It's a way to keep people updated on things on what's working.
+[5340.5s - 5342.8s] It's a way where people share provocative things.
+[5342.8s - 5351.5s] I think from a leadership level, and we also think about that as it's a way to scale your beliefs and views across an org as it grows quickly, right?
+[5351.5s - 5359.4s] So if you're now adding a lot of people in the organization, you need to think about, "Okay, what are the behaviors that we want to model?
+[5359.4s - 5368.1s] What are the principles that are top of mind to us?" And if you think about, yeah, you can have a bunch of these meetings where you talk about it,
+[5368.1s - 5369.5s] you can model that behavior.
+[5369.5s - 5376.8s] But if you have a channel which is like, "Here's my top of mind," and you say these things, right, if I have a post,
+[5376.8s - 5382.3s] which I did the other week of this is the importance of being comfortable leaving money on the table.
+[5382.3s - 5389.8s] Now all the new engineers on growth who've joined have seen that and they're like, "Oh, okay, this is different to what we've known before." Right.
+[5389.8s - 5392.1s] So I think it's good for the openness,
+[5392.1s - 5401.0s] but it's also good as a leader of how you can scale your views as an organization to get people more up to speed on the way that things are done,
+[5401.0s - 5406.8s] which is I think really important to avoid that drift, which when you have so many new people signing up,
+[5406.8s - 5411.1s] that drift can lead to a lot of drift in strategy and sort of perception.
+[5411.1s - 5414.3s] So it just helps run a tighter ship in that way.
+[5414.3s - 5420.3s] And more importantly, it's data for the agents everyone's got running to help them work with all these humans.
+[5420.3s - 5422.1s] Yes, that is very, very correct.
+[5422.1s - 5424.3s] It is something that goes to Claude.
+[5424.3s - 5430.3s] There are certain documents in onboarding where it's like the HR team has written before editing anything on this document,
+[5430.3s - 5435.8s] please check with this person because this is a document that Claude references as a key thing, right?
+[5435.8s - 5441.6s] And so more and more these types of things of, okay, how does the growth team think about this?
+[5441.6s - 5443.4s] How does safeguards think about this?
+[5443.4s - 5448.3s] You're arming Claude with that context to get better and better at helping in the future.
+[5448.3s - 5449.3s] That's interesting.
+[5449.3s - 5458.1s] It feels like that's something that every company's going to have to start doing is just sharing their thoughts in a structured way so that all these agents that we've all got running have what they need to know.
+[5458.1s - 5460.1s] Another interesting side note here is just Slack.
+[5460.1s - 5461.1s] Okay.
+[5461.1s - 5465.5s] So there's all this talk of SaaS tools being replaced by AI and you guys use Slack.
+[5465.5s - 5470.9s] I think there was this famous tweet of you guys still use Workday and all these tools, all these SaaS tools.
+[5470.9s - 5473.5s] They're all going to be vibe coded out of existence.
+[5473.5s - 5480.1s] The fact that you all, at the cutting edge of what could be built with code, still use Slack and all these other tools, to me,
+[5480.1s - 5483.7s] that's a good sign that maybe SaaS companies will be outright in the future.
+[5483.7s - 5486.3s] I don't know if you have anything there to share.
+[5486.3s - 5488.9s] Yeah, I think it's a really complicated picture.
+[5488.9s - 5492.4s] There's a number of things that we just build internally ourselves.
+[5492.4s - 5496.6s] As time goes on, the ability for Claude to do that better increases.
+[5496.6s - 5504.7s] And at the same time, we use Figma a ton, we use Slack a ton, we use Workday, we use a lot of these products,
+[5504.7s - 5507.9s] and I don't see that changing in the immediate future.
+[5507.9s - 5512.1s] And so yeah, I think there's probably some truth to some of this.
+[5512.1s - 5515.0s] I think the other parts are like it's overblown.
+[5515.0s - 5517.9s] And many of these products, they're customers of ours.
+[5517.9s - 5525.3s] We value them a lot as customers and we use their products very, very heavily, and I don't see that changing in there.
+[5525.3s - 5527.7s] And you have better things to do.
+[5527.7s - 5530.8s] Who's going to spend time building Slack at a...
+[5530.8s - 5533.9s] That is not where value is going to accrue.
+[5533.9s - 5538.4s] And I think it also helps you see how sophisticated these things are.
+[5538.4s - 5542.1s] There's been teams thinking about these problems for a long time.
+[5542.1s - 5544.2s] Anyway, that's a whole other tangent.
+[5544.2s - 5550.0s] Just coming back to the values thing, I just want to highlight something here that's really important.
+[5550.0s - 5559.3s] A lot of people criticize Anthropic for talking about the dangers to humanity, throwing out all these numbers about jobs going away, just creating all this fear.
+[5559.3s - 5560.8s] And people think it's, "Oh,
+[5560.8s - 5571.1s] we're trying to raise money or we got to get people's attention or we're just trying to create headlines." But everything I've ever seen internally is always just this is what we believe in.
+[5571.1s - 5574.2s] We want people to know what it might be coming.
+[5574.2s - 5581.7s] Even if it isn't bad, we want people to understand, "Here's what might happen and we are trying to avoid it." And you might say,
+[5581.7s - 5596.3s] "Why is Anthropic even building AI if it's so dangerous?" And the understanding Ben shared is just like we think it's better that we go at this and try to build it the right way versus just stay out of it and just hope that nothing bad happens.
+[5596.3s - 5597.3s] Yeah.
+[5597.3s - 5600.0s] I think three things that come to mind there.
+[5600.0s - 5606.8s] First is I go back to something I said earlier, which is that we very much think about things from an exponential lens.
+[5606.8s - 5615.4s] And if you are thinking about things from a linear lens, you'll see the world very, very differently, right, because you look at where we are today and you're like, "Okay,
+[5615.4s - 5623.7s] but how much better can it be in two, three years?" I think if you're looking at it from an exponential lens and you understand how exponentials work,
+[5623.7s - 5632.4s] then you just realize that a lot of this stuff is actually going to be happening sooner than people think if you're looking at it from a linear lens.
+[5632.4s - 5637.7s] And then if you understand that there could be upsides and downsides and the range of outcomes here,
+[5637.7s - 5644.3s] I think we very much need to be talking about the downsides so we can avoid them and push towards the upsides.
+[5644.3s - 5646.9s] I think most people at the company are optimists.
+[5646.9s - 5648.7s] We're very optimistic about the future.
+[5648.7s - 5655.5s] I think it's just we understand the risk is like it is not a guaranteed that we end up in a good place.
+[5655.5s - 5661.9s] And not enough people are talking about the risks, I think, in productive ways and who have the know-how of the risks.
+[5661.9s - 5666.6s] I think there's people who may talk about the risks but are not in the game.
+[5666.6s - 5668.7s] And so they don't actually know fully.
+[5668.7s - 5674.0s] They're not surgical on what the specific risks are, but we're in the game, we understand what's happening.
+[5674.0s - 5675.4s] And so that's one piece.
+[5675.4s - 5681.0s] I think the second is, I think, we actually believe in this stuff more strongly than we say externally.
+[5681.0s - 5690.7s] So it is just such a key part of how we think internally that sometimes we just reword your statements because it's like people might just think we're being too over the top,
+[5690.7s - 5696.3s] but internally, that's how we think, and what we're putting out is a softer version of that at times.
+[5696.3s - 5703.4s] And then I think the third piece is going to what Ben said where we think a lot about driving the race to the top.
+[5703.4s - 5708.9s] And so it's like if you're not in the game and you're shouting from the sidelines, no one cares.
+[5708.9s - 5711.4s] It's just the reality of how the world works.
+[5711.4s - 5712.6s] No one really cares.
+[5712.6s - 5721.4s] If you're in the game and you're a leading player and what you're doing is working, you can influence people who are also in the game to take the right actions.
+[5721.4s - 5723.7s] And so that is the core of it.
+[5723.7s - 5728.0s] If we just pack up and go home, you have no influence on this thing.
+[5728.0s - 5734.6s] And if you stay in the game and you're like, commercially, you're doing great, and then you have ways to influence that, okay,
+[5734.6s - 5740.3s] these are the principles and put that into the conversation and make more people sort of believe in those things.
+[5740.3s - 5749.4s] I could talk to you forever, Amol, but two more questions just to round out the conversation and touch on some stuff that I've hinted at a number of times.
+[5749.4s - 5759.1s] One is I want to take us actually to failure corner because someone listening to this may be like, "All right, look at this guy just worked at all these amazing companies,
+[5759.1s - 5763.0s] cold email, the CPO at Anthropic, got a job, joined this rocket ship.
+[5763.0s - 5765.4s] It's all been up and to the right,
+[5765.4s - 5773.3s] just killing it constantly." What's a story from your career where things didn't work out when you failed and what did you learn from that experience?
+[5773.3s - 5774.5s] I have a couple.
+[5774.5s - 5777.0s] I think it's very much not that way.
+[5777.0s - 5781.1s] I feel like it was a lot of squiggly lines to get here.
+[5781.1s - 5786.1s] The biggest I'd say is just founding a company, raising a bunch of money, having employees,
+[5786.1s - 5797.0s] and then having to shut it down and tell your investors that you've lost the money and that you had a vision of what you're going to do and that it's not going to happen.
+[5797.0s - 5800.1s] And so that I think is probably the biggest one.
+[5800.1s - 5802.0s] We spent three years on it.
+[5802.0s - 5810.8s] It was not like a, "Oh, we tried something part-time." It was like, "No, we went for it." We had spent three years, raised a couple of mil.
+[5810.8s - 5813.6s] We had maybe seven, 10 employees at our biggest.
+[5813.6s - 5816.4s] And it was something that we really believed in.
+[5816.4s - 5824.5s] It was around mental health and how you can quantify mental health to help understand or get early predictors of things like generalized anxiety, major depression.
+[5824.5s - 5827.3s] So it's stuff that we really, really believed in.
+[5827.3s - 5836.7s] But ultimately, in our early 20s, we had no idea what we're doing at the time and many things I do differently, but that was just a very, very, very painful process.
+[5836.7s - 5843.8s] I think the good thing was we kept our investors in the loop the whole time, so 20 founders who are struggling out there.
+[5843.8s - 5845.2s] Send those monthly investor updates.
+[5845.2s - 5848.2s] It's really easy to send those when things are great.
+[5848.2s - 5851.1s] It's really hard to send those when things are bad.
+[5851.1s - 5852.6s] You just bat it down.
+[5852.6s - 5861.7s] You sit down and send an update to your investors about why everything you talked about last month did not go to plan, but it's just the right thing to do,
+[5861.7s - 5864.9s] and it keeps people in the loop, and it avoids surprises.
+[5864.9s - 5869.7s] But it's still so tough when you're then calling up the investors to be like, "Hey,
+[5869.7s - 5876.1s] we're shutting down or making that decision," everyone who believed in you and it becomes such a big part of the identity.
+[5876.1s - 5877.3s] It's very, very tough.
+[5877.3s - 5879.0s] So man, that was just brutal.
+[5879.0s - 5880.0s] It's brutal.
+[5880.0s - 5883.9s] And it took me, I think, a number of years to truly get over.
+[5883.9s - 5890.0s] I think that it's a tough thing, but you get so much from that experience that it's hard to see in the moment.
+[5890.0s - 5893.6s] And I think without doing that, I would not have gone into this.
+[5893.6s - 5895.3s] I was not a PM before.
+[5895.3s - 5897.3s] I didn't have any of these skills.
+[5897.3s - 5898.7s] I'd never worked on products.
+[5898.7s - 5900.9s] I didn't know how to cold email really.
+[5900.9s - 5907.4s] And so it was through that job that I learned a ton of the skills that made this career path viable for me.
+[5907.4s - 5912.8s] And it's just really hard to see that in the moment when you're looking at a point in time.
+[5912.8s - 5915.3s] It's much easier to draw the line looking back.
+[5915.3s - 5921.3s] But I think that'd be my takeaway is just keep in mind that it's a long game and some of those things...
+[5921.3s - 5923.2s] I'm so grateful for that experience now.
+[5923.2s - 5926.2s] I'm so grateful that it failed and went that way, actually.
+[5926.2s - 5929.8s] It's very painful because it wouldn't have led to what I'm doing now.
+[5929.8s - 5933.3s] And so it's a tough thing, but the positives can come from it.
+[5933.3s - 5939.6s] What I love about this is a lot of people have these times in their career where they're like, "It's all over.
+[5939.6s - 5946.5s] I failed in such a big way and my reputation's screwed and people were counting on me and now they see I'm an imposter.
+[5946.5s - 5948.5s] I never knew what I was doing.
+[5948.5s - 5956.9s] And after all, now they finally see." And just seeing that, and this was three years, I'm looking at your LinkedIn, you had seven employees, something like that, and then it's like masterclass,
+[5956.9s - 5957.9s] Mercury, Anthropic.
+[5957.9s - 5965.4s] I think it's inspiring to hear a story like that to know that you can have a big failure like that and things can work out.
+[5965.4s - 5966.8s] That is not the end.
+[5966.8s - 5967.8s] Okay.
+[5967.8s - 5975.8s] So at 2023, I was going to go on pat leave because my wife's pregnant and I was just like, "Wait, what do I do with the newsletter?
+[5975.8s - 5977.9s] I need to take some time off.
+[5977.9s - 5981.3s] That would be really nice to take a month or two off."
+[5981.3s - 5989.8s] And so my plan was, "Okay, I'm going to do a bunch of guest posts where people line up." I put out a call for guest posts, people apply,
+[5989.8s - 5995.9s] I pick a few and then I kind of slot them in ahead of time so I could take time off.
+[5995.9s - 6002.3s] So I put out this call, "Hey, who wants to write a guest post for my newsletter?" I got 500 plus applications.
+[6002.3s - 6009.0s] One of those applications was from you and the pitch was essentially how a traumatic brain injury made me a better product manager.
+[6009.0s - 6014.2s] And I still remember reading the first draft you sent me and I was just like, "Holy shit,
+[6014.2s - 6020.9s] this story is incredible." It's just like you feel such feelings and it was just so tactically interesting and useful like, "Oh wow,
+[6020.9s - 6032.3s] this is actually going to make me a better product manager." Share the story of the brain injury that you went through and just the journey that you went on there because this is going to blow people's minds.
+[6032.3s - 6035.0s] It was the toughest time in my life.
+[6035.0s - 6041.8s] It made shutting down a company being like, "Oh, that was nothing actually." Just funny how perspective works that way.
+[6041.8s - 6045.2s] Back in early 2022, I had a traumatic brain injury.
+[6045.2s - 6047.6s] So I'd done MMA for many years.
+[6047.6s - 6053.7s] I'd done Muay Thai, which is a type of martial arts for many years, never had a problem.
+[6053.7s - 6057.8s] And it's just one of the things that happens, the wrong session.
+[6057.8s - 6060.8s] It's just a normal day of sparring, nothing crazy.
+[6060.8s - 6066.6s] You get the wrong hit to the head in the wrong way, and my whole life changed.
+[6066.6s - 6068.6s] And basically I spent nine months.
+[6068.6s - 6071.0s] I was off work for nine months.
+[6071.0s - 6073.4s] The first couple of months were brutal.
+[6073.4s - 6077.8s] It took me roughly half a year till I was comfortable walking again.
+[6077.8s - 6079.5s] It was very, very difficult.
+[6079.5s - 6087.3s] The first two, three months beyond just showering and going to the bathroom, my wife did everything for me, including texting my friends.
+[6087.3s - 6092.6s] I would listen to music for maybe 20 seconds and feel like I needed to vomit.
+[6092.6s - 6094.9s] I couldn't look at screens at all.
+[6094.9s - 6097.6s] And it was a very, very long recovery.
+[6097.6s - 6102.9s] It was not clear to me that I would ever work again for a while actually.
+[6102.9s - 6108.8s] And it was like we'd even discussed my wife, what would we do in that case, et cetera.
+[6108.8s - 6111.8s] And we had to think even on those levels.
+[6111.8s - 6119.1s] And through a lot of pushing and really working through myself, and you have to just slowly increase your tolerance to things.
+[6119.1s - 6130.1s] It's a brutal process, but you need to slowly expose yourself to different things and just get better and better at each little thing, actively work on that, don't push it too far,
+[6130.1s - 6132.1s] otherwise you have a big setback.
+[6132.1s - 6140.0s] It basically got to the point then where over nine months and then that it returned to work and then it slowly got better.
+[6140.0s - 6147.3s] And the part, Lenny, you don't know is in mid-2023, we posted that newsletter and a month later I got re-injured actually.
+[6147.3s - 6148.3s] Oh, wow.
+[6148.3s - 6154.8s] And when you have a brain injury, until you're 100% healed, your risk of another concussion or a brain injury is elevated.
+[6154.8s - 6159.0s] When you're 100% healed, your risk falls down to that of a non-concussed population.
+[6159.0s - 6163.4s] But until that time, and even if you're like 95% healed, you're not 100% healed.
+[6163.4s - 6171.1s] And it was just an innocuous sort of in everyday life getting off a plane, a bag sort of hit me on the head type thing.
+[6171.1s - 6174.1s] And I was off work for two months when I...
+[6174.1s - 6183.3s] One month into joining Mercury, one month in, I'm like, "Sorry guys, I need to peace out for three months." And then it was a very, very long recovery from that.
+[6183.3s - 6185.4s] And I'm actually still not 100% healed.
+[6185.4s - 6192.2s] So I'm mostly good, but I have times when I have dizziness and headaches and other things that I need to work around.
+[6192.2s - 6199.3s] Overall, I feel like it's one of the best things that could have happened to me, and I think that keeping that mindset helps.
+[6199.3s - 6203.8s] And there's a point when you can take that too far when that view is detached from reality,
+[6203.8s - 6207.9s] but I think it's just made me so much better and more effective as a person.
+[6207.9s - 6214.7s] A lot of the same habits, I don't drink alcohol, I don't drink caffeine, I have to do a bunch of these things for my physical health.
+[6214.7s - 6216.2s] I just have to do them.
+[6216.2s - 6217.4s] So I keep doing them.
+[6217.4s - 6218.4s] I take breaks.
+[6218.4s - 6219.9s] This is a really big one.
+[6219.9s - 6224.0s] You might think even in a place like Anthropic, how do you survive in this way?
+[6224.0s - 6231.3s] It's like even on the craziest days, Lenny, between the start of the day and lunch and between lunch and the end of the day, I take a short break.
+[6231.3s - 6237.3s] Even on the craziest days with model launches, et cetera, I'm lucky we have a meditation area in the office that I'll go to.
+[6237.3s - 6243.0s] And then the whole side of things around meditation that I talked about in that post,
+[6243.0s - 6250.5s] I think both you and I have done a retreat at Spirit Rock and doing a meditation retreat changed my life.
+[6250.5s - 6254.8s] And it's something that I do at least once a year now.
+[6254.8s - 6258.0s] I have one coming up relatively soon as well.
+[6258.0s - 6266.2s] And just I think all of that has helped with better managing the physical side of it because this job is very taxing,
+[6266.2s - 6270.4s] and then emotionally having a little bit of space to what happens.
+[6270.4s - 6276.5s] So you have sort of awareness on one side, you have the reality on the other side.
+[6276.5s - 6278.3s] And reality's crazy here, man.
+[6278.3s - 6279.3s] Reality's insane.
+[6279.3s - 6281.4s] There's so much happening every day.
+[6281.4s - 6283.5s] There's so much noise, it's mind-blowing.
+[6283.5s - 6294.3s] And so that relationship between awareness and reality, that's where you have choice that you sort of learn from deep meditation on how to shift that and apply your choice there.
+[6294.3s - 6300.2s] I think that that is the thing that has helped me significantly with just keeping a more level head.
+[6300.2s - 6308.8s] I think a lot of staying in this game in this level of intensity is just keep your head, just don't lose your head in the crazy times.
+[6308.8s - 6315.3s] And I think all of that that I've gone through has helped me do this without resorting to unhealthy coping mechanisms.
+[6315.3s - 6316.3s] Wow.
+[6316.3s - 6319.2s] Amol, you're such an inspiration in so many ways.
+[6319.2s - 6325.1s] There's so many reasons that you would not have been successful and things would not have worked out.
+[6325.1s - 6332.8s] And there's so many lessons to learn from just the stories you've shared in the journey you've been on to help people overcome challenges they're having.
+[6332.8s - 6335.4s] If you can come back from an insane...
+[6335.4s - 6338.0s] Was it like a kick to the head?
+[6338.0s - 6339.3s] Is that what happened?
+[6339.3s - 6340.3s] It was a kick to the head.
+[6340.3s - 6341.3s] That's correct.
+[6341.3s - 6342.3s] Yes.
+[6342.3s - 6349.2s] Just feeling like you may not be able to listen to music to just leading growth at the fastest growing company in history.
+[6349.2s - 6351.6s] There's also just a lesson here of constraints.
+[6351.6s - 6355.0s] Again, you mentioned this idea of just the power of constraints.
+[6355.0s - 6361.9s] You're forced to take breaks, you're forced to go meditate in a way that's really helpful and it's a lesson for us all.
+[6361.9s - 6364.3s] This is actually really good for us all.
+[6364.3s - 6365.3s] Yeah.
+[6365.3s - 6370.1s] I think that freedom through constraints is one of the big takeaways I've had during that time.
+[6370.1s - 6377.9s] Because if you have these constraints, you're forced to adapt and it creates, gives you in a business setting, you have to focus more in a personal setting.
+[6377.9s - 6381.2s] And if the constraint is, "I can't do anything and I'm injured.
+[6381.2s - 6383.2s] I don't know what's going to happen.
+[6383.2s - 6384.2s] I don't know.
+[6384.2s - 6386.7s] I'm going to get better," you have two choices.
+[6386.7s - 6395.1s] You're like, one, are you just going to resist and fight with reality and really suffer from that, or are you going to accept the situation and not let that affect you emotionally?
+[6395.1s - 6397.6s] And it's not to say I did everything, man.
+[6397.6s - 6402.1s] I was like, every single thing I could do, diet, I was like, "I'm on it.
+[6402.1s - 6404.3s] Every action I can take, I'm on it."
+[6404.3s - 6409.6s] But then you have a choice of, are you going to let the impact of that define your happiness or not?
+[6409.6s - 6415.0s] And I think that that's the thing when the impacts maybe are not coming, you have to then adapt to, "Okay,
+[6415.0s - 6423.1s] what do I want my happiness to be?" And one of the meditation teachers said that true freedom in life is learning how to be content when you don't get what you want.
+[6423.1s - 6427.2s] And it's not to say you shouldn't do something when you don't get what you want,
+[6427.2s - 6432.5s] but I think that that takeaway of just can you be content and not have your happiness rely on getting something.
+[6432.5s - 6433.5s] It's a challenge.
+[6433.5s - 6438.3s] I'm not perfect at it, but I think it's probably one of the biggest takeaways from that whole thing.
+[6438.3s - 6439.3s] Incredible.
+[6439.3s - 6442.0s] And we'll link to the post of folks who want to read this.
+[6442.0s - 6446.3s] Before we get to a very exciting lightning round, is there anything else you wanted to share, or should we just jump right in?
+[6446.3s - 6447.3s] I think we can jump into it.
+[6447.3s - 6449.6s] Oh, we covered a lot of ground.
+[6449.6s - 6450.8s] Okay, here we go.
+[6450.8s - 6452.8s] I've got five questions for you.
+[6452.8s - 6457.3s] First question, what are two or three books you recommend most to other people?
+[6457.3s - 6461.7s] It probably ties to a lot of what I just talked about.
+[6461.7s - 6465.4s] I think a lot about meditation and my emotional state.
+[6465.4s - 6472.1s] What I spend most of my time thinking and reading and researching and working on outside of work.
+[6472.1s - 6474.7s] So my recommendations very related to that.
+[6474.7s - 6479.5s] The first is a book called Joy of Living by a Buddhist monk.
+[6479.5s - 6481.4s] His name's Yongey Mingyur Rinpoche.
+[6481.4s - 6494.3s] It's just really about how you can start to think about your life experience in a different way and have tactics of what to do to kind of change just how you think about things.
+[6494.3s - 6497.3s] This is one where I've recommended to people.
+[6497.3s - 6501.2s] Yeah, I've recommended to a lot of people and they've really, really enjoyed it.
+[6501.2s - 6506.6s] I think another one is Awareness by Anthony de Mello, which is a kind of similar thing but from a different angle.
+[6506.6s - 6508.6s] Those two I consistently recommend to people.
+[6508.6s - 6514.2s] And then the third one is more relevant to product in many ways is Thinking In Bets by Annie Duke.
+[6514.2s - 6520.0s] I think just being able to break down a situation when someone's like, "I don't know, it'll get done in time.
+[6520.0s - 6521.0s] Okay.
+[6521.0s - 6523.0s] Can you put a number to that?
+[6523.0s - 6528.3s] What percentage or likelihood is it?" Those types of things, I think, are just so tactically helpful in product.
+[6528.3s - 6530.3s] Favorite recent movie or TV show?
+[6530.3s - 6532.2s] I think movie is probably Marty Supreme.
+[6532.2s - 6534.6s] It's one of the only ones I watched recently.
+[6534.6s - 6535.9s] I thought it was great.
+[6535.9s - 6537.5s] I thought it was just insane.
+[6537.5s - 6538.5s] Absolutely insane movie.
+[6538.5s - 6540.4s] It was ridiculous, but I loved it.
+[6540.4s - 6543.0s] TV show, I have not watched TV in a while.
+[6543.0s - 6546.3s] I think it's probably the Olympics would be the one, if that counts.
+[6546.3s - 6552.0s] Is there a product that you love just like, I don't know, when you discovered recently or just one you have in your life that's like, "Oh, this is very cool.
+[6552.0s - 6553.3s] People might want to know about it"?
+[6553.3s - 6554.3s] Yeah.
+[6554.3s - 6556.2s] So this is a funny one.
+[6556.2s - 6564.5s] I was in Japan last week and I was sleeping in this hotel and I just really loved the pillow that I had in this hotel.
+[6564.5s - 6565.8s] It was very random.
+[6565.8s - 6575.3s] I just at times had neck and upper trap pain and sometimes I've been frustrated with my pillow because I sometimes sleep facing up, sometimes sideways and the height's not quite right.
+[6575.3s - 6581.0s] And I was just like, "This pillow is just great." And basically this pillow is full of beads.
+[6581.0s - 6586.7s] And so you can naturally shift the height of the pillow while you're sleeping even unconsciously without thinking.
+[6586.7s - 6589.0s] And so I looked at the tag.
+[6589.0s - 6596.6s] I was like, "What is this?" I ordered it to [inaudible 01:49:26] Amazon Japan, and I bought it back with me on the plane.
+[6596.6s - 6598.8s] And so I have the name here.
+[6598.8s - 6606.5s] It's called the Maruhachi Shinsui Maruhatchi Pro pillow, and you can only get it in Japan, but they're shipped to the US, no affiliation.
+[6606.5s - 6610.3s] And I think that has changed my life in the last week.
+[6610.3s - 6611.6s] That is an awesome pick.
+[6611.6s - 6616.3s] Do you have a favorite life motto that you often come back to in work or in life?
+[6616.3s - 6618.7s] Main one I'd say is just she'll be right.
+[6618.7s - 6620.5s] This is a very common Aussie saying.
+[6620.5s - 6622.1s] It's like she will be right.
+[6622.1s - 6623.1s] She'll be right.
+[6623.1s - 6630.6s] It's a common Aussie saying when we're faced with a tough or difficult situation, you're kind of dismissing the severity of it in a way by saying like, "Eh,
+[6630.6s - 6634.0s] it'll be fine." And I think that that's just such a good metaphor.
+[6634.0s - 6636.4s] It's such a good tactic in many, many cases.
+[6636.4s - 6641.3s] And then I think the other one is just sometimes in life, you just have to go for it.
+[6641.3s - 6648.1s] And that is something that this guy, Eros Resmini, who is the CMO of Discord, who is a very close advisor to me as a founder,
+[6648.1s - 6652.8s] he would push me on this and that was something that he would often say is just like,
+[6652.8s - 6660.5s] "Just go for it." And I think that it's a very helpful thing of you can sit there thinking, "Should I do this, should I not?" And sometimes in life,
+[6660.5s - 6662.3s] you just have to go for it.
+[6662.3s - 6664.5s] I love the combo of those two.
+[6664.5s - 6667.8s] Just sometimes just go for it and she'll be right.
+[6667.8s - 6668.8s] So good.
+[6668.8s - 6669.8s] Okay.
+[6669.8s - 6670.8s] Final question.
+[6670.8s - 6671.8s] Okay.
+[6671.8s - 6673.8s] So I'm curious, used to be into martial arts, that didn't go great.
+[6673.8s - 6677.4s] Do you have a new hobby that you find yourself loving?
+[6677.4s - 6679.3s] Do you make time for hobbies?
+[6679.3s - 6682.7s] I think I'm just quite tight on time for hobbies.
+[6682.7s - 6691.2s] I would say I think it's largely just work and have my body function and then take care of the most important relationships around me.
+[6691.2s - 6699.3s] I think maybe the one hobby I'd say is just I'm really into sports and I've gotten more into sports at football in particular.
+[6699.3s - 6700.3s] Like watching.
+[6700.3s - 6701.3s] Watching.
+[6701.3s - 6702.3s] Certainly not playing.
+[6702.3s - 6708.0s] My wife's from Michigan and she took me to a game at the Big House and it just changed my life.
+[6708.0s - 6713.3s] From then on, I was like, I'm a Wolverines fan and big Wolverines fan, big 49ers fan.
+[6713.3s - 6714.5s] I just love football.
+[6714.5s - 6717.3s] So that's probably the one that comes to mind.
+[6717.3s - 6719.2s] Amol, this was incredible on so many levels.
+[6719.2s - 6722.9s] I'm so thankful that you made time for this considering how much you got going on.
+[6722.9s - 6728.4s] Where can folks find you a line, say they want to apply for a job maybe on your team, or can they find that?
+[6728.4s - 6730.3s] And how can listeners be useful to you?
+[6730.3s - 6732.4s] You can find me on my LinkedIn.
+[6732.4s - 6733.7s] It's just Amol Avasare.
+[6733.7s - 6734.7s] I'm boring.
+[6734.7s - 6735.7s] That's it.
+[6735.7s - 6741.8s] You can look online to apply on our jobs page as it rolls across growth engineering, growth product, growth design.
+[6741.8s - 6744.9s] We are looking for great people on the growth team.
+[6744.9s - 6746.7s] So please come and join us.
+[6746.7s - 6754.8s] And I think being helpful to me is just two things, trying our products, giving us feedback, giving us harsh feedback in particular on what [inaudible 01:52:07] you better.
+[6754.8s - 6757.3s] And then please send great people our way.
+[6757.3s - 6761.3s] We are looking for the best of the best to join the team,
+[6761.3s - 6768.3s] and we would love to hear from anyone you know of as well who could be a fit for one of our roles.
+[6768.3s - 6769.6s] Dream job for so many people.
+[6769.6s - 6771.3s] Amol, thank you so much for being here.
+[6771.3s - 6772.8s] Thanks, Lenny.
+[6772.8s - 6774.3s] Bye everyone.
+[6774.3s - 6776.4s] Thank you so much for listening.
+[6776.4s - 6783.6s] If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+[6783.6s - 6790.7s] Also, please consider giving us a rating or leaving a review as that really helps other listeners find the podcast.
+[6795.7s - 6797.9s] See you in the next episode.

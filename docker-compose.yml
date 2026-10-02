@@ -18,8 +18,21 @@ services:
       - JEV_PRIMARY_API_KEY=${JEV_PRIMARY_API_KEY:-}
       - JEV_SECONDARY_BASE_URL=${JEV_SECONDARY_BASE_URL:-https://opencode.ai/zen/v1/systemone}
       - JEV_SECONDARY_MODEL=${JEV_SECONDARY_MODEL:-jev-1.13-free}
+      - JEV_SECONDARY_API_KEY=${JEV_SECONDARY_API_KEY:-}
+      # Optional third backend. Empty means the slot is skipped, and the
+      # primary -> secondary order is unchanged. Adding a provider here must
+      # never displace the keyless free tier above.
+      - JEV_TERTIARY_BASE_URL=${JEV_TERTIARY_BASE_URL:-}
+      - JEV_TERTIARY_MODEL=${JEV_TERTIARY_MODEL:-}
+      - JEV_TERTIARY_API_KEY=${JEV_TERTIARY_API_KEY:-}
       - JEV_TIMEOUT_SECS=${JEV_TIMEOUT_SECS:-60}
-      - JEV_AD_THRESHOLD=${JEV_AD_THRESHOLD:-0.5}
+      # Detection is two stages: a permissive recall gate that decides whether
+      # a candidate exists, then edge trim that tightens the bounds. One
+      # threshold cannot do both jobs.
+      - JEV_RECALL_THRESHOLD=${JEV_RECALL_THRESHOLD:-0.35}
+      - JEV_EDGE_THRESHOLD=${JEV_EDGE_THRESHOLD:-0.50}
+      - JEV_EDGE_PIECE_SECS=${JEV_EDGE_PIECE_SECS:-2}
+      - JEV_EDGE_CONTEXT_SECS=${JEV_EDGE_CONTEXT_SECS:-45}
       - JEV_ATTACH_THRESHOLD=${JEV_ATTACH_THRESHOLD:-0.40}
       - JEV_ATTACH_GAP_SECS=${JEV_ATTACH_GAP_SECS:-8}
       - JEV_REVIEW_THRESHOLD=${JEV_REVIEW_THRESHOLD:-0.5}

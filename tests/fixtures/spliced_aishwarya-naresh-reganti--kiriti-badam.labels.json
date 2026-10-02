@@ -1,0 +1,4996 @@
+{
+  "name": "spliced_aishwarya-naresh-reganti--kiriti-badam",
+  "description": "Conversational transcript with a host read for Alo Yoga spliced in at line 511. Ground truth: exactly one cut.",
+  "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/aishwarya-naresh-reganti--kiriti-badam.md",
+  "lines": [
+    {
+      "start": 0.0,
+      "end": 2.3,
+      "text": "We worked on a guest post together."
+    },
+    {
+      "start": 2.3,
+      "end": 8.0,
+      "text": "They had this really key insight that building AI products is very different from building non-AI products."
+    },
+    {
+      "start": 8.0,
+      "end": 10.0,
+      "text": "Most people tend to ignore the non-determinism."
+    },
+    {
+      "start": 10.0,
+      "end": 16.6,
+      "text": "You don't know how the user might behave with your product, and you also don't know how the LLM might respond to that."
+    },
+    {
+      "start": 16.6,
+      "end": 18.9,
+      "text": "The second difference is the agency control trade-off."
+    },
+    {
+      "start": 18.9,
+      "end": 25.0,
+      "text": "Every time you hand over decision-making capabilities to agentic systems, you're kind of relinquishing some amount of control on your end."
+    },
+    {
+      "start": 25.0,
+      "end": 28.0,
+      "text": "This significantly changes the way you should be building product."
+    },
+    {
+      "start": 28.0,
+      "end": 29.3,
+      "text": "So we recommend building step-by-step."
+    },
+    {
+      "start": 29.3,
+      "end": 34.3,
+      "text": "When you start small, it forces you to think about what is the problem that I'm going to solve."
+    },
+    {
+      "start": 34.3,
+      "end": 42.0,
+      "text": "In all this advancements of the AI, one easy, slippery slope is to keep thinking about complexities of the solution and forget the problem that you're trying to solve."
+    },
+    {
+      "start": 42.0,
+      "end": 45.6,
+      "text": "It's not about being the first company to have an agent among your competitors."
+    },
+    {
+      "start": 45.6,
+      "end": 50.0,
+      "text": "It's about have you built the right flywheels in place so that you can improve over time."
+    },
+    {
+      "start": 50.0,
+      "end": 55.0,
+      "text": "What kind of ways of working do you see in companies that build AI products successfully?"
+    },
+    {
+      "start": 55.0,
+      "end": 57.6,
+      "text": "I used to work with the CEO of now Rackspace."
+    },
+    {
+      "start": 57.6,
+      "end": 63.0,
+      "text": "He would have this block every day in the morning, which would say catching up with AI 4:00 to 6:00 AM."
+    },
+    {
+      "start": 63.0,
+      "end": 65.0,
+      "text": "Leaders have to get back to being hands-on."
+    },
+    {
+      "start": 65.0,
+      "end": 68.6,
+      "text": "You must be comfortable with the fact that your intuitions might not be right."
+    },
+    {
+      "start": 68.6,
+      "end": 73.0,
+      "text": "And you probably are the dumbest person in the room and you want to learn from everyone."
+    },
+    {
+      "start": 73.0,
+      "end": 76.0,
+      "text": "What do you think the next year of AI is going to look like?"
+    },
+    {
+      "start": 76.0,
+      "end": 77.4,
+      "text": "Persistence is extremely valuable."
+    },
+    {
+      "start": 77.4,
+      "end": 87.2,
+      "text": "Successful companies right now building in any new area, they are going through the pain of learning this, implementing this and understanding what works and what doesn't work."
+    },
+    {
+      "start": 87.2,
+      "end": 89.0,
+      "text": "Pain is the new moat."
+    },
+    {
+      "start": 89.0,
+      "end": 101.1,
+      "text": "Today, my guests are Aishwarya Reganti and Kiriti Badam."
+    },
+    {
+      "start": 101.1,
+      "end": 130.8,
+      "text": "Kiriti works on Kodex at OpenAI and has spent the last decade building AI and ML infrastructure at Google and at Kumo."
+    },
+    {
+      "start": 130.8,
+      "end": 153.8,
+      "text": "Ash was an early AI researcher at Alexa and Microsoft and has published over 35 research papers."
+    },
+    {
+      "start": 153.8,
+      "end": 184.8,
+      "text": "Together, they've led and supported over 50 AI product deployments across companies like Amazon, Databricks, OpenAI, Google, and both startups and large enterprises."
+    },
+    {
+      "start": 184.8,
+      "end": 223.9,
+      "text": "Together, they also teach the number one rated AI course on Maven, where they teach product leaders all of the key lessons they've learned about building successful AI products."
+    },
+    {
+      "start": 223.9,
+      "end": 260.4,
+      "text": "The goal of this episode is to save you and your team a lot of pain and suffering and wasted time trying to build your AI product."
+    },
+    {
+      "start": 260.4,
+      "end": 288.7,
+      "text": "Whether you are already struggling to make your product work or want to avoid that struggle, this episode is for you."
+    },
+    {
+      "start": 288.7,
+      "end": 313.0,
+      "text": "If you enjoy this podcast, don't forget to subscribe and follow to your favorite podcasting app or YouTube."
+    },
+    {
+      "start": 313.0,
+      "end": 314.0,
+      "text": "Thank you, Lenny."
+    },
+    {
+      "start": 314.0,
+      "end": 315.0,
+      "text": "Thank you for having us."
+    },
+    {
+      "start": 315.0,
+      "end": 316.0,
+      "text": "Super excited for this."
+    },
+    {
+      "start": 316.0,
+      "end": 320.5,
+      "text": "Let me set the stage for the conversation that we're going to have today."
+    },
+    {
+      "start": 320.5,
+      "end": 324.0,
+      "text": "So you two have built a bunch of AI products yourself."
+    },
+    {
+      "start": 324.0,
+      "end": 331.0,
+      "text": "You've gone deep with a lot of companies who have built AI products, have struggled to build AI products, build AI agents."
+    },
+    {
+      "start": 331.0,
+      "end": 342.8,
+      "text": "You also teach a course on building AI products successfully and you're kind of on this mission to just reduce pain and suffering and failure that you constantly see people go through when they're building AI products."
+    },
+    {
+      "start": 342.8,
+      "end": 351.7,
+      "text": "So to set a little just foundation for the conversation we're going to have, what are you seeing on the ground within companies trying to build AI products?"
+    },
+    {
+      "start": 351.7,
+      "end": 352.7,
+      "text": "What's going well?"
+    },
+    {
+      "start": 352.7,
+      "end": 354.0,
+      "text": "What's not going well?"
+    },
+    {
+      "start": 354.0,
+      "end": 357.4,
+      "text": "I think 2025 has been significantly different than 2024."
+    },
+    {
+      "start": 357.4,
+      "end": 359.7,
+      "text": "One, the skepticism has significantly reduced."
+    },
+    {
+      "start": 359.7,
+      "end": 368.7,
+      "text": "There were tons of leaders last year who probably thought this would be yet another crypto wave and kind of skeptical to get started."
+    },
+    {
+      "start": 368.7,
+      "end": 376.3,
+      "text": "And a lot of the use cases that I saw last year were more of slap chat on your data."
+    },
+    {
+      "start": 376.3,
+      "end": 379.3,
+      "text": "And that was calling themselves an AI product."
+    },
+    {
+      "start": 379.3,
+      "end": 380.4,
+      "text": "And this year,"
+    },
+    {
+      "start": 380.4,
+      "end": 394.0,
+      "text": "a ton of companies are really rethinking their user experiences and their workflows and all of that and really understanding that you need to deconstruct and reconstruct your processes in order to build successful AI products."
+    },
+    {
+      "start": 394.0,
+      "end": 395.9,
+      "text": "And that's the good stuff."
+    },
+    {
+      "start": 395.9,
+      "end": 400.4,
+      "text": "The bad stuff is the execution is still all over the place."
+    },
+    {
+      "start": 400.4,
+      "end": 401.5,
+      "text": "Think of it."
+    },
+    {
+      "start": 401.5,
+      "end": 403.4,
+      "text": "This is a three-year-old field."
+    },
+    {
+      "start": 403.4,
+      "end": 406.4,
+      "text": "There are no playbooks, there are no textbooks."
+    },
+    {
+      "start": 406.4,
+      "end": 410.2,
+      "text": "So you really need to figure out as you go."
+    },
+    {
+      "start": 410.2,
+      "end": 417.0,
+      "text": "And the AI lifecycle, both pre-deployment and post-deployment is very different as compared to a traditional software lifecycle."
+    },
+    {
+      "start": 417.0,
+      "end": 420.9,
+      "text": "And so a lot of old contracts and handoffs between traditional roles,"
+    },
+    {
+      "start": 420.9,
+      "end": 432.7,
+      "text": "like say PMs and engineers and data folks has now been broken and people are really getting adapted to this new way of working together and kind of owning the same feedback loop in a way."
+    },
+    {
+      "start": 432.7,
+      "end": 439.3,
+      "text": "Because previously, I feel like PMs and engineers and all of these folks had their own feedback loops to optimize."
+    },
+    {
+      "start": 439.3,
+      "end": 443.2,
+      "text": "And now you need to be probably sitting in the same room."
+    },
+    {
+      "start": 443.2,
+      "end": 447.8,
+      "text": "You're probably looking at agent traces together and deciding how your product should behave."
+    },
+    {
+      "start": 447.8,
+      "end": 450.1,
+      "text": "So it's a tighter form of collaboration."
+    },
+    {
+      "start": 450.1,
+      "end": 453.1,
+      "text": "So companies are still kind of figuring that out."
+    },
+    {
+      "start": 453.1,
+      "end": 457.0,
+      "text": "That's kind of what I see in my consulting practice this year."
+    },
+    {
+      "start": 457.0,
+      "end": 458.9,
+      "text": "So let me follow that thread."
+    },
+    {
+      "start": 458.9,
+      "end": 463.4,
+      "text": "We worked on a guest post together that came out a few months ago."
+    },
+    {
+      "start": 463.4,
+      "end": 474.6,
+      "text": "And the thing that stood out to me most that stuck with me most after working on that post is this really key insight that building AI products is very different from building non-AI products."
+    },
+    {
+      "start": 474.6,
+      "end": 479.4,
+      "text": "And the thing that you're big on getting across is there's two very big differences."
+    },
+    {
+      "start": 479.4,
+      "end": 481.0,
+      "text": "Talk about those two differences."
+    },
+    {
+      "start": 481.0,
+      "end": 482.0,
+      "text": "Yes."
+    },
+    {
+      "start": 482.0,
+      "end": 486.9,
+      "text": "And again, I want to make sure that we drive home the right point."
+    },
+    {
+      "start": 486.9,
+      "end": 491.7,
+      "text": "There are tons of similarities of building AI systems and software systems as well,"
+    },
+    {
+      "start": 491.7,
+      "end": 498.7,
+      "text": "but then there are some things that kind of fundamentally change the way you build software systems versus AI systems."
+    },
+    {
+      "start": 498.7,
+      "end": 503.2,
+      "text": "And one of them that most people tend to ignore is the non-determinism."
+    },
+    {
+      "start": 503.2,
+      "end": 507.7,
+      "text": "You're pretty much working with a non-deterministic API as compared to traditional software."
+    },
+    {
+      "start": 507.7,
+      "end": 517.1,
+      "text": "What does that mean and why does that have to affect us is in traditional software, you pretty much have a very well-mapped decision engine or workflow."
+    },
+    {
+      "start": 517.1,
+      "end": 518.8,
+      "text": "Think of something like Booking.com."
+    },
+    {
+      "start": 518.8,
+      "end": 525.4,
+      "text": "You have an intention that you want to make a booking in San Francisco for two nights, et cetera."
+    },
+    {
+      "start": 525.4,
+      "end": 535.5,
+      "text": "The product has kind of been built so that your intention can be converted into a particular action and you kind of are clicking through a bunch of buttons, options, forms,"
+    },
+    {
+      "start": 535.5,
+      "end": 539.0,
+      "text": "and all of that, and you finally achieve your intention."
+    },
+    {
+      "start": 539.0,
+      "end": 546.0,
+      "text": "But now that layer in AI products has completely been replaced by a very fluid interface, which is mostly natural language,"
+    },
+    {
+      "start": 546.0,
+      "end": 552.4,
+      "text": "which means the user can literally come up with a ton of ways of saying or communicating their intentions."
+    },
+    {
+      "start": 552.4,
+      "end": 559.5,
+      "text": "And that kind of changes a lot of things because now you don't know how your user's going to be here."
+    },
+    {
+      "start": 559.5,
+      "end": 561.1,
+      "text": "That's on the input side."
+    },
+    {
+      "start": 561.1,
+      "end": 566.8,
+      "text": "And the output is also that you're working with a non-deterministic probabilistic API, which is your LLM."
+    },
+    {
+      "start": 566.8,
+      "end": 571.5,
+      "text": "And LLMs are pretty sensitive to prompt phrasings and they're pretty much black boxes."
+    },
+    {
+      "start": 571.5,
+      "end": 575.6,
+      "text": "So you don't even know how the output surface will look like."
+    },
+    {
+      "start": 575.6,
+      "end": 583.6,
+      "text": "So you don't know how the user might behave with your product, and you also don't know how the LLM might respond to that."
+    },
+    {
+      "start": 583.6,
+      "end": 587.3,
+      "text": "So you're now working with an input, output, and a process."
+    },
+    {
+      "start": 587.3,
+      "end": 590.0,
+      "text": "You don't understand all the three very well."
+    },
+    {
+      "start": 590.0,
+      "end": 593.0,
+      "text": "You're trying to anticipate behavior and build for it."
+    },
+    {
+      "start": 593.0,
+      "end": 596.2,
+      "text": "And with agentic systems, this kind of gets even harder."
+    },
+    {
+      "start": 596.2,
+      "end": 601.1,
+      "text": "And that's where we talk about the second difference, which is the agency control trade-off."
+    },
+    {
+      "start": 601.1,
+      "end": 606.6,
+      "text": "What we mean by that, and I'm kind of shocked so many people don't talk about this."
+    },
+    {
+      "start": 606.6,
+      "end": 611.1,
+      "text": "They're extremely obsessed with building autonomous systems, agents that can do work for you."
+    },
+    {
+      "start": 611.1,
+      "end": 618.9,
+      "text": "But every time you hand over decision-making capabilities or autonomy to agentic systems, you're kind of relinquishing some amount of control on your end."
+    },
+    {
+      "start": 618.9,
+      "end": 628.6,
+      "text": "And when you do that, you want to make sure that your agent has gained your trust or it is reliable enough that you can allow it to make decisions."
+    },
+    {
+      "start": 628.6,
+      "end": 637.3,
+      "text": "And that's where we talk about this agency controlled trade-off, which is if you give your AI agent or your AI system, whatever it is, more agency,"
+    },
+    {
+      "start": 637.3,
+      "end": 639.6,
+      "text": "which is the ability to make decisions,"
+    },
+    {
+      "start": 639.6,
+      "end": 649.0,
+      "text": "you're also losing some control and you want to make sure that the agent or the AI system has earned that ability or has built up trust over time."
+    },
+    {
+      "start": 649.0,
+      "end": 654.8,
+      "text": "So just to summarize what you're sharing here, essentially, people have been building product, software products for a long time."
+    },
+    {
+      "start": 654.8,
+      "end": 659.9,
+      "text": "We're now in a world where the software you're building is one, non-deterministic, can just do things differently."
+    },
+    {
+      "start": 659.9,
+      "end": 665.7,
+      "text": "As you said, you go to booking.com, you find a hotel, it's going to be the same experience every time."
+    },
+    {
+      "start": 665.7,
+      "end": 668.3,
+      "text": "You'll see different hotels, but it's a predictable experience."
+    },
+    {
+      "start": 668.3,
+      "end": 675.2,
+      "text": "With AI, you can't predict that it's going to be the exact same thing, the thing that you plan it to be every time."
+    },
+    {
+      "start": 675.2,
+      "end": 678.6,
+      "text": "And then the other is there's this trade-off between agency and control."
+    },
+    {
+      "start": 678.6,
+      "end": 683.8,
+      "text": "How much will the AI do for you versus how much should the person still be in charge?"
+    },
+    {
+      "start": 683.8,
+      "end": 689.5,
+      "text": "And what I'm hearing is the big point here is this significantly changes the way you should be building product."
+    },
+    {
+      "start": 689.5,
+      "end": 695.0,
+      "text": "And we're going to talk about the impact on how the product development lifecycle should change as a result."
+    },
+    {
+      "start": 695.0,
+      "end": 699.0,
+      "text": "Is there anything else you want to add there before we get into that?"
+    },
+    {
+      "start": 699.0,
+      "end": 706.2,
+      "text": "Yeah, it's definitely one of the key points that this kind of distinction needs to exist in your mind when you're starting to build."
+    },
+    {
+      "start": 706.2,
+      "end": 710.4,
+      "text": "For example, think about if your objective is to hike Half Dome in Yosemite."
+    },
+    {
+      "start": 710.4,
+      "end": 718.9,
+      "text": "You don't start hiking it every day, but you start training yourself in minor parts and then you slowly improve and then you go to the end goal."
+    },
+    {
+      "start": 718.9,
+      "end": 734.5,
+      "text": "I feel like that's extremely similar to what you want to build AI products in the sense that when you don't start with agents with all the tools and all the context that you have in the company in day one and expect it to work or even tinker at that level."
+    },
+    {
+      "start": 734.5,
+      "end": 749.0,
+      "text": "You need to be deliberately starting in places where there is minimal impact and more human control so that you have a good grip of what are the current capabilities and what can I do with them and then slowly lean into the more agency and lesser control."
+    },
+    {
+      "start": 749.0,
+      "end": 758.5,
+      "text": "So this gives you that confidence that, okay, I can know that, okay, this is the particular problem that I'm facing and the AI can solve this extent of it."
+    },
+    {
+      "start": 758.5,
+      "end": 767.3,
+      "text": "And then let me next think through what context I need to bring in, what kind of tools I need to add to this to improve the experience."
+    },
+    {
+      "start": 767.3,
+      "end": 781.5,
+      "text": "So I feel like also it's a good and a bad thing in the sense that it's good that you don't have to see the complexity of the outside world of all of this fancy AI agents force and feel like I cannot do that."
+    },
+    {
+      "start": 781.5,
+      "end": 784.6,
+      "text": "Everyone is starting from very minimalistic structures and then evolving."
+    },
+    {
+      "start": 784.6,
+      "end": 794.7,
+      "text": "And the second part is the bad thing is that as you are trying to build this one click agents into your company, you don't have to be overwhelmed with this complexity."
+    },
+    {
+      "start": 794.7,
+      "end": 796.0,
+      "text": "You can slowly graduate."
+    },
+    {
+      "start": 796.0,
+      "end": 797.1,
+      "text": "So that's extremely important."
+    },
+    {
+      "start": 797.1,
+      "end": 800.0,
+      "text": "And we see this as a repeating pattern over and over."
+    },
+    {
+      "start": 800.0,
+      "end": 801.0,
+      "text": "Okay."
+    },
+    {
+      "start": 801.0,
+      "end": 809.3,
+      "text": "So let's actually follow that because that's a really important component of how you recommend people build AI stuff, AI products, AI agents, all the AI things."
+    },
+    {
+      "start": 809.3,
+      "end": 818.0,
+      "text": "So give us an example of what you're talking about here, this idea of starting slow with agency and control and then moving up this rung."
+    },
+    {
+      "start": 818.0,
+      "end": 819.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 819.0,
+      "end": 824.1,
+      "text": "For example, a very important or very prevalent application of AI agents is customer support."
+    },
+    {
+      "start": 824.1,
+      "end": 840.5,
+      "text": "Imagine you are a company who has a lot of customer support tickets and why even imagine OpenAI is the exact same thing when we were launching products and there was a huge spike of support volume as we launched successful products like Image or GPT-5 and things like that."
+    },
+    {
+      "start": 840.5,
+      "end": 843.3,
+      "text": "The kind of questions you get is different."
+    },
+    {
+      "start": 843.3,
+      "end": 847.4,
+      "text": "The kind of problems that the customers bring to you is different."
+    },
+    {
+      "start": 847.4,
+      "end": 854.2,
+      "text": "So it's not about just dumping all the list of help center articles that you have into the AI agent."
+    },
+    {
+      "start": 854.2,
+      "end": 858.3,
+      "text": "You kind of understand what are the things that you can build."
+    },
+    {
+      "start": 858.3,
+      "end": 868.6,
+      "text": "And so initially the first step of it would be something like you have your support agents, the human support agents, but you will be suggesting in terms of, okay,"
+    },
+    {
+      "start": 868.6,
+      "end": 873.0,
+      "text": "this is what the AI thinks that is the right thing to do."
+    },
+    {
+      "start": 873.0,
+      "end": 881.6,
+      "text": "And then you get that feedback loop from the humans that, okay, this is actually a good suggestion for me in this particular case and this is a bad suggestion."
+    },
+    {
+      "start": 881.6,
+      "end": 890.1,
+      "text": "And then you can go back and understand, okay, this is what the drawbacks are or this is where the blind spots are, and then how do I fix that?"
+    },
+    {
+      "start": 890.1,
+      "end": 896.4,
+      "text": "And once you get that, you can increase the autonomy to say that, okay, I don't need to suggest to the human."
+    },
+    {
+      "start": 896.4,
+      "end": 899.0,
+      "text": "I'll actually show the answer directly to the customer."
+    },
+    {
+      "start": 899.0,
+      "end": 907.3,
+      "text": "And then we can actually add more complexity in terms of, okay, I was only answering questions based on health center articles, but now let me add new functionality."
+    },
+    {
+      "start": 907.3,
+      "end": 909.6,
+      "text": "I can actually issue refunds to the customers."
+    },
+    {
+      "start": 909.6,
+      "end": 913.9,
+      "text": "I can actually raise feature requests with the engineering team and all of these things."
+    },
+    {
+      "start": 913.9,
+      "end": 919.0,
+      "text": "So if you start with all of this on day one, it's incredibly hard to control the complexity."
+    },
+    {
+      "start": 919.0,
+      "end": 923.0,
+      "text": "So we recommend building step by step and then increasing it."
+    },
+    {
+      "start": 923.0,
+      "end": 924.0,
+      "text": "Awesome."
+    },
+    {
+      "start": 924.0,
+      "end": 928.6,
+      "text": "And you have a visual actually that we'll share of what this looks like."
+    },
+    {
+      "start": 928.6,
+      "end": 937.9,
+      "text": "But just to kind of mirror back what you're describing, this idea of start with high control, low agency, the example you gave is the support agents just kind of giving suggestions,"
+    },
+    {
+      "start": 937.9,
+      "end": 941.5,
+      "text": "is not able to do anything, the user is in charge."
+    },
+    {
+      "start": 941.5,
+      "end": 947.1,
+      "text": "And then as that becomes useful and you are confident it's doing the right sort of work,"
+    },
+    {
+      "start": 947.1,
+      "end": 953.4,
+      "text": "you give it a little more agency and you kind of pull back on the control the user has."
+    },
+    {
+      "start": 953.4,
+      "end": 961.0,
+      "text": "And then if that's starting to go well, then you give it more agency and the user needs less control to control it."
+    },
+    {
+      "start": 961.0,
+      "end": 962.0,
+      "text": "Awesome."
+    },
+    {
+      "start": 962.0,
+      "end": 968.1,
+      "text": "I think the higher level idea here is with AI systems, it's all about behavior calibration."
+    },
+    {
+      "start": 968.1,
+      "end": 972.0,
+      "text": "It's incredibly impossible to predict upfront how your system behaves."
+    },
+    {
+      "start": 972.0,
+      "end": 974.6,
+      "text": "Now, what do you do about it?"
+    },
+    {
+      "start": 974.6,
+      "end": 980.4,
+      "text": "You make sure that you don't ruin your customer experience or your end user experience."
+    },
+    {
+      "start": 980.4,
+      "end": 986.5,
+      "text": "You keep that as is, but then remove the amount of control that the human has."
+    },
+    {
+      "start": 986.5,
+      "end": 990.4,
+      "text": "And there is no single right way of doing it."
+    },
+    {
+      "start": 990.4,
+      "end": 993.4,
+      "text": "You can decide how to constrain that autonomy."
+    },
+    {
+      "start": 993.4,
+      "end": 999.2,
+      "text": "I mean, a different example of how you could constrain autonomy is pre-authorization use cases."
+    },
+    {
+      "start": 999.2,
+      "end": 1009.5,
+      "text": "Insurance pre-authorization is a very ripe use case for AI because clinicians spend a lot of time pre-authorizing things like blood tests, MRIs and things like that."
+    },
+    {
+      "start": 1009.5,
+      "end": 1014.1,
+      "text": "And there are some cases which are more of low hanging fruits."
+    },
+    {
+      "start": 1014.1,
+      "end": 1026.4,
+      "text": "For instance, MRIs and block tests, because as soon as you know patient's information, it's easier to approve that and AI could do that versus something like an invasive surgery, et cetera,"
+    },
+    {
+      "start": 1026.4,
+      "end": 1027.9,
+      "text": "is more high risk."
+    },
+    {
+      "start": 1027.9,
+      "end": 1031.0,
+      "text": "You don't want to be doing that autonomously."
+    },
+    {
+      "start": 1031.0,
+      "end": 1041.0,
+      "text": "So you can kind of determine which of these use cases should go through that human and the loop layer versus which of the use cases AI can conveniently handle."
+    },
+    {
+      "start": 1041.0,
+      "end": 1051.3,
+      "text": "And then all through this process, you're also logging what the human is doing because you want to build a flywheel that you could use in order to improve your system."
+    },
+    {
+      "start": 1051.3,
+      "end": 1061.0,
+      "text": "So you're essentially not showing the user experience, not eroding trust, at the same time logging what humans would otherwise do so that you can continuously improve your system."
+    },
+    {
+      "start": 1061.0,
+      "end": 1065.9,
+      "text": "So let me give you a few more examples of this kind of progression that you recommend."
+    },
+    {
+      "start": 1065.9,
+      "end": 1073.8,
+      "text": "And the reason I'm spending so much time here is this is a really key part of your recommendation to help people build more successful AI products."
+    },
+    {
+      "start": 1073.8,
+      "end": 1082.2,
+      "text": "This idea of start slow with high control and low agency and then build up over time once you've built confidence that it's doing the right sort of work."
+    },
+    {
+      "start": 1082.2,
+      "end": 1086.5,
+      "text": "So a few more examples that you shared in your post that I'll just read."
+    },
+    {
+      "start": 1086.5,
+      "end": 1091.5,
+      "text": "So say you're building a coding assistant, V1 would be just suggest inline completion and boilerplate snippets."
+    },
+    {
+      "start": 1091.5,
+      "end": 1095.5,
+      "text": "V2 would be generate larger blocks like tests or refactors for humans to review."
+    },
+    {
+      "start": 1095.5,
+      "end": 1099.0,
+      "text": "And then V3 is just apply the changes and open PRs autonomously."
+    },
+    {
+      "start": 1099.0,
+      "end": 1101.4,
+      "text": "And then another example is a marketing assistant."
+    },
+    {
+      "start": 1101.4,
+      "end": 1106.0,
+      "text": "So V1 would be draft emails or social copy, just like here's what I would do."
+    },
+    {
+      "start": 1106.0,
+      "end": 1109.6,
+      "text": "V2 is build a multi-step campaign and run the campaign."
+    },
+    {
+      "start": 1109.6,
+      "end": 1113.9,
+      "text": "And V3 is just launch it A/B tested auto-optimize campaigns across channels."
+    },
+    {
+      "start": 1113.9,
+      "end": 1114.9,
+      "text": "Awesome."
+    },
+    {
+      "start": 1114.9,
+      "end": 1115.9,
+      "text": "Yeah."
+    },
+    {
+      "start": 1115.9,
+      "end": 1122.4,
+      "text": "And again, just to summarize where we're at, just to give people the advice we've shared so far."
+    },
+    {
+      "start": 1122.4,
+      "end": 1125.9,
+      "text": "One is just important to understand AI products are different."
+    },
+    {
+      "start": 1125.9,
+      "end": 1126.9,
+      "text": "They're non-deterministic."
+    },
+    {
+      "start": 1126.9,
+      "end": 1134.1,
+      "text": "And you pointed out, and I forgot to actually mirror back this point, both on the input and the output."
+    },
+    {
+      "start": 1134.1,
+      "end": 1140.9,
+      "text": "The user experience is non-deterministic.People will see different things, different outputs, different chat conversations, different maybe UI if it's designing the UI for you."
+    },
+    {
+      "start": 1140.9,
+      "end": 1144.5,
+      "text": "And also the output obviously is going to be non-terministic."
+    },
+    {
+      "start": 1144.5,
+      "end": 1147.0,
+      "text": "So that's a problem and a challenge."
+    },
+    {
+      "start": 1147.0,
+      "end": 1148.0,
+      "text": "And then-"
+    },
+    {
+      "start": 1148.0,
+      "end": 1153.6,
+      "text": "I mean, if you think of it's also the most beautiful part of AI, which is, I mean,"
+    },
+    {
+      "start": 1153.6,
+      "end": 1158.9,
+      "text": "we are all much more comfortable talking than following a bunch of buttons and all of that."
+    },
+    {
+      "start": 1158.9,
+      "end": 1167.2,
+      "text": "So the bar to using AI products is much lower because you can be as natural as you would be with humans, but that's also the problem,"
+    },
+    {
+      "start": 1167.2,
+      "end": 1180.3,
+      "text": "which is there are tons of ways we communicate and you want to make sure that that intent is rightly communicated and the right actions are taken because most of your systems are deterministic and you want to achieve a deterministic outcome,"
+    },
+    {
+      "start": 1180.3,
+      "end": 1184.0,
+      "text": "but with non-deterministic technology and that's where it gets a little messy."
+    },
+    {
+      "start": 1184.0,
+      "end": 1185.0,
+      "text": "Awesome."
+    },
+    {
+      "start": 1185.0,
+      "end": 1186.0,
+      "text": "Okay."
+    },
+    {
+      "start": 1186.0,
+      "end": 1188.8,
+      "text": "I love the optimistic version of why this is good."
+    },
+    {
+      "start": 1188.8,
+      "end": 1189.8,
+      "text": "Okay."
+    },
+    {
+      "start": 1189.8,
+      "end": 1195.3,
+      "text": "And then the other piece is this idea of this trade-off of autonomy versus control when you're designing a thing."
+    },
+    {
+      "start": 1195.3,
+      "end": 1200.3,
+      "text": "And I imagine what you're seeing is people try to jump to the ideal, like the V3 immediately and that's when they get into trouble both."
+    },
+    {
+      "start": 1200.3,
+      "end": 1203.9,
+      "text": "It's probably a lot harder to build that and it just doesn't work."
+    },
+    {
+      "start": 1203.9,
+      "end": 1206.6,
+      "text": "And then they're just like, \"Okay, this is a failure."
+    },
+    {
+      "start": 1206.6,
+      "end": 1208.0,
+      "text": "What are we even doing?\""
+    },
+    {
+      "start": 1208.0,
+      "end": 1209.0,
+      "text": "Exactly."
+    },
+    {
+      "start": 1209.0,
+      "end": 1215.2,
+      "text": "I feel there's a bunch of things that you actually have to get confidence in before you get to V3."
+    },
+    {
+      "start": 1215.2,
+      "end": 1217.7,
+      "text": "And it's easy to get overwhelmed that, oh,"
+    },
+    {
+      "start": 1217.7,
+      "end": 1225.0,
+      "text": "my AI agent is doing these things wrong in a hundred different ways and you're not going to actually tabulate all of them and fix it."
+    },
+    {
+      "start": 1225.0,
+      "end": 1232.2,
+      "text": "Even though you've learned how do you deal with the evaluation practices and stuff like that, if you're starting on the wrong spot,"
+    },
+    {
+      "start": 1232.2,
+      "end": 1236.2,
+      "text": "you are actually going to have a hard time correcting things from there."
+    },
+    {
+      "start": 1236.2,
+      "end": 1243.0,
+      "text": "And when you start small and when you start with building a very minimalistic version with high human control and low agency,"
+    },
+    {
+      "start": 1243.0,
+      "end": 1248.0,
+      "text": "it also forces you to think about what is the problem that I'm going to solve."
+    },
+    {
+      "start": 1248.0,
+      "end": 1250.2,
+      "text": "We use this term called problem first."
+    },
+    {
+      "start": 1250.2,
+      "end": 1256.1,
+      "text": "And to me, it was obvious in the sense that that I do need to think about the problem,"
+    },
+    {
+      "start": 1256.1,
+      "end": 1263.5,
+      "text": "but it's incredible how well it resonates with the people that in all this advancements of the AI that we are seeing, one easy,"
+    },
+    {
+      "start": 1263.5,
+      "end": 1270.0,
+      "text": "slippery slope is to just keep thinking about complexities of the solution and forget the problem that you're trying to solve."
+    },
+    {
+      "start": 1270.0,
+      "end": 1274.0,
+      "text": "So when you're trying to start at a smaller scale of autonomy,"
+    },
+    {
+      "start": 1274.0,
+      "end": 1284.3,
+      "text": "you start to really think about what is the problem that I'm trying to solve and how do I break it down into levels of autonomy that I can build later?"
+    },
+    {
+      "start": 1284.3,
+      "end": 1291.0,
+      "text": "So that is incredibly useful and we keep repeating this part and over and over with everyone we talk to."
+    },
+    {
+      "start": 1291.0,
+      "end": 1299.8,
+      "text": "And there's so many other benefits to limiting autonomy because there's just danger also of the thing doing too much for you and just messing up your, I don't know, your database,"
+    },
+    {
+      "start": 1299.8,
+      "end": 1302.0,
+      "text": "sending out all these emails you never expected."
+    },
+    {
+      "start": 1302.0,
+      "end": 1305.0,
+      "text": "And there's like so many reasons this is a good idea."
+    },
+    {
+      "start": 1305.0,
+      "end": 1306.0,
+      "text": "Yep."
+    },
+    {
+      "start": 1306.0,
+      "end": 1310.9,
+      "text": "I recently read this paper from a bunch of folks at UC Berkeley."
+    },
+    {
+      "start": 1310.9,
+      "end": 1322.2,
+      "text": "Basically Matei Zaharia, [inaudible 00:21:54] and the folks at Databricks and it said about 74% or 75% of the enterprises that they had spoken to, their biggest problem was reliability."
+    },
+    {
+      "start": 1322.2,
+      "end": 1336.6,
+      "text": "And that's also why they weren't comfortable deploying products to their end users or building customer facing products because they just weren't sure or they just weren't comfortable doing that and exposing their users to a bunch of these risks."
+    },
+    {
+      "start": 1336.6,
+      "end": 1347.5,
+      "text": "And that's also why they think a lot of AI products today have to do with productivity because it's much low autonomy versus end-to-end agents that would replace workflows."
+    },
+    {
+      "start": 1347.5,
+      "end": 1358.0,
+      "text": "And yeah, I love their work otherwise as well, but I think that's very in line with what at least we are seeing at my startup as well."
+    },
+    {
+      "start": 1358.0,
+      "end": 1359.0,
+      "text": "Okay."
+    },
+    {
+      "start": 1359.0,
+      "end": 1360.0,
+      "text": "Very interesting."
+    },
+    {
+      "start": 1360.0,
+      "end": 1366.3,
+      "text": "There's an episode that'll come out before this conversation where we go deep into another problem that this avoids,"
+    },
+    {
+      "start": 1366.3,
+      "end": 1374.7,
+      "text": "which is around prompt injection and jailbreaking and just how big of a risk that is for AI products where it's essentially an unsolved and unsolvable problem potentially."
+    },
+    {
+      "start": 1374.7,
+      "end": 1382.0,
+      "text": "I'm not going to go down that track, but that's a pretty scary conversation we had that'll be out before this conversation."
+    },
+    {
+      "start": 1382.0,
+      "end": 1386.7,
+      "text": "I think that will be a huge problem once systems go mainstream."
+    },
+    {
+      "start": 1386.7,
+      "end": 1398.5,
+      "text": "We're still so busy building AI products that we're not worried about security, but it will be such a huge problem to kind of, especially with this non-deterministic API again."
+    },
+    {
+      "start": 1398.5,
+      "end": 1408.0,
+      "text": "So you're kind of stuck because there are tons of instructions that you could inject within your prompt and then it's going really bad."
+    },
+    {
+      "start": 1408.0,
+      "end": 1409.0,
+      "text": "Okay."
+    },
+    {
+      "start": 1409.0,
+      "end": 1414.7,
+      "text": "Let's actually spend a little time here because it's actually really interesting to me and no one's talking about this stuff,"
+    },
+    {
+      "start": 1414.7,
+      "end": 1420.5,
+      "text": "which is like the conversation we had is just it's pretty easy to get AI to do stuff it shouldn't do."
+    },
+    {
+      "start": 1420.5,
+      "end": 1426.9,
+      "text": "And there's all these guardrail systems people put in place, but turns out these guardrails aren't actually very good and you can always get around them."
+    },
+    {
+      "start": 1426.9,
+      "end": 1434.0,
+      "text": "And to your point, as agents become more autonomous and robots, it gets pretty scary that you could get AI to do things you shouldn't do."
+    },
+    {
+      "start": 1434.0,
+      "end": 1440.3,
+      "text": "I think this is definitely a problem, but I feel in the current spectrum of customers adopting AI,"
+    },
+    {
+      "start": 1440.3,
+      "end": 1451.5,
+      "text": "the extent to which companies can actually get advantage of AI or improve their processes or streamline the existing processes that they have, I feel it's still in the very early stage."
+    },
+    {
+      "start": 1451.5,
+      "end": 1457.2,
+      "text": "2025 has been an extremely busy year for AI agents and customers trying to adopt AI,"
+    },
+    {
+      "start": 1457.2,
+      "end": 1463.8,
+      "text": "but I feel the penetration is still not as much as you would actually get advantage out of it."
+    },
+    {
+      "start": 1463.8,
+      "end": 1474.7,
+      "text": "So with the right sort of human in the loop points in here, I feel we can actually avoid a bunch of these things and focus more towards streamlining the processes."
+    },
+    {
+      "start": 1474.7,
+      "end": 1487.0,
+      "text": "And I am more on the optimist side in the sense that you need to try and adopt this before actually trying to be only for highlighting the negative aspects of what could go wrong."
+    },
+    {
+      "start": 1487.0,
+      "end": 1491.2,
+      "text": "So I feel like strongly that companies has this adopt this, they definitely ..."
+    },
+    {
+      "start": 1491.2,
+      "end": 1497.7,
+      "text": "No company at OpenAI we talk to has never had been the case that, oh, AI cannot help me in this case."
+    },
+    {
+      "start": 1497.7,
+      "end": 1506.0,
+      "text": "It has always been that, oh, there is this set of things that it can optimize for me and then let me see how I can adopt it."
+    },
+    {
+      "start": 1506.0,
+      "end": 1507.0,
+      "text": "Sweet."
+    },
+    {
+      "start": 1507.0,
+      "end": 1508.8,
+      "text": "I always like the optimistic perspective."
+    },
+    {
+      "start": 1508.8,
+      "end": 1513.8,
+      "text": "I'm excited for you to listen to this and see what you think because it's really interesting."
+    },
+    {
+      "start": 1513.8,
+      "end": 1517.3,
+      "text": "And to your point, there's a lot of things to focus on."
+    },
+    {
+      "start": 1517.3,
+      "end": 1520.5,
+      "text": "It's one of many things to worry about and think about."
+    },
+    {
+      "start": 1520.5,
+      "end": 1522.6,
+      "text": "Okay, let's get back on track here."
+    },
+    {
+      "start": 1522.6,
+      "end": 1526.1,
+      "text": "So we've shared a bunch of pro-tips and important piece of advice."
+    },
+    {
+      "start": 1526.1,
+      "end": 1533.6,
+      "text": "Let me ask, what other patterns and kind of ways of working do you see in companies that do this well and teams that build AI products successfully?"
+    },
+    {
+      "start": 1533.6,
+      "end": 1537.1,
+      "text": "And then just what are the most common pitfalls people fall into?"
+    },
+    {
+      "start": 1537.1,
+      "end": 1543.0,
+      "text": "So we could just maybe start with, what are other ways that companies do this well, build AI products successfully?"
+    },
+    {
+      "start": 1543.0,
+      "end": 1549.3,
+      "text": "I almost think of it as like a success triangle with three dimensions that's never always technical."
+    },
+    {
+      "start": 1549.3,
+      "end": 1552.3,
+      "text": "Every technology problem is a people problem first."
+    },
+    {
+      "start": 1552.3,
+      "end": 1559.7,
+      "text": "And with companies that we have worked with, it's these three dimensions, like great leaders, good culture and technical prowess."
+    },
+    {
+      "start": 1559.7,
+      "end": 1567.1,
+      "text": "With leaders itself, we work with a lot of companies for their AI transformation, training, strategy and stuff like that."
+    },
+    {
+      "start": 1567.1,
+      "end": 1577.1,
+      "text": "And I feel like a lot of companies, the leaders have built intuitions over 10 or 15 years and they're kind of highly regarded for those intuitions."
+    },
+    {
+      "start": 1577.1,
+      "end": 1585.7,
+      "text": "But now with AI in the picture, those intuitions will have to be relearned and leaders have to be vulnerable to do that."
+    },
+    {
+      "start": 1585.7,
+      "end": 1589.8,
+      "text": "I used to work with the CEO of now Rackspace, Gagan."
+    },
+    {
+      "start": 1589.8,
+      "end": 1602.0,
+      "text": "So he would have this block every day in the morning, which would say catching up with AI 4:00 to 6:00 AM, and he would not have any meetings or anything like that."
+    },
+    {
+      "start": 1602.0,
+      "end": 1608.5,
+      "text": "And that was just his time to pick up on the latest AI podcast or information and all of that."
+    },
+    {
+      "start": 1608.5,
+      "end": 1612.5,
+      "text": "And he would have weekend vibe coding sessions and stuff like that."
+    },
+    {
+      "start": 1612.5,
+      "end": 1616.1,
+      "text": "So I think leaders have to get back to being hands-on."
+    },
+    {
+      "start": 1616.1,
+      "end": 1619.7,
+      "text": "And that's not because they have to be implementing these things,"
+    },
+    {
+      "start": 1619.7,
+      "end": 1632.1,
+      "text": "but more of rebuilding their intuitions because you must be comfortable with the fact that your intuitions might not be right and you probably are the dumbest person in the room and you want to learn from everyone."
+    },
+    {
+      "start": 1632.1,
+      "end": 1640.9,
+      "text": "And that I've seen that being a very distinguishing factor of companies that build products which are successful because you're kind of bringing in that top-down approach."
+    },
+    {
+      "start": 1640.9,
+      "end": 1643.9,
+      "text": "It's almost always impossible for it to be bottom-up."
+    },
+    {
+      "start": 1643.9,
+      "end": 1654.0,
+      "text": "You can't have a bunch of engineers go and get buy-in from the leader if they just don't trust in the technology or if they have misaligned expectations about the technology."
+    },
+    {
+      "start": 1654.0,
+      "end": 1672.4,
+      "text": "I've heard from so many folks who are building that our leaders just don't understand the extent to which AI can solve a particular problem or they just vibe code something and assume it's easy to take it to production and you really need to understand the range of what AI can solve today so that you can guide decisions within the company."
+    },
+    {
+      "start": 1672.4,
+      "end": 1674.5,
+      "text": "The second one is the culture itself."
+    },
+    {
+      "start": 1674.5,
+      "end": 1683.3,
+      "text": "And again, I work with enterprises where AI is not their main thing and they need to bring in AI into their processes just because a competitor is doing it."
+    },
+    {
+      "start": 1683.3,
+      "end": 1688.0,
+      "text": "And just because it does make sense because there are use cases that are very ripe."
+    },
+    {
+      "start": 1688.0,
+      "end": 1696.8,
+      "text": "Then along the way, I feel a lot of companies have this culture of FOMO and you will be replaced and those kind of things and people get really afraid."
+    },
+    {
+      "start": 1696.8,
+      "end": 1707.0,
+      "text": "Subject matter experts are such a huge part of building AI products that work because you really need to consult them to understand how your AI is behaving or what the ideal behavior should be."
+    },
+    {
+      "start": 1707.0,
+      "end": 1716.2,
+      "text": "But then I've spoken to a bunch of companies where the subject matter experts just don't want to talk to you because they think their job is being replaced."
+    },
+    {
+      "start": 1716.2,
+      "end": 1719.4,
+      "text": "So I mean, again, this comes from the leader itself."
+    },
+    {
+      "start": 1719.4,
+      "end": 1721.9,
+      "text": "You want to build a culture of empowerment,"
+    },
+    {
+      "start": 1721.9,
+      "end": 1732.3,
+      "text": "of augmenting AI into your own workflows so that you can 10X at what you're doing instead of saying that probably you'll be replaced if you don't adopt AI and stuff like that."
+    },
+    {
+      "start": 1732.3,
+      "end": 1735.2,
+      "text": "So that kind of an empowering culture always helps."
+    },
+    {
+      "start": 1735.2,
+      "end": 1743.7,
+      "text": "You want to make your entire organization be in it together and make AI work for you instead of trying to guard their own jobs, et cetera."
+    },
+    {
+      "start": 1743.7,
+      "end": 1748.8,
+      "text": "And with AI, it's also true that it opens up a lot more opportunities than before."
+    },
+    {
+      "start": 1748.8,
+      "end": 1754.2,
+      "text": "So you could have your employees doing a lot more things than before and 10x their productivity."
+    },
+    {
+      "start": 1754.2,
+      "end": 1758.0,
+      "text": "And the third one is the technical part which we talk about."
+    },
+    {
+      "start": 1758.0,
+      "end": 1770.7,
+      "text": "I think folks that are successful are incredibly obsessed about understanding their workflows very well and augmenting parts that could be ripe for AI versus the ones that might need human in the loop somewhere,"
+    },
+    {
+      "start": 1770.7,
+      "end": 1771.7,
+      "text": "et cetera."
+    },
+    {
+      "start": 1771.7,
+      "end": 1781.7,
+      "text": "Whenever you're trying to automate some part of a workflow, it's never the case that you could use an AI agent and that will solve your problems."
+    },
+    {
+      "start": 1781.7,
+      "end": 1788.4,
+      "text": "It's always, you probably have a machine learning model that's going to do some part of the job."
+    },
+    {
+      "start": 1788.4,
+      "end": 1792.1,
+      "text": "You have deterministic code doing some part of the job."
+    },
+    {
+      "start": 1792.1,
+      "end": 1802.8,
+      "text": "So you really need to be obsessed with understanding that workflow so you can choose the right tool for the problem instead of being obsessed with the technology itself."
+    },
+    {
+      "start": 1802.8,
+      "end": 1811.0,
+      "text": "And another pattern I see is also folks really understand this idea of working with a non-deterministic API, which is your LLM."
+    },
+    {
+      "start": 1811.0,
+      "end": 1818.4,
+      "text": "And what that means is they also understand the AI development lifecycle looks very different and they iterate pretty quickly,"
+    },
+    {
+      "start": 1818.4,
+      "end": 1831.0,
+      "text": "which is can I build something iterate quickly in a way that it doesn't ruin my customer experience at the same time gives me enough amount of data so that I can estimate behavior."
+    },
+    {
+      "start": 1831.0,
+      "end": 1833.1,
+      "text": "So they build that flywheel very quickly."
+    },
+    {
+      "start": 1833.1,
+      "end": 1838.3,
+      "text": "As of today, it's not about being the first company to have an agent among your competitors."
+    },
+    {
+      "start": 1838.3,
+      "end": 1843.4,
+      "text": "It's about, have you built the right flywheels in place so that you can improve over time?"
+    },
+    {
+      "start": 1843.4,
+      "end": 1852.2,
+      "text": "When someone comes up to me and says, \"We have this one click agent, it's going to be deployed in your system.\" And then in two or three days,"
+    },
+    {
+      "start": 1852.2,
+      "end": 1854.0,
+      "text": "it'll start showing you significant gains."
+    },
+    {
+      "start": 1854.0,
+      "end": 1857.0,
+      "text": "I would almost be skeptical because it's just not possible."
+    },
+    {
+      "start": 1857.0,
+      "end": 1864.3,
+      "text": "And that's not because the models aren't there, but because enterprise data and infrastructure is very messy and you need a bit to ..."
+    },
+    {
+      "start": 1864.3,
+      "end": 1867.9,
+      "text": "Even the agent needs a bit to understand how these systems work."
+    },
+    {
+      "start": 1867.9,
+      "end": 1869.7,
+      "text": "There are very messy taxonomies everywhere."
+    },
+    {
+      "start": 1869.7,
+      "end": 1876.0,
+      "text": "People tend to do things like get customer data, we want, get customer data, we do, and these kind of things."
+    },
+    {
+      "start": 1876.0,
+      "end": 1883.0,
+      "text": "And all those functions exist and they're being called and basically there's a lot of tech debt that you need to deal with."
+    },
+    {
+      "start": 1883.0,
+      "end": 1888.6,
+      "text": "So most of the times, if you're obsessed with the problem itself and you understand your workflows very well,"
+    },
+    {
+      "start": 1888.6,
+      "end": 1895.7,
+      "text": "you will know how to improve your agents over time instead of just slapping an agent and assuming that it'll work from day one."
+    },
+    {
+      "start": 1895.7,
+      "end": 1901.0,
+      "text": "I probably will go as far to say that if someone's selling you one click-agents, it's pure marketing."
+    },
+    {
+      "start": 1901.0,
+      "end": 1903.1,
+      "text": "You don't want to buy into that."
+    },
+    {
+      "start": 1903.1,
+      "end": 1905.8,
+      "text": "I would rather go with a company that says,"
+    },
+    {
+      "start": 1905.8,
+      "end": 1914.6,
+      "text": "\"We're going to build this pipeline for you,\" and that will learn over time and build a flywheel to improve than something that's going to work out of the box."
+    },
+    {
+      "start": 1914.6,
+      "end": 1921.7,
+      "text": "To replace any critical workflow or to build something that can give you significant ROI, it easily takes four to six months of work,"
+    },
+    {
+      "start": 1921.7,
+      "end": 1925.0,
+      "text": "even if you have the best data layer and infrastructure layer."
+    },
+    {
+      "start": 1925.0,
+      "end": 1926.0,
+      "text": "Amazing."
+    },
+    {
+      "start": 1926.0,
+      "end": 1931.4,
+      "text": "There's a lot there that resonates so deeply with other conversations I've been having on this podcast."
+    },
+    {
+      "start": 1931.4,
+      "end": 1938.6,
+      "text": "One is just for a company to be successful at seeing a lot of impact from AI, the founder-CEO has to be deep into it."
+    },
+    {
+      "start": 1938.6,
+      "end": 1944.6,
+      "text": "I had Dan Shipper on the podcast and they work with a bunch of companies helping them adopt AI."
+    },
+    {
+      "start": 1944.6,
+      "end": 1947.8,
+      "text": "And he said that's the number one predictor of success."
+    },
+    {
+      "start": 1947.8,
+      "end": 1951.6,
+      "text": "Is the CEO chatting with ChatGPT, Claude, whatever, many times a day."
+    },
+    {
+      "start": 1951.6,
+      "end": 1958.2,
+      "text": "I love this example you gave with the Rackspace CEO has catch up on AI news in the morning every day."
+    },
+    {
+      "start": 1958.2,
+      "end": 1962.0,
+      "text": "I was imagining he'd be chatting with the chatbot versus reading news."
+    },
+    {
+      "start": 1962.0,
+      "end": 1965.7,
+      "text": "With the kind of information you have as of today, you could just ..."
+    },
+    {
+      "start": 1965.7,
+      "end": 1969.8,
+      "text": "I mean, you want to choose the right channels as well because everybody has an opinion."
+    },
+    {
+      "start": 1969.8,
+      "end": 1972.2,
+      "text": "So whose opinion do you want to bank on?"
+    },
+    {
+      "start": 1972.2,
+      "end": 1976.6,
+      "text": "I feel like having that good quality set of people that you're listening to really makes sense."
+    },
+    {
+      "start": 1976.6,
+      "end": 1980.8,
+      "text": "So he just has a list of two or three sources that he always looks at."
+    },
+    {
+      "start": 1980.8,
+      "end": 1987.9,
+      "text": "And then he comes back with a bunch of questions and bounces it around with a bunch of AI experts to see what they think about it."
+    },
+    {
+      "start": 1987.9,
+      "end": 1991.0,
+      "text": "And I was part of that group, so I kind of know-"
+    },
+    {
+      "start": 1991.0,
+      "end": 1993.0,
+      "text": "I love that."
+    },
+    {
+      "start": 1993.0,
+      "end": 1995.0,
+      "text": "That's cool."
+    },
+    {
+      "start": 1995.0,
+      "end": 1996.0,
+      "text": "It's pretty cool."
+    },
+    {
+      "start": 1996.0,
+      "end": 2001.0,
+      "text": "I was like, \"Why are you doing so much?\" And then he says, \"It trickles down into a bunch of decisions that we take.\""
+    },
+    {
+      "start": 2001.0,
+      "end": 2002.0,
+      "text": "Okay."
+    },
+    {
+      "start": 2002.0,
+      "end": 2004.5,
+      "text": "Let me talk about another topic that's very ..."
+    },
+    {
+      "start": 2004.5,
+      "end": 2006.8,
+      "text": "It's been a hot topic on this podcast."
+    },
+    {
+      "start": 2006.8,
+      "end": 2009.8,
+      "text": "It was a hot topic on Twitter for a while, evals."
+    },
+    {
+      "start": 2009.8,
+      "end": 2014.4,
+      "text": "A lot of people are obsessed with evals, think they're the solution to a lot of problems in AI."
+    },
+    {
+      "start": 2014.4,
+      "end": 2017.8,
+      "text": "A lot of people think they're overrated that you don't need evals."
+    },
+    {
+      "start": 2017.8,
+      "end": 2020.8,
+      "text": "You can just feel the vibes and you'll be all right."
+    },
+    {
+      "start": 2020.8,
+      "end": 2022.2,
+      "text": "What's your take on evals?"
+    },
+    {
+      "start": 2022.2,
+      "end": 2027.0,
+      "text": "How far does that take people in solving a lot of the problems that you talk about?"
+    },
+    {
+      "start": 2027.0,
+      "end": 2030.3,
+      "text": "In terms of what is going on in the community,"
+    },
+    {
+      "start": 2030.3,
+      "end": 2039.2,
+      "text": "I feel there's just this false dichotomy of this either evals is going to solve everything or online monitoring or production monitoring is going to solve everything."
+    },
+    {
+      "start": 2039.2,
+      "end": 2049.1,
+      "text": "And I find no reason to trust one of the extremes in the sense that I will entirely bank my application on this or like that to solve the thing."
+    },
+    {
+      "start": 2049.1,
+      "end": 2053.0,
+      "text": "So if you take a step back, think of what are evals."
+    },
+    {
+      "start": 2053.0,
+      "end": 2065.2,
+      "text": "Evals are basically your trusted product thinking or your knowledge about the product that is going into this set of data sets that you're going to build in the sense that this is what matters to me."
+    },
+    {
+      "start": 2065.2,
+      "end": 2074.8,
+      "text": "This is the kind of problems that my agent should not do and let me build a list of datasets so that I'm going to do well on those."
+    },
+    {
+      "start": 2074.8,
+      "end": 2076.8,
+      "text": "And in terms of production monitoring,"
+    },
+    {
+      "start": 2076.8,
+      "end": 2087.0,
+      "text": "what you're doing there is you're deploying your application and then you're having some sort of key metrics that actually communicate back to you on how customers are using your product."
+    },
+    {
+      "start": 2087.0,
+      "end": 2094.7,
+      "text": "You could be deploying any agent and if the customer is giving a thumbs up for your interaction, you better want to know that."
+    },
+    {
+      "start": 2094.7,
+      "end": 2097.9,
+      "text": "So that is what production monitoring is going to do."
+    },
+    {
+      "start": 2097.9,
+      "end": 2106.8,
+      "text": "And this production monitoring has existed for products for a long time, just that now with the AI agents, you need to be monitoring a lot more granularity."
+    },
+    {
+      "start": 2106.8,
+      "end": 2113.2,
+      "text": "It's not just the customer always giving you explicit feedback, but there is many implicit feedback that you can get."
+    },
+    {
+      "start": 2113.2,
+      "end": 2118.7,
+      "text": "For example, in ChatGPT, if you are liking the answer, you can actually give a thumbs up."
+    },
+    {
+      "start": 2118.7,
+      "end": 2124.8,
+      "text": "Or if you don't like the answer, sometimes customers don't give you thumbs down, but actually regenerate the answer."
+    },
+    {
+      "start": 2124.8,
+      "end": 2130.5,
+      "text": "So that is a clear indication that the initial answer that regenerator is not meeting the customer's expectation."
+    },
+    {
+      "start": 2130.5,
+      "end": 2135.0,
+      "text": "So these are the kind of implicit signals you always need to think about."
+    },
+    {
+      "start": 2135.0,
+      "end": 2138.4,
+      "text": "And that spectrum has been increasing in terms of production monitoring."
+    },
+    {
+      "start": 2138.4,
+      "end": 2144.4,
+      "text": "Now let's come back to the initial topic of like, okay, is it evals or is it production monitoring?"
+    },
+    {
+      "start": 2144.4,
+      "end": 2145.6,
+      "text": "What does it matter?"
+    },
+    {
+      "start": 2145.6,
+      "end": 2152.2,
+      "text": "So I feel, again, we go back to this problem first approach of what is it that you're trying to build."
+    },
+    {
+      "start": 2152.2,
+      "end": 2157.9,
+      "text": "You're trying to build a reliable application for your customers that's not going to do a bad thing."
+    },
+    {
+      "start": 2157.9,
+      "end": 2160.4,
+      "text": "It's always going to do the right thing."
+    },
+    {
+      "start": 2160.4,
+      "end": 2164.4,
+      "text": "Or if it is doing a wrong thing, you're basically alerted very quickly."
+    },
+    {
+      "start": 2164.4,
+      "end": 2166.9,
+      "text": "So I break this down into two parts."
+    },
+    {
+      "start": 2166.9,
+      "end": 2171.0,
+      "text": "One is nobody goes into deploying an application without actually just testing that."
+    },
+    {
+      "start": 2171.0,
+      "end": 2179.8,
+      "text": "This testing could be wipes or this testing could be, \"Okay, I have this 10 questions that it should not go wrong no matter what changes I make,"
+    },
+    {
+      "start": 2179.8,
+      "end": 2187.9,
+      "text": "and let me build this and let's call this an evaluation dataset.\" Now, let's say you build this, you deployed this, and then you figured, \"Okay,"
+    },
+    {
+      "start": 2187.9,
+      "end": 2192.0,
+      "text": "now I need to understand whether it's doing the right thing or not.\""
+    },
+    {
+      "start": 2192.0,
+      "end": 2198.2,
+      "text": "So if you're a high throughput or a high transaction customer, you cannot practically sit and evaluate all the traces."
+    },
+    {
+      "start": 2198.2,
+      "end": 2202.9,
+      "text": "You need some indication to understand what are the things that I should look at."
+    },
+    {
+      "start": 2202.9,
+      "end": 2210.4,
+      "text": "And this is where production monitoring comes into the picture that you cannot predict the base in which your agent could be doing wrong,"
+    },
+    {
+      "start": 2210.4,
+      "end": 2219.1,
+      "text": "but all of these other implicit signals and explicit signals, those are going to communicate back to you what are the traces that you need to look at."
+    },
+    {
+      "start": 2219.1,
+      "end": 2221.3,
+      "text": "And that is where production monitoring helps."
+    },
+    {
+      "start": 2221.3,
+      "end": 2229.4,
+      "text": "And once you get this kind of traces, you need to examine what are the failure patterns that you're seeing in these different types of interactions."
+    },
+    {
+      "start": 2229.4,
+      "end": 2233.5,
+      "text": "And is there something that I really care about that should not happen?"
+    },
+    {
+      "start": 2233.5,
+      "end": 2240.0,
+      "text": "And if that kind of failure modes are happening, then I need to think about building an evaluation dataset for it."
+    },
+    {
+      "start": 2240.0,
+      "end": 2247.9,
+      "text": "And okay, let's say I built an evaluation dataset for my agent trying to offer refunds where explicitly I have configured it not to."
+    },
+    {
+      "start": 2247.9,
+      "end": 2257.0,
+      "text": "So I built this evaluation dataset and then I made my changes in tools or prompts or whatever, and then I deployed the second version of the product."
+    },
+    {
+      "start": 2257.0,
+      "end": 2262.3,
+      "text": "Now there is no guarantee that this is the only problem that you're going to see."
+    },
+    {
+      "start": 2262.3,
+      "end": 2267.5,
+      "text": "You still need production monitoring to actually catch different kinds of problems that you might encounter."
+    },
+    {
+      "start": 2267.5,
+      "end": 2278.0,
+      "text": "So I feel evals are important, production monitoring is important, but this notion of only one of them is going to solve things for you that is completely dismissible in my opinion."
+    },
+    {
+      "start": 2278.0,
+      "end": 2279.0,
+      "text": "All right."
+    },
+    {
+      "start": 2279.0,
+      "end": 2280.2,
+      "text": "A very reasonable answer."
+    },
+    {
+      "start": 2280.2,
+      "end": 2284.1,
+      "text": "And the point here isn't, it's not just as simple as do both."
+    },
+    {
+      "start": 2284.1,
+      "end": 2291.0,
+      "text": "It's more that there are different things to catch and one approach won't catch all the things you need to be paying attention to."
+    },
+    {
+      "start": 2291.0,
+      "end": 2292.0,
+      "text": "Exactly."
+    },
+    {
+      "start": 2292.0,
+      "end": 2293.0,
+      "text": "Awesome."
+    },
+    {
+      "start": 2293.0,
+      "end": 2311.4,
+      "text": "I want to take two steps back and kind of talk about how much weight the term evals has had to take in the second half of 2025 because you go meet a data labeling company and they tell you our experts are writing evals and then you have all of these folks saying that PMs should be writing evals,"
+    },
+    {
+      "start": 2311.4,
+      "end": 2312.6,
+      "text": "they're the new PRDs."
+    },
+    {
+      "start": 2312.6,
+      "end": 2320.6,
+      "text": "And then you have folks saying that evals is pretty much everything, which is the feedback loop you're supposed to be building to improve your products."
+    },
+    {
+      "start": 2320.6,
+      "end": 2324.5,
+      "text": "Now, step back as a beginner and kind of think what are evals?"
+    },
+    {
+      "start": 2324.5,
+      "end": 2326.1,
+      "text": "Why is everyone saying evals?"
+    },
+    {
+      "start": 2326.1,
+      "end": 2332.5,
+      "text": "And these are actually different parts of the process and nobody is wrong in the sense that yes, these are evals,"
+    },
+    {
+      "start": 2332.5,
+      "end": 2342.0,
+      "text": "but when a data labeling company is telling you that our experts are writing evals, they're actually referring to error analysis or experts just leading notes on what should be right."
+    },
+    {
+      "start": 2342.0,
+      "end": 2348.1,
+      "text": "Lawyers and doctors write evals, that doesn't mean they're building LLM judges or they're building this entire feedback loop."
+    },
+    {
+      "start": 2348.1,
+      "end": 2356.0,
+      "text": "And when you say that a PM should be writing evals, doesn't mean they have to write an LLM judge that's good enough for production."
+    },
+    {
+      "start": 2356.0,
+      "end": 2361.1,
+      "text": "I think there are also very prescriptive ways of doing this and plus one to KD,"
+    },
+    {
+      "start": 2361.1,
+      "end": 2370.1,
+      "text": "which is you cannot predict upfront if you need to be building an LLM judge versus you need to be using implicit signals from production monitoring, et cetera."
+    },
+    {
+      "start": 2370.1,
+      "end": 2379.0,
+      "text": "I think Martin Fowler at some point had this term called semantic diffusion back in the 2000s, which kind of means that someone comes up with a term,"
+    },
+    {
+      "start": 2379.0,
+      "end": 2385.1,
+      "text": "everybody starts butchering it with their own definitions and then you kind of lose the actual definition of it."
+    },
+    {
+      "start": 2385.1,
+      "end": 2394.0,
+      "text": "That is what is happening to evals or agents or any word in AI as of today, everybody kind of sees a different side to it, I guess."
+    },
+    {
+      "start": 2394.0,
+      "end": 2403.8,
+      "text": "But if you make a bunch of practitioners sit together and ask them, \"Is it important to build an actionable feedback loop for AI products?\" I think all of them will agree."
+    },
+    {
+      "start": 2403.8,
+      "end": 2407.1,
+      "text": "Now, how you do that really depends on your application itself."
+    },
+    {
+      "start": 2407.1,
+      "end": 2413.9,
+      "text": "When you go to complex use cases, it's incredibly hard to build LLM judges because you see a lot of emerging patterns."
+    },
+    {
+      "start": 2413.9,
+      "end": 2423.3,
+      "text": "If you built a judge that would test for verbosity or something like that, it turns out that you're seeing newer patterns that your LLM judge is not able to catch,"
+    },
+    {
+      "start": 2423.3,
+      "end": 2426.4,
+      "text": "and then you just end up building too many evals."
+    },
+    {
+      "start": 2426.4,
+      "end": 2435.5,
+      "text": "And at that point, it just makes sense to look at your user signals, fix them, check if you have regressed and move on instead of actually building these judges."
+    },
+    {
+      "start": 2435.5,
+      "end": 2436.8,
+      "text": "So it all depends."
+    },
+    {
+      "start": 2436.8,
+      "end": 2442.3,
+      "text": "I think one statement that every ML practitioner will tell you is it really depends on the context."
+    },
+    {
+      "start": 2442.3,
+      "end": 2445.0,
+      "text": "Don't be obsessed with prescriptions they're going to change."
+    },
+    {
+      "start": 2445.0,
+      "end": 2450.3,
+      "text": "That's such an important point, this idea that, especially that evals just means many things to different people now."
+    },
+    {
+      "start": 2450.3,
+      "end": 2452.5,
+      "text": "It's just a term for so many things."
+    },
+    {
+      "start": 2452.5,
+      "end": 2459.0,
+      "text": "And it's complicated to just talk about evals when you see it as the stuff data labeling companies are giving you and things PMR, right?"
+    },
+    {
+      "start": 2459.0,
+      "end": 2460.1,
+      "text": "And there's also benchmarks."
+    },
+    {
+      "start": 2460.1,
+      "end": 2462.0,
+      "text": "People call benchmarks a little bit evals."
+    },
+    {
+      "start": 2462.0,
+      "end": 2463.0,
+      "text": "It's like-"
+    },
+    {
+      "start": 2463.0,
+      "end": 2469.5,
+      "text": "I recently spoke to a client who told me, \"We do evals.\" And I was like, \"Okay, can you show me your dataset?\" And said, \"No,"
+    },
+    {
+      "start": 2469.5,
+      "end": 2471.5,
+      "text": "we just checked LM Arena and Artificial Analysis."
+    },
+    {
+      "start": 2471.5,
+      "end": 2478.0,
+      "text": "These are independent benchmarks and we know that this model is the right one for our use case.\" And I'm like, \"You're not doing evals."
+    },
+    {
+      "start": 2478.0,
+      "end": 2479.0,
+      "text": "That's not evals."
+    },
+    {
+      "start": 2479.0,
+      "end": 2480.0,
+      "text": "Those are model evals.\""
+    },
+    {
+      "start": 2480.0,
+      "end": 2481.0,
+      "text": "But it makes sense."
+    },
+    {
+      "start": 2481.0,
+      "end": 2482.9,
+      "text": "The word, it could be used in that context."
+    },
+    {
+      "start": 2482.9,
+      "end": 2486.0,
+      "text": "I get why people think that, but yeah, now it's just confusing it even more."
+    },
+    {
+      "start": 2486.0,
+      "end": 2487.0,
+      "text": "Yep."
+    },
+    {
+      "start": 2487.0,
+      "end": 2494.5,
+      "text": "Just one more line of questioning here that I think that's on my mind is the reason this became kind of a big debate is Cloud Code."
+    },
+    {
+      "start": 2494.5,
+      "end": 2499.0,
+      "text": "The head of Cloud Code, Boris, was like, \"Nah, we don't do evals on Cloud Code."
+    },
+    {
+      "start": 2499.0,
+      "end": 2504.0,
+      "text": "It's all vibes.\" What can you share, Kiriti, on Kodex and the Kodex team, how you approach evals?"
+    },
+    {
+      "start": 2504.0,
+      "end": 2511.0,
+      "text": "So Kodex, we have this balanced approach of you need to have evals and you need to definitely listen to your customers."
+    },
+    {
+      "start": 2511.0,
+      "end": 2518.7,
+      "text": "And I think Alex has been on your podcast recently and he's been talking about how you're extremely focused on building the right product."
+    },
+    {
+      "start": 2518.7,
+      "end": 2522.5,
+      "text": "And a big part of it is basically listening to your customers."
+    },
+    {
+      "start": 2522.5,
+      "end": 2531.5,
+      "text": "And coding agents are extremely unique compared to agents for other domains in the sense that these are actually built for customizability and these are built for engineers."
+    },
+    {
+      "start": 2531.5,
+      "end": 2538.5,
+      "text": "So coding agent is not a product which is going to solve these top five workflows or top six workflows or whatever."
+    },
+    {
+      "start": 2538.5,
+      "end": 2541.4,
+      "text": "It's meant to be customizable in multi different ways."
+    },
+    {
+      "start": 2541.4,
+      "end": 2550.0,
+      "text": "And the implication of that is that your product is going to be used in different integrations and different kinds of tools and different kinds of things."
+    },
+    {
+      "start": 2550.0,
+      "end": 2558.0,
+      "text": "So it gets really hard to build an evaluation dataset for all kinds of interactions that your customers are going to use your product for."
+    },
+    {
+      "start": 2558.0,
+      "end": 2568.7,
+      "text": "With that said, you also need to understand that, okay, if I'm going to make a change, it's at least not going to damage something that is really core to the product."
+    },
+    {
+      "start": 2568.7,
+      "end": 2576.4,
+      "text": "So we have evaluations for doing that, butt the same time we take extreme care on understanding how the customers are using it."
+    },
+    {
+      "start": 2576.4,
+      "end": 2582.5,
+      "text": "For example, we built this code review product recently and it has been gaining extreme amount of traction."
+    },
+    {
+      "start": 2582.5,
+      "end": 2589.5,
+      "text": "And I feel like many, many bugs in OpenAI as well as even our external customers are getting caught with this."
+    },
+    {
+      "start": 2589.5,
+      "end": 2598.2,
+      "text": "And now let's say if I'm making a model change to the code review or a different kinds of RL mechanism that I trained with it,"
+    },
+    {
+      "start": 2598.2,
+      "end": 2608.3,
+      "text": "and now if I'm going to deploy it, I definitely do want A/B test and identify whether it's actually finding the right mistakes and how are users reacting to it?"
+    },
+    {
+      "start": 2608.3,
+      "end": 2616.0,
+      "text": "And sometimes if users do get annoyed by your incorrect code regis, they go to the extent of just switching off the product."
+    },
+    {
+      "start": 2616.0,
+      "end": 2622.8,
+      "text": "So those are the signals that you want to look at and make sure that your new changes are doing the right thing."
+    },
+    {
+      "start": 2622.8,
+      "end": 2629.0,
+      "text": "And it's extremely hard for us to think of these kind of scenarios beforehand and develop evaluation data sets for it."
+    },
+    {
+      "start": 2629.0,
+      "end": 2631.7,
+      "text": "So I feel like there's a bit of both."
+    },
+    {
+      "start": 2631.7,
+      "end": 2641.8,
+      "text": "There's a lot of vibes and there's a lot of customer feedback and we are super active on the social media to understand if anybody's having certain types of problems and quickly fix that."
+    },
+    {
+      "start": 2641.8,
+      "end": 2643.6,
+      "text": "So I feel it's a ..."
+    },
+    {
+      "start": 2643.6,
+      "end": 2645.0,
+      "text": "How do I put this?"
+    },
+    {
+      "start": 2645.0,
+      "end": 2648.0,
+      "text": "It's like a domain of things that you do here."
+    },
+    {
+      "start": 2648.0,
+      "end": 2649.6,
+      "text": "That makes so much sense."
+    },
+    {
+      "start": 2649.6,
+      "end": 2650.6,
+      "text": "Okay."
+    },
+    {
+      "start": 2650.6,
+      "end": 2653.0,
+      "text": "What I'm hearing, Codex, pro evals, but it's not enough."
+    },
+    {
+      "start": 2653.0,
+      "end": 2655.5,
+      "text": "But also just watch customer behavior and feedback."
+    },
+    {
+      "start": 2655.5,
+      "end": 2659.0,
+      "text": "And also there's some vibes just like, is this feeling good?"
+    },
+    {
+      "start": 2659.0,
+      "end": 2664.0,
+      "text": "As I'm using it, generating great code that I'm excited about that I think is great."
+    },
+    {
+      "start": 2664.0,
+      "end": 2674.1,
+      "text": "I don't think if anybody's coming and seeing that I have this concrete set of evals that I can bet my life on and then I don't need to think about anything else,"
+    },
+    {
+      "start": 2674.1,
+      "end": 2675.6,
+      "text": "it's not going to work."
+    },
+    {
+      "start": 2675.6,
+      "end": 2681.5,
+      "text": "And every new model that you're going to launch, we get together as a team and test different things."
+    },
+    {
+      "start": 2681.5,
+      "end": 2683.6,
+      "text": "Each person is concentrating on something else."
+    },
+    {
+      "start": 2683.6,
+      "end": 2691.0,
+      "text": "And we have this list of hard problems that we have and we throw that to the model and see how well they're progressing."
+    },
+    {
+      "start": 2691.0,
+      "end": 2698.0,
+      "text": "So it's like custom evals for each engineer, you would say, and just understand what the product is doing in its new model."
+    },
+    {
+      "start": 2698.0,
+      "end": 2707.6,
+      "text": "If you're a founder, the hardest part of starting a company isn't having the idea, it's scaling the business without getting buried in back office work."
+    },
+    {
+      "start": 2707.6,
+      "end": 2709.4,
+      "text": "That's where Brex comes in."
+    },
+    {
+      "start": 2709.4,
+      "end": 2712.4,
+      "text": "Brex is the intelligent finance platform for founders."
+    },
+    {
+      "start": 2712.4,
+      "end": 2722.0,
+      "text": "With Brex, you get high limit corporate cards, easy banking, high yield treasury, plus a team of AI agents that handle manual finance tasks for you."
+    },
+    {
+      "start": 2722.0,
+      "end": 2731.9,
+      "text": "They'll do all the stuff that you don't want to do, like file your expenses, scour transactions for waste, and run reports all according to your rules."
+    },
+    {
+      "start": 2731.9,
+      "end": 2736.7,
+      "text": "With Brex's AI agents, you can move faster while staying in full control."
+    },
+    {
+      "start": 2736.7,
+      "end": 2741.2,
+      "text": "One in three startups in the United States already runs on Brex."
+    },
+    {
+      "start": 2741.2,
+      "end": 2743.0,
+      "text": "You can too at brex.com."
+    },
+    {
+      "start": 2743.0,
+      "end": 2753.4,
+      "text": "We've been talking for almost an hour already, and we haven't even covered your extremely powerful software development workflow for building AI products that you two developed that you teach in your course,"
+    },
+    {
+      "start": 2753.4,
+      "end": 2759.4,
+      "text": "that you basically combined all the stuff we've been talking about into a step-by-step approach to building AI products."
+    },
+    {
+      "start": 2759.4,
+      "end": 2762.2,
+      "text": "You call it the continuous calibration, continuous development framework."
+    },
+    {
+      "start": 2762.2,
+      "end": 2770.4,
+      "text": "Let's pull up a visual to show people what the heck we're talking about, and then just walk us through what this is, how this works,"
+    },
+    {
+      "start": 2770.4,
+      "end": 2778.0,
+      "text": "how teams can shift the way they build their AI products to this approach to help them avoid a lot of pain and suffering."
+    },
+    {
+      "start": 2778.0,
+      "end": 2780.6,
+      "text": "Before we go about explaining the life cycle,"
+    },
+    {
+      "start": 2780.6,
+      "end": 2792.2,
+      "text": "a quick story on why Kiriti and I came up with this is because there are tons of companies that we keep talking to that have the pressure from their competitors because they're all building agents."
+    },
+    {
+      "start": 2792.2,
+      "end": 2795.1,
+      "text": "We should be building agents that are entirely autonomous."
+    },
+    {
+      "start": 2795.1,
+      "end": 2800.3,
+      "text": "And I did end up working with a few customers where we built these end-to-end agents."
+    },
+    {
+      "start": 2800.3,
+      "end": 2812.0,
+      "text": "And turns out that because you start off at a place where you don't know how the user might interact with your system and what kind of responses or actions the AI might come up with,"
+    },
+    {
+      "start": 2812.0,
+      "end": 2819.7,
+      "text": "it's really hard to fix problems when you have this really huge workflow, which is taking four or five steps, making tons of decisions."
+    },
+    {
+      "start": 2819.7,
+      "end": 2829.1,
+      "text": "You just end up debugging so much and then kind of hot fixing to the point where at a time we were building for a customer support use case,"
+    },
+    {
+      "start": 2829.1,
+      "end": 2833.0,
+      "text": "which is the example that we give in the newsletter as well."
+    },
+    {
+      "start": 2833.0,
+      "end": 2843.9,
+      "text": "And we had to shut down the product because we were doing so many hot fixes and there was no way we could count all the emerging problems that were coming up."
+    },
+    {
+      "start": 2843.9,
+      "end": 2846.3,
+      "text": "And there's also quite some news online."
+    },
+    {
+      "start": 2846.3,
+      "end": 2856.2,
+      "text": "Recently, I think Air Canada had this thing where one of their agents predicted or hallucinated a policy for a refund, which was not part of their original playbook,"
+    },
+    {
+      "start": 2856.2,
+      "end": 2859.6,
+      "text": "and they had to go by it because legal stuff."
+    },
+    {
+      "start": 2859.6,
+      "end": 2863.1,
+      "text": "And there have been a ton of really scary incidents."
+    },
+    {
+      "start": 2863.1,
+      "end": 2865.5,
+      "text": "And that's where the idea comes from."
+    },
+    {
+      "start": 2865.5,
+      "end": 2870.9,
+      "text": "How can you build so that you don't lose customer trust and you don't end up,"
+    },
+    {
+      "start": 2870.9,
+      "end": 2877.4,
+      "text": "or your agent or AI system doesn't end up making decisions that are super dangerous to the company itself."
+    },
+    {
+      "start": 2877.4,
+      "end": 2883.2,
+      "text": "At the same time, build a flywheel so that you can improve your product as you go."
+    },
+    {
+      "start": 2883.2,
+      "end": 2888.0,
+      "text": "And that's where we came up with this idea of continuous calibration, continuous development."
+    },
+    {
+      "start": 2888.0,
+      "end": 2896.1,
+      "text": "The idea is pretty simple, which is we have this right side of the loop, which is continuous development, where you scope capability and curate data,"
+    },
+    {
+      "start": 2896.1,
+      "end": 2902.4,
+      "text": "essentially get a data set of what your expected inputs are and what your expected outputs should be looking at."
+    },
+    {
+      "start": 2902.4,
+      "end": 2914.2,
+      "text": "This is a very good exercise before you start building any AI product because many times you figure out that a lot of the folks within the team are just not aligned on how the product should behave."
+    },
+    {
+      "start": 2914.2,
+      "end": 2920.5,
+      "text": "And that's where your PMs can really give in a lot more information and your subject matter experts as well."
+    },
+    {
+      "start": 2920.5,
+      "end": 2926.1,
+      "text": "So you have this data set that you know your AI product should be doing really well on."
+    },
+    {
+      "start": 2926.1,
+      "end": 2928.9,
+      "text": "It's not comprehensive, but it lets you get started."
+    },
+    {
+      "start": 2928.9,
+      "end": 2933.9,
+      "text": "And then you set up the application and then design the right kind of evaluation metrics."
+    },
+    {
+      "start": 2933.9,
+      "end": 2942.9,
+      "text": "And I intentionally use the term evaluation metrics, although we say evals because I just want to be very specific in what it is because evaluation is a process,"
+    },
+    {
+      "start": 2942.9,
+      "end": 2947.0,
+      "text": "evaluation metrics are dimensions that you want to focus on during the process."
+    },
+    {
+      "start": 2947.0,
+      "end": 2950.4,
+      "text": "And then you go about deploying, run your evaluation metrics."
+    },
+    {
+      "start": 2950.4,
+      "end": 2958.6,
+      "text": "And the second part is the continuous calibration, which is the part where you understand what behavior you hadn't expected in the beginning, right?"
+    },
+    {
+      "start": 2958.6,
+      "end": 2965.7,
+      "text": "Because when you start the development process, you have this data set that you're optimizing for, but more often than not,"
+    },
+    {
+      "start": 2965.7,
+      "end": 2973.8,
+      "text": "you realize that that data set is not comprehensive enough because users start behaving with your systems in ways that you did not predict."
+    },
+    {
+      "start": 2973.8,
+      "end": 2977.2,
+      "text": "And that's where you want to do the calibration piece."
+    },
+    {
+      "start": 2977.2,
+      "end": 2980.4,
+      "text": "This segment is brought to you by Alo Yoga."
+    },
+    {
+      "start": 2980.4,
+      "end": 2989.3,
+      "text": "If you have been wondering how to get a real handle on your without adding more work to your week, Alo Yoga is the answer."
+    },
+    {
+      "start": 2989.3,
+      "end": 2997.2,
+      "text": "Lenny has been using it, and it is the reason the prep for this episode took an afternoon instead of a week."
+    },
+    {
+      "start": 2997.2,
+      "end": 3002.6,
+      "text": "Go to aloyoga.com/lenny and enter code ALOYOGPOD at checkout to get your first month free."
+    },
+    {
+      "start": 3002.6,
+      "end": 3005.5,
+      "text": "That is aloyoga.com/lenny. Alright, back to the show."
+    },
+    {
+      "start": 3005.5,
+      "end": 3006.9,
+      "text": "I've deployed my system."
+    },
+    {
+      "start": 3006.9,
+      "end": 3015.4,
+      "text": "Now I see that there are patterns that I did not really expect and your evaluation metrics should give you some insight into those patterns,"
+    },
+    {
+      "start": 3015.4,
+      "end": 3023.9,
+      "text": "but sometimes you figure out that those metrics were also not enough and you probably have new error patterns that you have not thought about."
+    },
+    {
+      "start": 3023.9,
+      "end": 3027.3,
+      "text": "And that's where you analyze your behavior, spot error patterns."
+    },
+    {
+      "start": 3027.3,
+      "end": 3035.1,
+      "text": "You apply fixes for issues that you see, but you also design newer evaluation metrics to figure out that they are emerging patterns."
+    },
+    {
+      "start": 3035.1,
+      "end": 3038.5,
+      "text": "And that doesn't mean you should always design evaluation metrics."
+    },
+    {
+      "start": 3038.5,
+      "end": 3045.4,
+      "text": "There are some errors that you can just fix and not really come back to because they're very spot errors."
+    },
+    {
+      "start": 3045.4,
+      "end": 3051.5,
+      "text": "For instance, there's a tool calling error just because your tool wasn't defined well and stuff like that."
+    },
+    {
+      "start": 3051.5,
+      "end": 3054.2,
+      "text": "You can just fix it and move on."
+    },
+    {
+      "start": 3054.2,
+      "end": 3058.7,
+      "text": "And this is pretty much how an AI product lifecycle would look like."
+    },
+    {
+      "start": 3058.7,
+      "end": 3067.9,
+      "text": "But what we specifically also mention is while you're going through these iterations, try to think of lower agency iterations in the beginning and higher control iterations."
+    },
+    {
+      "start": 3067.9,
+      "end": 3087.3,
+      "text": "What that means is constrain the number of decisions your AI systems can make and make sure that they're humans in the loop and then increase that over time because you're kind of building a flywheel of behavior and you're understanding what kind of use cases are coming in or how your users are using the system."
+    },
+    {
+      "start": 3087.3,
+      "end": 3092.3,
+      "text": "And one example I think we give in the newsletter itself is the customer support."
+    },
+    {
+      "start": 3092.3,
+      "end": 3099.0,
+      "text": "This is a nice image that kind of shows how you can think of agency and control as two dimensions."
+    },
+    {
+      "start": 3099.0,
+      "end": 3108.0,
+      "text": "And each of your versions keep on increasing the agency or the ability of your AI system to make decisions and lower the control as you go."
+    },
+    {
+      "start": 3108.0,
+      "end": 3115.3,
+      "text": "And one example that we give is that of the customer support agent, where you can break it down into three versions."
+    },
+    {
+      "start": 3115.3,
+      "end": 3122.6,
+      "text": "The first version is just routing, which is your agent able to classify and route a particular ticket to the right department?"
+    },
+    {
+      "start": 3122.6,
+      "end": 3128.3,
+      "text": "And sometimes when you read this, you probably think, is it so hard to just do routing?"
+    },
+    {
+      "start": 3128.3,
+      "end": 3130.6,
+      "text": "Why can't an agent easily do that?"
+    },
+    {
+      "start": 3130.6,
+      "end": 3135.3,
+      "text": "And when you go to enterprises, routing itself can be a super complex problem."
+    },
+    {
+      "start": 3135.3,
+      "end": 3140.3,
+      "text": "Any retail company, any popular retail company that you can think of has hierarchical taxonomies."
+    },
+    {
+      "start": 3140.3,
+      "end": 3143.1,
+      "text": "Most of the times the taxonomies are incredibly messy."
+    },
+    {
+      "start": 3143.1,
+      "end": 3159.0,
+      "text": "I have worked in use cases where you probably have taxonomy that says some kind of hierarchy and then that says shoes and then women's shoes and men's shoes all at the same layer where idea you should be having shoes and then women's shoes and men's shoes should be subclasses."
+    },
+    {
+      "start": 3159.0,
+      "end": 3160.8,
+      "text": "And then you're like, okay, fine."
+    },
+    {
+      "start": 3160.8,
+      "end": 3162.4,
+      "text": "I could just merge that."
+    },
+    {
+      "start": 3162.4,
+      "end": 3170.8,
+      "text": "And you go further and you see that there's also another section on the shoes that says for women and for men, and it's just not aggregated."
+    },
+    {
+      "start": 3170.8,
+      "end": 3172.7,
+      "text": "It's not fixed for some reason."
+    },
+    {
+      "start": 3172.7,
+      "end": 3178.3,
+      "text": "So if an agent kind of sees this kind of a taxonomy, what is it supposed to do?"
+    },
+    {
+      "start": 3178.3,
+      "end": 3180.1,
+      "text": "Where is it supposed to route?"
+    },
+    {
+      "start": 3180.1,
+      "end": 3187.3,
+      "text": "And a lot of the times we are not aware of these problems until you actually go about building something and understanding it."
+    },
+    {
+      "start": 3187.3,
+      "end": 3193.2,
+      "text": "And when these kind of problems, real human agents see these kind of problems, they know what to check next."
+    },
+    {
+      "start": 3193.2,
+      "end": 3199.5,
+      "text": "Maybe they realize that the node that says for women and for men that's under shoes was last updated in 2019,"
+    },
+    {
+      "start": 3199.5,
+      "end": 3203.9,
+      "text": "which means that it's just a dead node that's lying there and not being used."
+    },
+    {
+      "start": 3203.9,
+      "end": 3209.9,
+      "text": "So they kind of know that, okay, we're supposed to be looking at a different node and stuff like that."
+    },
+    {
+      "start": 3209.9,
+      "end": 3218.8,
+      "text": "And I'm not saying agents cannot understand this or models are not capable enough to understand this, but there are really weird rules within enterprises that are not documented anywhere."
+    },
+    {
+      "start": 3218.8,
+      "end": 3225.3,
+      "text": "And you want to make sure that the agents have all of that context instead of just throwing the problem at that."
+    },
+    {
+      "start": 3225.3,
+      "end": 3226.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 3226.3,
+      "end": 3234.5,
+      "text": "Coming back to the versions we had, routing was one where you have really high control because even if your agent routes to the wrong department,"
+    },
+    {
+      "start": 3234.5,
+      "end": 3237.0,
+      "text": "humans can take control and undo those actions."
+    },
+    {
+      "start": 3237.0,
+      "end": 3238.2,
+      "text": "And along the way,"
+    },
+    {
+      "start": 3238.2,
+      "end": 3248.5,
+      "text": "you also figure out that you probably are dealing with a ton of data issues that you need to fix and make sure that your data layer is good enough for the agent to function."
+    },
+    {
+      "start": 3248.5,
+      "end": 3258.3,
+      "text": "We do is what we said of a Copilot, which is now that you've figured out routing works fine after a few iterations and you've fixed all of your data issues,"
+    },
+    {
+      "start": 3258.3,
+      "end": 3267.1,
+      "text": "you could go to the next step, which is, can my agent provide suggestions based on some standard operating procedures that we have for the customer support agent?"
+    },
+    {
+      "start": 3267.1,
+      "end": 3271.5,
+      "text": "And it could just generate a draft that the human can make changes to."
+    },
+    {
+      "start": 3271.5,
+      "end": 3280.6,
+      "text": "And when you do this, you're also logging human behavior, which means that how much of this draft was used by the customer support agent or what was omitted."
+    },
+    {
+      "start": 3280.6,
+      "end": 3290.3,
+      "text": "So you're actually getting error analysis for free when you do this because you're literally logging everything that the user is doing that you could then build back into your flywheel."
+    },
+    {
+      "start": 3290.3,
+      "end": 3298.9,
+      "text": "And then we say, post that, once you've figured out that those drafts look good and most of the times maybe humans are not making too many changes,"
+    },
+    {
+      "start": 3298.9,
+      "end": 3300.7,
+      "text": "they're using these drafts as is."
+    },
+    {
+      "start": 3300.7,
+      "end": 3307.8,
+      "text": "That's when you want to go to your end-to-end resolution assistant that could draft a resolution that could solve the ticket as well."
+    },
+    {
+      "start": 3307.8,
+      "end": 3313.6,
+      "text": "And those are the stages of agency where you start with low agency and then you go up high."
+    },
+    {
+      "start": 3313.6,
+      "end": 3317.0,
+      "text": "We also have this really nice table that we put together,"
+    },
+    {
+      "start": 3317.0,
+      "end": 3327.4,
+      "text": "which is what do you do at each version and what you learn that can enable you to go to the next step and what information do you get that you can feed into the loop,"
+    },
+    {
+      "start": 3327.4,
+      "end": 3328.4,
+      "text": "right?"
+    },
+    {
+      "start": 3328.4,
+      "end": 3337.3,
+      "text": "When you're just doing your routing, you have better quality routing data, you also know what kind of prompts you need to be building to improve the routing system."
+    },
+    {
+      "start": 3337.3,
+      "end": 3343.1,
+      "text": "Essentially, you're figuring out your structure for context engineering and building that flywheel that you want."
+    },
+    {
+      "start": 3343.1,
+      "end": 3348.9,
+      "text": "And while I go through this, I want to also be very clear that two things."
+    },
+    {
+      "start": 3348.9,
+      "end": 3356.2,
+      "text": "One is when you build with CCCD in mind, it doesn't mean that you've fixed the problem all for one."
+    },
+    {
+      "start": 3356.2,
+      "end": 3367.5,
+      "text": "It's possible that you've probably gone through V3 and you see a new distribution of data that you never previously imagined, but this is just one way to lower your risk,"
+    },
+    {
+      "start": 3367.5,
+      "end": 3375.1,
+      "text": "which is you get enough information about how users behave with your system before going to a point of complete autonomy."
+    },
+    {
+      "start": 3375.1,
+      "end": 3380.2,
+      "text": "And the second thing is you're also kind of building this implicit logging system."
+    },
+    {
+      "start": 3380.2,
+      "end": 3385.3,
+      "text": "A lot of people come and tell us that, \"Oh, wait, there are evals."
+    },
+    {
+      "start": 3385.3,
+      "end": 3387.8,
+      "text": "Why do you need something like this?"
+    },
+    {
+      "start": 3387.8,
+      "end": 3398.4,
+      "text": "\" The issue with just building a bunch of evaluation metrics and then having them in production is evaluation metrics catch only the errors that you're already aware of,"
+    },
+    {
+      "start": 3398.4,
+      "end": 3405.3,
+      "text": "but there can be a lot of emerging patterns that you understand only after you put things in production."
+    },
+    {
+      "start": 3405.3,
+      "end": 3406.9,
+      "text": "So for those emerging patterns,"
+    },
+    {
+      "start": 3406.9,
+      "end": 3420.2,
+      "text": "you're kind of creating a low risk kind of a framework so that you could understand user behavior and not really be in a position where there are tons of errors and you're trying to fix all of them at once."
+    },
+    {
+      "start": 3420.2,
+      "end": 3423.4,
+      "text": "And this is not the only way to do it."
+    },
+    {
+      "start": 3423.4,
+      "end": 3425.3,
+      "text": "There are tons of different ways."
+    },
+    {
+      "start": 3425.3,
+      "end": 3428.2,
+      "text": "You want to decide how you constrain your autonomy."
+    },
+    {
+      "start": 3428.2,
+      "end": 3435.4,
+      "text": "It could be based on the number of actions that the agent is taking, which is what we do in this example."
+    },
+    {
+      "start": 3435.4,
+      "end": 3437.3,
+      "text": "It could be based on topic."
+    },
+    {
+      "start": 3437.3,
+      "end": 3444.7,
+      "text": "There's just some domains where it's pretty high risk to make a system completely autonomous for certain decisions, but for some other topics,"
+    },
+    {
+      "start": 3444.7,
+      "end": 3449.6,
+      "text": "it's okay to make them completely autonomous and depending on the complexity of the problem."
+    },
+    {
+      "start": 3449.6,
+      "end": 3458.3,
+      "text": "And that's where you really want your product managers, your engineers and subject matter experts to align on how to build this system and continuously improve it."
+    },
+    {
+      "start": 3458.3,
+      "end": 3465.3,
+      "text": "The idea is just behavior calibration and not losing user trust as you do that behavior calibration, I guess."
+    },
+    {
+      "start": 3465.3,
+      "end": 3470.1,
+      "text": "We'll link folks to this actual post if they want to go really deep."
+    },
+    {
+      "start": 3470.1,
+      "end": 3474.9,
+      "text": "You basically go through all of these steps by step, a bunch of examples."
+    },
+    {
+      "start": 3474.9,
+      "end": 3478.7,
+      "text": "And the idea here is, as you said, that the reason,"
+    },
+    {
+      "start": 3478.7,
+      "end": 3487.4,
+      "text": "everything about what you're describing here is about making it continuous and iterative and kind of moving along this progression of higher autonomy, less control."
+    },
+    {
+      "start": 3487.4,
+      "end": 3493.6,
+      "text": "And this idea of even calling continuous calibration, continuous development is communicating it's this kind of iterative process."
+    },
+    {
+      "start": 3493.6,
+      "end": 3499.8,
+      "text": "And just to be clear, this naming is kind of ode to CI/CD, continuous integration, continuous deployment suite."
+    },
+    {
+      "start": 3499.8,
+      "end": 3509.1,
+      "text": "And the idea here is that this is the version of that for AI where instead of just integrating into unit tests and deploying constantly, it's running evals, looking at results,"
+    },
+    {
+      "start": 3509.1,
+      "end": 3514.3,
+      "text": "iterating on the metrics you're watching, figuring out where it's breaking and iterating on that."
+    },
+    {
+      "start": 3514.3,
+      "end": 3515.3,
+      "text": "Awesome."
+    },
+    {
+      "start": 3515.3,
+      "end": 3516.3,
+      "text": "Okay."
+    },
+    {
+      "start": 3516.3,
+      "end": 3519.6,
+      "text": "So again, we'll point people to this post if they want to go deeper."
+    },
+    {
+      "start": 3519.6,
+      "end": 3520.8,
+      "text": "That was a great overview."
+    },
+    {
+      "start": 3520.8,
+      "end": 3526.3,
+      "text": "Is there anything else before we go into different topic around this framework specifically that you think is important for people to know?"
+    },
+    {
+      "start": 3526.3,
+      "end": 3536.8,
+      "text": "I think one of the most common questions we get is, how do I know if I need to go to the next stage or if this is calibrated enough?"
+    },
+    {
+      "start": 3536.8,
+      "end": 3542.1,
+      "text": "There's not really a rule book you can follow, but it's all about minimizing surprise,"
+    },
+    {
+      "start": 3542.1,
+      "end": 3550.2,
+      "text": "which means let's say you're calibrating every one or two days and you figure out that you're not seeing new data distribution patterns,"
+    },
+    {
+      "start": 3550.2,
+      "end": 3554.8,
+      "text": "your users have been pretty consistent with how they're behaving with the system."
+    },
+    {
+      "start": 3554.8,
+      "end": 3563.6,
+      "text": "Then the amount of information you gain is kind of very low and that's when you know you can actually go to the next stage."
+    },
+    {
+      "start": 3563.6,
+      "end": 3570.6,
+      "text": "And it's all about the wipes at that point, do you know you're ready, you're not receiving any new information."
+    },
+    {
+      "start": 3570.6,
+      "end": 3578.3,
+      "text": "But also it really helps to understand that sometimes there are events that could completely mess up the calibration of your system."
+    },
+    {
+      "start": 3578.3,
+      "end": 3584.3,
+      "text": "An example is GPT-4o doesn't exist anymore, or it's going to be deprecated in APIs as well."
+    },
+    {
+      "start": 3584.3,
+      "end": 3590.7,
+      "text": "So most companies that were using 4o should switch to 5 and 5 has very different properties."
+    },
+    {
+      "start": 3590.7,
+      "end": 3593.3,
+      "text": "So that's where your calibration's off again."
+    },
+    {
+      "start": 3593.3,
+      "end": 3597.1,
+      "text": "You want to go back and do this process again."
+    },
+    {
+      "start": 3597.1,
+      "end": 3602.3,
+      "text": "Sometimes users start behaving with systems also differently over time or user behavior evolves."
+    },
+    {
+      "start": 3602.3,
+      "end": 3613.2,
+      "text": "Even with consumer products, you don't talk to ChatGPT the same way you were talking, say, two years ago, just because you know the capabilities have increased so much."
+    },
+    {
+      "start": 3613.2,
+      "end": 3622.3,
+      "text": "And also just people get excited when these systems can solve one task, they want to try it out on other tasks as well."
+    },
+    {
+      "start": 3622.3,
+      "end": 3625.6,
+      "text": "We built this system for underwriters at some point."
+    },
+    {
+      "start": 3625.6,
+      "end": 3627.5,
+      "text": "Underwriting is a painful task."
+    },
+    {
+      "start": 3627.5,
+      "end": 3632.8,
+      "text": "There are agreements that are like loan applications are like 30 or 40 pages,"
+    },
+    {
+      "start": 3632.8,
+      "end": 3643.3,
+      "text": "and the idea for this bank was to build a system that could help underwriters pick policies and information about the bank so that they could approve loans."
+    },
+    {
+      "start": 3643.3,
+      "end": 3647.6,
+      "text": "And for a good three or four months, everybody was pretty impressed with the system."
+    },
+    {
+      "start": 3647.6,
+      "end": 3652.4,
+      "text": "We had underwriters actually report gains in terms of how much time they were spending, et cetera."
+    },
+    {
+      "start": 3652.4,
+      "end": 3659.5,
+      "text": "And first three months, we realized that they were so excited with the product that they started asking very deep questions that we never anticipated."
+    },
+    {
+      "start": 3659.5,
+      "end": 3666.7,
+      "text": "They would just throw the entire application document at the system and go, \"For a case that looks like this, what did previous underwriters do?"
+    },
+    {
+      "start": 3666.7,
+      "end": 3673.8,
+      "text": "\" And for a user, that just seems like a natural extension of what they were doing, but the building behind it should significantly change."
+    },
+    {
+      "start": 3673.8,
+      "end": 3679.5,
+      "text": "Now, you need to understand what does for a case like this mean in the context of the loan itself?"
+    },
+    {
+      "start": 3679.5,
+      "end": 3686.3,
+      "text": "Is it referring to people of a particular income range or is it referring to people in a particular geo and stuff like that?"
+    },
+    {
+      "start": 3686.3,
+      "end": 3696.0,
+      "text": "And then you need to pick up historical documents, analyze those documents, and then tell them, \"Okay, this is what it looks like,\" versus just saying that there's a policy X, Y,"
+    },
+    {
+      "start": 3696.0,
+      "end": 3699.0,
+      "text": "and Z, and you want to look up that policy."
+    },
+    {
+      "start": 3699.0,
+      "end": 3708.4,
+      "text": "So something that might seem very natural to an end user might be very hard to build as a product builder, and you see that user behavior also evolves over time,"
+    },
+    {
+      "start": 3708.4,
+      "end": 3712.3,
+      "text": "and that's when you know that you want to go back and recalibrate."
+    },
+    {
+      "start": 3712.3,
+      "end": 3717.8,
+      "text": "What do you think is overhyped in the AI space right now?"
+    },
+    {
+      "start": 3717.8,
+      "end": 3722.3,
+      "text": "And even more importantly, what do you think is under-hyped?"
+    },
+    {
+      "start": 3722.3,
+      "end": 3726.5,
+      "text": "As I said, super optimistic in different things that are going in AI."
+    },
+    {
+      "start": 3726.5,
+      "end": 3731.7,
+      "text": "So I wouldn't say overhyped, but I feel kind of misunderstood is the concept of multi-agents."
+    },
+    {
+      "start": 3731.7,
+      "end": 3735.2,
+      "text": "People have this notion of, \"I have this incredibly complex problem."
+    },
+    {
+      "start": 3735.2,
+      "end": 3739.4,
+      "text": "Now I'm going to break it down into, hey, you are this agent."
+    },
+    {
+      "start": 3739.4,
+      "end": 3740.7,
+      "text": "Take care of this."
+    },
+    {
+      "start": 3740.7,
+      "end": 3741.7,
+      "text": "You're this agent."
+    },
+    {
+      "start": 3741.7,
+      "end": 3746.2,
+      "text": "Take care of this.\" And now if I somehow connect all of these agents,"
+    },
+    {
+      "start": 3746.2,
+      "end": 3753.0,
+      "text": "they think they're the agent utopia and it's never the case that there are incredibly successful multi-agent systems that are built."
+    },
+    {
+      "start": 3753.0,
+      "end": 3754.6,
+      "text": "There's no doubt about that."
+    },
+    {
+      "start": 3754.6,
+      "end": 3762.7,
+      "text": "But I feel a lot of it comes in terms of how are you limiting the ways in which the system can go off tracks."
+    },
+    {
+      "start": 3762.7,
+      "end": 3772.3,
+      "text": "And for example, if you're building a supervisor agent and there are subagents that actually do the work for the super agent, supervisor agent, that is a very successful pattern."
+    },
+    {
+      "start": 3772.3,
+      "end": 3783.3,
+      "text": "But coming with this notion of I'm going to divide the responsibilities based on functionality and somehow expect all of that to work together in some sort of gossip protocol,"
+    },
+    {
+      "start": 3783.3,
+      "end": 3786.6,
+      "text": "that is extremely misunderstood that you could do that."
+    },
+    {
+      "start": 3786.6,
+      "end": 3794.7,
+      "text": "I don't think current ways of building and current model capabilities are right there in terms of building those kind of applications."
+    },
+    {
+      "start": 3794.7,
+      "end": 3798.0,
+      "text": "I feel that is kind of misunderstood than overrated."
+    },
+    {
+      "start": 3798.0,
+      "end": 3801.0,
+      "text": "Underrated, I feel it's hard to probably believe,"
+    },
+    {
+      "start": 3801.0,
+      "end": 3814.2,
+      "text": "but I still feel coding agents are underrated in the sense that I feel like you can go on Twitter and you can go on Reddit and you see a lot of chatter about coding agents,"
+    },
+    {
+      "start": 3814.2,
+      "end": 3826.0,
+      "text": "but talking to an engineer in any random company, especially outside of Bay Area, you can see the amount of impact this coding agents can create and the penetration is very low."
+    },
+    {
+      "start": 3826.0,
+      "end": 3833.3,
+      "text": "So I feel like 2025 and 2026 is going to be an incredible year for optimizing all of these processes."
+    },
+    {
+      "start": 3833.3,
+      "end": 3836.3,
+      "text": "And I feel that is going to be creating a lot of value with AI."
+    },
+    {
+      "start": 3836.3,
+      "end": 3838.6,
+      "text": "That's really interesting on that first point."
+    },
+    {
+      "start": 3838.6,
+      "end": 3849.4,
+      "text": "So the idea there is you'll probably be more successful building and using an agent that is able to do its own sub-agent splitting of work versus a bunch of, say, Codex agents."
+    },
+    {
+      "start": 3849.4,
+      "end": 3852.3,
+      "text": "Will you do this task, you do that task?"
+    },
+    {
+      "start": 3852.3,
+      "end": 3861.6,
+      "text": "You can have agents to do these things and you as a human can orchestrate it or you can have one larger agent that is going to orchestrate all of these things,"
+    },
+    {
+      "start": 3861.6,
+      "end": 3865.0,
+      "text": "but letting the agents communicate in terms of peer-to-peer kind of protocol,"
+    },
+    {
+      "start": 3865.0,
+      "end": 3876.3,
+      "text": "and then especially doing this in a customer support kind of use case is incredibly hard to control what kind of agent is replying to your customer because you need to shift your guardrails everywhere and things like that."
+    },
+    {
+      "start": 3876.3,
+      "end": 3877.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 3877.3,
+      "end": 3878.3,
+      "text": "Okay."
+    },
+    {
+      "start": 3878.3,
+      "end": 3879.3,
+      "text": "Great picks."
+    },
+    {
+      "start": 3879.3,
+      "end": 3880.3,
+      "text": "Okay."
+    },
+    {
+      "start": 3880.3,
+      "end": 3881.3,
+      "text": "Ash, what do you got?"
+    },
+    {
+      "start": 3881.3,
+      "end": 3882.3,
+      "text": "Can I say evals?"
+    },
+    {
+      "start": 3882.3,
+      "end": 3883.3,
+      "text": "Will I be canceled?"
+    },
+    {
+      "start": 3883.3,
+      "end": 3884.4,
+      "text": "In which category?"
+    },
+    {
+      "start": 3884.4,
+      "end": 3886.3,
+      "text": "Which bucket do they go?"
+    },
+    {
+      "start": 3886.3,
+      "end": 3888.3,
+      "text": "Overrated."
+    },
+    {
+      "start": 3888.3,
+      "end": 3889.3,
+      "text": "Overrated."
+    },
+    {
+      "start": 3889.3,
+      "end": 3890.3,
+      "text": "Okay, go for it."
+    },
+    {
+      "start": 3890.3,
+      "end": 3891.3,
+      "text": "We won't let you get canceled."
+    },
+    {
+      "start": 3891.3,
+      "end": 3892.3,
+      "text": "Just kidding."
+    },
+    {
+      "start": 3892.3,
+      "end": 3893.9,
+      "text": "I think evals are misunderstood."
+    },
+    {
+      "start": 3893.9,
+      "end": 3895.2,
+      "text": "They are important, folks."
+    },
+    {
+      "start": 3895.2,
+      "end": 3904.4,
+      "text": "I'm not saying they're not important, but I think just this, I'm going to keep jumping across tools and going to pick up and learn if new tool is overrated."
+    },
+    {
+      "start": 3904.4,
+      "end": 3911.7,
+      "text": "I still am old school and feel like you would really need to be obsessed with the business problem you're trying to solve."
+    },
+    {
+      "start": 3911.7,
+      "end": 3913.3,
+      "text": "AI is only a tool."
+    },
+    {
+      "start": 3913.3,
+      "end": 3915.9,
+      "text": "I try to think of it that way."
+    },
+    {
+      "start": 3915.9,
+      "end": 3922.9,
+      "text": "Of course, you need to be learning about the latest and greatest, but don't be so obsessed with just building so quickly."
+    },
+    {
+      "start": 3922.9,
+      "end": 3924.5,
+      "text": "Building is really cheap today."
+    },
+    {
+      "start": 3924.5,
+      "end": 3928.9,
+      "text": "Design is more expensive, really thinking about your product, what you're going to build."
+    },
+    {
+      "start": 3928.9,
+      "end": 3931.8,
+      "text": "Is it going to really solve a pain point?"
+    },
+    {
+      "start": 3931.8,
+      "end": 3934.0,
+      "text": "Is what is way more valuable today?"
+    },
+    {
+      "start": 3934.0,
+      "end": 3937.6,
+      "text": "And it will only become more true in the near future."
+    },
+    {
+      "start": 3937.6,
+      "end": 3943.3,
+      "text": "So really obsessing about your problem and design is underrated and just rote building is overrated, I guess."
+    },
+    {
+      "start": 3943.3,
+      "end": 3944.3,
+      "text": "Awesome."
+    },
+    {
+      "start": 3944.3,
+      "end": 3945.3,
+      "text": "Okay."
+    },
+    {
+      "start": 3945.3,
+      "end": 3946.6,
+      "text": "Similar sort of question."
+    },
+    {
+      "start": 3946.6,
+      "end": 3951.8,
+      "text": "From a product point of view, what do you think the next year of AI is going to look like?"
+    },
+    {
+      "start": 3951.8,
+      "end": 3958.3,
+      "text": "Give us a vision of where you think things are going to go by, say by the end of 2026."
+    },
+    {
+      "start": 3958.3,
+      "end": 3964.4,
+      "text": "Yeah, I feel there's a lot of promise in terms of this background agents are proactive agents who is ..."
+    },
+    {
+      "start": 3964.4,
+      "end": 3967.1,
+      "text": "They're going to basically understand your workflow even more."
+    },
+    {
+      "start": 3967.1,
+      "end": 3972.8,
+      "text": "If you think of where is AI failing to create value today, it's mainly about not understanding the context."
+    },
+    {
+      "start": 3972.8,
+      "end": 3979.5,
+      "text": "And the reason that it's not understanding the context is it's not plugged into the right places where actual work is happening."
+    },
+    {
+      "start": 3979.5,
+      "end": 3981.6,
+      "text": "And as you do more of this,"
+    },
+    {
+      "start": 3981.6,
+      "end": 3994.4,
+      "text": "you can give the agent more of context and then it start to see the world around you and understand what are the set of metrics that you're optimizing for or what are the kind of activities that you're trying to do."
+    },
+    {
+      "start": 3994.4,
+      "end": 4001.3,
+      "text": "It is a very easy extension from there to actually gain more out of it and then let the agent prompt you back."
+    },
+    {
+      "start": 4001.3,
+      "end": 4008.3,
+      "text": "We already do this in terms of ChatGPT pulse, which kind of gives you this daily update of things you might care about."
+    },
+    {
+      "start": 4008.3,
+      "end": 4014.3,
+      "text": "And it's very nice to actually have that jog your brain up in terms of, \"Oh, this is something that I haven't thought about."
+    },
+    {
+      "start": 4014.3,
+      "end": 4019.8,
+      "text": "Maybe this is good.\" And now when you extend this to more complex tasks, like a coding agent, which says that, \"Okay,"
+    },
+    {
+      "start": 4019.8,
+      "end": 4023.1,
+      "text": "I have fixed five of your linear tickets and here are the patches."
+    },
+    {
+      "start": 4023.1,
+      "end": 4028.1,
+      "text": "Just to review them at the start of your day.\" So I feel that is going to be extremely useful."
+    },
+    {
+      "start": 4028.1,
+      "end": 4032.3,
+      "text": "And I see that as a strong direction in which products are going to build in 2026."
+    },
+    {
+      "start": 4032.3,
+      "end": 4033.3,
+      "text": "That's so cool."
+    },
+    {
+      "start": 4033.3,
+      "end": 4041.7,
+      "text": "So essentially agents anticipating what you want to do and getting ahead of you and I've solved these problems for you or I think this is going to crash your site."
+    },
+    {
+      "start": 4041.7,
+      "end": 4047.7,
+      "text": "Maybe you should fix this thing right here or I see the spike here and let's refactor our database."
+    },
+    {
+      "start": 4047.7,
+      "end": 4048.7,
+      "text": "Amazing."
+    },
+    {
+      "start": 4048.7,
+      "end": 4049.7,
+      "text": "What a world."
+    },
+    {
+      "start": 4049.7,
+      "end": 4050.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4050.7,
+      "end": 4052.3,
+      "text": "Ash, what do you got?"
+    },
+    {
+      "start": 4052.3,
+      "end": 4055.2,
+      "text": "I'm all in for multimodal experiences in 2026."
+    },
+    {
+      "start": 4055.2,
+      "end": 4062.5,
+      "text": "I think we have done quite some progress in 2025, and not just in terms of generation, but also understanding."
+    },
+    {
+      "start": 4062.5,
+      "end": 4070.5,
+      "text": "Until now, I think LLMs have been our most commonly used modules, but as humans, we are multimodal creatures, I would say."
+    },
+    {
+      "start": 4070.5,
+      "end": 4074.1,
+      "text": "Language is probably one of our last forms of evolution."
+    },
+    {
+      "start": 4074.1,
+      "end": 4079.6,
+      "text": "As the three of us are talking, I think we're constantly getting so many signals."
+    },
+    {
+      "start": 4079.6,
+      "end": 4086.1,
+      "text": "I'm like, \"Oh, Lenny's nodding his head, so probably I would go in this direction or Lenny's bored,"
+    },
+    {
+      "start": 4086.1,
+      "end": 4097.8,
+      "text": "so let me stop talking.\" So there's a chain of thought behind your chain of thought and you're constantly altering it with language that dimension of expression is not explored as well."
+    },
+    {
+      "start": 4097.8,
+      "end": 4103.9,
+      "text": "So if we could build better multimodal experiences that would get us closer to human-like conversation richness."
+    },
+    {
+      "start": 4103.9,
+      "end": 4112.3,
+      "text": "And you will also, just given the kind of models, there's a bunch of boring tasks as well, which are ripe for AI."
+    },
+    {
+      "start": 4112.3,
+      "end": 4123.8,
+      "text": "If multimodal understanding gets better, there are so many handwritten documents and really messy PDFs that cannot be passed even by the best of the models as of today."
+    },
+    {
+      "start": 4123.8,
+      "end": 4129.3,
+      "text": "And if it's possible, there'll be so much data that we can tap into."
+    },
+    {
+      "start": 4129.3,
+      "end": 4130.3,
+      "text": "Awesome."
+    },
+    {
+      "start": 4130.3,
+      "end": 4138.2,
+      "text": "I just saw Demis from DeepMind, AI, Google, whatever they call the whole org, talking about this where he thinks that's going to be a big part of where they're going,"
+    },
+    {
+      "start": 4138.2,
+      "end": 4144.8,
+      "text": "combining the image model work, the LLM, and also their world model stuff, Genie, I think is what it's called."
+    },
+    {
+      "start": 4144.8,
+      "end": 4145.8,
+      "text": "Yes."
+    },
+    {
+      "start": 4145.8,
+      "end": 4148.7,
+      "text": "So that's going to be a wild, wild time."
+    },
+    {
+      "start": 4148.7,
+      "end": 4149.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4149.7,
+      "end": 4150.7,
+      "text": "Last question."
+    },
+    {
+      "start": 4150.7,
+      "end": 4160.3,
+      "text": "If someone wants to just get better at building AI products, what's just maybe one skill or maybe two skills that you think they should lean into and develop?"
+    },
+    {
+      "start": 4160.3,
+      "end": 4171.8,
+      "text": "I think we did cover a bunch of best practices for AI products, which is start small, try to get your iteration going well and build a flywheel and all of that."
+    },
+    {
+      "start": 4171.8,
+      "end": 4179.8,
+      "text": "But again, if you kind of look at it at a 10,000 feet level for anybody building today, like I was saying,"
+    },
+    {
+      "start": 4179.8,
+      "end": 4184.1,
+      "text": "implementation is going to be ridiculously cheap in the next few years."
+    },
+    {
+      "start": 4184.1,
+      "end": 4189.2,
+      "text": "So really nail down your design, your judgment, your taste and all of that."
+    },
+    {
+      "start": 4189.2,
+      "end": 4197.8,
+      "text": "And in general, if you're building a career as well, I feel for the past few years, your former years, say the first two,"
+    },
+    {
+      "start": 4197.8,
+      "end": 4203.6,
+      "text": "three years of building your career is always focused on execution, mechanics and all of that."
+    },
+    {
+      "start": 4203.6,
+      "end": 4209.0,
+      "text": "And now we have AI that could help you ramp pretty quickly and post that."
+    },
+    {
+      "start": 4209.0,
+      "end": 4217.3,
+      "text": "I mean, after a few years, I think everybody's job becomes about your taste, your judgment and kind of what is uniquely you."
+    },
+    {
+      "start": 4217.3,
+      "end": 4223.9,
+      "text": "I think nail down on that part and try to figure out how you can bring in that kind of a perspective."
+    },
+    {
+      "start": 4223.9,
+      "end": 4228.4,
+      "text": "It doesn't have to mean that you should be significantly old, have years of experience."
+    },
+    {
+      "start": 4228.4,
+      "end": 4237.8,
+      "text": "We recently hired someone and we use this very popular app for tracking our tasks and we've been using it for years and we pay a high subscription fee for it."
+    },
+    {
+      "start": 4237.8,
+      "end": 4242.0,
+      "text": "And this guy just came with his own vibe coded app to the meeting."
+    },
+    {
+      "start": 4242.0,
+      "end": 4245.3,
+      "text": "He onboarded us to all of it and he's like, \"Okay,"
+    },
+    {
+      "start": 4245.3,
+      "end": 4253.2,
+      "text": "let's start using this.\" And I think that kind of agency and that kind of ownership to really rethink experiences is what will set people apart."
+    },
+    {
+      "start": 4253.2,
+      "end": 4258.0,
+      "text": "And I'm not being blind to the fact that vibe coded apps have high maintenance costs."
+    },
+    {
+      "start": 4258.0,
+      "end": 4264.3,
+      "text": "And maybe as we scale as a company, we have to replace it or we have to think of better approaches."
+    },
+    {
+      "start": 4264.3,
+      "end": 4268.4,
+      "text": "But given that we are a small size company now and just ..."
+    },
+    {
+      "start": 4268.4,
+      "end": 4271.5,
+      "text": "I was really shocked because I never thought of it."
+    },
+    {
+      "start": 4271.5,
+      "end": 4276.5,
+      "text": "If you've been used to working in a certain way, you associate a cost with building."
+    },
+    {
+      "start": 4276.5,
+      "end": 4282.7,
+      "text": "And I feel like folks who grew up in this age have a much lower cost associated in their mind."
+    },
+    {
+      "start": 4282.7,
+      "end": 4286.2,
+      "text": "They just don't mind building something and going ahead with it."
+    },
+    {
+      "start": 4286.2,
+      "end": 4289.3,
+      "text": "And they're also very enthusiastic to try out new tools."
+    },
+    {
+      "start": 4289.3,
+      "end": 4296.8,
+      "text": "That's also probably why AI products have this retention problem because everybody's so excited about trying out these new tools and all of that."
+    },
+    {
+      "start": 4296.8,
+      "end": 4304.0,
+      "text": "But essentially having the agency and ownership, and I think it's also the going to be the end of the busy work era."
+    },
+    {
+      "start": 4304.0,
+      "end": 4309.3,
+      "text": "You can't be sitting in a corner doing something that doesn't move the needle for a company."
+    },
+    {
+      "start": 4309.3,
+      "end": 4314.3,
+      "text": "You really need to be thinking about end-to-end workflows, how you can bring in more impact."
+    },
+    {
+      "start": 4314.3,
+      "end": 4316.3,
+      "text": "I think all of that will be super important."
+    },
+    {
+      "start": 4316.3,
+      "end": 4319.7,
+      "text": "That reminds me, I just had Jason Lemkit on the podcast."
+    },
+    {
+      "start": 4319.7,
+      "end": 4325.6,
+      "text": "He's very smart on sales, go to market, run Saster, and he replaced his whole sales team with agents."
+    },
+    {
+      "start": 4325.6,
+      "end": 4329.3,
+      "text": "He had 10 salespeople and then he was 1.2 and 20 agents."
+    },
+    {
+      "start": 4329.3,
+      "end": 4337.0,
+      "text": "And one of the agents, it was just tracking everyone's updates to Salesforce and kind of updating it automatically for them based on their calls."
+    },
+    {
+      "start": 4337.0,
+      "end": 4342.9,
+      "text": "And one of the salespeople was like, \"Okay, I quit.\" And it turned out he wasn't really doing anything."
+    },
+    {
+      "start": 4342.9,
+      "end": 4346.9,
+      "text": "He was just sitting around and he's like, \"Okay, this will catch me."
+    },
+    {
+      "start": 4346.9,
+      "end": 4349.1,
+      "text": "I got to get out of here."
+    },
+    {
+      "start": 4349.1,
+      "end": 4355.3,
+      "text": "So to your point about, it'll be harder to sit around and twiddle your thumbs, I think is really right."
+    },
+    {
+      "start": 4355.3,
+      "end": 4356.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 4356.3,
+      "end": 4365.9,
+      "text": "I think to add on to that, I feel like persistence is also something that is extremely valuable, especially given that anybody who wants to build something,"
+    },
+    {
+      "start": 4365.9,
+      "end": 4370.1,
+      "text": "the information is at your fingertips even more than the past decade."
+    },
+    {
+      "start": 4370.1,
+      "end": 4375.1,
+      "text": "You can learn anything overnight and become that sort of Ironman kind of approach."
+    },
+    {
+      "start": 4375.1,
+      "end": 4384.0,
+      "text": "So I feel like having that persistence and going through the pain of learning this, implementing this and understanding what works and what doesn't work."
+    },
+    {
+      "start": 4384.0,
+      "end": 4394.0,
+      "text": "And as you are going through this pain of developing multiple approaches and then solving the problem, I feel that is going to be the real moat as an individual."
+    },
+    {
+      "start": 4394.0,
+      "end": 4404.3,
+      "text": "I like to call it pain is the new moat, but I feel that is exactly super useful to actually have this in, especially in building these AI products."
+    },
+    {
+      "start": 4404.3,
+      "end": 4405.3,
+      "text": "Say more about this."
+    },
+    {
+      "start": 4405.3,
+      "end": 4406.3,
+      "text": "I love this concept."
+    },
+    {
+      "start": 4406.3,
+      "end": 4407.3,
+      "text": "Pain is the new moat."
+    },
+    {
+      "start": 4407.3,
+      "end": 4408.3,
+      "text": "Is there more there?"
+    },
+    {
+      "start": 4408.3,
+      "end": 4413.7,
+      "text": "Yeah, I feel as a company, I mean, successful companies right now building in any new area,"
+    },
+    {
+      "start": 4413.7,
+      "end": 4420.7,
+      "text": "they are successful not because they're first to the market or they have this fancy feature that more customers are liking it."
+    },
+    {
+      "start": 4420.7,
+      "end": 4432.9,
+      "text": "They went through the pain of understanding what are the set of non-negotiable things and trade them off exactly with what are the features or what are the model capabilities that they can use to solve that problem."
+    },
+    {
+      "start": 4432.9,
+      "end": 4434.8,
+      "text": "This is not a straightforward process."
+    },
+    {
+      "start": 4434.8,
+      "end": 4440.8,
+      "text": "There's no textbook to do this or there's no straightforward way or a known credit path to be here."
+    },
+    {
+      "start": 4440.8,
+      "end": 4449.4,
+      "text": "So a lot of this pain I was talking about is just going through this iteration of like, \"Okay, let's try this and if this doesn't work,"
+    },
+    {
+      "start": 4449.4,
+      "end": 4460.0,
+      "text": "let's try this.\" And that kind of knowledge that you built across the organization or across your own lived experiences, I feel that pain is what translates into the moat of the company."
+    },
+    {
+      "start": 4460.0,
+      "end": 4463.8,
+      "text": "This could be a product of evals or something that you built."
+    },
+    {
+      "start": 4463.8,
+      "end": 4467.3,
+      "text": "And I feel that is going to be the game changer."
+    },
+    {
+      "start": 4467.3,
+      "end": 4468.5,
+      "text": "That is awesome."
+    },
+    {
+      "start": 4468.5,
+      "end": 4471.3,
+      "text": "It's like turning a coal into diamond."
+    },
+    {
+      "start": 4471.3,
+      "end": 4472.3,
+      "text": "Yes."
+    },
+    {
+      "start": 4472.3,
+      "end": 4473.3,
+      "text": "Okay."
+    },
+    {
+      "start": 4473.3,
+      "end": 4480.1,
+      "text": "I feel like we've done a great job helping people avoid some of the biggest issues people consistently run into building AI products."
+    },
+    {
+      "start": 4480.1,
+      "end": 4484.9,
+      "text": "We covered so many of the pitfalls and the ways to actually do it correctly."
+    },
+    {
+      "start": 4484.9,
+      "end": 4490.7,
+      "text": "Before we get to our very exciting lightning round, is there anything else that you wanted to share?"
+    },
+    {
+      "start": 4490.7,
+      "end": 4493.3,
+      "text": "Anything else you want to leave listeners with?"
+    },
+    {
+      "start": 4493.3,
+      "end": 4495.2,
+      "text": "Be obsessed with your customers."
+    },
+    {
+      "start": 4495.2,
+      "end": 4497.0,
+      "text": "Be obsessed with the problem."
+    },
+    {
+      "start": 4497.0,
+      "end": 4503.0,
+      "text": "AI is just a tool and try to make sure that you're really understanding your workflows."
+    },
+    {
+      "start": 4503.0,
+      "end": 4509.0,
+      "text": "80% of so called AI engineers, AIPMs spend their time actually understanding their workflows very well."
+    },
+    {
+      "start": 4509.0,
+      "end": 4514.2,
+      "text": "They're not building the fanciest and the most cool models or workflows around it."
+    },
+    {
+      "start": 4514.2,
+      "end": 4518.3,
+      "text": "They're actually in the weeds understanding their customer's behavior and data."
+    },
+    {
+      "start": 4518.3,
+      "end": 4524.6,
+      "text": "And whenever a software engineer who's never done AI before, here's the term, look at your data."
+    },
+    {
+      "start": 4524.6,
+      "end": 4529.8,
+      "text": "I think it's a huge revelation to them, but it's always been the case."
+    },
+    {
+      "start": 4529.8,
+      "end": 4537.3,
+      "text": "You need to go there, look at your data, understand your users, and that's going to be a huge differentiator."
+    },
+    {
+      "start": 4537.3,
+      "end": 4539.6,
+      "text": "That's a great way to close it."
+    },
+    {
+      "start": 4539.6,
+      "end": 4541.2,
+      "text": "The AI isn't the answer."
+    },
+    {
+      "start": 4541.2,
+      "end": 4543.5,
+      "text": "It's a tool to solve the problem."
+    },
+    {
+      "start": 4543.5,
+      "end": 4546.7,
+      "text": "With that, we have reached our very exciting lightning round."
+    },
+    {
+      "start": 4546.7,
+      "end": 4549.3,
+      "text": "I've got five questions for both of you."
+    },
+    {
+      "start": 4549.3,
+      "end": 4550.3,
+      "text": "Are you ready?"
+    },
+    {
+      "start": 4550.3,
+      "end": 4551.3,
+      "text": "Yay."
+    },
+    {
+      "start": 4551.3,
+      "end": 4552.3,
+      "text": "Yes."
+    },
+    {
+      "start": 4552.3,
+      "end": 4553.3,
+      "text": "All right."
+    },
+    {
+      "start": 4553.3,
+      "end": 4554.6,
+      "text": "So you can both answer them."
+    },
+    {
+      "start": 4554.6,
+      "end": 4556.6,
+      "text": "You can pick one which you want to answer."
+    },
+    {
+      "start": 4556.6,
+      "end": 4557.7,
+      "text": "Either way, up to you."
+    },
+    {
+      "start": 4557.7,
+      "end": 4560.3,
+      "text": "What are two or three books you find yourself recommending most to other people?"
+    },
+    {
+      "start": 4560.3,
+      "end": 4564.1,
+      "text": "For me, it's this book called When Breath Becomes Air, Lenny."
+    },
+    {
+      "start": 4564.1,
+      "end": 4566.1,
+      "text": "It was written by Paul Kalanithi."
+    },
+    {
+      "start": 4566.1,
+      "end": 4572.2,
+      "text": "I think he was an Indian original neurosurgeon who was diagnosed with lung cancer at 31 or 32."
+    },
+    {
+      "start": 4572.2,
+      "end": 4577.3,
+      "text": "And the whole book is his memoir and just is written after he was diagnosed."
+    },
+    {
+      "start": 4577.3,
+      "end": 4585.2,
+      "text": "And it's really beautiful, especially because I read it during COVID and all we ever wanted to do during COVID is stay alive."
+    },
+    {
+      "start": 4585.2,
+      "end": 4596.4,
+      "text": "There are a bunch of really nice quotes within the book as well, but I remember one of them, he was kind of arguing against a very popular quote by Socrates, which is,"
+    },
+    {
+      "start": 4596.4,
+      "end": 4606.0,
+      "text": "\"The unexamined life is not worth living,\" or something like that, which means you really need to be thinking about your choices, you need to understand your values,"
+    },
+    {
+      "start": 4606.0,
+      "end": 4608.0,
+      "text": "your mission and all of that."
+    },
+    {
+      "start": 4608.0,
+      "end": 4611.8,
+      "text": "And Paul says, \"If the unexamined life is not worth living,"
+    },
+    {
+      "start": 4611.8,
+      "end": 4620.3,
+      "text": "was the unlived life worth examining?\" Which means are you spending so much time just understanding your mission and purpose that you've forgotten to live?"
+    },
+    {
+      "start": 4620.3,
+      "end": 4631.6,
+      "text": "And I think everybody who's staying in the AI era and building and continuously going through the space of reinventing themselves need to take a pause and live for a bit, I guess."
+    },
+    {
+      "start": 4631.6,
+      "end": 4634.3,
+      "text": "They need to stop evaling life too much."
+    },
+    {
+      "start": 4634.3,
+      "end": 4635.6,
+      "text": "I was going to say that."
+    },
+    {
+      "start": 4635.6,
+      "end": 4636.7,
+      "text": "That's where my mind went."
+    },
+    {
+      "start": 4636.7,
+      "end": 4638.7,
+      "text": "You got to write some evals for your life."
+    },
+    {
+      "start": 4638.7,
+      "end": 4640.3,
+      "text": "Oh my God, we've gone too far."
+    },
+    {
+      "start": 4640.3,
+      "end": 4641.3,
+      "text": "Yep."
+    },
+    {
+      "start": 4641.3,
+      "end": 4642.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 4642.3,
+      "end": 4643.3,
+      "text": "That's my favorite book."
+    },
+    {
+      "start": 4643.3,
+      "end": 4645.9,
+      "text": "I like more of science fiction books."
+    },
+    {
+      "start": 4645.9,
+      "end": 4649.3,
+      "text": "So I really like this 3 Body problem series."
+    },
+    {
+      "start": 4649.3,
+      "end": 4651.5,
+      "text": "It's like a three book series."
+    },
+    {
+      "start": 4651.5,
+      "end": 4658.6,
+      "text": "It has elements of grander than science fiction, life outside earth and how it impacts human decision making process."
+    },
+    {
+      "start": 4658.6,
+      "end": 4665.7,
+      "text": "And it also has elements of geopolitics and how much important or valuable abstract science is to human progress."
+    },
+    {
+      "start": 4665.7,
+      "end": 4672.5,
+      "text": "And then when that gets stopped, it's not noticeable in everyday life, but it can cause devastating effects."
+    },
+    {
+      "start": 4672.5,
+      "end": 4678.8,
+      "text": "So I feel like AI helping in these areas, for example, is going to be extremely crucial."
+    },
+    {
+      "start": 4678.8,
+      "end": 4683.3,
+      "text": "And that book is a nice example of what could happen otherwise."
+    },
+    {
+      "start": 4683.3,
+      "end": 4684.3,
+      "text": "Completely agree."
+    },
+    {
+      "start": 4684.3,
+      "end": 4685.3,
+      "text": "Absolutely."
+    },
+    {
+      "start": 4685.3,
+      "end": 4686.3,
+      "text": "Love."
+    },
+    {
+      "start": 4686.3,
+      "end": 4689.3,
+      "text": "Might be my favorite sci-fi book except, or series even, and it's three."
+    },
+    {
+      "start": 4689.3,
+      "end": 4691.7,
+      "text": "I have to read of all three, by the way."
+    },
+    {
+      "start": 4691.7,
+      "end": 4695.1,
+      "text": "I find that it only got really good about one and a half books in."
+    },
+    {
+      "start": 4695.1,
+      "end": 4700.3,
+      "text": "So if anyone's tried it and like, \"What the heck is going on here?\" Just keep reading and get to the middle of the second one and then it gets mind-blowing."
+    },
+    {
+      "start": 4700.3,
+      "end": 4702.3,
+      "text": "Yes."
+    },
+    {
+      "start": 4702.3,
+      "end": 4709.3,
+      "text": "If you love sci-fi and you're in AI, you got to read this book called A Fire Upon the Deep by Vernon Vinge."
+    },
+    {
+      "start": 4709.3,
+      "end": 4710.3,
+      "text": "Check it out."
+    },
+    {
+      "start": 4710.3,
+      "end": 4711.3,
+      "text": "It's incredible."
+    },
+    {
+      "start": 4711.3,
+      "end": 4718.6,
+      "text": "I saw Noah Smith on his newsletter recommend this book and there's sequels to it, but this is the one that's so incredible."
+    },
+    {
+      "start": 4718.6,
+      "end": 4725.4,
+      "text": "And it's actually, it turns out it's about AGI and super intelligence and all these things, and it's just so epic."
+    },
+    {
+      "start": 4725.4,
+      "end": 4727.3,
+      "text": "And no one's heard of it."
+    },
+    {
+      "start": 4727.3,
+      "end": 4728.3,
+      "text": "Thank you."
+    },
+    {
+      "start": 4728.3,
+      "end": 4729.3,
+      "text": "There you go."
+    },
+    {
+      "start": 4729.3,
+      "end": 4730.6,
+      "text": "I'm giving you one back."
+    },
+    {
+      "start": 4730.6,
+      "end": 4731.6,
+      "text": "Okay, next question."
+    },
+    {
+      "start": 4731.6,
+      "end": 4734.3,
+      "text": "What's a favorite recent movie or TV show that you've really enjoyed?"
+    },
+    {
+      "start": 4734.3,
+      "end": 4737.7,
+      "text": "I started rewatching Silicon Valley and I think it's so true."
+    },
+    {
+      "start": 4737.7,
+      "end": 4738.7,
+      "text": "It's so timeless."
+    },
+    {
+      "start": 4738.7,
+      "end": 4740.5,
+      "text": "Everything is repeating all over again."
+    },
+    {
+      "start": 4740.5,
+      "end": 4749.3,
+      "text": "Anybody who's watched it a few years ago should start rewatching it and you'll see that it's eerily similar to everything that's happening right now with the AI wave."
+    },
+    {
+      "start": 4749.3,
+      "end": 4751.4,
+      "text": "That's a good idea to rewatch it."
+    },
+    {
+      "start": 4751.4,
+      "end": 4756.1,
+      "text": "I love that their whole business was like an algorithm to compress, like a compression algorithm."
+    },
+    {
+      "start": 4756.1,
+      "end": 4759.3,
+      "text": "It's like maybe a precursor to LLMs in some small way."
+    },
+    {
+      "start": 4759.3,
+      "end": 4760.5,
+      "text": "No, I get it."
+    },
+    {
+      "start": 4760.5,
+      "end": 4762.3,
+      "text": "All right, Kiriti, what you got?"
+    },
+    {
+      "start": 4762.3,
+      "end": 4769.6,
+      "text": "I'm going to drag this and say lot a movie or a TV show, but there's this game I picked up recently called Expedition 33."
+    },
+    {
+      "start": 4769.6,
+      "end": 4777.3,
+      "text": "It has nothing to do with AI, but it's an incredibly well-made game in terms of the gameplay or the movie and the story and the music."
+    },
+    {
+      "start": 4777.3,
+      "end": 4778.3,
+      "text": "It's been amazing."
+    },
+    {
+      "start": 4778.3,
+      "end": 4780.9,
+      "text": "I love that you have time to play games."
+    },
+    {
+      "start": 4780.9,
+      "end": 4782.1,
+      "text": "That's a great sign."
+    },
+    {
+      "start": 4782.1,
+      "end": 4783.1,
+      "text": "I love that."
+    },
+    {
+      "start": 4783.1,
+      "end": 4785.2,
+      "text": "Someone OpenAI, I'm just imagining you're ..."
+    },
+    {
+      "start": 4785.2,
+      "end": 4788.3,
+      "text": "There's nothing else going on except just coding and having meetings."
+    },
+    {
+      "start": 4788.3,
+      "end": 4790.3,
+      "text": "Yeah, it has been incredibly hard to find time for that."
+    },
+    {
+      "start": 4790.3,
+      "end": 4791.3,
+      "text": "That's good."
+    },
+    {
+      "start": 4791.3,
+      "end": 4792.3,
+      "text": "That's a good sign."
+    },
+    {
+      "start": 4792.3,
+      "end": 4793.5,
+      "text": "I'm happy to hear this."
+    },
+    {
+      "start": 4793.5,
+      "end": 4794.5,
+      "text": "Okay."
+    },
+    {
+      "start": 4794.5,
+      "end": 4796.3,
+      "text": "What's a favorite product that you've recently discovered that you really love?"
+    },
+    {
+      "start": 4796.3,
+      "end": 4797.9,
+      "text": "For me, it's Whisper Flow."
+    },
+    {
+      "start": 4797.9,
+      "end": 4803.8,
+      "text": "I think I've been using it quite a bit and I didn't know I needed it so much."
+    },
+    {
+      "start": 4803.8,
+      "end": 4813.3,
+      "text": "The best part is it's a conceptual transcription tool, which means if you go to Codex and start using Whisper Flow, it starts identifying variables and all of that."
+    },
+    {
+      "start": 4813.3,
+      "end": 4816.6,
+      "text": "And it's so seamless in terms of transcription to instruction."
+    },
+    {
+      "start": 4816.6,
+      "end": 4819.5,
+      "text": "You could say something like, \"I'm so excited today."
+    },
+    {
+      "start": 4819.5,
+      "end": 4822.1,
+      "text": "Add three exclamation marks,\" and it seamlessly switches."
+    },
+    {
+      "start": 4822.1,
+      "end": 4826.4,
+      "text": "It adds those three exclamation marks instead of writing add three exclamation marks."
+    },
+    {
+      "start": 4826.4,
+      "end": 4828.4,
+      "text": "And I think it's pretty cool."
+    },
+    {
+      "start": 4828.4,
+      "end": 4831.3,
+      "text": "If you're not using it, you should try it."
+    },
+    {
+      "start": 4831.3,
+      "end": 4832.7,
+      "text": "I'll do a plug."
+    },
+    {
+      "start": 4832.7,
+      "end": 4840.3,
+      "text": "Get Whisper Flow for free for an entire year for a year for free by becoming an annual subscriber of my newsletter."
+    },
+    {
+      "start": 4840.3,
+      "end": 4842.3,
+      "text": "That's how I got access to it, Lenny."
+    },
+    {
+      "start": 4842.3,
+      "end": 4843.4,
+      "text": "There we go."
+    },
+    {
+      "start": 4843.4,
+      "end": 4845.5,
+      "text": "I think I pitched this deal."
+    },
+    {
+      "start": 4845.5,
+      "end": 4848.2,
+      "text": "I think people don't truly understand how incredible this is."
+    },
+    {
+      "start": 4848.2,
+      "end": 4850.7,
+      "text": "They're like, \"No way this is real."
+    },
+    {
+      "start": 4854.3,
+      "end": 4855.3,
+      "text": "Moving on."
+    },
+    {
+      "start": 4855.3,
+      "end": 4856.3,
+      "text": "Kiriti."
+    },
+    {
+      "start": 4856.3,
+      "end": 4857.3,
+      "text": "Awesome."
+    },
+    {
+      "start": 4857.3,
+      "end": 4859.5,
+      "text": "I actually am a stickler for productivity."
+    },
+    {
+      "start": 4859.5,
+      "end": 4863.7,
+      "text": "I keep experimenting new CLI tools and things which can make me faster."
+    },
+    {
+      "start": 4863.7,
+      "end": 4866.5,
+      "text": "So I feel like a Raycast has been amazing."
+    },
+    {
+      "start": 4866.5,
+      "end": 4872.8,
+      "text": "I've discovered all this new shortcuts that you can use to open different things, type in shortcut commands and things like that."
+    },
+    {
+      "start": 4872.8,
+      "end": 4876.6,
+      "text": "And Caffeinate is another thing that I've recently discovered from my teammates."
+    },
+    {
+      "start": 4876.6,
+      "end": 4883.6,
+      "text": "It helps you prevent Mac from sleeping so you can run this really long Codex task for four or five hours locally,"
+    },
+    {
+      "start": 4883.6,
+      "end": 4889.3,
+      "text": "let it build the thing and then you can wake up and be like, \"Okay, this is good."
+    },
+    {
+      "start": 4889.3,
+      "end": 4890.3,
+      "text": "I like this.\""
+    },
+    {
+      "start": 4890.3,
+      "end": 4891.7,
+      "text": "That's hilarious, that combo."
+    },
+    {
+      "start": 4891.7,
+      "end": 4892.7,
+      "text": "Codex and Caffeinate."
+    },
+    {
+      "start": 4892.7,
+      "end": 4900.1,
+      "text": "You guys need to use it, build that yourself, an OpenAI version of that, or the Codex agent should just keep your Mac from sleeping."
+    },
+    {
+      "start": 4900.1,
+      "end": 4901.1,
+      "text": "That's so funny."
+    },
+    {
+      "start": 4901.1,
+      "end": 4904.6,
+      "text": "By the way, Raycast, also part of Lenny's product pass."
+    },
+    {
+      "start": 4904.6,
+      "end": 4906.3,
+      "text": "One year for your Raycast."
+    },
+    {
+      "start": 4906.3,
+      "end": 4907.3,
+      "text": "Amazing."
+    },
+    {
+      "start": 4907.3,
+      "end": 4908.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 4908.3,
+      "end": 4910.0,
+      "text": "Lenny didn't tell us these folks."
+    },
+    {
+      "start": 4910.0,
+      "end": 4911.0,
+      "text": "Yes."
+    },
+    {
+      "start": 4911.0,
+      "end": 4913.3,
+      "text": "These are actually our favorite products."
+    },
+    {
+      "start": 4913.3,
+      "end": 4915.1,
+      "text": "These are just two of 19 products."
+    },
+    {
+      "start": 4915.1,
+      "end": 4916.1,
+      "text": "No Caffeinate though."
+    },
+    {
+      "start": 4916.1,
+      "end": 4917.8,
+      "text": "I don't know if that's even paid."
+    },
+    {
+      "start": 4917.8,
+      "end": 4918.8,
+      "text": "Okay, let's keep going."
+    },
+    {
+      "start": 4918.8,
+      "end": 4923.3,
+      "text": "Do you have a favorite life motto that you find yourself coming back to in work or in life?"
+    },
+    {
+      "start": 4923.3,
+      "end": 4931.6,
+      "text": "For me, I think this is one my dad told me when I was a kid and it's always stuck, which is they told it couldn't be done,"
+    },
+    {
+      "start": 4931.6,
+      "end": 4934.8,
+      "text": "but the fool didn't know it, so he did it anyway."
+    },
+    {
+      "start": 4934.8,
+      "end": 4940.5,
+      "text": "I think be foolish enough to believe that you can do anything if you put your heart to it,"
+    },
+    {
+      "start": 4940.5,
+      "end": 4947.6,
+      "text": "especially now because you have so much data at your hand that could be pointing towards the fact that you probably will be unsuccessful."
+    },
+    {
+      "start": 4947.6,
+      "end": 4953.8,
+      "text": "How many podcasts made it to more than a thousand subscribers or how many companies hit more than one million ARR?"
+    },
+    {
+      "start": 4953.8,
+      "end": 4960.3,
+      "text": "And there's always data to show you that you won't be successful, but sometimes just be foolish and go ahead with it."
+    },
+    {
+      "start": 4960.3,
+      "end": 4961.3,
+      "text": "That's great."
+    },
+    {
+      "start": 4961.3,
+      "end": 4962.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 4962.3,
+      "end": 4964.7,
+      "text": "For me, I am more of an overthinker."
+    },
+    {
+      "start": 4964.7,
+      "end": 4969.9,
+      "text": "So I really like this quote from Steve Jobs that you can only connect the dots looking backwards."
+    },
+    {
+      "start": 4969.9,
+      "end": 4975.8,
+      "text": "So a lot of the times there are numerous choices and you don't really know the optimal one to pick,"
+    },
+    {
+      "start": 4975.8,
+      "end": 4980.2,
+      "text": "but life works in ways that you can actually see back and be like, \"Oh,"
+    },
+    {
+      "start": 4980.2,
+      "end": 4987.3,
+      "text": "these are actually beautiful in terms of how our transition.\" So I feel like that is extremely useful in keep moving forward, keep experimenting."
+    },
+    {
+      "start": 4987.3,
+      "end": 4988.3,
+      "text": "Final question."
+    },
+    {
+      "start": 4988.3,
+      "end": 4993.3,
+      "text": "Whenever I have two guests on the podcast at once, I like to ask this question."
+    },
+    {
+      "start": 4993.3,
+      "end": 4996.3,
+      "text": "What's something that you admire about the other person?"
+    },
+    {
+      "start": 4996.3,
+      "end": 5003.4,
+      "text": "I think with Kiriti, he's pretty calm and very grounded and he's always been my sounding board."
+    },
+    {
+      "start": 5003.4,
+      "end": 5014.6,
+      "text": "I can throw a ton of ideas at him and he always comes up with, he's able to anticipate the kind of issues that might land into."
+    },
+    {
+      "start": 5014.6,
+      "end": 5022.5,
+      "text": "And he's extremely kind and lets his work speak instead of actually doing a lot of talking, I guess."
+    },
+    {
+      "start": 5022.5,
+      "end": 5028.3,
+      "text": "But if I had to pick one, I think he's the most incredible husband."
+    },
+    {
+      "start": 5028.3,
+      "end": 5029.3,
+      "text": "Reveal."
+    },
+    {
+      "start": 5029.3,
+      "end": 5033.3,
+      "text": "Little did people know."
+    },
+    {
+      "start": 5033.3,
+      "end": 5039.3,
+      "text": "We've been married for four years and been the most beautiful four years of my life."
+    },
+    {
+      "start": 5039.3,
+      "end": 5040.3,
+      "text": "Wow."
+    },
+    {
+      "start": 5040.3,
+      "end": 5041.3,
+      "text": "Okay."
+    },
+    {
+      "start": 5041.3,
+      "end": 5042.3,
+      "text": "How do you follow that?"
+    },
+    {
+      "start": 5042.3,
+      "end": 5044.6,
+      "text": "Yeah, it's super hard to follow that."
+    },
+    {
+      "start": 5044.6,
+      "end": 5051.9,
+      "text": "I would say I am extremely privileged in terms of working with really smart people in great companies in the Silicon Valley."
+    },
+    {
+      "start": 5051.9,
+      "end": 5065.2,
+      "text": "And I feel the unique thing that stands with Aishwarya across like any other smart folks I've worked on is she has this really amazing knack of teaching and explaining something in a very understandable and easy to comprehend way."
+    },
+    {
+      "start": 5065.2,
+      "end": 5074.4,
+      "text": "And that combined with persistence is super useful, especially in this fast-moving AI world that we are in the sense that there's so many new things coming up."
+    },
+    {
+      "start": 5074.4,
+      "end": 5083.0,
+      "text": "It feels overwhelming, but when I hear her talk about, this is how you make sense of this entire thing, this is where it plugs in."
+    },
+    {
+      "start": 5083.0,
+      "end": 5085.7,
+      "text": "I feel like, oh, that is so simple."
+    },
+    {
+      "start": 5085.7,
+      "end": 5087.3,
+      "text": "I can also do that."
+    },
+    {
+      "start": 5087.3,
+      "end": 5093.3,
+      "text": "So she empowers a lot of people by simplifying things and explaining things in the most understandable way."
+    },
+    {
+      "start": 5093.3,
+      "end": 5095.3,
+      "text": "So I feel that is an incredible quality."
+    },
+    {
+      "start": 5095.3,
+      "end": 5096.3,
+      "text": "Amazing."
+    },
+    {
+      "start": 5096.3,
+      "end": 5097.3,
+      "text": "How sweet."
+    },
+    {
+      "start": 5097.3,
+      "end": 5099.5,
+      "text": "I got to do this all the time."
+    },
+    {
+      "start": 5099.5,
+      "end": 5101.5,
+      "text": "I need more guest to do it."
+    },
+    {
+      "start": 5101.5,
+      "end": 5102.5,
+      "text": "That was great."
+    },
+    {
+      "start": 5102.5,
+      "end": 5103.5,
+      "text": "Okay."
+    },
+    {
+      "start": 5103.5,
+      "end": 5104.5,
+      "text": "Final questions."
+    },
+    {
+      "start": 5104.5,
+      "end": 5109.3,
+      "text": "Where can folks find stuff that you're working on, find you online, share your course link, and then just how can listeners be useful to you?"
+    },
+    {
+      "start": 5109.3,
+      "end": 5111.2,
+      "text": "I write a lot on LinkedIn."
+    },
+    {
+      "start": 5111.2,
+      "end": 5119.5,
+      "text": "So if you want to listen to pragmatists who've been in the weeds, working on AI products and what they're seeing, you can follow my work."
+    },
+    {
+      "start": 5119.5,
+      "end": 5126.2,
+      "text": "We also have a GitHub repository with about 20K stars, and that repository is all about good resources for learning AI."
+    },
+    {
+      "start": 5126.2,
+      "end": 5127.2,
+      "text": "It's completely free."
+    },
+    {
+      "start": 5127.2,
+      "end": 5132.0,
+      "text": "And if you like what we spoke today, we also run a super popular course."
+    },
+    {
+      "start": 5132.0,
+      "end": 5135.5,
+      "text": "We leave a link to it on building enterprise AI products."
+    },
+    {
+      "start": 5135.5,
+      "end": 5142.6,
+      "text": "And the course is a lot about unlearning mindsets and following a problem-first approach instead of a tool-first or a hype-first approach."
+    },
+    {
+      "start": 5142.6,
+      "end": 5145.1,
+      "text": "So you can check that out as well."
+    },
+    {
+      "start": 5145.1,
+      "end": 5155.3,
+      "text": "And if you don't want to do the course, we write a lot, we give out a lot of free resources, we have free sessions, so make sure you follow our work."
+    },
+    {
+      "start": 5155.3,
+      "end": 5159.0,
+      "text": "Yeah, I would also add that you can also find me on LinkedIn."
+    },
+    {
+      "start": 5159.0,
+      "end": 5165.2,
+      "text": "I don't write a lot, I guess, but I'm super all excited to just talk to any complex product that you're building."
+    },
+    {
+      "start": 5165.2,
+      "end": 5171.9,
+      "text": "And if you have thoughts on how you can use coding agents to make your life better or however the problems that you're seeing,"
+    },
+    {
+      "start": 5171.9,
+      "end": 5175.3,
+      "text": "always my DMs are open and we can have a great discussion."
+    },
+    {
+      "start": 5175.3,
+      "end": 5176.3,
+      "text": "Awesome."
+    },
+    {
+      "start": 5176.3,
+      "end": 5180.3,
+      "text": "Well, Kiriti and Ash, thank you so much for being here."
+    },
+    {
+      "start": 5180.3,
+      "end": 5181.3,
+      "text": "Thank you so much."
+    },
+    {
+      "start": 5181.3,
+      "end": 5182.3,
+      "text": "Thank you, Lenny."
+    },
+    {
+      "start": 5182.3,
+      "end": 5183.3,
+      "text": "This was so much fun."
+    },
+    {
+      "start": 5183.3,
+      "end": 5185.1,
+      "text": "So much fun."
+    },
+    {
+      "start": 5185.1,
+      "end": 5186.3,
+      "text": "Bye, everyone."
+    },
+    {
+      "start": 5186.3,
+      "end": 5188.4,
+      "text": "Thank you so much for listening."
+    },
+    {
+      "start": 5188.4,
+      "end": 5195.6,
+      "text": "If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app."
+    },
+    {
+      "start": 5195.6,
+      "end": 5202.7,
+      "text": "Also, please consider giving us a rating or leaving a review as that really helps other listeners find the podcast."
+    },
+    {
+      "start": 5207.7,
+      "end": 5209.9,
+      "text": "See you in the next episode."
+    }
+  ],
+  "labels": [
+    {
+      "kind": "host_read",
+      "start": 2977.2,
+      "end": 3005.5,
+      "sponsor": "Alo Yoga",
+      "note": "spliced host_read for Alo Yoga"
+    }
+  ]
+}

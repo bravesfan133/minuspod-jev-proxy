@@ -1,0 +1,886 @@
+# negative_adam-mosseri
+# Conversational transcript with no ads. Ground truth: no cuts.
+# source: https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/adam-mosseri.md
+
+[0.0s - 1.8s] No, I think taste matters a ton.
+[1.8s - 9.9s] In a world where it's easier to build things, it's more important to make sure that your time is spent figuring out what you should be building in the first place.
+[9.9s - 18.0s] The people who I think are going to make the most of it are the ones who are clear-eyed about what AI is good at and what it's not good at,
+[18.0s - 23.0s] and also have an instinct or a nose for what it will be good at and not good at.
+[23.0s - 30.0s] What's something that the Instagram algorithm knows about human behavior that people may not realize?
+[30.0s - 38.0s] I think people assume that there's a much more detailed semantic understanding of everybody's interests and preferences in the algorithm than there is.
+[38.0s - 45.0s] Is the rise of AI content a headwind or a tailwind for Instagram versus other platforms?
+[45.0s - 49.7s] I think it's going to be a tailwind, but I think it's going to be a challenge.
+[49.7s - 56.3s] In a world where there's an abundance of synthetic content, I actually think people are going to seek out creativity and authenticity and people.
+[56.3s - 58.8s] I don't think we should filter out AI content.
+[58.8s - 62.6s] I think we should let you know if content is AI content or not.
+[62.6s - 64.0s] That's hard, by the way.
+[64.0s - 72.0s] Where do you think human brains will continue to be most valuable as AI continues to eat more and more of that product development life cycle?
+[72.0s - 133.0s] That's a great question, so-
+[133.0s - 134.0s] Thank you for having me.
+[134.0s - 135.0s] Excited to be here.
+[135.0s - 137.9s] You've been doing product for a long time.
+[137.9s - 142.9s] You get to see how a lot of teams operate across Meta, within Instagram.
+[142.9s - 146.9s] What does just the canonical product team look like in 2026?
+[146.9s - 153.0s] What's kind of most different today in how teams operate/should operate versus, say, a couple years ago?
+[153.0s - 155.2s] It's changed a lot this year.
+[155.2s - 166.9s] So for the longest time at a big company like ours, the canonical team was something like two or three Android engineers, two or three iOS engineers, two or three server engineers,
+[166.9s - 174.6s] maybe a generalist, a PM, a designer, a data scientist, a researcher, if you were lucky, and maybe that's about it.
+[174.6s - 177.5s] So on the order of a Baker's dozen.
+[177.5s - 187.8s] And that is a function of you want to have, for anybody who's running code, someone who can review their code and who's familiar with that code base,
+[187.8s - 191.1s] and having these different functions that are more specialized.
+[191.1s - 194.0s] I think it's very different at a startup.
+[194.0s - 195.8s] But this year, it's changing.
+[195.8s - 204.8s] We've adopted what we call pods, which are just mini teams, where it's, call it, four to six engineers who are a bit more generalists.
+[204.8s - 214.1s] One, we call product staff, which is sort of an evolution of the PM, so a PM who can do some of what a designer does,
+[214.1s - 222.7s] and some of what a data scientist does, and some of what a research does, leveraging the latest tools that we have for them.
+[222.7s - 224.8s] And then whatever specialist they need.
+[224.8s - 230.2s] If they're doing something that requires a pricing strategy, you need a senior data scientist.
+[230.2s - 237.0s] If you're doing something that is really novel from an experience standpoint, you need a very senior product designer.
+[237.0s - 264.5s] So we try to build a team based on the needs of the work a bit, but then end up with a much smaller core,
+[264.5s - 276.6s] which is more on the order of six or seven usually.
+[276.6s - 292.0s] And that is a very big shift that's just happening to us this year.
+[292.0s - 320.5s] But just by virtue of having less people to coordinate, they can often move faster and make better decisions, a little bit less designed by committee.
+[320.5s - 338.1s] So we talk a lot about AI adjusting and improving productivity, and that's part of it.
+[338.1s - 359.0s] But I think another part of it is just the small teams, I think, often are just more effective.
+[359.0s - 360.9s] You just have less specialists, right?
+[360.9s - 362.8s] So you might not have any.
+[362.8s - 370.2s] You might be four engineers and a product staff, and there's no data scientist, there's no designer, there's no researcher, there's no content designer.
+[370.2s - 374.0s] The product staff is the generalist that supports all of those things.
+[374.0s - 382.5s] I mean, what's clearly happening is all of the functions are starting to bleed into each other, and the whole industry's wrestling with what that means.
+[382.5s - 388.1s] A lot of what a data scientist does at a big company, for instance, is relatively mechanical.
+[388.1s - 397.0s] And so there's stuff that they do that is really more like art and science and there's stuff that's really more like just pulling data, data management.
+[397.0s - 400.4s] So some of the tools that we're building internally to understand ...
+[400.4s - 403.6s] For instance, a traditional data science question would be a waterfall.
+[403.6s - 411.0s] So if you wanted to look at people creating reels, you would look at all the steps and then how people fall off on each step,
+[411.0s - 414.7s] and try to figure out where there might be opportunities to improve things.
+[414.7s - 420.7s] That kind of basic waterfall analysis is much easier now to use some of our internal tools to just pull automatically,
+[420.7s - 425.6s] as opposed to having to have a data scientist do a bunch of bespoke work for that.
+[425.6s - 431.0s] So our product staff might be able to do that now, and they couldn't do that a year ago.
+[431.0s - 436.7s] So you just end up with these people who have more generalist shapes.
+[436.7s - 446.3s] And then when you need it, when you really need it, you have a more senior, ideally, or just more creative specialist.
+[446.3s - 452.0s] So a phenomenal product designer or just a genius data scientist or researcher.
+[452.0s - 453.4s] This is so interesting.
+[453.4s - 455.4s] It's exactly what I just heard.
+[455.4s - 461.0s] I had Fiona Fong, the head of engineering for Claude Code and co-work on the podcast.
+[461.0s - 469.6s] She's Boris Cherry's manager, and she described the people she hires now are, one, builders with great taste that can take an idea from end-to-end,
+[469.6s - 473.0s] and people with deep expertise in a very specific domain.
+[473.0s - 474.8s] The taste thing matters a lot.
+[474.8s - 476.2s] I really agree with that.
+[476.2s - 478.0s] Boris used to work at Instagram.
+[478.0s - 479.0s] Oh, that's right.
+[479.0s - 480.7s] Yeah, he was a senior IC at Instagram for a while.
+[480.7s - 481.7s] I love seeing him.
+[481.7s - 482.7s] He's all over Threads now.
+[482.7s - 484.0s] It's like he's sort of like the face of Claude Code, which is amazing.
+[484.0s - 485.0s] Yeah, he's crushing it.
+[485.0s - 486.3s] He's killing it.
+[486.3s - 488.0s] He's a celebrity now.
+[488.0s - 489.0s] He really is.
+[489.0s - 490.7s] He's his own little ...
+[490.7s - 491.7s] Yeah, for sure.
+[491.7s - 494.8s] In a world that is on fire right now.
+[494.8s - 497.2s] No, I think taste matters a ton.
+[497.2s - 508.0s] So in a world where it's easier to build things, it's more important to make sure that your time is spent figuring out what you should be building in the first place.
+[508.0s - 513.5s] Actually, so a lot of designers right now are very anxious about their roles.
+[513.5s - 520.6s] You know, I've got these other generalists doing design, you've got engineers doing design, product staff doing design.
+[520.6s - 526.4s] But I'm actually pretty long on design or designers because they tend to have taste.
+[526.4s - 532.7s] And I think that is something that is much more difficult to imagine being automated away.
+[532.7s - 539.0s] And so there's other challenges with design sometimes, but I'm pretty long right now on designers.
+[539.0s - 540.4s] I've always felt that too.
+[540.4s - 545.2s] As it is so easy to build and all the work that AI produces is so ...
+[545.2s - 547.3s] You can tell this was Claude designed.
+[547.3s - 549.0s] I know what you did here.
+[549.0s - 550.0s] This is Codex.
+[550.0s - 551.3s] Well, they all have their vibe.
+[551.3s - 557.0s] When you vibe code your apps, we call it vibe coding, and you're all like, "Oh, that's a Codex app," or, "Oh, that's a Claude app."
+[557.0s - 558.0s] Right.
+[558.0s - 559.4s] And that's Replate, that's Lovable.
+[559.4s - 560.8s] You can predict these things.
+[560.8s - 566.1s] I've always though that too, that design should be thriving, or, you know, for some reason, it hasn't yet.
+[566.1s - 569.5s] If you look at jobs for designers, they're kind of flat lining.
+[569.5s - 576.9s] I feel like the missing piece is like the PME piece of deeply understanding the business, and what will grow it, and what success, you know, all that stuff.
+[576.9s - 580.0s] The business side of it versus the taste side of it.
+[580.0s - 581.0s] Yeah.
+[581.0s - 583.6s] I think you're going to see ...
+[583.6s - 589.1s] We have a senior designer at Instagram called Nate, who just transferred into product staff.
+[589.1s - 600.9s] So I think some of what you'll see is it will be harder to talk about design roles and who's a good designer because they're not going to just stay in traditional design roles.
+[600.9s - 607.5s] If you're an amazing designer, you probably have strong opinions outside of just the interaction and visual design.
+[607.5s - 613.0s] You probably have strong opinions on product strategy, even on the business, on the go-to-market.
+[613.0s - 623.2s] And so I actually think some of our strongest product staff are going to be converts from design and from data science who are just looking to expand their reach.
+[623.2s - 632.1s] And they were influential across functional boundaries before, but this world where those functional boundaries are just wildly blurred, just allow them just to jump in.
+[632.1s - 639.9s] And so sure, they'll be technically a generalist on paper, but they clearly have a uniquely strong ability in one type of craft.
+[639.9s - 646.0s] But they've got the ability and strong opinions to make informed decisions across other parts or other crafts.
+[646.0s - 651.2s] And so I don't know that all the strongest designers I have will all be in design.
+[651.2s - 656.7s] They probably will be the majority, but I can imagine a bunch of really strong ones moving roles.
+[656.7s - 665.0s] But, I mean, I should also check my own bias here though, because I started as a designer at Facebook way back when, and I switched roles.
+[665.0s - 666.1s] No, designers are great.
+[666.1s - 667.1s] I'm a big fan.
+[667.1s - 668.5s] So this is really interesting.
+[668.5s - 672.2s] There's always been this GM model where different types of functions can become GMs.
+[672.2s - 677.0s] It's like this product staff role feels like a similar situation, where different functions can become product staff.
+[677.0s - 678.0s] Yeah.
+[678.0s - 679.0s] Yeah.
+[679.0s - 684.2s] And that was true of PM before, but it's just so much more true now.
+[684.2s - 688.7s] And, I mean, in some ways, it's probably the age of the generalist,
+[688.7s - 694.6s] but I still think there's going to be a real important role for these really amazing specialists who are just ...
+[694.6s - 696.3s] They're all about going ...
+[696.3s - 698.4s] I wish I was like that.
+[698.4s - 704.3s] I always had this, like I romanticize the phenomenal machine learning engineer or AI researcher or shoemaker.
+[704.3s - 707.4s] I think that's the coolest thing in the world.
+[707.4s - 709.5s] But it's never been my shape.
+[709.5s - 711.5s] I've never been great at anything.
+[711.5s - 713.3s] I've always just had range.
+[713.3s - 715.0s] That's always been my strength.
+[715.0s - 716.0s] Same.
+[716.0s - 717.0s] Okay.
+[717.0s - 718.9s] So this idea of product staff.
+[718.9s - 721.7s] So the idea is on these new pods ...
+[721.7s - 724.8s] So this is a new thing you guys are doing.
+[724.8s - 730.5s] So there's these pod teams, product staff, engineers, and maybe one specialist that's going deep on set pricing algorithm or something like that.
+[730.5s - 736.4s] So what this tells me is there's these adjacent roles that are maybe more in trouble over the years.
+[736.4s - 738.9s] Data science, for example, user research, for example.
+[738.9s - 740.8s] You talked about designers being anxious.
+[740.8s - 747.0s] Is there anything there of just like, "Oh, maybe folks in these groups should think about shifting to other roles."?
+[747.0s - 748.5s] I mean, there's anxiety everywhere.
+[748.5s - 758.3s] I mean, I've talked to a lot of people at a lot of other companies, and it just seems like this is a lot of concern right now about competition, about job displacement,
+[758.3s - 762.8s] about unintended or unforeseen consequences of all this technology and all this moving so quickly.
+[762.8s - 764.0s] So that's definitely happening.
+[764.0s - 771.1s] I think that you will see the functional lines continue to blur, but I still think there will be room for functions.
+[771.1s - 772.7s] They'll just be shaped differently.
+[772.7s - 779.1s] They won't all be senior ICs necessarily, but they'll all be either senior or on their way to being senior.
+[779.1s - 788.7s] You can't just have a bunch of super senior data scientists and no new ones, because then who's going to be the new super senior data scientists in the future?
+[788.7s - 792.2s] So you need to basically hire and mentor and grow talent.
+[792.2s - 800.6s] Maybe the team is smaller overall, and then that those who aren't on their way to being super senior move into more of a generalist role.
+[800.6s - 802.8s] I think that's a reasonable soft landing.
+[802.8s - 811.2s] But I do think you're going to want to make sure you're investing not only in today's senior talent for each specific function, but in tomorrow's.
+[811.2s - 816.0s] Otherwise, I think you're going to regret it in a couple years is my take.
+[816.0s - 821.7s] That said, who knows what the world looks like in a couple of years?
+[821.7s - 831.0s] So my big thing is generally don't be overly confident in whatever your predictions are, because there's just too much flux right now.
+[831.0s - 836.0s] Benedict Evans was on the podcast recently, said the same thing, "We don't want to know anything about what's going on."
+[836.0s - 837.0s] Yeah, yeah.
+[837.0s - 838.3s] I like him a lot.
+[838.3s - 840.0s] I'll make sure I listen to the pod.
+[840.0s - 841.0s] Yeah.
+[841.0s - 842.4s] So you talked about taste.
+[842.4s - 844.1s] This makes me think about ...
+[844.1s - 847.5s] So you're interviewing a lot of people, hiring a lot of people.
+[847.5s - 852.8s] What are some traits that are trending up in things that you look for more and more now in this world?
+[852.8s - 857.0s] And what are some traits that are trending down, and maybe less important to you?
+[857.0s - 860.1s] I mean, there are some things that are the same.
+[860.1s - 865.4s] So for the longest time, almost no matter what the function, I always look for three things.
+[865.4s - 867.2s] Do you have sort of grit?
+[867.2s - 870.0s] You've got some drive, some fire in your belly.
+[870.0s - 871.6s] Are you a quick learner?
+[871.6s - 879.3s] And are you reasonably ideally very self-aware so that you can actually take feedback and know what you're good at and know you're not good?
+[879.3s - 888.0s] Because if you are those things, if you got fire in your belly, you learn quickly and you're self-aware, you can kind of get good at anything eventually.
+[888.0s - 893.0s] But if any of those things are missing, there's usually an issue, so that's the baseline.
+[893.0s - 903.7s] Right now for hiring, but just for I think people who are going to be more successful over these next 5 or 10 years, as things change so significantly,
+[903.7s - 911.8s] I think two things that I'm continuing to encourage myself to do, are to stay curious and to put yourself out there.
+[911.8s - 914.7s] I just think you got to try things.
+[914.7s - 922.1s] To that point before where no one really knows what's going on, you have to be willing to try things.
+[922.1s - 925.0s] I don't know, do you speak another language?
+[925.0s - 926.0s] Russian, yeah.
+[926.0s - 927.0s] Yeah.
+[927.0s - 933.3s] So when you learn another language, I think one of the most important things and one of the best predictors, this is my guess, I don't have any research on this,
+[933.3s - 937.4s] about are you going to get good at speaking, is are you willing to sound like an idiot?
+[937.4s - 942.2s] Are you willing just to say it and be corrected, and not be offended, and then just get better and better?
+[942.2s - 944.0s] You just have to put yourself out there.
+[944.0s - 949.6s] And with all of these new tools and models and technologies, I think you just have to be willing to try stuff.
+[949.6s - 953.4s] So if you're curious when you try stuff, I think that you'll learn, you'll adapt.
+[953.4s - 959.3s] But if you're not curious or you're not willing to make mistakes or try things, I think you're in a ton of trouble,
+[959.3s - 962.6s] or at least I think it's going to be a really difficult time.
+[962.6s - 969.5s] So those, I think, are premiums, not just for hiring at a company like Meta or a team like Instagram, but I just think across the industry,
+[969.5s - 972.0s] and multiple industries over the next 10 to 20 years.
+[972.0s - 975.2s] Is this something that maybe we're looking for less of?
+[975.2s - 985.4s] For some of these functions, I think that there's some that are still going to be very large teams, and so you need people who are really good at managing large organizations.
+[985.4s - 988.2s] Large organizational leadership is its own craft and skill.
+[988.2s - 989.8s] It's actually different than management.
+[989.8s - 993.0s] But I do think there'll be less of those roles.
+[993.0s - 998.4s] I think we'll have more smaller teams, and there'll be less people who manage thousands of people.
+[998.4s - 1008.0s] And so that's not that job will go away, but that will be less of what I'm looking for in hires, because I'm going to have less roles like that.
+[1008.0s - 1018.6s] Something I'm hearing from a few folks is AI is almost kind of resetting people's impact and success, in terms of some people that were maybe low performers pre-AI can now do ...
+[1018.6s - 1022.4s] Like things they were bad at, AI now allows them to do.
+[1022.4s - 1025.9s] And now they're thriving, building all these things, helping other people.
+[1025.9s - 1027.8s] Do you see that at all?
+[1027.8s - 1032.0s] Just AI is just lifting other people up, maybe lowering some people down?
+[1032.0s - 1035.1s] Yeah, I mean the job is just different.
+[1035.1s - 1036.1s] Take engineering.
+[1036.1s - 1042.4s] Engineering used to be, maybe not majority, but a large percentage, 40%, 50%, 60% writing code.
+[1042.4s - 1047.1s] It's not now, especially if you talk to anybody at these labs.
+[1047.1s - 1051.1s] They're spending most of their time planning and reviewing code.
+[1051.1s - 1053.4s] That is a very different job.
+[1053.4s - 1058.1s] You might hate that, and you might have loved just writing code.
+[1058.1s - 1064.4s] Or you might love that, and you might not have been that fast at writing code.
+[1064.4s - 1071.6s] So who succeeds is a function of whose strengths are aligned with the tools' needs and the business' needs.
+[1071.6s - 1074.0s] And so this is definitely happening.
+[1074.0s - 1085.0s] Another thing is you've had people who had good ideas about how to contribute it to other functions, but didn't have the mechanical or technical skills to do so.
+[1085.0s - 1091.0s] And AI reduces the boundary to do that, and then all of a sudden they can.
+[1091.0s - 1099.2s] For me, it's kind of funny because when I got hired at Facebook, all the designers had to be able to program.
+[1099.2s - 1101.5s] I went through a technical loop.
+[1101.5s - 1106.4s] We gave up on that because it was too hard to hire people.
+[1106.4s - 1112.0s] But I now get to program again for the first time in maybe 10 years.
+[1112.0s - 1115.4s] And, you know, I am not a good engineer.
+[1115.4s - 1118.4s] I'm a mediocre engineer on a good day.
+[1118.4s - 1123.2s] But now, I can write code responsibly, which is just an amazing thing.
+[1123.2s - 1127.8s] You're seeing this across all sorts of levels in seniority and functions.
+[1127.8s - 1136.0s] Designers who are programming, engineers who are pulling data and doing strong analyses, data scientists who are putting together proposals for designs.
+[1136.0s - 1138.7s] The tools aren't all great, by the way.
+[1138.7s - 1144.2s] I think too often we have this really polarized binary outlook on the state of AI.
+[1144.2s - 1146.9s] Like, are you AI-pilled or are you anti-AI?
+[1146.9s - 1148.6s] It's like, people are binary.
+[1148.6s - 1151.0s] I said that to the team yesterday.
+[1151.0s - 1154.1s] And the state of the tools isn't binary either.
+[1154.1s - 1157.5s] They're amazing at some things and remarkably bad at others.
+[1157.5s - 1168.4s] And the people who I think are going to make the most of it are the ones who are clear-eyed about what AI is good at and what it's not good at,
+[1168.4s - 1178.0s] and also have an instinct or a nose for what it will be good at and not good at next month or in a couple months from now.
+[1178.0s - 1181.6s] You mentioned that AI writes all our code now.
+[1181.6s - 1192.0s] Someone tweeted this idea that stuck with me for months now of just like, "Remember, we used to be able to just write code for free?"
+[1192.0s - 1196.0s] I think you'll still be able to write code for free, it'll just be with a smaller model, but yes.
+[1196.0s - 1197.0s] That is [inaudible 00:19:58].
+[1197.0s - 1198.2s] I guess that's true.
+[1198.2s - 1202.5s] There's a model that are close to free, but it's like, yeah, that's crazy.
+[1202.5s - 1204.0s] Now it's just like totally-
+[1204.0s - 1214.8s] But just think about the cost, think about what you pay for a model now and what the level of intelligence you're getting from that model is.
+[1214.8s - 1220.3s] And then at that same price point a year ago, what were you getting?
+[1220.3s - 1223.5s] At some point, the incremental value won't matter.
+[1223.5s - 1227.5s] We're getting there I think with small projects and programming.
+[1227.5s - 1231.1s] I think the models will matter even beyond ...
+[1231.1s - 1239.5s] This week you've got Fable and, obviously, Mythos from Anthropic, but I spent a lot of time with that this week.
+[1239.5s - 1251.4s] For the first time, I'm like, "Oh, I'm just talking to a much more technical, much smarter engineer than I am." The next version, a year out, of that model,
+[1251.4s - 1257.0s] do I need to pay for frontier tokens for whatever Anthropic model 6.0 is?
+[1257.0s - 1261.4s] Or is Fable just fine for all of my side projects?
+[1261.4s - 1262.6s] Probably just fine.
+[1262.6s - 1265.0s] Probably pretty cheap by then too.
+[1265.0s - 1266.0s] Yeah.
+[1266.0s - 1275.7s] When Kevin Weil on the podcast when he was CPO at OpenAI, he famously said, "This is the worst the model will ever be." It's still hard to comprehend that.
+[1275.7s - 1277.8s] It's only going to get better.
+[1277.8s - 1285.0s] So on this point of tokens, spend, ROI, and things like that, Meta is famous for this leaderboard of token spend.
+[1285.0s - 1286.3s] It's a terrible idea.
+[1286.3s - 1288.0s] No leaderboards for token spend.
+[1288.0s - 1289.0s] Okay.
+[1289.0s - 1290.0s] Okay.
+[1290.0s - 1292.9s] Talk about that, and just how do you think about just budgets for engineers and product teams at this point?
+[1292.9s - 1294.5s] Just spend as much as you want?
+[1294.5s - 1296.3s] Is it like there's a cap we have?
+[1296.3s - 1299.0s] Is there any sort of thing you've figured out that works well?
+[1299.0s - 1305.7s] Right now, we've managed to get the costs reigned in a little bit by shutting down the silly things that we were doing.
+[1305.7s - 1310.7s] It's not that hard to build a token incinerator and that doesn't create a lot of value.
+[1310.7s - 1319.2s] And as soon as you actually look at the dollars in and value out, you might just be like, "Oh, that's just a bad idea." And so right now,
+[1319.2s - 1321.5s] we don't have token limits for our engineers.
+[1321.5s - 1323.2s] Actually, I think for anybody, really.
+[1323.2s - 1327.9s] I think that'll eventually have to happen, particularly if costs go up before they go down.
+[1327.9s - 1332.0s] I think they'll eventually go down for the reasons that we just talked about.
+[1332.0s - 1340.3s] But I think of it as any other resource, like I have to decide how to deploy capacity to my different teams,
+[1340.3s - 1346.3s] because I have a limited number of GPUs and CPUs and storage and RAM, et cetera.
+[1346.3s - 1351.6s] I have to decide how to deploy OPEX for labeling budgets across my teams.
+[1351.6s - 1356.5s] I have to decide how to deploy payroll for headcount across my teams.
+[1356.5s - 1361.8s] I think that you can imagine, at least in a year or two coming,
+[1361.8s - 1369.3s] that the burn rate of a strong engineer might be the same as their salary or their cost of employment.
+[1369.3s - 1374.6s] And in that world, you're going to probably need to put in some caps.
+[1374.6s - 1382.5s] The caps should probably be portional to the company's trust in your ability to use them in an ROA positive way.
+[1382.5s - 1385.1s] But I can imagine caps being healthy.
+[1385.1s - 1387.0s] Right now, we're not there.
+[1387.0s - 1392.6s] I think costs will go up because we'll just be using more tokens, not because prices will necessarily go up.
+[1392.6s - 1399.5s] But then I think prices will come down because all of these frontier models are going to be in a bit of a pricing war.
+[1399.5s - 1400.5s] So we'll see.
+[1400.5s - 1403.0s] I think it'll be a bit of a rollercoaster.
+[1403.0s - 1413.3s] So coming back to this idea that, as you said, we've evolved from, we used to write all our code, to now we're approaching all code will be written by AI.
+[1413.3s - 1419.7s] And it feels like now the transition is it's not just written by AI, but it's one-shotted by AI.
+[1419.7s - 1425.7s] Coding now is steering AI, and it's like how often you have to correct it is coding now.
+[1425.7s - 1429.7s] So it's like the software development lifecycle slowly being eaten by AI.
+[1429.7s - 1434.0s] It'll start helping us come up with ideas, I imagine, more and more.
+[1434.0s - 1445.0s] The question I like to ask people is, where do you think human brains will continue to be most valuable as AI continues to eat more and more of that product development lifecycle?
+[1445.0s - 1446.7s] Taste, like we talked about.
+[1446.7s - 1448.1s] Judgment, particularly around strategy.
+[1448.1s - 1456.5s] You might get feedback from an AI on a strategy, but you're not asking an AI to come up with a strategy anytime soon.
+[1456.5s - 1461.1s] Or if you are, then it's within the context of bounds you set.
+[1461.1s - 1467.0s] So here's my goal, here's my vision, here are my constraints, here's my job, here's my budget.
+[1467.0s - 1470.2s] I think that it looks more like management.
+[1470.2s - 1481.3s] You are trying to define what success looks like, decide how prescriptive you want to be about the path to success, and then giving feedback along the way.
+[1481.3s - 1483.7s] And that is its own craft.
+[1483.7s - 1489.7s] And it'll be interesting to see how if some of the same dynamics come up.
+[1489.7s - 1497.7s] I believe that if you are too prescriptive, as a leader with a team, you end up stifling good ideas.
+[1497.7s - 1503.7s] But if you're too open-ended, sometimes teams just waste time going in the wrong direction.
+[1503.7s - 1514.4s] And so that level of autonomy you give a team, maybe that applies to agents in the future, particularly when we're talking not just about building something,
+[1514.4s - 1518.0s] but deciding what you build in the first place.
+[1518.0s - 1525.8s] But I think of vision as an articulation of the world or the state of the product you want to get to.
+[1525.8s - 1530.4s] And I think of strategy as an opinionated path to achieve that vision.
+[1530.4s - 1534.0s] Strategy can't be like be the best or be amazing.
+[1534.0s - 1537.9s] It has to be controversial, that you have to be ...
+[1537.9s - 1545.3s] A reasonable person should be able to disagree with it, because otherwise you're probably just trying to compete on raw execution.
+[1545.3s - 1556.0s] And I think both vision and strategy I think are going to be where our brains are spreading more and more of our cycles, and I think less on execution.
+[1556.0s - 1567.0s] Something I have always though is AI should be incredibly good at strategy because you would think, here's the market, here's all the information on the market, our competitors, our metrics, our numbers,
+[1567.0s - 1568.7s] our growth, all these things.
+[1568.7s - 1571.0s] Help me figure out how to win.
+[1571.0s - 1575.0s] You think AI, knowing all that, would be really good at this.
+[1575.0s - 1576.4s] I think it could be.
+[1576.4s - 1579.4s] I have found it's not unless you steer it pretty aggressively.
+[1579.4s - 1583.0s] And I don't mean towards an answer, I mean based on the constraints.
+[1583.0s - 1588.2s] It turns out when you're trying to come up with a strategy, there's a lot of things to consider.
+[1588.2s - 1594.2s] You need to consider the state of the technology, personnel on the team and what's motivating them and what you can get.
+[1594.2s - 1600.5s] Sometimes coming up with an idea that is on the bubble, you know it's going to actually attract some of the best talent.
+[1600.5s - 1603.0s] And so the push then goes to the idea.
+[1603.0s - 1612.4s] Obviously, the competitive landscape, the regulatory landscape for companies as large as ours and the compliance landscape, the identity and reason to exist for the brand,
+[1612.4s - 1615.3s] you have to consider all of these things.
+[1615.3s - 1622.2s] I think if you ask an AI just for a strategy lazily, you're not going to get something great.
+[1622.2s - 1628.0s] You're going to get something pretty predictable that probably the competition would expect you to do.
+[1628.0s - 1637.5s] I think if you want a really more effective one, you need to think long and hard about what are all of the different inputs that need to be considered,
+[1637.5s - 1642.2s] make sure you steer the AI in a way that it's considering those as well.
+[1642.2s - 1646.3s] And then it needs to be a conversation in the back and forth.
+[1646.3s - 1656.1s] But I think if you're willing to put in the work and the time, it can definitely be helpful and definitely be clarifying, particularly if you tell it to be critical.
+[1656.1s - 1664.0s] Different models have very different vibes, though, on how willing they are to be pushed back, so I recommend picking one that likes pushing back.
+[1664.0s - 1665.0s] Yeah.
+[1665.0s - 1667.9s] Mythos has gotten really good at being like, "I can't do this.
+[1667.9s - 1670.0s] Let's move on." There's all these limitations.
+[1670.0s - 1675.4s] Claude has always been a little bit of a jerk in a way that I actually appreciate.
+[1675.4s - 1681.1s] I appreciate it, I really do, because I don't want one that's just like, "Oh, you're so right.
+[1681.1s - 1684.8s] I'm so sorry I said that." It's like, no, no, hold on.
+[1684.8s - 1686.4s] I want the real intelligence.
+[1686.4s - 1688.0s] I don't want the pleaser.
+[1688.0s - 1692.9s] This point you made about people being excited about the strategy is such an interesting one.
+[1692.9s - 1696.6s] There's this idea that I read, I think Cory Doctorow wrote this.
+[1696.6s - 1700.3s] There's this kind of concept of a centaur and a reverse centaur.
+[1700.3s - 1702.8s] So centaur is a human body horse ...
+[1702.8s - 1704.6s] This is going somewhere, I promise.
+[1704.6s - 1705.8s] Human body horse ...
+[1705.8s - 1708.0s] Sorry, human upper part, horse, lower part.
+[1708.0s - 1709.0s] Horse body.
+[1709.0s - 1710.0s] Yeah, yeah, yeah.
+[1710.0s - 1711.9s] Horse body, where the human is in charge.
+[1711.9s - 1714.3s] And we prefer that we want to be in charge.
+[1714.3s - 1720.0s] Reverse centaur, which is what we want to avoid with AI, is where the AI is controlling us, and we're just doing its bidding.
+[1720.0s - 1722.0s] So it's a horse head on a human body.
+[1722.0s - 1723.0s] Yeah, exactly.
+[1723.0s - 1724.0s] It's terrifying.
+[1724.0s - 1728.4s] So in a sense, Uber drivers and DoorDash people, this is their life, which is not great.
+[1728.4s - 1734.2s] And this is the danger, I think, for a lot of people is if it's giving us the strategy and telling us,
+[1734.2s - 1737.3s] "Here's what we're building" No one's going to want to do that.
+[1737.3s - 1742.0s] So that's a really interesting counterpoint to, we don't want AI to be telling us the strategy, almost.
+[1742.0s - 1769.1s] Yeah, no, I think there's a lot of things to be careful about right now.
+[1769.1s - 1808.8s] And I would certainly not just assume that because you might be able to outsource some workflow to AI, that you should.
+[1808.8s - 1854.0s] There are certain ones where I think it's really just a win-win and there are certain ones where I think the risk outweighs the benefits.
+[1854.0s - 1855.0s] Yeah.
+[1855.0s - 1862.2s] I mean, you do sometimes find amazing product leaders who are just idea machines, just prolific idea machines.
+[1862.2s - 1874.9s] But I do think a lot of the best have taste, have something about them that really makes really strong talent want to work with them, but end up sort of being curators,
+[1874.9s - 1879.7s] curators of people, curators of ideas, curators of technologies, curators of strategies.
+[1879.7s - 1889.8s] Because I don't really care if I'm hiring a strong lead for an area, if the strategy comes from them or comes from somebody else.
+[1889.8s - 1899.0s] I just care that there is an amazing strategy, and everyone has bought into it, and that we're executing against that strategy well.
+[1899.0s - 1911.8s] And so I think that some of the best product leaders, yes, have ideas, it's hard to be a great curator if you don't have some of your own ideas,
+[1911.8s - 1925.3s] but embrace the reality that they can't come up with everything themselves, and so they need to create an environment in which great ideas bubble up and are chosen or decided upon.
+[1925.3s - 1933.0s] And so I think it's not just about curating ideas, but it's sometimes about curating teams and people.
+[1933.0s - 1934.0s] I love that.
+[1934.0s - 1935.0s] I so agree.
+[1935.0s - 1940.3s] I feel like everyone's always joining a team, and they just want to do vision strategy, just not actually hands-on work.
+[1940.3s - 1943.0s] "No AI's coming in here, let me do the strategy."
+[1943.0s - 1947.0s] Yeah, exactly.
+[1947.0s - 1955.0s] And I love this point that there's so much power and value, and people underestimate just the need for just a really good curator of the team's ideas.
+[1955.0s - 1956.0s] Yeah.
+[1956.0s - 1959.4s] Sometimes it's not just who's good or what idea's good.
+[1959.4s - 1963.2s] It's also what is going to work given the broader context.
+[1963.2s - 1972.4s] So for instance, on team building, a huge thing that I'm always considering is not just like, is this person a really strong candidate for this role?
+[1972.4s - 1976.2s] It is how does this person fit into their leadership team?
+[1976.2s - 1985.8s] So for an area like trust and safety, I have an engineering lead, I have a product staff lead, I have a data science lead, I have a design lead,
+[1985.8s - 1987.5s] I have a research lead.
+[1987.5s - 1991.2s] I need to make sure that those five compliment each other.
+[1991.2s - 1996.0s] And that's about what skills each one has, what weaknesses each one might have.
+[1996.0s - 2003.1s] I also need to make sure that this is more art than science, have a good vibe.
+[2003.1s - 2005.2s] You need trust and rapport.
+[2005.2s - 2010.6s] A leadership team with strong trust and rapport can work through most anything.
+[2010.6s - 2015.6s] A leadership team without trust or rapport, anything can become an issue.
+[2015.6s - 2021.5s] And so that chemistry bit is, like I said, much more art than science.
+[2021.5s - 2023.1s] But that also matters.
+[2023.1s - 2031.5s] And so I think some of the best leaders and product leaders specifically also either do that instinctively or consciously,
+[2031.5s - 2039.0s] but they have a nose for building teams that are going to have good energy and good collaboration.
+[2039.0s - 2041.0s] Warm and fuzzy stuff.
+[2041.0s - 2042.0s] Yeah.
+[2042.0s - 2044.4s] Well, the flip side is also true.
+[2044.4s - 2054.2s] I've had many times in my career where I've had two people who I think are amazing, and I even adore them and love them, and they just can't get along.
+[2054.2s - 2056.9s] And you're like, "This isn't a competency issue.
+[2056.9s - 2063.0s] This is just a personality issue," and you just have to just sometimes call it, and split them.
+[2063.0s - 2069.9s] I want to transition to talk about Instagram, the product, the platform, things you guys have learned there.
+[2069.9s - 2072.2s] Let me start with this question.
+[2072.2s - 2078.0s] What's something that the Instagram algorithm knows about human behavior that people may not realize?
+[2078.0s - 2082.4s] One of the most common misconceptions is actually in the opposite direction.
+[2082.4s - 2090.9s] I think people assume that there's a much more detailed semantic understanding of everybody's interests and preferences in the algorithm than there is.
+[2090.9s - 2096.8s] Most of what's really driven the progress in the world of recommenders over the last 5,
+[2096.8s - 2104.9s] 10 years have been these large embedding models and these other techniques that basically produce artifacts that cannot be read by people.
+[2104.9s - 2106.0s] They're not legible.
+[2106.0s - 2107.1s] They're giant vectors.
+[2107.1s - 2115.5s] It's like, sure, I can show you the vector, but it's just going to be a bunch of numbers in a seven-dimensional space.
+[2115.5s - 2119.6s] And so when we talk about, does the algorithm know something?
+[2119.6s - 2124.4s] Usually we think in these more semantic terms, it knows I like surfing.
+[2124.4s - 2126.6s] And it's like, "Eh." It doesn't.
+[2126.6s - 2131.0s] It just has this big-ass number that happens to correlate with surfing.
+[2131.0s - 2134.3s] That said, I think that is starting to change.
+[2134.3s - 2142.7s] I think that one of the things that LLMs are enabling is they can describe in words, English or whatever language you prefer,
+[2142.7s - 2148.3s] what some of those previously-illegible artifacts are at least proximate to, if not mean directly.
+[2148.3s - 2150.1s] So this is like ...
+[2150.1s - 2152.3s] The thing I haven't really ...
+[2152.3s - 2156.3s] I posted about this this week, this thing called Your Algorithm.
+[2156.3s - 2166.2s] Basically the idea is we take a look at all of the stuff that you've interacted with, and then all of that is in an embedding space.
+[2166.2s - 2169.5s] You can think of embedding space as a map.
+[2169.5s - 2176.2s] You map a bunch of videos into the same map, and so videos that are close or similar.
+[2176.2s - 2182.4s] And now, we can just have an LLM just be like, describe that part of the map.
+[2182.4s - 2189.0s] And it can be like, "Oh, that is deep pour over coffee snobbery." And that's kind of amazing.
+[2189.0s - 2190.1s] That is so cool.
+[2190.1s - 2195.0s] You can ask the LLM to look at these numbers, and extrapolate here's the topic that you're interested in.
+[2195.0s - 2196.0s] That's awesome.
+[2196.0s - 2197.0s] Yeah.
+[2197.0s - 2198.0s] Or look at the videos.
+[2198.0s - 2200.1s] And so the way you ...
+[2200.1s - 2201.1s] Both.
+[2201.1s - 2204.1s] You can also embed concepts into that same space.
+[2204.1s - 2207.6s] And so I mean, embeddings are really the underlying technology underneath LLMs.
+[2207.6s - 2210.0s] That's how all the whole thing works.
+[2210.0s - 2218.9s] And so what we do now is we let you "see your algorithm." You can see what topics we think you're interested in and you can adjust it,
+[2218.9s - 2220.9s] you can add and remove things.
+[2220.9s - 2228.2s] But the idea here, giving people some agency back in a world where these social media apps are getting taken over by recommendations.
+[2228.2s - 2233.6s] But we can't do a lot of other things yet, but we will be able to do.
+[2233.6s - 2238.4s] There's things that aren't topical that you might ask for, "I want more fun content.
+[2238.4s - 2240.7s] I want to see my friends more.
+[2240.7s - 2247.4s] I don't want to see my high school's friends' kids' photos." I don't know, we can come up with a ...
+[2247.4s - 2256.0s] "I don't want to see seven photos in a row, but I'm happy to see six photos in a row." Whatever your mind can come up with.
+[2256.0s - 2260.9s] So we have a lot of work to do, and so I'm excited about that.
+[2260.9s - 2267.4s] But I think a misconception historically is, until recently, we don't really know as much about you as you think.
+[2267.4s - 2270.0s] We're just like, "Oh, you liked these photos.
+[2270.0s - 2279.5s] These people also like those same photos, and they like these other photos, so you might like those other photos." I'm oversimplifying, but that's Kind of how it worked.
+[2279.5s - 2286.0s] Now, only now, are we actually getting as sophisticated as I think people have assumed we've been for many years.
+[2286.0s - 2287.4s] That is really interesting.
+[2287.4s - 2293.5s] One that comes to mind is this transition everyone eventually goes through to this algorithmic, broad global feed.
+[2293.5s - 2304.5s] It always feels, like people think, "I just want to see chronologically everyone I know and follow, and that's going to be my favorite feed," and it continues to be proven wrong.
+[2304.5s - 2311.0s] No, you actually engage a lot more when it's this algorithmic feed of things we think you will love.
+[2311.0s - 2312.9s] Yeah, it's tough because ...
+[2312.9s - 2322.4s] I mean, I posted this week this thing about agency, and I just got destroyed in the comments, which is just part of the job.
+[2322.4s - 2323.5s] I get it.
+[2323.5s - 2327.3s] But there are a couple issues with the chronological feed.
+[2327.3s - 2328.8s] So one is ...
+[2328.8s - 2336.1s] And some of this is the tension between an individual's interests and what works when you scale it up.
+[2336.1s - 2343.7s] So if you do a pure chronological feed, the incentive for everybody is to just post as much as possible,
+[2343.7s - 2350.9s] because it will always be at the top of everyone who follows you's feed as soon as you post.
+[2350.9s - 2358.8s] So what ends up happening is that the feed gets overwhelmed with professional content, with usually large company content and publishers.
+[2358.8s - 2363.0s] The New York Times can pump out 50 things a day.
+[2363.0s - 2364.5s] Your best friend won't.
+[2364.5s - 2368.0s] You might get one thing a week from them.
+[2368.0s - 2371.0s] And so, your feed just gets taken over.
+[2371.0s - 2377.0s] So part of it is the incentives that emerge, because when you design these systems, it's almost like designing a city.
+[2377.0s - 2380.1s] You need to think about, "Okay, here's how the mechanics work.
+[2380.1s - 2381.9s] What are the incentives that arise?
+[2381.9s - 2384.4s] How are people going to act within those incentives?
+[2384.4s - 2390.4s] And then what happens?" And the other thing is sometimes the most interesting thing was just not the most recent thing.
+[2390.4s - 2394.1s] Recency is an important input into relevance, but it's not the only one.
+[2394.1s - 2397.0s] My sister got engaged last night, and she's in Germany.
+[2397.0s - 2398.0s] Congratulations.
+[2398.0s - 2399.0s] No, she didn't.
+[2399.0s - 2400.0s] If she did.
+[2400.0s - 2401.0s] She's married.
+[2401.0s - 2402.0s] She got married last year.
+[2402.0s - 2403.0s] That's why it was top of mind.
+[2403.0s - 2412.9s] But if she got engaged and I missed it because she lives in Europe and we're different time differences, do I really want to see a picture of my brother's po'boy sandwich,
+[2412.9s - 2416.0s] or do I want to see my sister's things first?
+[2416.0s - 2417.0s] So it's tough.
+[2417.0s - 2418.0s] It's tough.
+[2418.0s - 2421.5s] I'd love to figure out a way to find the right balance.
+[2421.5s - 2429.1s] I want to give people agency over the experience, but I think it needs to be in a way that creates a system that makes sense.
+[2429.1s - 2431.8s] Not just for us as a business, which matters.
+[2431.8s - 2439.1s] I'm not pretending that's not an issue, but also for the overall community, because we've done chronological by default, or you can make a default,
+[2439.1s - 2442.9s] and you see not only does usage go down, overall sentiment goes down.
+[2442.9s - 2451.4s] The individual who made that choice might be happy at the moment, but when you just get pummeled with stuff you're less interested in over the course of months, we ask,
+[2451.4s - 2453.2s] we run surveys and massive scales.
+[2453.2s - 2457.0s] We just se people start to become less and less satisfied with Instagram.
+[2457.0s - 2464.9s] Kind of along these lines, everybody asks you about this these days, AI and content and how that all impacts everything that's going on.
+[2464.9s - 2468.8s] I want to ask you something I haven't seen someone ask you.
+[2468.8s - 2474.0s] Is the rise of AI content a headwind or a tailwind for Instagram versus other platforms?
+[2474.0s - 2477.0s] Do you think this helps or hurts you guys?
+[2477.0s - 2481.8s] I think it's going to be a tailwind, but I think it's going to be a challenge.
+[2481.8s - 2483.7s] And not just because it's more content.
+[2483.7s - 2485.1s] Obviously, we're an attention-driven business.
+[2485.1s - 2486.3s] We're an advertising business.
+[2486.3s - 2487.9s] More content means potentially more attention.
+[2487.9s - 2489.3s] That's not for free, though.
+[2489.3s - 2492.4s] I don't think we're very good at ranking AI content yet.
+[2492.4s - 2494.7s] There's great AI content, this crap AI content.
+[2494.7s - 2500.0s] You should just see the stuff you're interested in and not any of the stuff you're not interested in.
+[2500.0s - 2503.5s] But I do think that in a world where ...
+[2503.5s - 2509.9s] Or for years now, and I've said this many times, power shifting from institutions to individuals across industries.
+[2509.9s - 2518.4s] The easiest example of sports, where players are more relevant than teams now, and that was not the case when I was a kid.
+[2518.4s - 2525.9s] In that world, I think it behooves us to invest in individuals and to invest in, specifically, for Instagram and creators.
+[2525.9s - 2527.6s] And I mean creators broadly.
+[2527.6s - 2532.6s] I don't just mean influencers who are promoting branded content and making native-only videos.
+[2532.6s - 2537.5s] I mean, anybody who's using platforms like Instagram to help do what they do.
+[2537.5s - 2543.6s] You could be a journalist, you could be an artist, you could be selling scarves you sew.
+[2543.6s - 2551.0s] But you're out there, as yourself, creating and sharing content that helps you achieve whatever it is you're trying to do.
+[2551.0s - 2554.6s] So we've been leaning in that direction for many years now.
+[2554.6s - 2560.8s] That's been one of our two or three most important audiences for as long as I've been on Instagram.
+[2560.8s - 2569.7s] In a world where there's an abundance of synthetic content, I actually think people are going to seek out creativity and authenticity and people more, not less.
+[2569.7s - 2572.0s] And I think that will help us.
+[2572.0s - 2575.9s] That doesn't mean that we won't have AI content on our platform.
+[2575.9s - 2583.4s] There's going to be bad and good AI content, and we're going to try and handle that the way we normally handle content.
+[2583.4s - 2584.7s] So unsafe goes away.
+[2584.7s - 2588.0s] Interesting versus not interesting is based on ranking and personalization.
+[2588.0s - 2594.4s] But I think people are going to really seek out other points of view, because Instagram was never just about the content.
+[2594.4s - 2601.3s] It was always about, to a certain degree, the person behind the content, the point of view, the reason they're sharing it, their perspective.
+[2601.3s - 2604.5s] And I think that's going to become more important, not less.
+[2604.5s - 2610.9s] And I think given that we are not the best at a lot of things, but we are the largest creator platform.
+[2610.9s - 2618.1s] If you look at how we define creators and how many creators use us versus other platforms, I think it'll be a tailwind for us,
+[2618.1s - 2621.0s] because I think people are going to seek out people.
+[2621.0s - 2629.0s] And this connects to your earlier point that companies like, say, New York Times can pump out a bunch of AI content versus a creator.
+[2629.0s - 2638.0s] And so you're saying you kind of want to protect against that too, allow individuals to continue to perform well in spite of just all this AI content.
+[2638.0s - 2640.2s] If you just love AI content, great.
+[2640.2s - 2643.9s] You should be able to have a feed that's just AI town.
+[2643.9s - 2647.7s] And if you don't, then you shouldn't have it in your feed.
+[2647.7s - 2649.3s] To me, it's like ...
+[2649.3s - 2651.1s] I don't think we should ...
+[2651.1s - 2652.7s] I understand why people are.
+[2652.7s - 2657.7s] I'm not oblivious to the overall paradigm shift and sort of revolution that we're sitting in.
+[2657.7s - 2662.4s] But I don't think we should judge content based on the tool that made it.
+[2662.4s - 2668.3s] I think we should judge it based on the content, the point of view, the person behind the content.
+[2668.3s - 2671.2s] I don't think we should filter out AI content.
+[2671.2s - 2675.5s] I think we should let you know if content is AI content or not.
+[2675.5s - 2679.9s] I think we should let you know more about the person who posted anything,
+[2679.9s - 2688.1s] so that you can make informed decisions about whether or not to believe or trust them based on knowing who they are, or where they are,
+[2688.1s - 2694.0s] or how many times they've changed their profile, or if their profile's three days old or three years old.
+[2694.0s - 2699.0s] But I don't think we should be making value judgements based on what tool you used.
+[2699.0s - 2704.1s] Is there an AI content creator you love that you're just like, "This is so good.
+[2704.1s - 2706.0s] I love watching these AI videos."
+[2706.0s - 2707.0s] Yeah.
+[2707.0s - 2708.0s] What is she called?
+[2708.0s - 2709.0s] Plastic Dream Sequence.
+[2709.0s - 2710.0s] Is that what it is?
+[2710.0s - 2711.0s] Cool.
+[2711.0s - 2713.0s] [inaudible 00:45:12] check it out.
+[2713.0s - 2714.5s] Check it out, yeah.
+[2714.5s - 2715.6s] Plastic Dream Sequence.
+[2715.6s - 2717.9s] I have it on my phone.
+[2717.9s - 2719.0s] I'll double check.
+[2719.0s - 2725.3s] It's these sort of dolls, Barbies, but they're singing songs in these little tiny silhouettes and snippets.
+[2725.3s - 2726.8s] And it's just amazing.
+[2726.8s - 2730.2s] It's a little weird, but also kind of amazing.
+[2730.2s - 2738.8s] And it's very clearly AI, it's not pretending not to be, but it has a very clear creative and aesthetic point of view.
+[2738.8s - 2747.0s] And every time I come by one, I'm like, "Yep, we're doing this now." I'm going to watch this for 30 seconds.
+[2747.0s - 2752.0s] I have it pulled up here, and I want to watch it, but I'm not going to.
+[2752.0s - 2753.0s] That's awesome.
+[2753.0s - 2754.5s] Ifonly.ai, that's another one.
+[2754.5s - 2755.6s] He's in France.
+[2755.6s - 2757.5s] I think he's in Paris.
+[2757.5s - 2764.5s] He uses multiple different tools and models, but he kind of tries to create these dreamscapes and animate them.
+[2764.5s - 2771.2s] So he uses one model to create the image, another one to create the video, music, et cetera.
+[2771.2s - 2773.8s] He's very clearly got his own aesthetic.
+[2773.8s - 2779.0s] And you could think of him as a painter, but this is his tool.
+[2779.0s - 2781.4s] Is there a vision of AI versus human in the feed?
+[2781.4s - 2782.4s] Do you think it'll...
+[2782.4s - 2784.1s] You said you maybe want to mark it.
+[2784.1s - 2785.4s] How do you think about people?
+[2785.4s - 2787.7s] Are they going to be like AI account, not AI count?
+[2787.7s - 2791.0s] How do you think about it, or is that still kind of a work in progress?
+[2791.0s - 2797.7s] Maybe we'll end up in the same place, but there's a difference between marking content and marking accounts, and they're both useful and interesting.
+[2797.7s - 2802.2s] So if content was created with AI, I think you should be able to know that.
+[2802.2s - 2809.5s] That's hard, by the way, because we can detect that right now, but as these models get better, we might lose the ability to detect that.
+[2809.5s - 2816.0s] So we should also be very careful to be honest with you about how confident we are in our own sort of assessment.
+[2816.0s - 2825.0s] But I think you should be able to just ask, be like, "Hey, is this AI?" And we should be able to tell you who we think it probably is,
+[2825.0s - 2828.6s] or we're not sure, or it's definitely not, or it definitely is.
+[2828.6s - 2837.0s] I actually think we might be more practical to label camera captured content, basically non-AI content as opposed to labeling AI content long-term for a couple of reasons.
+[2837.0s - 2840.3s] But then at the account level, I think it also matters.
+[2840.3s - 2843.6s] There's definitely a new spam vector, which is these fake accounts.
+[2843.6s - 2846.3s] Which by the way, an AI creator, that's fine.
+[2846.3s - 2848.1s] There's nothing wrong with that necessarily.
+[2848.1s - 2856.5s] But there are these spam vectors which are trying to abuse that, and they're selling bogus supplements, and it's like an AI monk, and it doesn't present it,
+[2856.5s - 2863.9s] and it's not obvious that it's an AI, and it's just trying to take advantage of a certain aesthetic or a certain sort of stereotype.
+[2863.9s - 2867.2s] We need to figure out how to crack down on that.
+[2867.2s - 2871.1s] And so I do think we should be making sure that you know.
+[2871.1s - 2875.6s] Basically you just need to know, and then you can make your own informed decision.
+[2875.6s - 2878.0s] Is the account a real person or not?
+[2878.0s - 2881.0s] Is the content a real piece of content or not?
+[2881.0s - 2891.0s] When you think about other platforms in the space, social content platforms, are there any features or ways of approaching stuff that they do well,
+[2891.0s - 2895.0s] that you're kind of jealous of or really impressed by?
+[2895.0s - 2896.4s] Yeah, there's a bunch.
+[2896.4s - 2898.5s] So many people do so much.
+[2898.5s - 2909.6s] I mean, for me, one of the things that we are finally catching up with, but I've been always very impressed with is TikTok and their recommenders' ability to break small talent.
+[2909.6s - 2914.1s] In the world of ranking and recommenders, you can talk about exploitation-based ranking.
+[2914.1s - 2918.3s] That sounds terrible, but it just means using the data you have.
+[2918.3s - 2928.7s] And then you can talk about exploration-based ranking, going and trying to figure out what someone might be interested in, that they might even not know they're interested in yet.
+[2928.7s - 2937.1s] And it is much easier to move engagement by showing people stuff that you know they'll probably like because lots of people like it.
+[2937.1s - 2947.1s] It's much harder to go and figure out how to essentially test content so that we can see, "Hey, sure you like Bieber, but you might also like Afropunk.
+[2947.1s - 2952.0s] And so we're just going to show you some Afropunk and see what happens."
+[2952.0s - 2958.3s] If you do the latter, this exploration-based ranking, I think it's really good for niche creators and small creators,
+[2958.3s - 2967.7s] because you give them a chance to find an audience that either wasn't going to see on them before or didn't even know that they were interested before.
+[2967.7s - 2977.7s] So we've invested a lot over the last couple of years in ranking, not just increasing engagement, but increasing originality, increasing the number of pieces of content that break out,
+[2977.7s - 2979.7s] increasing recency to stay culturally relevant.
+[2979.7s - 2984.0s] And so a lot of that has been inspired by TikTok and ByteDance.
+[2984.0s - 2985.5s] I think we're catching up.
+[2985.5s - 2991.6s] There's actually a couple of those areas where we, I think, by best we can tell, we're ahead of them.
+[2991.6s - 2993.7s] There's a couple where we're still behind.
+[2993.7s - 3000.1s] But we have line of sight to, I think, being the best-in-class at recommendations for the first time during my tenure.
+[3000.1s - 3005.0s] So I think they get a lot of credit for inspiring a lot of that work.
+[3005.0s - 3007.0s] Nice job.
+[3007.0s - 3008.1s] Well, we'll see.
+[3008.1s - 3009.2s] Not there yet.
+[3009.2s - 3011.1s] They call me disappointed dad.
+[3011.1s - 3022.0s] My team is always like, "Can you ease up on the disappointed dad vibe?" So I'm trying to be a little bit more generous about giving people their flowers.
+[3022.0s - 3029.0s] Like you say that, but that's an interesting common thread across really successful leaders, is just never being satisfied.
+[3029.0s - 3030.0s] Always feeling-
+[3030.0s - 3031.0s] Yeah, it's a blessing and a curse.
+[3031.0s - 3032.0s] ...
+[3032.0s - 3033.0s] here's all the problem.
+[3033.0s - 3034.0s] It is.
+[3034.0s - 3035.0s] Yeah.
+[3035.0s - 3037.8s] On this creator piece, I think that's also ...
+[3037.8s - 3046.1s] People complain about this global algorithm not showing them all their friends, but I feel like this is a benefit of what happens when you do this,
+[3046.1s - 3055.0s] now that you can break new creators into a wide audience if you have this kind of global algorithmic feed, which is really great for a lot of people.
+[3055.0s - 3064.7s] I mean, I'm out there talking about a lot of these contentious issues, and I get beat up a lot in the comments, which is fine.
+[3064.7s - 3070.3s] My main thing here is just to try to communicate that there's almost always trade-offs.
+[3070.3s - 3073.7s] You can't just have all of the things, unfortunately.
+[3073.7s - 3083.8s] You want to never see something you're not interested in, then you're also just going to see the most basic, general, lowest-common denominator stuff all the time.
+[3083.8s - 3086.8s] You want to discover new and interesting things?
+[3086.8s - 3090.9s] You're occasionally going to see stuff that was just a miss.
+[3090.9s - 3093.5s] But this isn't just true about ranking.
+[3093.5s - 3095.8s] All these major debates have trade-offs.
+[3095.8s - 3096.9s] Privacy and safety.
+[3096.9s - 3099.1s] Those two things are in contention.
+[3099.1s - 3102.9s] Do you want a company scanning your messages or not?
+[3102.9s - 3107.0s] There's some really significant trade-offs on both sides of that debate.
+[3107.0s - 3115.8s] And so generally speaking, when I argue and engage in debate with people who feel really strongly about things, I'm not usually trying to convince them.
+[3115.8s - 3117.9s] Their mind is usually made up.
+[3117.9s - 3125.0s] I'm just trying to enumerate all of the different puts and takes for the rest of the people watching the conversation.
+[3125.0s - 3136.0s] Speaking of getting torn apart in the comments, you are so in the middle and thick of all of these really hairy situations, changing the feed, you were in the Cambridge Analytica lawsuit,
+[3136.0s - 3137.0s] all this.
+[3137.0s - 3139.8s] You're in the center of so much controversy.
+[3139.8s - 3140.8s] Is that ...
+[3140.8s - 3142.5s] You're like, "Yep." Oh, man.
+[3142.5s - 3146.0s] Is that just like you, "I will lean into this.
+[3146.0s - 3154.9s] This is the thing I need to do." Or is it Zuck being like, "Adam, you got to be the front face of all the stuff,
+[3154.9s - 3158.0s] and get in there." Where does that come from?
+[3158.0s - 3159.3s] It started on newsfeed.
+[3159.3s - 3168.7s] So I used to run newsfeed on Facebook, and my take was that the debate was going to happen with or without us, so we might as well participate.
+[3168.7s - 3179.4s] And so I started being really active on Twitter specifically, because that's where journalists really lived at the time, and I thought it would show some humility to show up on their turf,
+[3179.4s - 3180.4s] so to speak.
+[3180.4s - 3186.9s] My Twitter ended up being the darkest place in my life because I just followed all of our biggest critics.
+[3186.9s - 3188.8s] That's not a dig on Twitter.
+[3188.8s - 3190.8s] That was just what I did.
+[3190.8s - 3195.0s] And that's where it started, and it kind of slowly built from there.
+[3195.0s - 3201.3s] For better or for worse, we've become a really important part of daily life for a lot of people.
+[3201.3s - 3207.2s] We touch a lot of people, we have a lot of responsibility, and there's a lot of change.
+[3207.2s - 3211.5s] And with change means there's going to be anxiety and stress and scrutiny.
+[3211.5s - 3213.8s] We've made great decisions, we've made mistakes.
+[3213.8s - 3216.7s] We've been criticized for things that I think ...
+[3216.7s - 3219.4s] We've been criticized unfairly, we've been criticized fairly.
+[3219.4s - 3224.3s] And so we just need to accept that this debate is going to happen broadly.
+[3224.3s - 3233.5s] So I just think it's better for us to talk about it, and just be clear about what we're doing, why we're doing it, what the trade-offs are.
+[3233.5s - 3235.2s] If people disagree, that's okay.
+[3235.2s - 3239.5s] We're not necessarily winning over friends when we talk about what we do.
+[3239.5s - 3249.0s] But I think over the long run, people are fundamentally more afraid of things that they don't understand and about things where people are more secretive and less accessible.
+[3249.0s - 3257.8s] And so I've tried to show up in an accessible and authentic way, and I've made mistakes, and I have enjoyed it at times, and hated it at other times.
+[3257.8s - 3259.9s] But that's kind of how it started.
+[3259.9s - 3267.8s] There was also a fun debate in Mark's senior leadership team a long time ago, where we were just talking about how we're a social media company,
+[3267.8s - 3276.6s] but we had a very sort of conventional approach to communication and press releases, and say, "Why don't we just use our platform?" So I was not in that debate,
+[3276.6s - 3279.9s] but I stuck myself into that debate trying to mediate it.
+[3279.9s - 3286.4s] But that was also a reason why I ended up getting sucked in because Mark was like, "All right, well, let's see.
+[3286.4s - 3289.0s] Why don't you try and see how it goes?"
+[3289.0s - 3295.0s] What's something that helps you deal with the hate that flows at you every time you say something that people disagree with?
+[3295.0s - 3298.0s] You try to put it in perspective.
+[3298.0s - 3300.2s] So it started with ...
+[3300.2s - 3303.6s] I did the redesign of newsfeed in 2009.
+[3303.6s - 3307.1s] We launched it March of 2009 for Facebook.
+[3307.1s - 3312.3s] I was a designer, I was an IC designer, front entry-level designer.
+[3312.3s - 3317.1s] And the first comment that came in was something pretty derogatory.
+[3317.1s - 3320.1s] I think it was homophobic and antisemitic.
+[3320.1s - 3322.2s] Literally, we're all sitting there.
+[3322.2s - 3330.0s] We launched this thing, and we're just looking at the stream of comments, and it's the first one.
+[3330.0s - 3332.6s] And it was specifically about ...
+[3332.6s - 3343.0s] They don't know me, but it was like, "What exploitive expletive censor censor designed this shit?" And I was like, "Oh, it was me."
+[3343.0s - 3344.4s] And I was devastated.
+[3344.4s - 3346.4s] I was like a 25-year-old kid.
+[3346.4s - 3357.8s] And, I don't know, I thought about it, and I came to this idea that if you spent 30, 40, 50 minutes a day at your desk, and you organized your photos there,
+[3357.8s - 3368.4s] and you wrote letters to your friends there, and you read there, and then I just came, and I rearranged your desk, and I didn't tell you, I didn't warn you,
+[3368.4s - 3373.2s] I didn't even explain why, you would be pissed, and that would be reasonable.
+[3373.2s - 3377.0s] And that was what was happening just with millions of people.
+[3377.0s - 3384.6s] So I tried to put things in perspective, and then I tried to step away from it, get time with my kids, get time outside.
+[3384.6s - 3391.0s] There are months where it's really not hard at all and there are months where it really, really grinds on me.
+[3391.0s - 3398.6s] Along those lines, there was a famous kind of reversal when you redesigned the feed into this kind of video scroll-y experience.
+[3398.6s - 3400.0s] There's this whole protest.
+[3400.0s - 3401.0s] The world protested.
+[3401.0s - 3404.0s] Yeah, that was pretty rough.
+[3404.0s - 3408.0s] What was kind of like, "Okay, wow, we're actually not right, and we should go back."?
+[3408.0s - 3410.0s] What helped you decide, "Okay, let's change course."?
+[3410.0s - 3413.1s] So actually that one, three or four things got conflated.
+[3413.1s - 3416.8s] We had to redesign a feed that went to the video viewer.
+[3416.8s - 3419.9s] That was a test to 4% of users on iOS.
+[3419.9s - 3422.1s] It was not going to roll out.
+[3422.1s - 3427.1s] It was just an early test to get us some sense and feedback on the idea.
+[3427.1s - 3429.6s] We were also leaning into Reels a lot.
+[3429.6s - 3434.2s] We were also leaning into recommendations, so posts from accounts you don't follow, a lot.
+[3434.2s - 3442.0s] And there were also creators who were upset about the fact that their reach was going down, and they were blaming ranking changes on that.
+[3442.0s - 3444.3s] Those four things got all conflated.
+[3444.3s - 3447.8s] We had some pretty big-name creators publicly slap us.
+[3447.8s - 3454.0s] Then the press covered that creator sort of backlash, which then got more creators doing it.
+[3454.0s - 3463.7s] So we ended up with this little bit of like a multiplier effect or echo between the creator community and the press back and forth.
+[3463.7s - 3466.8s] But we were never going to launch that.
+[3466.8s - 3468.7s] That was an early test.
+[3468.7s - 3471.0s] We knew it needed to work.
+[3471.0s - 3483.0s] We actually have continued to grow video, and invest in creative tools, and invest in ranking, and invest in recommendations, and that's driven most of our growth in the years since.
+[3483.0s - 3485.0s] I think we were pushing ...
+[3485.0s - 3486.3s] Well, I don't know.
+[3486.3s - 3487.9s] It doesn't feel like ...
+[3487.9s - 3492.9s] I think my real takeaway wasn't that we should have not tested that design necessarily.
+[3492.9s - 3499.1s] I think we could have done a bunch of things better to explain, and maybe move a little slower.
+[3499.1s - 3503.1s] I think we were just pushing things a little bit too fast.
+[3503.1s - 3511.0s] And when you are responsible for a platform like Instagram, you need to be reasonable and realistic about how much you can evolve it.
+[3511.0s - 3522.4s] Now, I would much rather have backlashes like that every couple years, but continue to evolve and continue to stay relevant than the alternative, which would've been like we didn't have video,
+[3522.4s - 3526.6s] we didn't have DMs, we didn't have Stories, we didn't have ranking.
+[3526.6s - 3529.8s] And we wouldn't be having this podcast right now.
+[3529.8s - 3538.0s] But the cost of leaning in is that you're going to occasionally make a mistake and you're going to definitely pay for it.
+[3538.0s - 3541.8s] It's interesting how running experiments now is very risky for companies at your scale.
+[3541.8s - 3544.0s] One person spots it, and I go, "Shit."
+[3544.0s - 3546.6s] Kind of need to have a ...
+[3546.6s - 3553.0s] You don't need to be proactive about communicating it, but you need to have a comm strategy.
+[3553.0s - 3564.5s] For any design change or any test that could be controversial, we talk about it beforehand and be like, "Okay, not if it leaks, when it leaks, what are we saying?
+[3564.5s - 3566.8s] Should we talk about it proactively?
+[3566.8s - 3569.0s] Should we talk about it reactively?
+[3569.0s - 3576.1s] Either way, what's the message?" Because you can't launch something to three billion people and not test it first,
+[3576.1s - 3581.7s] but you can't test something at our scale and not expect people to cover it.
+[3581.7s - 3589.1s] And so you have to be ready to talk about it before you even know you want to launch it.
+[3589.1s - 3594.0s] So it makes the development cycle more complicated than it used to be.
+[3594.0s - 3595.0s] Yeah.
+[3595.0s - 3598.5s] The head of growth at Anthropic launched an experiment with pricing, and it just went crazy on Twitter.
+[3598.5s - 3600.9s] He's like, "It's rolled out to 1% of people.
+[3600.9s - 3603.0s] We're just [inaudible 01:00:02]." They're like, "No, Anthropic.
+[3603.0s - 3604.0s] Come on."
+[3604.0s - 3606.0s] Pricing particularly, that one is a real ...
+[3606.0s - 3608.2s] You got to be real careful with that one.
+[3608.2s - 3609.5s] We've all learned these lessons.
+[3609.5s - 3612.0s] We should all share notes more, that's what I think.
+[3612.0s - 3615.0s] "Here's not what to do." How to avoid the internet hating you for the day.
+[3615.0s - 3616.0s] Yeah.
+[3616.0s - 3620.0s] I'm happy to talk to that [inaudible 01:00:18] in Anthropic.
+[3620.0s - 3621.0s] I think he's all right.
+[3621.0s - 3622.0s] He's all right.
+[3622.0s - 3627.5s] Okay, I'm going to take us to two recurring corners on the podcast, Fail Corner and Hot Seat Corner.
+[3627.5s - 3633.0s] Fail Corner, what's something that you worked on that was just a huge failure that helped you become better?
+[3633.0s - 3635.0s] Oh, a bunch.
+[3635.0s - 3636.0s] So many.
+[3636.0s - 3638.4s] So I'll give you two maybe.
+[3638.4s - 3650.0s] So before Instagram, my first project as a PM was on a project called Facebook Home, which was a sort of fork of Android at the operating system level-
+[3650.0s - 3651.0s] I remember that.
+[3651.0s - 3652.0s] ...
+[3652.0s - 3654.2s] and a piece of hardware with HTC.
+[3654.2s - 3655.7s] It was a spectacular failure.
+[3655.7s - 3664.9s] I learned way more in that year, year and a half than I did in any year, I think, probably in my career, because I was just a design manager before that.
+[3664.9s - 3674.8s] I declared myself a PM because the PM on the project quit, and I just threw myself headfirst in understanding carriers and OEMs and certification, as well as Android and operating systems,
+[3674.8s - 3676.3s] and just learned a ton.
+[3676.3s - 3682.5s] And I'm happy I brought that project to an end, because it had been going on for a long time.
+[3682.5s - 3688.1s] And sometimes, the best thing you can do is execute an idea that doesn't have market fit well,
+[3688.1s - 3693.0s] just to decide whether or not the idea was a good idea in the first place.
+[3693.0s - 3699.7s] Another big mistake I made during my Instagram tenure was the first version of Reels was built on top of Stories.
+[3699.7s - 3701.7s] Stories had a ton of momentum.
+[3701.7s - 3710.7s] This was, I think, 2019, and we were trying to build Reels into Stories because we were trying to build in the thing that was growing the fastest.
+[3710.7s - 3712.9s] But it was not a strong foundation.
+[3712.9s - 3715.5s] The read-through rate on stories is relatively low.
+[3715.5s - 3719.0s] There's way more stories than most people have time to consume.
+[3719.0s - 3723.0s] So most of the Reels were never seen, and then they disappeared.
+[3723.0s - 3731.7s] And if we had the version of Reels that we launched in, I think it was the summer of 2020, in the summer of 2019 ...
+[3731.7s - 3741.7s] I think TikTok is still big and important, but I don't think it's as big as it is now, because when they really took off was when the pandemic hit,
+[3741.7s - 3752.0s] and a bunch of people had a lot of time at home, and we're looking for a little bit of joy, and we're totally fine with our phone having sound on.
+[3752.0s - 3757.8s] And so if you look at the numbers, 2020 is when they exploded, and we were out of position.
+[3757.8s - 3762.9s] And on one hand, I'm a designer, I'm trying to not add new things to the product.
+[3762.9s - 3766.2s] I'm trying to extend existing primitives, and that was the idea.
+[3766.2s - 3768.3s] On the other hand, I was wrong.
+[3768.3s - 3775.0s] And it's a pretty big fork on the road if you just look at the overall business over the last eight years.
+[3775.0s - 3780.0s] You created a lot of economic opportunity in the world, allowing TikTok to grow.
+[3780.0s - 3781.3s] Yeah, it's good.
+[3781.3s - 3783.0s] I'm glad they exist.
+[3783.0s - 3784.1s] Okay, final question.
+[3784.1s - 3788.0s] I'm curious just about your screen time policy with your kids.
+[3788.0s - 3790.2s] I know you have three kids.
+[3790.2s - 3796.3s] There's a lot of concern these days about Instagram not being great for people, not for kids.
+[3796.3s - 3802.0s] A lot of tech executives don't let their kids use devices while they're building the product.
+[3802.0s - 3807.0s] As head of Instagram, how do you think about screen time with your kids?
+[3807.0s - 3809.2s] The key thing for me is boundaries.
+[3809.2s - 3812.1s] It's also about education and having conversations with them.
+[3812.1s - 3815.3s] But my kids are too young to use social media.
+[3815.3s - 3816.9s] They're 10, 8, and 6.
+[3816.9s - 3818.8s] But they each have an iPad.
+[3818.8s - 3820.7s] They have to earn their time.
+[3820.7s - 3823.5s] So they have different ways they earn their time.
+[3823.5s - 3826.4s] It's usually about sitting down to do your homework.
+[3826.4s - 3835.0s] Three times for half an hour each gets you a total of 90 minutes on the weekend, and then they can use that time on the weekend.
+[3835.0s - 3842.6s] But you kind of have to set that boundary, where it can't just be they ask for it, and you give it to them.
+[3842.6s - 3844.5s] I think that matters a lot.
+[3844.5s - 3848.0s] And then I'm pretty opinionated about what they do on it.
+[3848.0s - 3850.2s] I approve what apps that they have.
+[3850.2s - 3855.0s] I think parents should be approving what apps kids specifically are downloading onto their devices.
+[3855.0s - 3859.8s] We've been advocating for this at a policy level for a long time at Meta.
+[3859.8s - 3862.0s] I think those things help a lot.
+[3862.0s - 3863.3s] There are some exceptions.
+[3863.3s - 3864.3s] One is planes.
+[3864.3s - 3865.6s] It's just about surviving.
+[3865.6s - 3867.8s] I don't know if you've ever ...
+[3867.8s - 3870.0s] For those of you who are parents-
+[3870.0s - 3871.0s] I'm going to be, yeah.
+[3871.0s - 3876.1s] Yeah, that's just like, "All right." It's a 10-hour flight or 8-hour flight.
+[3876.1s - 3880.0s] It's like, yeah, you just need to get through it.
+[3880.0s - 3884.6s] The other one that I'm starting to experiment with my 10-year-old with is ...
+[3884.6s - 3891.6s] So schools are interesting because I think I'm pretty supportive of a no phone in classrooms that's happening more and more.
+[3891.6s - 3894.2s] I think that's just probably good for education.
+[3894.2s - 3904.1s] And I do also know, in the world of AI, that there's concern about kids using AI and not learning critical thinking skills, and I think that's a valid concern.
+[3904.1s - 3911.0s] But I also am worried about kids not learning how to leverage AI and then being sort of at a disadvantage.
+[3911.0s - 3912.3s] So that's a balance.
+[3912.3s - 3914.0s] I think you need both.
+[3914.0s - 3917.6s] So with my eldest, we started vibe coding recently together.
+[3917.6s - 3919.4s] He just loves video games.
+[3919.4s - 3921.6s] So I was like, "All right,
+[3921.6s - 3932.7s] let's make a video game." And so he's made this 19-level platformer game that kind of looks like an eight bit version of Super Mario from when I was a kid.
+[3932.7s - 3937.1s] But each level has its own theme, its own types of monsters.
+[3937.1s - 3941.0s] There's a store where you can buy different skins or weapons.
+[3941.0s - 3948.9s] And it's unbelievable what a 10-year-old who still types with three fingers can do with just a couple hours of sitting together.
+[3948.9s - 3954.4s] But that is more of a, "I want you to learn how to make things.
+[3954.4s - 3958.0s] I want you to be thinking, not just playing games.
+[3958.0s - 3963.0s] And I'm going to sit with you, and we're going to do this together."
+[3963.0s - 3969.6s] So to me, these are the things that matter, boundaries, scoping it down to the activities you think are healthy for your kid.
+[3969.6s - 3970.8s] Every kid is different.
+[3970.8s - 3978.5s] But I do think you want your kids to be digitally literate, AI literate, because I think if they're not, they're going to be at a disadvantage.
+[3978.5s - 3982.0s] But you also don't want it to be a free for all.
+[3982.0s - 3983.8s] This is selfishly useful for me as ...
+[3983.8s - 3989.0s] I have a three-year-old, and I'm trying to figure all this stuff out, so this is useful for me to figure out a strategy.
+[3989.0s - 3990.0s] It's a thing.
+[3990.0s - 3991.5s] And you're not that far off.
+[3991.5s - 3993.2s] You're really just not that far off.
+[3993.2s - 3995.0s] It's going to happen in a couple years.
+[3995.0s - 3997.0s] Vibe coding next year, let's do it.
+[3997.0s - 3998.0s] I couldn't believe.
+[3998.0s - 4001.6s] I tried to do it six months ago and it just totally didn't work.
+[4001.6s - 4004.0s] And then now, with newer models, it's been amazing.
+[4004.0s - 4005.8s] What's their platform of choice?
+[4005.8s - 4008.0s] Are they a Claude Code person?
+[4008.0s - 4011.0s] Yeah, my 10-year-old is using Claude Code right now.
+[4011.0s - 4012.0s] Amazing.
+[4012.0s - 4013.0s] Okay.
+[4013.0s - 4014.3s] But we will see.
+[4014.3s - 4016.0s] We'll see how that goes.
+[4016.0s - 4018.2s] Adam, I'm going to let you go.
+[4018.2s - 4020.3s] Thank you so much for being here.
+[4020.3s - 4023.1s] You're just like such a gem of a person.
+[4023.1s - 4025.0s] It's just so obvious how clear-
+[4025.0s - 4026.0s] Thank you.
+[4026.0s - 4027.0s] I appreciate that.
+[4027.0s - 4028.0s] ...
+[4028.0s - 4029.0s] like how authentic you are, and just how deeply you think about everything.
+[4029.0s - 4030.0s] So I really appreciate you being here.
+[4030.0s - 4031.5s] Yeah, I appreciate you bringing me on.
+[4031.5s - 4033.0s] Been a fan for a long time.
+[4033.0s - 4035.0s] It's nice to finally get to have a conversation.
+[4035.0s - 4036.1s] I really appreciate that.
+[4036.1s - 4037.2s] I really appreciate that.
+[4037.2s - 4043.0s] Let me just ask you this final question I ask everyone, what's a way that listeners can be useful to you?
+[4043.0s - 4044.5s] I just think ...
+[4044.5s - 4054.0s] You don't even have to tell this to other people, but just remember that this world and technology is complicated, and there are almost always trade-offs.
+[4054.0s - 4066.1s] And you can totally disagree with the decisions I or we make, but just remember that we are people here trying to make these decisions, just trying to do the best we can.
+[4066.1s - 4070.9s] And I actually do invite the criticism and the critique and the feedback.
+[4070.9s - 4079.0s] But know that none of these contentious debates are nearly as simple as most people pretend to make them out to be.
+[4079.0s - 4080.0s] Wise words.
+[4080.0s - 4082.0s] Adam, thank you so much for being here.
+[4082.0s - 4083.0s] Pleasure.
+[4083.0s - 4084.0s] Thank you, Lenny.
+[4084.0s - 4086.0s] Bye, everyone.
+[4086.0s - 4088.1s] Thank you so much for listening.
+[4088.1s - 4095.3s] If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+[4095.3s - 4102.4s] Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast.
+[4107.4s - 4109.6s] See you in the next episode.

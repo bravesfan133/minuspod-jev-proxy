@@ -183,8 +183,9 @@ async fn decide_once(
 /// Try primary, fall back to secondary. Each backend gets bounded retries
 /// with backoff on rate limiting (per TypeSafe guidance). Calls are gated
 /// by a semaphore so MinusPod's parallel windows don't burst the quota.
-/// Returns Err only if BOTH backends fail; RateLimited if the failure was
-/// quota/overload on both (MinusPod must defer, not drop).
+/// Returns Err only if every configured backend fails; RateLimited if the
+/// failure was quota/overload on all of them (MinusPod must defer, not drop).
+/// Unconfigured slots (empty base_url) are skipped entirely.
 pub async fn decide(
     client: &Client,
     cfg: &Config,
@@ -194,11 +195,20 @@ pub async fn decide(
 ) -> Result<DecideOutcome, JevError> {
     const MAX_ATTEMPTS: u32 = 3;
     let timeout = Duration::from_secs(cfg.timeout_secs.max(5));
-    let backends = [(&cfg.primary, "primary"), (&cfg.secondary, "secondary")];
+    let backends = [
+        (&cfg.primary, "primary"),
+        (&cfg.secondary, "secondary"),
+        (&cfg.tertiary, "tertiary"),
+    ];
     let mut last_err: Option<JevError> = None;
     let mut saw_rate_limited: Option<u64> = None;
 
     for (backend, name) in backends {
+        // An unset slot is skipped rather than attempted, so an unconfigured
+        // third backend cannot turn a working two-backend setup into a failure.
+        if backend.base_url.trim().is_empty() {
+            continue;
+        }
         for attempt in 0..MAX_ATTEMPTS {
             let result = {
                 let _permit = sem.acquire().await.map_err(|_| JevError::Failed {

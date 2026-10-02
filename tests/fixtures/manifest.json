@@ -1,0 +1,84 @@
+[
+  {
+    "file": "negative_adam-mosseri.txt",
+    "kind": "negative",
+    "description": "Conversational transcript with no ads. Ground truth: no cuts.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/adam-mosseri.md",
+    "expected_cuts": 0,
+    "spans": 0
+  },
+  {
+    "file": "negative_adam-ward.txt",
+    "kind": "negative",
+    "description": "Conversational transcript with no ads. Ground truth: no cuts.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/adam-ward.md",
+    "expected_cuts": 0,
+    "spans": 0
+  },
+  {
+    "file": "spliced_aishwarya-naresh-reganti--kiriti-badam.txt",
+    "kind": "host_read",
+    "description": "Conversational transcript with a host read for Alo Yoga spliced in at line 511. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/aishwarya-naresh-reganti--kiriti-badam.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Alo Yoga",
+    "ad_start": 2977.2,
+    "ad_end": 3005.5
+  },
+  {
+    "file": "spliced_alexander-embiricos.txt",
+    "kind": "inserted_ad",
+    "description": "Conversational transcript with a inserted ad for Acorns spliced in at line 548. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/alexander-embiricos.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Acorns",
+    "ad_start": 2977.8,
+    "ad_end": 2997.5
+  },
+  {
+    "file": "spliced_amol-avasare.txt",
+    "kind": "host_read",
+    "description": "Conversational transcript with a host read for Butcher Box spliced in at line 523. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/amol-avasare.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Butcher Box",
+    "ad_start": 2797.0,
+    "ad_end": 2825.3
+  },
+  {
+    "file": "spliced_andrew-ambrosino.txt",
+    "kind": "host_read",
+    "description": "Conversational transcript with a host read for Birchbox spliced in at line 368. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/andrew-ambrosino.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Birchbox",
+    "ad_start": 1880.1,
+    "ad_end": 1907.8
+  },
+  {
+    "file": "spliced_anish-acharya-2.txt",
+    "kind": "inserted_ad",
+    "description": "Conversational transcript with a inserted ad for Acorns spliced in at line 657. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/anish-acharya-2.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Acorns",
+    "ad_start": 3232.0,
+    "ad_end": 3251.7
+  },
+  {
+    "file": "spliced_benedict-evans.txt",
+    "kind": "host_read",
+    "description": "Conversational transcript with a host read for Asana spliced in at line 625. Ground truth: exactly one cut.",
+    "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/benedict-evans.md",
+    "expected_cuts": 1,
+    "spans": 1,
+    "sponsor": "Asana",
+    "ad_start": 3052.9,
+    "ad_end": 3080.6
+  }
+]

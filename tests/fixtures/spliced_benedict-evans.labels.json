@@ -1,0 +1,5276 @@
+{
+  "name": "spliced_benedict-evans",
+  "description": "Conversational transcript with a host read for Asana spliced in at line 625. Ground truth: exactly one cut.",
+  "source": "https://raw.githubusercontent.com/LennysNewsletter/lennys-newsletterpodcastdata/main/podcasts/benedict-evans.md",
+  "lines": [
+    {
+      "start": 0.0,
+      "end": 7.0,
+      "text": "My most controversial opinion is that I think that AI is as big a deal as the internet or mobile, and only as big a deal as the internet or mobile."
+    },
+    {
+      "start": 7.0,
+      "end": 9.0,
+      "text": "But you're just on the coming job apocalypse."
+    },
+    {
+      "start": 9.0,
+      "end": 11.5,
+      "text": "Every time we have a new technology, it automates away a bunch of jobs."
+    },
+    {
+      "start": 11.5,
+      "end": 13.4,
+      "text": "And then that automation unlocks a bunch of new jobs."
+    },
+    {
+      "start": 13.4,
+      "end": 15.5,
+      "text": "And you don't know the new job because it doesn't exist yet."
+    },
+    {
+      "start": 15.5,
+      "end": 17.0,
+      "text": "We've had that process over and over again."
+    },
+    {
+      "start": 17.0,
+      "end": 23.0,
+      "text": "Even just looking at the most advanced AI companies, throughout big OpenAI, everyone's increasing headcount."
+    },
+    {
+      "start": 23.0,
+      "end": 30.7,
+      "text": "You talk to these doomers on Twitter and they would act like every big company is going to buy ChatGPT tomorrow, and then in two weeks' time, they'll fire all their stuff."
+    },
+    {
+      "start": 30.7,
+      "end": 31.9,
+      "text": "These people are more on."
+    },
+    {
+      "start": 31.9,
+      "end": 34.3,
+      "text": "You can't predict which things are going to be exposed."
+    },
+    {
+      "start": 34.3,
+      "end": 40.0,
+      "text": "You can't look at a senior partner at a law firm and say, \"Well, 17% of their work could be automated.\" This is horseshit."
+    },
+    {
+      "start": 40.0,
+      "end": 43.0,
+      "text": "I'm curious if you're following the anti-AI sentiment."
+    },
+    {
+      "start": 43.0,
+      "end": 44.2,
+      "text": "It's a big fuzzy mess."
+    },
+    {
+      "start": 44.2,
+      "end": 49.0,
+      "text": "Yes, this will change a bunch of stuff and we'll need to worry about it, but that's kind of a constant."
+    },
+    {
+      "start": 49.0,
+      "end": 50.0,
+      "text": "We've always had that."
+    },
+    {
+      "start": 50.0,
+      "end": 56.0,
+      "text": "What would be a couple things you recommend people do to be more successful in this future?"
+    },
+    {
+      "start": 56.0,
+      "end": 58.6,
+      "text": "Don't stick your head in the sand and say,"
+    },
+    {
+      "start": 58.6,
+      "end": 67.5,
+      "text": "\"I hate all of this stuff.\" That gives you a great feeling of all superiority and you can go on BlueSky and chat at everybody about how Evil AI is like, great,"
+    },
+    {
+      "start": 67.5,
+      "end": 68.5,
+      "text": "happy for you."
+    },
+    {
+      "start": 68.5,
+      "end": 70.2,
+      "text": "But that's not going to help."
+    },
+    {
+      "start": 70.2,
+      "end": 75.0,
+      "text": "What helps is you diving into this and coming out, understanding what you can do with it."
+    },
+    {
+      "start": 75.0,
+      "end": 77.8,
+      "text": "Today, my guest is Benedict Evans."
+    },
+    {
+      "start": 77.8,
+      "end": 84.8,
+      "text": "Benedict was a longtime partner at A16Z as their in house analyst and resident thinker."
+    },
+    {
+      "start": 84.8,
+      "end": 88.5,
+      "text": "Before that, he was a longtime equity researcher."
+    },
+    {
+      "start": 88.5,
+      "end": 98.7,
+      "text": "And for the past six years, he's been an independent analyst tracking the most important tech trends and sharing what he's learning."
+    },
+    {
+      "start": 98.7,
+      "end": 106.6,
+      "text": "Most recently, as you'd expect, he's spending all his time on how AI is changing our lives."
+    },
+    {
+      "start": 106.6,
+      "end": 112.2,
+      "text": "And in his words, \"AI is eating the world.\" In this conversation,"
+    },
+    {
+      "start": 112.2,
+      "end": 126.1,
+      "text": "we go deep on what we're still not pricing in on the impact that AI is going to have on our lives and our work, the rise of anti-AI sentiment,"
+    },
+    {
+      "start": 126.1,
+      "end": 134.5,
+      "text": "the impact on jobs, where in the value chain most of the value will accrue, and tons more."
+    },
+    {
+      "start": 134.5,
+      "end": 147.0,
+      "text": "If you are worried about AI, or just confused about where things are heading, this conversation will teach you a lot, and also make you feel better."
+    },
+    {
+      "start": 147.0,
+      "end": 149.0,
+      "text": "Thank you for inviting me."
+    },
+    {
+      "start": 149.0,
+      "end": 152.4,
+      "text": "You just put out this deck called AI is Eating the World."
+    },
+    {
+      "start": 152.4,
+      "end": 157.5,
+      "text": "I want to ask you the flip side of this, of we all know it's a big deal."
+    },
+    {
+      "start": 157.5,
+      "end": 166.0,
+      "text": "Knowing that, what do you think people are still not fully pricing in when they think about the change that they're going to experience to their lives and their work?"
+    },
+    {
+      "start": 166.0,
+      "end": 167.9,
+      "text": "An interesting way of thinking about it,"
+    },
+    {
+      "start": 167.9,
+      "end": 176.1,
+      "text": "I did a podcast last year with someone where I said my most controversial opinion is that I think that AI is as big a deal as the internet or mobile."
+    },
+    {
+      "start": 176.1,
+      "end": 184.6,
+      "text": "And only as big a deal as the internet or mobile, because clearly there's a bunch of people in tech who think, no, this is more like the industrial revolution or something."
+    },
+    {
+      "start": 184.6,
+      "end": 189.7,
+      "text": "And there are a whole bunch of people underneath saying, \"Well, he thinks this is just as big as..."
+    },
+    {
+      "start": 189.7,
+      "end": 194.2,
+      "text": "Does he not understand how big this is?\" And I'm like, smartphones were quite a big deal."
+    },
+    {
+      "start": 194.2,
+      "end": 196.1,
+      "text": "The internet was quite a big deal."
+    },
+    {
+      "start": 196.1,
+      "end": 199.0,
+      "text": "We wouldn't be doing this if it wasn't for the internet."
+    },
+    {
+      "start": 199.0,
+      "end": 206.2,
+      "text": "But then if you dig into that, if you're going to make the internet comparison, it's like we're a 1997."
+    },
+    {
+      "start": 206.2,
+      "end": 207.2,
+      "text": "It's very exciting."
+    },
+    {
+      "start": 207.2,
+      "end": 209.0,
+      "text": "Most stuff doesn't work yet."
+    },
+    {
+      "start": 209.0,
+      "end": 219.8,
+      "text": "Most of the stuff that people are going to do hasn't been built yet, and it's not really clear how any of it's going to work when it does work."
+    },
+    {
+      "start": 219.8,
+      "end": 230.2,
+      "text": "And the people who've already got it, who have already taken whichever pill it is, I forget which, sort of imagine that everybody in the world is already there."
+    },
+    {
+      "start": 230.2,
+      "end": 234.5,
+      "text": "And the truth is you've got this kind of very wide distribution."
+    },
+    {
+      "start": 234.5,
+      "end": 240.5,
+      "text": "So there's people in tech who bought their cluster of Mac minis, and don't use Google anymore."
+    },
+    {
+      "start": 240.5,
+      "end": 247.0,
+      "text": "And then you look out side tech and setting aside the idiots who think that this isn't real."
+    },
+    {
+      "start": 247.0,
+      "end": 252.0,
+      "text": "Most people who are using this are using this every week or shoot, maybe."
+    },
+    {
+      "start": 252.0,
+      "end": 258.3,
+      "text": "So you've got that kind of spread of adoption and that spread of maturity of how well this works."
+    },
+    {
+      "start": 258.3,
+      "end": 264.3,
+      "text": "And then within that, you can make specific points about, well, how are the models going to work?"
+    },
+    {
+      "start": 264.3,
+      "end": 267.0,
+      "text": "And do the model labs have pricing power?"
+    },
+    {
+      "start": 267.0,
+      "end": 269.3,
+      "text": "And where's the value going to be?"
+    },
+    {
+      "start": 269.3,
+      "end": 271.7,
+      "text": "And has OpenAI won the whole thing?"
+    },
+    {
+      "start": 271.7,
+      "end": 274.0,
+      "text": "Or is Anthropic got it this week?"
+    },
+    {
+      "start": 274.0,
+      "end": 281.3,
+      "text": "And so then you can kind of get into calling those races where, again, it's like being in 1997 and saying, \"Well,"
+    },
+    {
+      "start": 281.3,
+      "end": 286.0,
+      "text": "is it going to be Excite or Yahoo?\" And the answer was no, generally."
+    },
+    {
+      "start": 286.0,
+      "end": 292.9,
+      "text": "So there's a fractual point here."
+    },
+    {
+      "start": 292.9,
+      "end": 307.9,
+      "text": "There's the super high level that this is going to change absolutely everything."
+    },
+    {
+      "start": 307.9,
+      "end": 333.3,
+      "text": "I don't think it's particularly productive to say, \"Well, is it 20% bigger than the internet or 100%?\" Those aren't productive conversations."
+    },
+    {
+      "start": 333.3,
+      "end": 355.2,
+      "text": "But it's one of those fundamental changes, but then you don't know how any of it's going to work."
+    },
+    {
+      "start": 355.2,
+      "end": 362.2,
+      "text": "In fact, I just published this."
+    },
+    {
+      "start": 362.2,
+      "end": 400.2,
+      "text": "I do a presentation every six months and I just published one yesterday, and one of the comments was, \"Benedict, this is 80 slides of saying we don't know,\" which is slightly facetious,"
+    },
+    {
+      "start": 400.2,
+      "end": 406.0,
+      "text": "but also kind of true."
+    },
+    {
+      "start": 406.0,
+      "end": 415.6,
+      "text": "Well, unquestionably, we are already in that moment in software, and then there's a conversation about, well, what does Agentic and AI software development, three separate things that merge together,"
+    },
+    {
+      "start": 415.6,
+      "end": 418.1,
+      "text": "mean for the future of the software industry?"
+    },
+    {
+      "start": 418.1,
+      "end": 428.0,
+      "text": "There's one extreme which is no one really believes, which is, \"hey, you'll just vibe create your in Stripe.\" And no one actually believes that, although briefly you don't believe that,"
+    },
+    {
+      "start": 428.0,
+      "end": 436.4,
+      "text": "but clearly there's a whole bunch of questions about what this means for the software industry, and how much stuff you'll be able to do yourself,"
+    },
+    {
+      "start": 436.4,
+      "end": 438.9,
+      "text": "or how much more software there will be."
+    },
+    {
+      "start": 438.9,
+      "end": 440.5,
+      "text": "And that's one whole conversation."
+    },
+    {
+      "start": 440.5,
+      "end": 447.9,
+      "text": "But the other extreme is, if you're in a law firm, this is all very interesting, but how exactly do we use this,"
+    },
+    {
+      "start": 447.9,
+      "end": 458.1,
+      "text": "and how do we work out how not to be the next story that we've submitted something with hallucinations in it, and how many associates are we going to hire next year?"
+    },
+    {
+      "start": 458.1,
+      "end": 460.0,
+      "text": "What does this mean for us?"
+    },
+    {
+      "start": 460.0,
+      "end": 467.6,
+      "text": "One of the analogies I used in the presentation is, imagine you're an accountant seeing the first software spreadsheets in the late '70s, and this is mind-blowing."
+    },
+    {
+      "start": 467.6,
+      "end": 471.0,
+      "text": "You change the interest rate here, and all the other numbers change."
+    },
+    {
+      "start": 471.0,
+      "end": 474.7,
+      "text": "And it does a week of work for you in like 30 seconds."
+    },
+    {
+      "start": 474.7,
+      "end": 480.9,
+      "text": "And we can talk about what that meant for the accounting industry, but clearly if you're an accountant, this is obviously mind-blowing."
+    },
+    {
+      "start": 480.9,
+      "end": 489.9,
+      "text": "But if you were a lawyer looking at that, or journalist looking at that, you'd think, \"Well, that's very clever and my accountant should see this,\" but that's not what I do."
+    },
+    {
+      "start": 489.9,
+      "end": 498.7,
+      "text": "I might use it for my time sheet next week if it didn't cost 10 or $15,000 to get the Apple 2 and the monitor and the printer to run it,"
+    },
+    {
+      "start": 498.7,
+      "end": 501.2,
+      "text": "which is what it costs if you adjust replacing."
+    },
+    {
+      "start": 501.2,
+      "end": 502.9,
+      "text": "But that's not what I do."
+    },
+    {
+      "start": 502.9,
+      "end": 506.0,
+      "text": "And you need Word processor, which actually came very shortly afterwards."
+    },
+    {
+      "start": 506.0,
+      "end": 513.8,
+      "text": "And so that's sort of the moment that we're in of, there's some people like software developers are the accountant seeing VisiCalc."
+    },
+    {
+      "start": 513.8,
+      "end": 520.1,
+      "text": "\"Oh, my God, this changes everything.\" Before VisiCalc and after VisiCalc, before Claude Code and after Claude Code."
+    },
+    {
+      "start": 520.1,
+      "end": 526.1,
+      "text": "A lot of other people are picking it up using it to varying degrees, but slightly puzzled."
+    },
+    {
+      "start": 526.1,
+      "end": 537.0,
+      "text": "So, there's a bunch of survey data that I put in the presentation that, even if you look at like 13 to 18 year olds or something, it's still like 15,"
+    },
+    {
+      "start": 537.0,
+      "end": 542.0,
+      "text": "20% of people are daily active users, and another 20% are weekly active users."
+    },
+    {
+      "start": 542.0,
+      "end": 549.0,
+      "text": "And then the other 60% of those people in that demographic how on you say they are not using this."
+    },
+    {
+      "start": 549.0,
+      "end": 553.6,
+      "text": "So, there's a sort of very widespread of who gets it, and a very wide..."
+    },
+    {
+      "start": 553.6,
+      "end": 561.7,
+      "text": "Which I think also maps, this is kind of almost a separate point, maps to this sort of jagged frontier question of, where does this work?"
+    },
+    {
+      "start": 561.7,
+      "end": 563.2,
+      "text": "Where does it not work?"
+    },
+    {
+      "start": 563.2,
+      "end": 565.7,
+      "text": "Can you tell where it's going to work?"
+    },
+    {
+      "start": 565.7,
+      "end": 568.4,
+      "text": "Is it intuitive to know where it would work?"
+    },
+    {
+      "start": 568.4,
+      "end": 570.3,
+      "text": "Can you tell after it worked?"
+    },
+    {
+      "start": 570.3,
+      "end": 574.0,
+      "text": "Can you work out for yourself what you would do with this?"
+    },
+    {
+      "start": 574.0,
+      "end": 576.5,
+      "text": "And all of those intersect with your software developer."
+    },
+    {
+      "start": 576.5,
+      "end": 585.0,
+      "text": "There's a lot of other people who are like, people are having a moment or they're not, or again, we're in that kind of 1997 moment of, \"Okay, what is this?\""
+    },
+    {
+      "start": 585.0,
+      "end": 598.6,
+      "text": "Along those lines, something you've been writing a bit about is, this unexpected investment in professional services/consulting services/forward deployed engineers, all the AI labs, at least the two big ones, OpenAI and Anthropic,"
+    },
+    {
+      "start": 598.6,
+      "end": 602.3,
+      "text": "are investing in buying massive consultancies and PE firms."
+    },
+    {
+      "start": 602.3,
+      "end": 606.0,
+      "text": "Talk about just what's happening there, why that's happening."
+    },
+    {
+      "start": 606.0,
+      "end": 614.3,
+      "text": "Well, it's funny, I was kind of groping for a joke last night when I wrote my newsletter and couldn't quite get to land it."
+    },
+    {
+      "start": 614.3,
+      "end": 620.9,
+      "text": "But something like, we know the joke that a machine learning scientist is a statistician who lives in San Francisco."
+    },
+    {
+      "start": 620.9,
+      "end": 630.2,
+      "text": "And there's something in there of like a forward deployed engineer is like an Accenture outsource software developer who lives in San Francisco, or works in San Francisco."
+    },
+    {
+      "start": 630.2,
+      "end": 639.5,
+      "text": "I mean, joking apart, if you have any experience of professional services, companies do not have lots of people sitting around waiting to build a big new project,"
+    },
+    {
+      "start": 639.5,
+      "end": 649.4,
+      "text": "or do a big new piece of analysis, or build a big new piece of technology, or a new product, or work out how they're going to redesign their stores,"
+    },
+    {
+      "start": 649.4,
+      "end": 655.7,
+      "text": "or work out where the store should be, or try and work out why the churn is too high."
+    },
+    {
+      "start": 655.7,
+      "end": 665.7,
+      "text": "All of those kinds of questions are reasons why you hire Bain, BCG, McKinsey on one side, or Accenture, Infosys, whoever on the other, or you hire a branding agency,"
+    },
+    {
+      "start": 665.7,
+      "end": 669.0,
+      "text": "or you hire an arch firm of architects or whatever."
+    },
+    {
+      "start": 669.0,
+      "end": 678.4,
+      "text": "And it's always like, well, we could hire some architects, but why on earth would we want to have 15 architects on staff when we would just go and hire an architecture firm,"
+    },
+    {
+      "start": 678.4,
+      "end": 681.0,
+      "text": "and we just go and hire an ad agency?"
+    },
+    {
+      "start": 681.0,
+      "end": 689.3,
+      "text": "And so we are supposed to completely reimagine all of the internal workflows of your company, and work out which of them could be automated really quickly with AI."
+    },
+    {
+      "start": 689.3,
+      "end": 690.3,
+      "text": "That's a project."
+    },
+    {
+      "start": 690.3,
+      "end": 696.7,
+      "text": "That's a project that needs like five or 10 people to sit down and spend a month or two working it out."
+    },
+    {
+      "start": 696.7,
+      "end": 699.0,
+      "text": "And then actually doing it is another project."
+    },
+    {
+      "start": 699.0,
+      "end": 707.7,
+      "text": "Okay, so you need to plug these three vertical systems into these two horizontal systems and build a bunch of new workflows and train people to do that."
+    },
+    {
+      "start": 707.7,
+      "end": 708.7,
+      "text": "Well, guess what?"
+    },
+    {
+      "start": 708.7,
+      "end": 710.2,
+      "text": "Who's going to do that?"
+    },
+    {
+      "start": 710.2,
+      "end": 714.2,
+      "text": "Because you don't have a bunch of people sitting around not doing anything."
+    },
+    {
+      "start": 714.2,
+      "end": 722.9,
+      "text": "So, on the one side, this is part of the model of some PE firms, which is that they provide support to their portfolio companies to do stuff."
+    },
+    {
+      "start": 722.9,
+      "end": 733.0,
+      "text": "And on the other side, that's why you hire, depending on what you're trying to do, you hire Bain, or you hire Accenture, or you hire publicists to help you work that out."
+    },
+    {
+      "start": 733.0,
+      "end": 738.2,
+      "text": "What's really just funny about this trend is you would think consultants were going to be gone."
+    },
+    {
+      "start": 738.2,
+      "end": 740.7,
+      "text": "No, we don't need all these people anymore."
+    },
+    {
+      "start": 740.7,
+      "end": 742.8,
+      "text": "AI is going to do their work."
+    },
+    {
+      "start": 742.8,
+      "end": 747.5,
+      "text": "Instead, the most cutting edge AI labs are the ones most investing in these folks."
+    },
+    {
+      "start": 747.5,
+      "end": 749.0,
+      "text": "I think it's pretty surprising."
+    },
+    {
+      "start": 749.0,
+      "end": 753.9,
+      "text": "Well, one of the strands in my presentation, so I split the presentation into three sections."
+    },
+    {
+      "start": 753.9,
+      "end": 760.9,
+      "text": "There's a section on capital, which is basically, where is all this CapEx going and are the model labs going to have differentiation?"
+    },
+    {
+      "start": 760.9,
+      "end": 766.3,
+      "text": "And then there's a section on deployment, which is basically, what does it mean for the software industry?"
+    },
+    {
+      "start": 766.3,
+      "end": 769.7,
+      "text": "And then the third section is, how does this change stuff?"
+    },
+    {
+      "start": 769.7,
+      "end": 777.3,
+      "text": "And one of the sort of strands I tried to pull together in the section on change is, what's the hard part of the job?"
+    },
+    {
+      "start": 777.3,
+      "end": 781.3,
+      "text": "Is the hard part of the job writing the code line by line?"
+    },
+    {
+      "start": 781.3,
+      "end": 785.8,
+      "text": "Is the hard part of the job giving you the SKU, or making the PowerPoint?"
+    },
+    {
+      "start": 785.8,
+      "end": 788.9,
+      "text": "Or is the hard part of the job something else?"
+    },
+    {
+      "start": 788.9,
+      "end": 791.0,
+      "text": "Is it the task or the job?"
+    },
+    {
+      "start": 791.0,
+      "end": 793.7,
+      "text": "And pulling that apart, sometimes the task is the job."
+    },
+    {
+      "start": 793.7,
+      "end": 795.8,
+      "text": "The classic example is like an elevator attendant."
+    },
+    {
+      "start": 795.8,
+      "end": 801.2,
+      "text": "If I live in a building that has an attended elevator, we have a manual elevator, so there's no button."
+    },
+    {
+      "start": 801.2,
+      "end": 804.1,
+      "text": "There's a lever and the dormant drives you to your floor."
+    },
+    {
+      "start": 804.1,
+      "end": 805.5,
+      "text": "It's a vertical speed cut."
+    },
+    {
+      "start": 805.5,
+      "end": 807.9,
+      "text": "It's like one of those cramps in San Francisco."
+    },
+    {
+      "start": 807.9,
+      "end": 810.3,
+      "text": "They drive you to the store, to your floor."
+    },
+    {
+      "start": 810.3,
+      "end": 816.2,
+      "text": "And then those all got automated after the '50s, and now you press a button, and pressing the button is a job."
+    },
+    {
+      "start": 816.2,
+      "end": 821.0,
+      "text": "So there were some things where the button, the job was a task and the task got automated."
+    },
+    {
+      "start": 821.0,
+      "end": 828.8,
+      "text": "What happens much more, and this is why people talked about the Jevons paradox is this pricey elasticity, because the Jevons paradox is just price elasticity, applied price elasticity."
+    },
+    {
+      "start": 828.8,
+      "end": 831.4,
+      "text": "If you make it cheaper to do something, what happens?"
+    },
+    {
+      "start": 831.4,
+      "end": 833.6,
+      "text": "Do you do the same for less money?"
+    },
+    {
+      "start": 833.6,
+      "end": 836.5,
+      "text": "Or do you do more for the same amount of money?"
+    },
+    {
+      "start": 836.5,
+      "end": 840.0,
+      "text": "Or do you do more for more money because you've got new ROI?"
+    },
+    {
+      "start": 840.0,
+      "end": 848.4,
+      "text": "And if you look at something like the history of accounting, or indeed professional services, this is a joke I made on Twitter back when it was Twitter, was like,"
+    },
+    {
+      "start": 848.4,
+      "end": 852.8,
+      "text": "young people won't believe this, but before Excel, junior investment bankers worked really long hours."
+    },
+    {
+      "start": 852.8,
+      "end": 856.7,
+      "text": "And now thanks to Excel, Goldman's associates will work at lunchtime on Fridays."
+    },
+    {
+      "start": 856.7,
+      "end": 859.3,
+      "text": "It's like, well, why is that not what happened?"
+    },
+    {
+      "start": 859.3,
+      "end": 862.0,
+      "text": "You could make the same point as software development."
+    },
+    {
+      "start": 862.0,
+      "end": 866.1,
+      "text": "Before IDEs, and libraries, and operating systems, developers had to write all the code."
+    },
+    {
+      "start": 866.1,
+      "end": 871.1,
+      "text": "Now if you write an iPhone app, 90% of the code is written for you by Apple."
+    },
+    {
+      "start": 871.1,
+      "end": 874.9,
+      "text": "Apple wrote the modem driver, and the graphics drivers, and the file system."
+    },
+    {
+      "start": 874.9,
+      "end": 877.3,
+      "text": "You don't need to write any of that."
+    },
+    {
+      "start": 877.3,
+      "end": 879.6,
+      "text": "So, we've got intents as many engineers now."
+    },
+    {
+      "start": 879.6,
+      "end": 880.6,
+      "text": "Well, no."
+    },
+    {
+      "start": 880.6,
+      "end": 888.0,
+      "text": "And so then you kind of have to look at an industry and work out, well, which is it and what is the hard part?"
+    },
+    {
+      "start": 888.0,
+      "end": 893.4,
+      "text": "One of the analogies that occurred to me here is to look at the history of e-commerce,"
+    },
+    {
+      "start": 893.4,
+      "end": 899.5,
+      "text": "which is that what Amazon does is it gets you the SKU if you know what the SKU is."
+    },
+    {
+      "start": 899.5,
+      "end": 903.3,
+      "text": "If you know what SKU you want, you want that microphone stand."
+    },
+    {
+      "start": 903.3,
+      "end": 906.8,
+      "text": "This part number, you can go to Amazon and get it."
+    },
+    {
+      "start": 906.8,
+      "end": 911.0,
+      "text": "If you don't know what microphone to get, probably shouldn't start on Amazon."
+    },
+    {
+      "start": 911.0,
+      "end": 913.2,
+      "text": "Multiply that by many, many, many product categories."
+    },
+    {
+      "start": 913.2,
+      "end": 918.6,
+      "text": "And so what Amazon does is get you the SKU, but knowing what SKU you want is another job."
+    },
+    {
+      "start": 918.6,
+      "end": 922.2,
+      "text": "Claude Code can write you the code, but what code do you want?"
+    },
+    {
+      "start": 922.2,
+      "end": 923.9,
+      "text": "It can make you the features."
+    },
+    {
+      "start": 923.9,
+      "end": 925.9,
+      "text": "Sure, but what features do you want?"
+    },
+    {
+      "start": 925.9,
+      "end": 926.9,
+      "text": "Who's your customer?"
+    },
+    {
+      "start": 926.9,
+      "end": 928.9,
+      "text": "What's the right product for that customer?"
+    },
+    {
+      "start": 928.9,
+      "end": 931.4,
+      "text": "How are you going to take it to market?"
+    },
+    {
+      "start": 931.4,
+      "end": 934.8,
+      "text": "And long way of answering a question, why do you hire McKinsey?"
+    },
+    {
+      "start": 934.8,
+      "end": 937.3,
+      "text": "Are you hiring them to get a 75-slide deck?"
+    },
+    {
+      "start": 937.3,
+      "end": 940.9,
+      "text": "Well, narrowly, Claude cowork will make a really, really crappy version of that."
+    },
+    {
+      "start": 940.9,
+      "end": 950.1,
+      "text": "And you'll get all this kind of AI grifters on LinkedIn and Twitter and so on saying, \"Hey, I made a McKinsey deck with Claude,\" and you look at it and you think,"
+    },
+    {
+      "start": 950.1,
+      "end": 954.0,
+      "text": "\"Yeah, that's a bunch of doc crap.\" That's not what you'd get from McKinsey."
+    },
+    {
+      "start": 954.0,
+      "end": 957.4,
+      "text": "But even if it was, that's not what you paid them for."
+    },
+    {
+      "start": 957.4,
+      "end": 962.9,
+      "text": "What you actually pay Bain to do is to go and walk all over your company and work out."
+    },
+    {
+      "start": 962.9,
+      "end": 965.8,
+      "text": "Yes, but why is it that you didn't do that?"
+    },
+    {
+      "start": 965.8,
+      "end": 968.1,
+      "text": "And how do the politics of this work?"
+    },
+    {
+      "start": 968.1,
+      "end": 970.4,
+      "text": "And what do you actually need to do?"
+    },
+    {
+      "start": 970.4,
+      "end": 977.5,
+      "text": "And let's go and talk to your customers and work out what they actually think, as opposed to what's on the first page of Google."
+    },
+    {
+      "start": 977.5,
+      "end": 979.0,
+      "text": "It's all the other stuff."
+    },
+    {
+      "start": 979.0,
+      "end": 983.5,
+      "text": "And the PowerPoint is just like the task, but that's not what you hired them for."
+    },
+    {
+      "start": 983.5,
+      "end": 987.0,
+      "text": "The same with Amazon versus the retailer, the same with software development."
+    },
+    {
+      "start": 987.0,
+      "end": 989.0,
+      "text": "So you've got that kind of split."
+    },
+    {
+      "start": 989.0,
+      "end": 995.7,
+      "text": "The other analogy that occurred to me here is looking at the sort of class of industry that got steamrolled by the internet,"
+    },
+    {
+      "start": 995.7,
+      "end": 999.3,
+      "text": "because they had those two things and you could split the part."
+    },
+    {
+      "start": 999.3,
+      "end": 1005.7,
+      "text": "So you had the physical manufacturing or physical distribution, and then you had the other, the thing, what was the actual thing?"
+    },
+    {
+      "start": 1005.7,
+      "end": 1008.0,
+      "text": "Classic examples would be newspapers and recorded music."
+    },
+    {
+      "start": 1008.0,
+      "end": 1015.7,
+      "text": "So record companies do not think of themselves as being in the business of manufacturing small pieces of plastic, but that was what they actually did."
+    },
+    {
+      "start": 1015.7,
+      "end": 1018.0,
+      "text": "And when that went away, they were screwed."
+    },
+    {
+      "start": 1018.0,
+      "end": 1019.2,
+      "text": "Same thing with newspapers."
+    },
+    {
+      "start": 1019.2,
+      "end": 1021.6,
+      "text": "Newspapers did not think of themselves as manufacturing."
+    },
+    {
+      "start": 1021.6,
+      "end": 1022.6,
+      "text": "And trucking companies."
+    },
+    {
+      "start": 1022.6,
+      "end": 1025.3,
+      "text": "When you decouple that, then that becomes a problem."
+    },
+    {
+      "start": 1025.3,
+      "end": 1033.5,
+      "text": "But often you can't decouple that, or that wasn't really the problem; or you make that thing cheap and then all this other stuff happens as well."
+    },
+    {
+      "start": 1033.5,
+      "end": 1042.4,
+      "text": "And so all of this is just vastly more complicated than saying, \"Well, hey, we're just going to automate the accountants or we're going to automate the consultants.\" I mean,"
+    },
+    {
+      "start": 1042.4,
+      "end": 1049.6,
+      "text": "there's two charts in the presentation of the number of people employed as accountants, which went up right the way through the 20th century,"
+    },
+    {
+      "start": 1049.6,
+      "end": 1053.2,
+      "text": "and has gone up again since the beginning of the 21st century."
+    },
+    {
+      "start": 1053.2,
+      "end": 1061.7,
+      "text": "So you have adding machines, and punch cards, and mainframes, and databases, and ERP, and cloud, with spreadsheets and PCs, and the number of accountants keep going up."
+    },
+    {
+      "start": 1061.7,
+      "end": 1063.2,
+      "text": "And so why is that?"
+    },
+    {
+      "start": 1063.2,
+      "end": 1065.0,
+      "text": "Well, it's more complicated than automation."
+    },
+    {
+      "start": 1065.0,
+      "end": 1072.9,
+      "text": "Even just looking at the most advanced AI companies, Anthropic, OpenAI, I just had Dan Shipper from Every on the podcast, everyone's just increasing headcount."
+    },
+    {
+      "start": 1072.9,
+      "end": 1078.3,
+      "text": "The companies you would think would be least likely to add humans are adding many, many humans."
+    },
+    {
+      "start": 1078.3,
+      "end": 1080.5,
+      "text": "And since your point, it's really complicated."
+    },
+    {
+      "start": 1080.5,
+      "end": 1089.0,
+      "text": "What you're just kind just on the job, the coming job apocalypse, like Dario's talking about all the entry level people are no more jobs, just like..."
+    },
+    {
+      "start": 1089.0,
+      "end": 1090.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 1090.0,
+      "end": 1093.9,
+      "text": "I mean, there's a narrow point here, which is that I would place..."
+    },
+    {
+      "start": 1093.9,
+      "end": 1095.7,
+      "text": "I don't like argument from authority."
+    },
+    {
+      "start": 1095.7,
+      "end": 1099.9,
+      "text": "And I don't think the fact that you run AI lab suddenly gives you..."
+    },
+    {
+      "start": 1099.9,
+      "end": 1105.3,
+      "text": "Or rather, if you're going to use argument from authority, then it should be relevant to the field."
+    },
+    {
+      "start": 1105.3,
+      "end": 1110.5,
+      "text": "So, I'm interested in Dario's opinions on where models are going to go in the next six to 12 months."
+    },
+    {
+      "start": 1110.5,
+      "end": 1115.6,
+      "text": "I'm not particularly interested in it opinions on series of labor and market value and comparative advantage."
+    },
+    {
+      "start": 1115.6,
+      "end": 1119.5,
+      "text": "Yeah, maybe he had a course on that at university, so did I."
+    },
+    {
+      "start": 1119.5,
+      "end": 1124.0,
+      "text": "So, I think one needs to be a little bit cautious on what Dario says."
+    },
+    {
+      "start": 1124.0,
+      "end": 1130.0,
+      "text": "And that's setting aside the cynical view that he's just doing that department stock, which I don't believe at all."
+    },
+    {
+      "start": 1130.0,
+      "end": 1133.5,
+      "text": "So this kind of comes back to my point about platform shifts."
+    },
+    {
+      "start": 1133.5,
+      "end": 1137.5,
+      "text": "Every time we have a new technology, it automates away a bunch of jobs."
+    },
+    {
+      "start": 1137.5,
+      "end": 1144.5,
+      "text": "And then that automation, whether it's price elasticity, and the enablement of the fact that they became automated, unlock so much of new jobs."
+    },
+    {
+      "start": 1144.5,
+      "end": 1151.4,
+      "text": "And so you go back to 1800, 90% of us were peasants, and our major concern was like, are the crops going to fail?"
+    },
+    {
+      "start": 1151.4,
+      "end": 1153.2,
+      "text": "Because then we'll all go hungry."
+    },
+    {
+      "start": 1153.2,
+      "end": 1154.2,
+      "text": "Or worse."
+    },
+    {
+      "start": 1154.2,
+      "end": 1161.0,
+      "text": "And so ever since then, we've been automating jobs and creating new jobs, and you can always see the job that's going to go away,"
+    },
+    {
+      "start": 1161.0,
+      "end": 1166.8,
+      "text": "and you don't know the new job because it doesn't exist yet, and it's like something that sounds dumb anyway."
+    },
+    {
+      "start": 1166.8,
+      "end": 1168.5,
+      "text": "Like railway engineer, what's a railway?"
+    },
+    {
+      "start": 1168.5,
+      "end": 1170.3,
+      "text": "Why would that be a thing?"
+    },
+    {
+      "start": 1170.3,
+      "end": 1172.3,
+      "text": "Who would want to go that fast?"
+    },
+    {
+      "start": 1172.3,
+      "end": 1175.2,
+      "text": "And so we've had that process over and over again."
+    },
+    {
+      "start": 1175.2,
+      "end": 1178.1,
+      "text": "This is what any first-year economic student would tell you."
+    },
+    {
+      "start": 1178.1,
+      "end": 1181.0,
+      "text": "We've had this process over and over again since 1800."
+    },
+    {
+      "start": 1181.0,
+      "end": 1189.6,
+      "text": "And each time you go through it, you get a bunch of frictional pain and dislocation, and a bunch of people do their jobs, and a bunch of towns get hollowed out,"
+    },
+    {
+      "start": 1189.6,
+      "end": 1190.6,
+      "text": "and it all sucks."
+    },
+    {
+      "start": 1190.6,
+      "end": 1196.3,
+      "text": "But when you come through on the other side, we're all richer, and we're not worried about the crops failing anymore."
+    },
+    {
+      "start": 1196.3,
+      "end": 1198.9,
+      "text": "And this is the process of the last 200 years."
+    },
+    {
+      "start": 1198.9,
+      "end": 1203.7,
+      "text": "So then the question is, is there some a primary reason why this would be different to those?"
+    },
+    {
+      "start": 1203.7,
+      "end": 1207.5,
+      "text": "Because the internet removed a bunch of jobs, PCs removed a bunch of jobs."
+    },
+    {
+      "start": 1207.5,
+      "end": 1209.6,
+      "text": "There aren't many people working as typesetters anymore."
+    },
+    {
+      "start": 1209.6,
+      "end": 1211.0,
+      "text": "Or telephone operators, or typists."
+    },
+    {
+      "start": 1211.0,
+      "end": 1212.8,
+      "text": "The internet removed a bunch of jobs."
+    },
+    {
+      "start": 1212.8,
+      "end": 1219.0,
+      "text": "And generally the jobs that go away are crap jobs, seen retrospectively, and the new job, the better, because GDP keeps going up."
+    },
+    {
+      "start": 1219.0,
+      "end": 1220.1,
+      "text": "So, is AI different?"
+    },
+    {
+      "start": 1220.1,
+      "end": 1223.3,
+      "text": "And so then there's kind of a couple of answers to this."
+    },
+    {
+      "start": 1223.3,
+      "end": 1226.3,
+      "text": "One theory is, well, this is going to be way quicker."
+    },
+    {
+      "start": 1226.3,
+      "end": 1232.8,
+      "text": "And certainly the adoption of AI is quicker than previous technologies, but this is kind of because you're turning on the shoulders of giants."
+    },
+    {
+      "start": 1232.8,
+      "end": 1240.8,
+      "text": "So you don't need to wait for everyone to buy a piece of expensive hardware, to buy a phone or a PC, or wait for the telco to deploy broadband."
+    },
+    {
+      "start": 1240.8,
+      "end": 1241.8,
+      "text": "That's already there."
+    },
+    {
+      "start": 1241.8,
+      "end": 1246.9,
+      "text": "So of course, ChatGPT can get 900 million chat users, because there's already 900 million people on the internet."
+    },
+    {
+      "start": 1246.9,
+      "end": 1252.6,
+      "text": "When Mark Andreessen launched Netscape in what was it, '93, '94, there were like 50 to 100 million PCs on earth."
+    },
+    {
+      "start": 1252.6,
+      "end": 1255.0,
+      "text": "So now you didn't have 900 million users then."
+    },
+    {
+      "start": 1255.0,
+      "end": 1259.1,
+      "text": "But the point is then he didn't need to wait for phone networks or microchips."
+    },
+    {
+      "start": 1259.1,
+      "end": 1264.2,
+      "text": "And before that, you didn't need to wait for electricity, and you didn't need to wait for mass production."
+    },
+    {
+      "start": 1264.2,
+      "end": 1266.7,
+      "text": "So you're always standing on the shoulders of giants."
+    },
+    {
+      "start": 1266.7,
+      "end": 1268.0,
+      "text": "There's always a compounding effect."
+    },
+    {
+      "start": 1268.0,
+      "end": 1271.0,
+      "text": "So yeah, this is faster, but the internet was faster too."
+    },
+    {
+      "start": 1271.0,
+      "end": 1278.0,
+      "text": "I think the other answer to this, and this kind of comes back to the professional services point is, you talk to these doomers on Twitter,"
+    },
+    {
+      "start": 1278.0,
+      "end": 1285.0,
+      "text": "and they would act like every big company is going to buy ChatGPT tomorrow, and then in two weeks time, they'll fire all their staff, and these people are mourners."
+    },
+    {
+      "start": 1285.0,
+      "end": 1290.6,
+      "text": "This is one of many reasons why the doomers were mourns, but complete failure to understand the way the world works."
+    },
+    {
+      "start": 1290.6,
+      "end": 1294.4,
+      "text": "And that was like the starting point why they then didn't understand anything else."
+    },
+    {
+      "start": 1294.4,
+      "end": 1301.5,
+      "text": "Turn to a big company, enterprise software sales cycle, you'll know this better than me, enterprise software sales cycle is like 18 months, if you're lucky."
+    },
+    {
+      "start": 1301.5,
+      "end": 1302.8,
+      "text": "This is always a problem."
+    },
+    {
+      "start": 1302.8,
+      "end": 1306.1,
+      "text": "The enterprise sales cycle is shorter than the venture backed funding cycle."
+    },
+    {
+      "start": 1306.1,
+      "end": 1307.1,
+      "text": "Longer rather."
+    },
+    {
+      "start": 1307.1,
+      "end": 1308.1,
+      "text": "Longer."
+    },
+    {
+      "start": 1308.1,
+      "end": 1312.7,
+      "text": "It takes you longer to get an enterprise deal than it takes you to go between raps."
+    },
+    {
+      "start": 1312.7,
+      "end": 1317.0,
+      "text": "And this was always supporting the building, particularly for sectors like aerospace, or healthcare, or something."
+    },
+    {
+      "start": 1317.0,
+      "end": 1322.3,
+      "text": "So, I know people aren't just going to tear out SAP and replace it with X, Y, Z."
+    },
+    {
+      "start": 1322.3,
+      "end": 1331.7,
+      "text": "Maybe in like three, five, 10 years, yes, that whole estate will look radically different, and all those jobs will have changed, but it will take two, three, four, five, 10 years,"
+    },
+    {
+      "start": 1331.7,
+      "end": 1339.0,
+      "text": "and it will take time sector by sector, and it will take time for people to work out, \"You could do that thing with this.\""
+    },
+    {
+      "start": 1339.0,
+      "end": 1348.8,
+      "text": "And one of the companies I always remember that we looked at when I was at Andreessen Horowitz is a company called Frame.io, which is video editing, video collaboration."
+    },
+    {
+      "start": 1348.8,
+      "end": 1355.2,
+      "text": "And there's nothing there that you couldn't have done at least five years earlier, and maybe 10 years earlier."
+    },
+    {
+      "start": 1355.2,
+      "end": 1362.2,
+      "text": "And actually, that's kind of a bad example because that relies on a bunch of stuff like cutting edge web technologies."
+    },
+    {
+      "start": 1362.2,
+      "end": 1368.6,
+      "text": "But if you go out and pick 10 random SaaS companies that were started the day before ChatGPT launched,"
+    },
+    {
+      "start": 1368.6,
+      "end": 1374.0,
+      "text": "how many of them could have been founded at any point in the previous 15 years?"
+    },
+    {
+      "start": 1374.0,
+      "end": 1381.7,
+      "text": "The delay was somebody realizing, \"Oh, that problem exists inside that industry, and this is the way that we would solve it.\" It didn't all happen the day after Google Docs."
+    },
+    {
+      "start": 1381.7,
+      "end": 1387.6,
+      "text": "It took like 10, 15, 20 years for people to invent all that stuff, and work out that you could do that with this."
+    },
+    {
+      "start": 1387.6,
+      "end": 1393.1,
+      "text": "And so all of that is like, the way of saying, well, yes, it is going to be quick, but actually, no,"
+    },
+    {
+      "start": 1393.1,
+      "end": 1398.0,
+      "text": "it will kind of take a while for people to work out how to completely change how their business works."
+    },
+    {
+      "start": 1398.0,
+      "end": 1408.0,
+      "text": "Your view is so comforting, because basically it's like, okay, this is a huge deal, but we've been through many transformations before, and it's going to be okay."
+    },
+    {
+      "start": 1408.0,
+      "end": 1417.0,
+      "text": "Well, I have a slide towards the end of the presentation, which I know the title is something like, \"This is going to be completely different from everything else,"
+    },
+    {
+      "start": 1417.0,
+      "end": 1426.6,
+      "text": "just like everything else.\" And then the next slide is an IBM ad from the '50s, which has got this sea of white men holding up in white shirts and ties,"
+    },
+    {
+      "start": 1426.6,
+      "end": 1428.2,
+      "text": "all holding up flood rules."
+    },
+    {
+      "start": 1428.2,
+      "end": 1436.9,
+      "text": "And the slogan of the title of the ad is, it's an IBM ad, it says, \"An IBM electronic calculator...\" This before it was called a computer, \"..."
+    },
+    {
+      "start": 1436.9,
+      "end": 1441.9,
+      "text": "it's an electronic calculator it's the size of a fridge.\" Is like having 150 extra engineers."
+    },
+    {
+      "start": 1441.9,
+      "end": 1448.1,
+      "text": "How many people listening to this company list, like their company slogan is basically will give you 150 extra engineers?"
+    },
+    {
+      "start": 1448.1,
+      "end": 1451.5,
+      "text": "I mean, isn't that like the whole pitch of Claude Code?"
+    },
+    {
+      "start": 1451.5,
+      "end": 1453.0,
+      "text": "150 expert engineers for free."
+    },
+    {
+      "start": 1453.0,
+      "end": 1455.8,
+      "text": "Or not free, that's like a lot of money."
+    },
+    {
+      "start": 1455.8,
+      "end": 1458.0,
+      "text": "And yeah, that's what I gave you."
+    },
+    {
+      "start": 1458.0,
+      "end": 1463.8,
+      "text": "And so yes, we keep going through this over and over and over again, just to kind of make that tangible."
+    },
+    {
+      "start": 1463.8,
+      "end": 1466.8,
+      "text": "I mean, obviously we couldn't be doing this without the internet."
+    },
+    {
+      "start": 1466.8,
+      "end": 1475.8,
+      "text": "So there's a slide in my presentation, which is, we could maybe talk about, but it's a slide of chart showing how many products are stocked in supermarkets in America since the '50s."
+    },
+    {
+      "start": 1475.8,
+      "end": 1482.7,
+      "text": "And the point of the slide is to say that barcodes allowed supermarkets to stock way more stuff because they could keep track of it."
+    },
+    {
+      "start": 1482.7,
+      "end": 1487.4,
+      "text": "But making that chart, I had to know there was a thing called the Food Marketing Institute."
+    },
+    {
+      "start": 1487.4,
+      "end": 1493.4,
+      "text": "And I had to have found out that they published a number for how many scoots there were in supermarkets every year."
+    },
+    {
+      "start": 1493.4,
+      "end": 1496.7,
+      "text": "And then I had to realize they've been around since the '50s."
+    },
+    {
+      "start": 1496.7,
+      "end": 1503.0,
+      "text": "And if I could dug long enough, I might be able to make a whole time series, and I could make whole chart."
+    },
+    {
+      "start": 1503.0,
+      "end": 1504.4,
+      "text": "Now imagine doing that in 1994."
+    },
+    {
+      "start": 1504.4,
+      "end": 1506.7,
+      "text": "First of all, you would have no idea that exists."
+    },
+    {
+      "start": 1506.7,
+      "end": 1510.7,
+      "text": "You really need to go and find a library where they publish, and they publish that number."
+    },
+    {
+      "start": 1510.7,
+      "end": 1513.3,
+      "text": "And that the numbers in that report, you'd have no idea."
+    },
+    {
+      "start": 1513.3,
+      "end": 1515.6,
+      "text": "Then you need to find a library that had them."
+    },
+    {
+      "start": 1515.6,
+      "end": 1522.0,
+      "text": "So you're going to spend like three days on the phone, and spend like $50 on long distance phone calls to find a library that has these."
+    },
+    {
+      "start": 1522.0,
+      "end": 1529.4,
+      "text": "Or maybe you call the Food Marketing Institute and they say, \"We'll sell them to you for $500 each.\" So then you're going to get on, maybe you live in New York,"
+    },
+    {
+      "start": 1529.4,
+      "end": 1530.6,
+      "text": "or someone that has this."
+    },
+    {
+      "start": 1530.6,
+      "end": 1533.7,
+      "text": "And two weeks later you've got the chart and you look at it."
+    },
+    {
+      "start": 1533.7,
+      "end": 1540.4,
+      "text": "And then the other side of this is the life of an analyst is you spend all day making a chart and you look at it and go, \"Oh,"
+    },
+    {
+      "start": 1540.4,
+      "end": 1547.0,
+      "text": "that's not really interesting.\" So you spend two weeks to make the chart and then you look at it and go, \"Yeah, I'm not going to use that.\""
+    },
+    {
+      "start": 1547.0,
+      "end": 1550.0,
+      "text": "And for me, this was like two hours in Google."
+    },
+    {
+      "start": 1550.0,
+      "end": 1553.3,
+      "text": "And so we forget how big a deal the internet was."
+    },
+    {
+      "start": 1553.3,
+      "end": 1555.5,
+      "text": "That's a long way of saying it."
+    },
+    {
+      "start": 1555.5,
+      "end": 1563.0,
+      "text": "But we forget we've had these absolutely enormous changes, and then we don't see it, because it's like that's the world the world's always been."
+    },
+    {
+      "start": 1563.0,
+      "end": 1575.4,
+      "text": "What's different potentially this time, just even what your quote is, it's different, everything's going to change just like last time, the big difference obviously is AGI might emerge, and super intelligence."
+    },
+    {
+      "start": 1575.4,
+      "end": 1582.4,
+      "text": "Does the work of humans can do a lot of this stuff for us, can actually replace jobs?"
+    },
+    {
+      "start": 1582.4,
+      "end": 1587.0,
+      "text": "Just like thoughts on that element of this transformation we're going through."
+    },
+    {
+      "start": 1587.0,
+      "end": 1588.0,
+      "text": "I don't know."
+    },
+    {
+      "start": 1588.0,
+      "end": 1596.7,
+      "text": "This is one of the ways I've struggled to write about AI is like certainly in 2023, early '24, all the questions were questions you could have asked in December 2022."
+    },
+    {
+      "start": 1596.7,
+      "end": 1598.5,
+      "text": "And the questions didn't really change."
+    },
+    {
+      "start": 1598.5,
+      "end": 1600.2,
+      "text": "And the strategies didn't really change."
+    },
+    {
+      "start": 1600.2,
+      "end": 1603.5,
+      "text": "And I think the AGI question is kind of the same."
+    },
+    {
+      "start": 1603.5,
+      "end": 1612.4,
+      "text": "I mean, the thing that the observation one can make, we have no theory of what human intelligence is, we have no theory of why these models work so well,"
+    },
+    {
+      "start": 1612.4,
+      "end": 1615.7,
+      "text": "we have no theory of how much better they will get."
+    },
+    {
+      "start": 1615.7,
+      "end": 1619.5,
+      "text": "So we're all just kind of vibes forecasting as to what will happen."
+    },
+    {
+      "start": 1619.5,
+      "end": 1626.9,
+      "text": "And then you can have like the 20 AM doped out philosophy students talking about, \"Hey man, is this consciousness?\" \"Maybe we aren't conscious either."
+    },
+    {
+      "start": 1626.9,
+      "end": 1629.0,
+      "text": "We just think we are.\" \"Yeah, great."
+    },
+    {
+      "start": 1629.0,
+      "end": 1630.0,
+      "text": "Thank you.\""
+    },
+    {
+      "start": 1630.0,
+      "end": 1633.9,
+      "text": "I think the one thing one can observe today is we have no idea."
+    },
+    {
+      "start": 1633.9,
+      "end": 1634.9,
+      "text": "We don't know."
+    },
+    {
+      "start": 1634.9,
+      "end": 1639.1,
+      "text": "We can guess, but we don't really know where this is going to end up."
+    },
+    {
+      "start": 1639.1,
+      "end": 1644.1,
+      "text": "What I think you can say today is that there's a lot of kind of redefinition of terms."
+    },
+    {
+      "start": 1644.1,
+      "end": 1652.3,
+      "text": "So I think a quote I used in my presentation late last year was an AI scientist called Larry Tesla who said AI is whatever machines can't do yet,"
+    },
+    {
+      "start": 1652.3,
+      "end": 1660.5,
+      "text": "because once machines can do it, people say, \"Well, that's your software.\" And so certainly, I mean, I did do a poll on social media every now and then asking,"
+    },
+    {
+      "start": 1660.5,
+      "end": 1664.7,
+      "text": "\"Is machine learning still AI?\" Because I've certainly heard people say, \"Well, that's not AI."
+    },
+    {
+      "start": 1664.7,
+      "end": 1666.6,
+      "text": "That's just image recognition\" \"That's not AI."
+    },
+    {
+      "start": 1666.6,
+      "end": 1670.3,
+      "text": "That's just sentiment analysis.\" So AI, it's a bit like the word technology."
+    },
+    {
+      "start": 1670.3,
+      "end": 1672.5,
+      "text": "It's like if it's new, then it's technology."
+    },
+    {
+      "start": 1672.5,
+      "end": 1675.3,
+      "text": "But in the '60s airline, jet airlines is the technology."
+    },
+    {
+      "start": 1675.3,
+      "end": 1677.0,
+      "text": "Now a jet airline isn't tech."
+    },
+    {
+      "start": 1677.0,
+      "end": 1682.6,
+      "text": "And so there's a sort of sense of AI is like a moving target, is whatever just started working."
+    },
+    {
+      "start": 1682.6,
+      "end": 1689.0,
+      "text": "And I think the point here is now clearly you can see people redefining AGI to mean the stuff that works now."
+    },
+    {
+      "start": 1689.0,
+      "end": 1691.2,
+      "text": "So is AEI, what's the definition now?"
+    },
+    {
+      "start": 1691.2,
+      "end": 1694.8,
+      "text": "It's like it can do a certain percentage of economically valuable work."
+    },
+    {
+      "start": 1694.8,
+      "end": 1697.0,
+      "text": "Well, that's a very different thing too."
+    },
+    {
+      "start": 1697.0,
+      "end": 1699.4,
+      "text": "It has a soul and it's fucking alive."
+    },
+    {
+      "start": 1699.4,
+      "end": 1701.3,
+      "text": "Because a database could do that."
+    },
+    {
+      "start": 1701.3,
+      "end": 1707.7,
+      "text": "Like an IBM mainframe in 1975 could do a meaningful percentage of economically valuable work that was previously done by people."
+    },
+    {
+      "start": 1707.7,
+      "end": 1715.4,
+      "text": "And it turned out there was a whole bunch of other stuff that it couldn't do that we didn't do then, we didn't know existed."
+    },
+    {
+      "start": 1715.4,
+      "end": 1717.9,
+      "text": "So there's a lot of creative redefinition here."
+    },
+    {
+      "start": 1717.9,
+      "end": 1721.9,
+      "text": "Superintelligence, I'm not sure, is superintelligence more than AGI or less than AGI?"
+    },
+    {
+      "start": 1721.9,
+      "end": 1727.1,
+      "text": "Because last year I thought superintelligence was like really good, but not as good, not actual AGI."
+    },
+    {
+      "start": 1727.1,
+      "end": 1732.0,
+      "text": "And now it's like, \"Oh no, no, we've already got AGI, but superintelligence, that's really hard.\""
+    },
+    {
+      "start": 1732.0,
+      "end": 1738.5,
+      "text": "It's funny, I was having an argument on Hacker News this morning, you remember the argument, which is never a good use of time,"
+    },
+    {
+      "start": 1738.5,
+      "end": 1743.9,
+      "text": "but you remember the argument of like people would argue about whether crypto is blockchain, or whether blockchain is crypto."
+    },
+    {
+      "start": 1743.9,
+      "end": 1745.8,
+      "text": "There isn't a right answer to that."
+    },
+    {
+      "start": 1745.8,
+      "end": 1746.9,
+      "text": "Let's just be sure."
+    },
+    {
+      "start": 1746.9,
+      "end": 1752.4,
+      "text": "It's important to understand what you mean when you say that, but there isn't like a correct answer to this."
+    },
+    {
+      "start": 1752.4,
+      "end": 1755.6,
+      "text": "Are we going to get to something that has human level intelligence?"
+    },
+    {
+      "start": 1755.6,
+      "end": 1756.6,
+      "text": "We don't know."
+    },
+    {
+      "start": 1756.6,
+      "end": 1759.6,
+      "text": "I don't think we have any way of answering that question."
+    },
+    {
+      "start": 1759.6,
+      "end": 1760.6,
+      "text": "Maybe, maybe not."
+    },
+    {
+      "start": 1760.6,
+      "end": 1762.2,
+      "text": "You can make arguments either way."
+    },
+    {
+      "start": 1762.2,
+      "end": 1766.6,
+      "text": "Meantime, in the meanwhile, we've got this thing that's clearly kind of a completely transformative technology."
+    },
+    {
+      "start": 1766.6,
+      "end": 1772.5,
+      "text": "And maybe the serious point here is like you don't have to believe, even if the model stopped it getting better tomorrow."
+    },
+    {
+      "start": 1772.5,
+      "end": 1780.8,
+      "text": "If this is it and we hit a brick wall tomorrow, this is an incredibly useful technology that's going to change your world and get rolled out over the next 10 years."
+    },
+    {
+      "start": 1780.8,
+      "end": 1786.0,
+      "text": "So you don't have to believe in any of that stuff to believe that this is a giant deal."
+    },
+    {
+      "start": 1786.0,
+      "end": 1793.2,
+      "text": "Something that's definitely changed, I had your former boss, Mark Andreessen on the podcast, and we didn't actually talk about this during the conversation,"
+    },
+    {
+      "start": 1793.2,
+      "end": 1802.5,
+      "text": "and he brought it up before we started recording and I never got to it, is he had this insight that the opportunity set for companies now is so much larger."
+    },
+    {
+      "start": 1802.5,
+      "end": 1807.4,
+      "text": "We used to have no trillion-dollar companies, now we're going to have dozens of trillion-dollar companies."
+    },
+    {
+      "start": 1807.4,
+      "end": 1813.7,
+      "text": "Just like the size companies can grow to are going up so much, and valuations also go up along with that."
+    },
+    {
+      "start": 1813.7,
+      "end": 1818.5,
+      "text": "And his point is just people haven't really grokked just how large companies can get now."
+    },
+    {
+      "start": 1818.5,
+      "end": 1821.8,
+      "text": "Everyone's hitting a hundred million AR in five months, six months."
+    },
+    {
+      "start": 1821.8,
+      "end": 1823.0,
+      "text": "Just thoughts on that."
+    },
+    {
+      "start": 1823.0,
+      "end": 1824.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 1824.0,
+      "end": 1829.7,
+      "text": "I mean, this was his whole software's eating the world thesis from 15 years ago, whenever it was."
+    },
+    {
+      "start": 1829.7,
+      "end": 1830.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 1830.7,
+      "end": 1836.0,
+      "text": "The TAM, it gets progressively bigger, because you can address larger and larger parts of the economy."
+    },
+    {
+      "start": 1836.0,
+      "end": 1842.9,
+      "text": "And so if you think about the classic platform ship framing that mainframes are, I think peak mainframe install base was something like 70, 80,000 units."
+    },
+    {
+      "start": 1842.9,
+      "end": 1849.5,
+      "text": "I mean, slightly fuzzy term, what exactly is a mainframe, and at what point does it become two mainframes as one."
+    },
+    {
+      "start": 1849.5,
+      "end": 1852.0,
+      "text": "But something like that, that order of magnitude."
+    },
+    {
+      "start": 1852.0,
+      "end": 1858.3,
+      "text": "And then when the internet kicks off, there are, as I said, 50 to 100 million PCs on earth, maybe."
+    },
+    {
+      "start": 1858.3,
+      "end": 1865.3,
+      "text": "Today there are something over a billion, one to one and a half billion, but obviously a lot of those are corporate."
+    },
+    {
+      "start": 1865.3,
+      "end": 1868.1,
+      "text": "Like seven, 800 million consumer PCs in the world."
+    },
+    {
+      "start": 1868.1,
+      "end": 1876.0,
+      "text": "There's about five and a half, six billion smartphones in the world, which is why you can have 900 million weekly active users on ChatGPT."
+    },
+    {
+      "start": 1876.0,
+      "end": 1880.4,
+      "text": "And so there was this narrative five years ago of like, \"Well, we've run out of people."
+    },
+    {
+      "start": 1880.4,
+      "end": 1886.7,
+      "text": "So the next thing can't be in order of magnitude bigger.\" Which was true up to a point, but that was the wrong model,"
+    },
+    {
+      "start": 1886.7,
+      "end": 1893.0,
+      "text": "because clearly what's happening now as you're moving in another direction, is you're just branching out and automating big news weights of the economy."
+    },
+    {
+      "start": 1893.0,
+      "end": 1902.8,
+      "text": "Now, back to your job point, you could argue, well, we're just going to replace all the people with AI and all the money will go to Sam Altman."
+    },
+    {
+      "start": 1902.8,
+      "end": 1906.5,
+      "text": "And Mark can buy himself another Gulfstream, add to the fleet."
+    },
+    {
+      "start": 1906.5,
+      "end": 1915.9,
+      "text": "I think the other answer, it's back to the lump of labor fallacy, and the last 200 years, that each of these technologies removes a bunch of jobs,"
+    },
+    {
+      "start": 1915.9,
+      "end": 1926.7,
+      "text": "creates a bunch of new jobs, creates a bunch of new value, unlocks prosperity for all of us, and that's painful as you go through it, but it always creates more value."
+    },
+    {
+      "start": 1926.7,
+      "end": 1930.1,
+      "text": "And so here you could certainly make an analog to..."
+    },
+    {
+      "start": 1930.1,
+      "end": 1936.1,
+      "text": "The useful analog to the electricity industry is just saying how that electricity became part of absolutely everything."
+    },
+    {
+      "start": 1936.1,
+      "end": 1939.8,
+      "text": "And software has been kind of slowly working its way out."
+    },
+    {
+      "start": 1939.8,
+      "end": 1944.5,
+      "text": "Another would be electricity in factories, and then electricity sort of slowly spreads out."
+    },
+    {
+      "start": 1944.5,
+      "end": 1950.9,
+      "text": "And so that would be the point again, that it slowly spreads out to do more and more things."
+    },
+    {
+      "start": 1950.9,
+      "end": 1956.0,
+      "text": "And so more and more value and a bigger and bigger contribution to the economy."
+    },
+    {
+      "start": 1956.0,
+      "end": 1958.0,
+      "text": "Also, of course, disappears inside things."
+    },
+    {
+      "start": 1958.0,
+      "end": 1965.9,
+      "text": "And the other side, the point of my capital section in the presentation is there's this quote from Sam Altman where he said,"
+    },
+    {
+      "start": 1965.9,
+      "end": 1974.4,
+      "text": "\"We're going to be selling AI intelligence on a meter like water or electricity.\" And you look at this and think, \"My dear sweet child,"
+    },
+    {
+      "start": 1974.4,
+      "end": 1980.1,
+      "text": "you need me to explain the margin structure of the utility industry to you.\" Because guess what?"
+    },
+    {
+      "start": 1980.1,
+      "end": 1986.6,
+      "text": "When you watch television, the TV company isn't paying a percentage of your monthly bill to the electricity company."
+    },
+    {
+      "start": 1986.6,
+      "end": 1992.4,
+      "text": "When you wash your clothes, Bosch isn't paying a percentage of the price of the washing machine."
+    },
+    {
+      "start": 1992.4,
+      "end": 1997.5,
+      "text": "And clearly, this is like the much more specific tactical question at the moment, is,"
+    },
+    {
+      "start": 1997.5,
+      "end": 2006.0,
+      "text": "do we even end up with three giant models or does it become hundreds of models and open models and local models and so on?"
+    },
+    {
+      "start": 2006.0,
+      "end": 2015.6,
+      "text": "And even if we do end up with, say, pick a number, three to six to 10 giant foundation models that cost hundreds of billions of dollars a year, fine,"
+    },
+    {
+      "start": 2015.6,
+      "end": 2018.1,
+      "text": "do they get all the value from that?"
+    },
+    {
+      "start": 2018.1,
+      "end": 2023.9,
+      "text": "Now, I started my career as a telecom analyst, and so still pay attention to it a bit."
+    },
+    {
+      "start": 2023.9,
+      "end": 2029.3,
+      "text": "Global mobile industry has revenue of about a trillion dollars a year, maybe a bit more now."
+    },
+    {
+      "start": 2029.3,
+      "end": 2033.1,
+      "text": "And it spends about $200 billion a year on CapEx every year."
+    },
+    {
+      "start": 2033.1,
+      "end": 2034.7,
+      "text": "Total telecoms is about 300."
+    },
+    {
+      "start": 2034.7,
+      "end": 2036.0,
+      "text": "Mobile is about 200."
+    },
+    {
+      "start": 2036.0,
+      "end": 2038.6,
+      "text": "It's about 15, 20% of revenue every year."
+    },
+    {
+      "start": 2038.6,
+      "end": 2045.3,
+      "text": "And if you look at a chart of mobile data consumption, it's an exponential curve, like perfect curve going spread up."
+    },
+    {
+      "start": 2045.3,
+      "end": 2051.0,
+      "text": "And the number now, I think it's about 1,500 to 2,000 times what it was in 2010 globally."
+    },
+    {
+      "start": 2051.0,
+      "end": 2057.7,
+      "text": "And the stocks have gone nowhere in 25 years, because it's an X gross low margin commodity utility,"
+    },
+    {
+      "start": 2057.7,
+      "end": 2067.7,
+      "text": "where they're selling this objectively amazing piece of global technology infrastructure that has enormous complexity and enormous sophistication, but all the cool stuff is made by you."
+    },
+    {
+      "start": 2067.7,
+      "end": 2071.0,
+      "text": "It's made by the people listening to this podcast."
+    },
+    {
+      "start": 2071.0,
+      "end": 2072.9,
+      "text": "It's made by somebody else."
+    },
+    {
+      "start": 2072.9,
+      "end": 2081.8,
+      "text": "This was that kind of pivotal moment where the telcos thought that they would do all the stuff that you did on your iPhone."
+    },
+    {
+      "start": 2081.8,
+      "end": 2087.0,
+      "text": "And not only do they not do it, but Apple doesn't do it either."
+    },
+    {
+      "start": 2087.0,
+      "end": 2088.4,
+      "text": "It's all further up stack."
+    },
+    {
+      "start": 2088.4,
+      "end": 2093.8,
+      "text": "And so this is the elemental question right now around foundation models is, does the model do the whole thing?"
+    },
+    {
+      "start": 2093.8,
+      "end": 2098.1,
+      "text": "Do you just go to the chatbot and get the chatbot to do the whole thing?"
+    },
+    {
+      "start": 2098.1,
+      "end": 2106.5,
+      "text": "Can the model companies keep building these like Claude for X, Claude for Y things, which to me look very much like what you see if you hit file new in Excel."
+    },
+    {
+      "start": 2106.5,
+      "end": 2110.3,
+      "text": "It's like the tablets, but all of those are actually billion-dollar companies as well."
+    },
+    {
+      "start": 2110.3,
+      "end": 2113.3,
+      "text": "And if not, no, does it all have to be \"apps\"?"
+    },
+    {
+      "start": 2113.3,
+      "end": 2114.3,
+      "text": "Whatever app means."
+    },
+    {
+      "start": 2114.3,
+      "end": 2122.4,
+      "text": "And if it all has to be apps who builds those, well, they can't all get built by the model labs, just as they didn't all get built by Microsoft."
+    },
+    {
+      "start": 2122.4,
+      "end": 2128.4,
+      "text": "And so if they're all built by other companies, does their notion models have leverage up the stack the way Windows did?"
+    },
+    {
+      "start": 2128.4,
+      "end": 2137.0,
+      "text": "Or is this more like AWS where, if you're, I don't know, an engineering company or a law firm buying a piece of software, you don't care which cloud it runs on?"
+    },
+    {
+      "start": 2137.0,
+      "end": 2141.0,
+      "text": "And you don't have to standardize on AWS because that's where all the software is."
+    },
+    {
+      "start": 2141.0,
+      "end": 2144.6,
+      "text": "And the developers all standardize on AWS because all the customers use AWS."
+    },
+    {
+      "start": 2144.6,
+      "end": 2145.9,
+      "text": "That's not how it works."
+    },
+    {
+      "start": 2145.9,
+      "end": 2149.1,
+      "text": "That's how Windows or iOS works, but that's not how AWS works."
+    },
+    {
+      "start": 2149.1,
+      "end": 2157.5,
+      "text": "And so it does sort of seem to me that if the chatbot isn't the UX, and it needs to be apps, and the model companies aren't going to build that,"
+    },
+    {
+      "start": 2157.5,
+      "end": 2164.2,
+      "text": "and the models themselves are basically commodities, at least as you can see them as users, then why would the model companies have pricing power?"
+    },
+    {
+      "start": 2164.2,
+      "end": 2166.9,
+      "text": "And wouldn't all the value be further up the stack?"
+    },
+    {
+      "start": 2166.9,
+      "end": 2171.5,
+      "text": "Aren't you basically, have you got like three to six companies selling a commodity at marginal cost?"
+    },
+    {
+      "start": 2171.5,
+      "end": 2174.8,
+      "text": "Now, obviously the semi-analyst guys are like, \"No, no, no, no, no."
+    },
+    {
+      "start": 2174.8,
+      "end": 2178.0,
+      "text": "There's going to be infinite pricing power forever.\" I'm sorry, I'm exaggerating."
+    },
+    {
+      "start": 2178.0,
+      "end": 2187.9,
+      "text": "But I think you have to really important to draw a distinction between where are we now, where you have radical price disequilibrium, and you've got these, what's the guy,"
+    },
+    {
+      "start": 2187.9,
+      "end": 2192.8,
+      "text": "the OpenClaw guy spent one and a half million dollars on token this last month."
+    },
+    {
+      "start": 2192.8,
+      "end": 2197.1,
+      "text": "But that's somebody getting like a 50 grand mobile data built in 2010."
+    },
+    {
+      "start": 2197.1,
+      "end": 2198.1,
+      "text": "That's temporary."
+    },
+    {
+      "start": 2198.1,
+      "end": 2208.2,
+      "text": "What is the steady state equilibrium point where all of these lines on the chart kind of get lined up, and we don't have this kind of weird, crazy stuff going on?"
+    },
+    {
+      "start": 2208.2,
+      "end": 2216.4,
+      "text": "And then will you have pricing power, or have you got like three or four or five companies kind of all selling the same thing?"
+    },
+    {
+      "start": 2216.4,
+      "end": 2219.4,
+      "text": "And so then you should have a pricing price."
+    },
+    {
+      "start": 2219.4,
+      "end": 2224.0,
+      "text": "You should have lower pricing and lower margins, and the value you've got stack."
+    },
+    {
+      "start": 2224.0,
+      "end": 2229.1,
+      "text": "I am so excited to tell you about this season's supporting sponsor Vanta."
+    },
+    {
+      "start": 2229.1,
+      "end": 2233.7,
+      "text": "Vanta helps over 15,000 companies like Cursor, Ramp, Duolingo, Snowflake, and Atlassian."
+    },
+    {
+      "start": 2233.7,
+      "end": 2236.4,
+      "text": "Earn and prove trust with their customers."
+    },
+    {
+      "start": 2236.4,
+      "end": 2241.1,
+      "text": "Teams are building and shipping products faster than ever thanks to AI."
+    },
+    {
+      "start": 2241.1,
+      "end": 2249.6,
+      "text": "But as a result, the amount of risk being introduced into your product and your business is higher than it's ever been."
+    },
+    {
+      "start": 2249.6,
+      "end": 2259.1,
+      "text": "Every security leader that I talk to is feeling the increasing weight of protecting their organization, their business, and not to mention their customer data."
+    },
+    {
+      "start": 2259.1,
+      "end": 2268.1,
+      "text": "Because things are moving so fast, they are constantly reacting, having to guess at priorities, and having to make do with outdated solutions."
+    },
+    {
+      "start": 2268.1,
+      "end": 2275.8,
+      "text": "Vanta automates compliance and risk management, with over 35 security and privacy frameworks, including SOC 2, ISO 27,001 and HIPAA."
+    },
+    {
+      "start": 2275.8,
+      "end": 2279.3,
+      "text": "This helps companies get compliant fast and stay compliant."
+    },
+    {
+      "start": 2279.3,
+      "end": 2284.8,
+      "text": "More than ever before, trust has the power to make or break your business."
+    },
+    {
+      "start": 2284.8,
+      "end": 2286.3,
+      "text": "Learn more at vanta.com/lenny."
+    },
+    {
+      "start": 2286.3,
+      "end": 2291.0,
+      "text": "And as a listener of this podcast, you get $1,000 off Vanta."
+    },
+    {
+      "start": 2291.0,
+      "end": 2292.0,
+      "text": "That's vanta.com/lenny."
+    },
+    {
+      "start": 2292.0,
+      "end": 2299.7,
+      "text": "A really interesting takeaway here is that your sense is over time the foundational model companies, Anthropic, OpenAI, others, their margins will get squeezed,"
+    },
+    {
+      "start": 2299.7,
+      "end": 2308.0,
+      "text": "they will not be as successful as they are today, and the bigger opportunities in the application layer, the people building on the model, the wrappers."
+    },
+    {
+      "start": 2308.0,
+      "end": 2309.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 2309.0,
+      "end": 2318.1,
+      "text": "I mean, this is a very sort of deterministic thesis, which is, the models companies, crucially what I said is the models don't seem to have no after effects."
+    },
+    {
+      "start": 2318.1,
+      "end": 2325.0,
+      "text": "So there doesn't seem to be a winner takes all effect where one of these will run away ahead of the other."
+    },
+    {
+      "start": 2325.0,
+      "end": 2326.9,
+      "text": "So you should have competition indefinitely."
+    },
+    {
+      "start": 2326.9,
+      "end": 2332.3,
+      "text": "If you have competition indefinitely, you don't have primary really radical differentiation of what the product is."
+    },
+    {
+      "start": 2332.3,
+      "end": 2334.5,
+      "text": "Then why would you have pricing power?"
+    },
+    {
+      "start": 2334.5,
+      "end": 2342.9,
+      "text": "And meanwhile, if you need to have thousands of applications that are all different built by different people, those can't all be built by the model people."
+    },
+    {
+      "start": 2342.9,
+      "end": 2347.3,
+      "text": "So, it should end up looking more like cloud than it looks like Windows."
+    },
+    {
+      "start": 2347.3,
+      "end": 2357.0,
+      "text": "Now that may be completely wrong, and one of the points I make in the presentation is like, imagine having this conversation about the internet in 1997, what would you have got right?"
+    },
+    {
+      "start": 2357.0,
+      "end": 2359.5,
+      "text": "Or indeed having it about mobile in 2000."
+    },
+    {
+      "start": 2359.5,
+      "end": 2361.7,
+      "text": "You would've missed almost all of it."
+    },
+    {
+      "start": 2361.7,
+      "end": 2367.1,
+      "text": "You certainly would've said that a has-been PC company from [inaudible 00:39:28] would win the whole thing."
+    },
+    {
+      "start": 2367.1,
+      "end": 2369.0,
+      "text": "And no one would've said that."
+    },
+    {
+      "start": 2369.0,
+      "end": 2378.4,
+      "text": "And a search company with a weird logo like, \"Search, what's that got to do with mobile?\" \"No, forget it, you're an idiot.\" So we should presume we don't know,"
+    },
+    {
+      "start": 2378.4,
+      "end": 2384.4,
+      "text": "but they're all this sort of basic building blocks of like, well, but why would they have pricing power?"
+    },
+    {
+      "start": 2384.4,
+      "end": 2394.1,
+      "text": "I don't know, when I was a baby analyst in '99, went to see a dotcom company in the UK that was trying to do online selling computer cars, components online."
+    },
+    {
+      "start": 2394.1,
+      "end": 2404.5,
+      "text": "And they had this whole model and this whole story in the brand and buy the whole thing and we went up to see them, and we're on the train back from Birmingham,"
+    },
+    {
+      "start": 2404.5,
+      "end": 2407.0,
+      "text": "and this just senior banker called David Tate."
+    },
+    {
+      "start": 2407.0,
+      "end": 2414.8,
+      "text": "We're all sitting talking about it, and Tate says, \"It's a low margin reseller, one time sells.\" \"You can say dotcom all you like,"
+    },
+    {
+      "start": 2414.8,
+      "end": 2420.9,
+      "text": "it's a low margin reseller.\" And I think that's the crux of this, is they're undifferentiated commodity infrastructure providers."
+    },
+    {
+      "start": 2420.9,
+      "end": 2425.7,
+      "text": "There's a lot of science to it, but there's a lot of science in mobile."
+    },
+    {
+      "start": 2425.7,
+      "end": 2429.0,
+      "text": "I mean, what do you pay for flat panel screen?"
+    },
+    {
+      "start": 2429.0,
+      "end": 2431.2,
+      "text": "There's Nobel Prizes in flat panel screens."
+    },
+    {
+      "start": 2431.2,
+      "end": 2433.2,
+      "text": "There's still a low margin commodity."
+    },
+    {
+      "start": 2433.2,
+      "end": 2439.0,
+      "text": "I look forward to be proving wrong, proven wrong, but like, hey, that's what it looks like now."
+    },
+    {
+      "start": 2439.0,
+      "end": 2440.0,
+      "text": "This is great."
+    },
+    {
+      "start": 2440.0,
+      "end": 2441.7,
+      "text": "So I know you're not an investor."
+    },
+    {
+      "start": 2441.7,
+      "end": 2445.0,
+      "text": "I know you didn't actually do investing at A16C even though you work for A16Z."
+    },
+    {
+      "start": 2445.0,
+      "end": 2446.0,
+      "text": "Partner."
+    },
+    {
+      "start": 2446.0,
+      "end": 2447.0,
+      "text": "Partner."
+    },
+    {
+      "start": 2447.0,
+      "end": 2449.0,
+      "text": "Just sit around and pontificate partner."
+    },
+    {
+      "start": 2449.0,
+      "end": 2451.3,
+      "text": "Are there companies you would invest in?"
+    },
+    {
+      "start": 2451.3,
+      "end": 2457.0,
+      "text": "If there are a couple companies you'd invest in now, is there some on that list, or categories even?"
+    },
+    {
+      "start": 2457.0,
+      "end": 2460.0,
+      "text": "I mentioned briefly that I was an analyst."
+    },
+    {
+      "start": 2460.0,
+      "end": 2462.7,
+      "text": "I was a sell side equity analyst."
+    },
+    {
+      "start": 2462.7,
+      "end": 2474.1,
+      "text": "I was not a very good sell side equity analyst, but partly because I was not interested in talking to clients, partly because I was not interested in share prices,"
+    },
+    {
+      "start": 2474.1,
+      "end": 2479.0,
+      "text": "which would seem to be like a disqualification to be an equity analyst."
+    },
+    {
+      "start": 2479.0,
+      "end": 2487.7,
+      "text": "There's a huge difference between being right and being early, and there's a huge difference between the right company and the right price."
+    },
+    {
+      "start": 2487.7,
+      "end": 2499.9,
+      "text": "Now, deterministically, you can look across the market and say, well, it's like the bell curve IQMium, and the guy with 50 and the guy with 200 are both saying, \"Jeff Bezos,"
+    },
+    {
+      "start": 2499.9,
+      "end": 2504.8,
+      "text": "smart guy, I buy stock.\" And you can certainly overthink all of this."
+    },
+    {
+      "start": 2504.8,
+      "end": 2516.9,
+      "text": "And you can look at Google, Apple, Facebook, Amazon, and say, \"Hard to see a problem for them really with all of this.\" You can certainly see questions for all of them,"
+    },
+    {
+      "start": 2516.9,
+      "end": 2523.0,
+      "text": "and one of them may drop the ball, but it's worth remembering what happened in mobile."
+    },
+    {
+      "start": 2523.0,
+      "end": 2525.8,
+      "text": "The internet was just like a big obvious platform shift."
+    },
+    {
+      "start": 2525.8,
+      "end": 2531.9,
+      "text": "The funny thing about mobile is that some companies missed it completely, and for some of them it really didn't change anything."
+    },
+    {
+      "start": 2531.9,
+      "end": 2533.5,
+      "text": "For Google, it didn't change anything."
+    },
+    {
+      "start": 2533.5,
+      "end": 2534.9,
+      "text": "For Meta, this was great."
+    },
+    {
+      "start": 2534.9,
+      "end": 2542.9,
+      "text": "This is a way better way to do social than on PC, because you've got a camera, and notifications, and it's on your phone all the time with you."
+    },
+    {
+      "start": 2542.9,
+      "end": 2544.3,
+      "text": "Amazon, what does this change?"
+    },
+    {
+      "start": 2544.3,
+      "end": 2545.4,
+      "text": "It doesn't change everything."
+    },
+    {
+      "start": 2545.4,
+      "end": 2550.7,
+      "text": "I mean, I'm massively oversimplifying here, but the point is now, meanwhile, Yahoo Mail fails to make the jump,"
+    },
+    {
+      "start": 2550.7,
+      "end": 2555.4,
+      "text": "there are companies that were already kind of dying that failed to make the jump, maybe eBay."
+    },
+    {
+      "start": 2555.4,
+      "end": 2557.0,
+      "text": "You could argue about individual names."
+    },
+    {
+      "start": 2557.0,
+      "end": 2562.0,
+      "text": "The point is that we went through that shift and it didn't change anything for half the industry."
+    },
+    {
+      "start": 2562.0,
+      "end": 2563.1,
+      "text": "Half the internet industry."
+    },
+    {
+      "start": 2563.1,
+      "end": 2567.0,
+      "text": "And so I think that you could propose a little bit of that here."
+    },
+    {
+      "start": 2567.0,
+      "end": 2576.0,
+      "text": "While Steven Jay Sinofsky at A16Z who used to run Windows would always say, \"Incumbents always try and make the new thing a feature.\" And sometimes they're right, sometimes it's a feature."
+    },
+    {
+      "start": 2576.0,
+      "end": 2579.8,
+      "text": "Actually, along those lines, something I wanted to get your take on."
+    },
+    {
+      "start": 2579.8,
+      "end": 2589.5,
+      "text": "There's this thread that's been happening across a bunch of guests, which is around distribution becoming a bigger and bigger moat, because as software is easier to build, everyone's launching products,"
+    },
+    {
+      "start": 2589.5,
+      "end": 2593.0,
+      "text": "everyone's trying to compete for attention, it's getting harder and harder."
+    },
+    {
+      "start": 2593.0,
+      "end": 2600.2,
+      "text": "It's always been hard to get people's attention, but it's just like the noise in the market is just going up like crazy."
+    },
+    {
+      "start": 2600.2,
+      "end": 2605.5,
+      "text": "And to me that tells me distribution is becoming a more and more valuable skill and asset."
+    },
+    {
+      "start": 2605.5,
+      "end": 2614.0,
+      "text": "And it also tells me incumbents are going to be a lot more successful because they already have distribution versus a startup that's trying to break through."
+    },
+    {
+      "start": 2614.0,
+      "end": 2615.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 2615.0,
+      "end": 2620.6,
+      "text": "I mean, there's like a version of the Drake meme of like he says, \"I don't like that."
+    },
+    {
+      "start": 2620.6,
+      "end": 2624.1,
+      "text": "I do like this.\" It's like, \"I don't like GPT wrappers."
+    },
+    {
+      "start": 2624.1,
+      "end": 2633.4,
+      "text": "I do like harnesses.\" So yeah, I did spend some time talking about this in the presentation I did at the end of last year, that if the product is a commodity,"
+    },
+    {
+      "start": 2633.4,
+      "end": 2635.2,
+      "text": "then the distribution is what matters."
+    },
+    {
+      "start": 2635.2,
+      "end": 2640.9,
+      "text": "And I wrote a thing about ChatGPT earlier this year, OpenAI earlier this year, how do they compete."
+    },
+    {
+      "start": 2640.9,
+      "end": 2645.6,
+      "text": "Well, there's an obvious comparison that a lot of people made is with web browsers."
+    },
+    {
+      "start": 2645.6,
+      "end": 2655.6,
+      "text": "The fundamentally web browser, and there's a distinction here I think between the web browser as product and web browser rendering engine, in that the rendering engine can be better or worse,"
+    },
+    {
+      "start": 2655.6,
+      "end": 2660.2,
+      "text": "but the browser product is just like a really thin wrapper for a rendering engine."
+    },
+    {
+      "start": 2660.2,
+      "end": 2662.8,
+      "text": "There's an input box and an output box."
+    },
+    {
+      "start": 2662.8,
+      "end": 2664.0,
+      "text": "And like, what else?"
+    },
+    {
+      "start": 2664.0,
+      "end": 2666.9,
+      "text": "And which is like, what's the last innovation in browser design?"
+    },
+    {
+      "start": 2666.9,
+      "end": 2669.5,
+      "text": "Tab browsing, which was 20 years ago, 25 years ago."
+    },
+    {
+      "start": 2669.5,
+      "end": 2675.3,
+      "text": "And every now and then somebody tries to innovate in browser design and it never works because you found the Platonic ideal."
+    },
+    {
+      "start": 2675.3,
+      "end": 2677.4,
+      "text": "It's like trying to innovate in smartphone design."
+    },
+    {
+      "start": 2677.4,
+      "end": 2678.7,
+      "text": "It's a glass rate angle."
+    },
+    {
+      "start": 2678.7,
+      "end": 2680.2,
+      "text": "There's nothing you can do there."
+    },
+    {
+      "start": 2680.2,
+      "end": 2683.9,
+      "text": "And so what happened, of course, is that Microsoft uses distribution to break in."
+    },
+    {
+      "start": 2683.9,
+      "end": 2691.5,
+      "text": "Then of course, what also happens is setting aside the lawsuit, is that it turns out the winning browsers doesn't matter anyway because the value is further up stack."
+    },
+    {
+      "start": 2691.5,
+      "end": 2697.0,
+      "text": "And so Microsoft, we use browsers for like five, six years, and it doesn't matter, and it doesn't get them anything."
+    },
+    {
+      "start": 2697.0,
+      "end": 2701.8,
+      "text": "So clearly what's happening now is that Google is using distribution to drive Gemini."
+    },
+    {
+      "start": 2701.8,
+      "end": 2704.6,
+      "text": "And what's the difference between Gemini and Claude?"
+    },
+    {
+      "start": 2704.6,
+      "end": 2710.8,
+      "text": "And if you're using this stuff all day, then you know, but like normal person, there's no difference."
+    },
+    {
+      "start": 2710.8,
+      "end": 2721.1,
+      "text": "And the same thing with Meta, if you look at survey data on which our M people use, even before the news thing, like the Llama thing, Meta was behind,"
+    },
+    {
+      "start": 2721.1,
+      "end": 2731.5,
+      "text": "it was up there between ChatGPT and Gemini, which if you're in tech, people have completely written it off, but it was like they sprayed it on every service surface."
+    },
+    {
+      "start": 2731.5,
+      "end": 2732.9,
+      "text": "It wasn't that bad."
+    },
+    {
+      "start": 2732.9,
+      "end": 2733.9,
+      "text": "It was fine."
+    },
+    {
+      "start": 2733.9,
+      "end": 2744.9,
+      "text": "So distribution of an adequate product when the field is basically commodity distribution on brand become a big deal, you could see that in the strategy, OpenAI strategy late last year was,"
+    },
+    {
+      "start": 2744.9,
+      "end": 2747.0,
+      "text": "people called it Everything, Everywhere, Yesterday."
+    },
+    {
+      "start": 2747.0,
+      "end": 2751.2,
+      "text": "And so they were just trying everything to work out how they would get that."
+    },
+    {
+      "start": 2751.2,
+      "end": 2754.5,
+      "text": "How can we get a flyway or how can we get distribution?"
+    },
+    {
+      "start": 2754.5,
+      "end": 2756.5,
+      "text": "How can we get something that sticks?"
+    },
+    {
+      "start": 2756.5,
+      "end": 2762.9,
+      "text": "How can we get something that people uses before Google, and Meta, and Amazon spray it everywhere and get everybody using that one?"
+    },
+    {
+      "start": 2762.9,
+      "end": 2767.9,
+      "text": "And then you've got the inertia and the power of the default and like, why would you switch?"
+    },
+    {
+      "start": 2767.9,
+      "end": 2771.0,
+      "text": "Obviously Apple is kind of the last penny to drop here."
+    },
+    {
+      "start": 2771.0,
+      "end": 2776.9,
+      "text": "There was this sort of slightly weird opening idea, and now there's even weirder story that OpenAI want to sue Apple."
+    },
+    {
+      "start": 2776.9,
+      "end": 2778.0,
+      "text": "Good luck with that."
+    },
+    {
+      "start": 2778.0,
+      "end": 2786.1,
+      "text": "The funny thing about the Apple deal thing is just, not to go off on a tangent, but if you go back and watch the WWGC from 2024,"
+    },
+    {
+      "start": 2786.1,
+      "end": 2788.7,
+      "text": "the whole second half of it is Apple Intelligence."
+    },
+    {
+      "start": 2788.7,
+      "end": 2794.2,
+      "text": "That was like the most compelling vision of a personal AI assistant, still the most compelling vision I've seen."
+    },
+    {
+      "start": 2794.2,
+      "end": 2797.3,
+      "text": "They then couldn't ship it, but then neither was anybody else."
+    },
+    {
+      "start": 2797.3,
+      "end": 2804.8,
+      "text": "And you watch it again and you're like, \"Okay, so you want tool using a Agentic on device, AI with no prompt injection and no hallucinations,"
+    },
+    {
+      "start": 2804.8,
+      "end": 2811.5,
+      "text": "and a completely standardized API system across 10,000 apps with intents that all work perfectly.\" I'm like, \"Well, that sounds good to me,"
+    },
+    {
+      "start": 2811.5,
+      "end": 2815.5,
+      "text": "but I'm not surprised they couldn't ship it.\" But nobody else would ship that."
+    },
+    {
+      "start": 2815.5,
+      "end": 2816.9,
+      "text": "But that vision was great."
+    },
+    {
+      "start": 2816.9,
+      "end": 2820.4,
+      "text": "I really want to see what happens at WWGC in a month."
+    },
+    {
+      "start": 2820.4,
+      "end": 2823.0,
+      "text": "Do they actually ship that now, powered by Gemini?"
+    },
+    {
+      "start": 2823.0,
+      "end": 2832.8,
+      "text": "But that's also another point, is like, okay, there's going to be the AI intelligence, whatever we call, a Gemini intelligence on Android, and then there's going to be Apple intelligence on iOS,"
+    },
+    {
+      "start": 2832.8,
+      "end": 2837.5,
+      "text": "which is powered by Gemini, but it's not going to be the same set of products."
+    },
+    {
+      "start": 2837.5,
+      "end": 2844.0,
+      "text": "The model's just like the dumb thing underneath the, funny way of putting it, the dumb thing underneath that power's a feature."
+    },
+    {
+      "start": 2844.0,
+      "end": 2849.6,
+      "text": "The model is the commodity that powers different decisions about what the feature should be and what different distribution."
+    },
+    {
+      "start": 2849.6,
+      "end": 2854.6,
+      "text": "And in that situation, of course, Apple's got a billion devices that can run this on edge."
+    },
+    {
+      "start": 2854.6,
+      "end": 2860.8,
+      "text": "And Google has this wonderful marketing slogan coming soon to our most powerful devices, meaning it will work on those Androids."
+    },
+    {
+      "start": 2860.8,
+      "end": 2862.0,
+      "text": "So again, distribution questions."
+    },
+    {
+      "start": 2862.0,
+      "end": 2863.0,
+      "text": "Interesting."
+    },
+    {
+      "start": 2863.0,
+      "end": 2865.0,
+      "text": "Google AO's next week, so we'll see what they launched."
+    },
+    {
+      "start": 2865.0,
+      "end": 2870.0,
+      "text": "Oh no, they launched the Android and it just shows how modules it-"
+    },
+    {
+      "start": 2870.0,
+      "end": 2871.0,
+      "text": "As it today?"
+    },
+    {
+      "start": 2871.0,
+      "end": 2877.6,
+      "text": "Well, no, they launched it last week, which it just illustrates how much we start paying attention to Android and iPhone."
+    },
+    {
+      "start": 2877.6,
+      "end": 2880.4,
+      "text": "Google did had a whole big thing last week."
+    },
+    {
+      "start": 2880.4,
+      "end": 2889.4,
+      "text": "They're replacing Chromebooks with Google Books, and they've got a new Android intelligence powered by Gemini that will roll out to the five people who bought a Pixel phone."
+    },
+    {
+      "start": 2889.4,
+      "end": 2891.0,
+      "text": "You don't work for Google."
+    },
+    {
+      "start": 2891.0,
+      "end": 2892.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 2892.0,
+      "end": 2894.8,
+      "text": "I want to go in a slightly different direction."
+    },
+    {
+      "start": 2894.8,
+      "end": 2900.1,
+      "text": "Something that I'm curious if you're following is just the anti-AI sentiment that feels like is growing."
+    },
+    {
+      "start": 2900.1,
+      "end": 2906.8,
+      "text": "It feels like if you've seen these surveys, AI is less popular than ICE, people are trying to stop data centers from being built."
+    },
+    {
+      "start": 2906.8,
+      "end": 2912.7,
+      "text": "I think Eric Schmidt just did a commencement speech and people were booing him every time he mentioned AI."
+    },
+    {
+      "start": 2912.7,
+      "end": 2915.5,
+      "text": "Just like, \"What do you think is going on?"
+    },
+    {
+      "start": 2915.5,
+      "end": 2918.0,
+      "text": "Where do you think this goes over time?\""
+    },
+    {
+      "start": 2918.0,
+      "end": 2919.0,
+      "text": "It's interesting."
+    },
+    {
+      "start": 2919.0,
+      "end": 2924.1,
+      "text": "And it's a big sort of fuzzy mass of different stuff, I think."
+    },
+    {
+      "start": 2924.1,
+      "end": 2934.7,
+      "text": "There is tangible, like my electricity bill went up, which applies actually in a very small number of places, objectively, but it did, and this is a question."
+    },
+    {
+      "start": 2934.7,
+      "end": 2938.6,
+      "text": "The water thing is weird because it's just completely fake."
+    },
+    {
+      "start": 2938.6,
+      "end": 2941.7,
+      "text": "And I should explain what I mean here."
+    },
+    {
+      "start": 2941.7,
+      "end": 2944.1,
+      "text": "Data centers use water for cooling."
+    },
+    {
+      "start": 2944.1,
+      "end": 2953.0,
+      "text": "It's mostly closed loop, but the number of data centers relative to the total amount of water use in the USA is tiny."
+    },
+    {
+      "start": 2953.0,
+      "end": 2961.6,
+      "text": "I actually went and dug into this that the Livermore lab did a study at the end of 2024 where they estimated US data center water consumption."
+    },
+    {
+      "start": 2961.6,
+      "end": 2965.0,
+      "text": "And it came out at about 0.017% of US water consumption."
+    },
+    {
+      "start": 2965.0,
+      "end": 2975.5,
+      "text": "Now, obviously if you live in a small town and you've got one well and they capped the well and gave all the water to the data center, then you're really pissed off."
+    },
+    {
+      "start": 2975.5,
+      "end": 2977.1,
+      "text": "But that's a planning problem."
+    },
+    {
+      "start": 2977.1,
+      "end": 2979.0,
+      "text": "That's not a data center problem."
+    },
+    {
+      "start": 2979.0,
+      "end": 2988.8,
+      "text": "In generality, yes, this is data centers of what, like 5% of US energy, and might grow at 1% a year for the next five years, one percentage point a year,"
+    },
+    {
+      "start": 2988.8,
+      "end": 2991.0,
+      "text": "but the water stuff is just nonsense."
+    },
+    {
+      "start": 2991.0,
+      "end": 2995.2,
+      "text": "And then you get into more tangible like, well, what is happening with this?"
+    },
+    {
+      "start": 2995.2,
+      "end": 2996.8,
+      "text": "Is it taking jobs away?"
+    },
+    {
+      "start": 2996.8,
+      "end": 3004.4,
+      "text": "Where you can watch a bunch of three-hour podcasts of economists talking to each other and the main answer is we really don't know yet."
+    },
+    {
+      "start": 3004.4,
+      "end": 3010.4,
+      "text": "There's a bunch of charts that kind of say yes and a bunch of charts that kind of say no."
+    },
+    {
+      "start": 3010.4,
+      "end": 3018.9,
+      "text": "And clearly there's a slowdown in employment of 18 to 24 year olds, but that seems to be the same for people who do and don't have degrees,"
+    },
+    {
+      "start": 3018.9,
+      "end": 3025.0,
+      "text": "and the same for people in fields that look exposed to AI and feels that they look exposed to AI."
+    },
+    {
+      "start": 3025.0,
+      "end": 3027.6,
+      "text": "So there's a lot of econometric argument about this."
+    },
+    {
+      "start": 3027.6,
+      "end": 3036.1,
+      "text": "And I mean, there's a broader point here, in fact, which is a different point here, that we have very little data on what's going on in AI, from anyone."
+    },
+    {
+      "start": 3036.1,
+      "end": 3038.1,
+      "text": "The model labs don't tell us anything."
+    },
+    {
+      "start": 3038.1,
+      "end": 3040.5,
+      "text": "They don't give us any meaningful usage information."
+    },
+    {
+      "start": 3040.5,
+      "end": 3045.5,
+      "text": "They give us these weird studies of people, how many people use this for this and that."
+    },
+    {
+      "start": 3045.5,
+      "end": 3048.1,
+      "text": "They don't give us a daily active use number."
+    },
+    {
+      "start": 3048.1,
+      "end": 3051.9,
+      "text": "We do not have a daily active user number for us for ChatGPT."
+    },
+    {
+      "start": 3051.9,
+      "end": 3052.9,
+      "text": "It's crazy."
+    },
+    {
+      "start": 3052.9,
+      "end": 3055.8,
+      "text": "This segment is brought to you by Asana."
+    },
+    {
+      "start": 3055.8,
+      "end": 3064.4,
+      "text": "If you have been wondering how to get a real handle on what without adding more work to your week, Asana is the answer."
+    },
+    {
+      "start": 3064.4,
+      "end": 3072.3,
+      "text": "Lenny has been using it, and it is the reason the prep for this episode took an afternoon instead of a week."
+    },
+    {
+      "start": 3072.3,
+      "end": 3077.7,
+      "text": "Go to asana.com/lenny and enter code ASANAPOD at checkout to get your first month free."
+    },
+    {
+      "start": 3077.7,
+      "end": 3080.6,
+      "text": "That is asana.com/lenny. Alright, back to the show."
+    },
+    {
+      "start": 3080.6,
+      "end": 3085.3,
+      "text": "And all the data comes from academic economists trying to back stuff out of BLS surveys."
+    },
+    {
+      "start": 3085.3,
+      "end": 3092.7,
+      "text": "Or consultancies and marketing agencies like spending a whole bunch of money to survey 20,000 people and saying, \"What are you doing with this stuff?\""
+    },
+    {
+      "start": 3092.7,
+      "end": 3097.8,
+      "text": "We don't have good data on what's going on and how many people are really using this, but to the employment question,"
+    },
+    {
+      "start": 3097.8,
+      "end": 3104.1,
+      "text": "hence there's a lot of people looking through all the stuff that the US census collects and trying to work out, \"Well, where can we see this?"
+    },
+    {
+      "start": 3104.1,
+      "end": 3105.1,
+      "text": "Can we see productivity?"
+    },
+    {
+      "start": 3105.1,
+      "end": 3112.1,
+      "text": "What could we see?\" And the answer right now I think is there's no clear consensus that we're seeing an impact on jobs, but of course, politically that doesn't matter."
+    },
+    {
+      "start": 3112.1,
+      "end": 3119.7,
+      "text": "If you're a student and you can't get a job, and that clearly is an issue, whether it's because of AI or whether it's because of Trump and tariffs is a different question."
+    },
+    {
+      "start": 3119.7,
+      "end": 3133.7,
+      "text": "Then you get niche things like people who draw book covers for young adult romance novels are very upset that now you can get a picture of a naked woman on back of a dragon flying through a volcano without paying them."
+    },
+    {
+      "start": 3133.7,
+      "end": 3137.0,
+      "text": "I'm sorry, I'm being deliberately unkind, but there's a little..."
+    },
+    {
+      "start": 3137.0,
+      "end": 3143.4,
+      "text": "And particularly novelists, people who write eBooks, there's a huge culture war over whether it's okay to use AI."
+    },
+    {
+      "start": 3143.4,
+      "end": 3151.7,
+      "text": "There's this whole sort of AI slop question, and obviously you show the number that like 30, 40% of your podcasts are generated by AI."
+    },
+    {
+      "start": 3151.7,
+      "end": 3153.7,
+      "text": "There's a big fuzzy massive questions."
+    },
+    {
+      "start": 3153.7,
+      "end": 3159.9,
+      "text": "Some of this, I think it's a little bit like the backlash we had around social, but much more compressed."
+    },
+    {
+      "start": 3159.9,
+      "end": 3167.2,
+      "text": "And like social, some of the backlash around social was true, and some of it was sort of true, and some of it wasn't."
+    },
+    {
+      "start": 3167.2,
+      "end": 3177.1,
+      "text": "Always like exemplified in the whole Facebook sells your data thing, which is just, A, not true, and B, the people who believe it are absolutely adamant that of course it's true,"
+    },
+    {
+      "start": 3177.1,
+      "end": 3179.5,
+      "text": "and you're obviously a lunatic for suggesting otherwise."
+    },
+    {
+      "start": 3179.5,
+      "end": 3185.7,
+      "text": "It's like the line from Jonathan Swift that you can't reason somebody out of an idea that went reasonably to."
+    },
+    {
+      "start": 3185.7,
+      "end": 3193.8,
+      "text": "So you get this kind of wide, it was a long answer question, but you've got this wide spread of ideas just as you kind of did with social."
+    },
+    {
+      "start": 3193.8,
+      "end": 3199.2,
+      "text": "There's like 20 different things, some of which are really real, and some of which are really not real."
+    },
+    {
+      "start": 3199.2,
+      "end": 3203.1,
+      "text": "And a lot of which are kind of a fuzzy mess in the middle."
+    },
+    {
+      "start": 3203.1,
+      "end": 3211.8,
+      "text": "All of which means that meanwhile, you've got Trump saying he wants a new executive order on dangerous models, which I actually don't think is the thing that drives the backlash."
+    },
+    {
+      "start": 3211.8,
+      "end": 3219.7,
+      "text": "The worrying about myth or cyber, I don't feel like that's a main street America conversation, but that's the thing that got Trump interested in this stuff again."
+    },
+    {
+      "start": 3219.7,
+      "end": 3222.0,
+      "text": "Let me go kind of in a tangential direction."
+    },
+    {
+      "start": 3222.0,
+      "end": 3229.0,
+      "text": "Something that I like to ask folks that have kids that come on the podcast, especially people that are thinking so deeply about where things are going,"
+    },
+    {
+      "start": 3229.0,
+      "end": 3236.8,
+      "text": "knowing what you know about just where the world is heading, what AI is going to do to the future, how are you changing the way you raise your kids?"
+    },
+    {
+      "start": 3236.8,
+      "end": 3240.7,
+      "text": "Just what are you teaching them differently potentially that might help them in the future?"
+    },
+    {
+      "start": 3240.7,
+      "end": 3241.7,
+      "text": "I don't know."
+    },
+    {
+      "start": 3241.7,
+      "end": 3249.1,
+      "text": "I think there's a curve here in that if you've got kids who are going onto the job market in the next year or two,"
+    },
+    {
+      "start": 3249.1,
+      "end": 3254.3,
+      "text": "then everything is up in the air and no one knows how this is going to work."
+    },
+    {
+      "start": 3254.3,
+      "end": 3259.8,
+      "text": "If you've got kids who are going onto the job market in like five years, then who knows?"
+    },
+    {
+      "start": 3259.8,
+      "end": 3264.1,
+      "text": "But staff will have settled down a lot by then in probably unpredictable ways."
+    },
+    {
+      "start": 3264.1,
+      "end": 3268.0,
+      "text": "So, I could be a lot more worried if I had a 21-year-old."
+    },
+    {
+      "start": 3268.0,
+      "end": 3271.7,
+      "text": "I don't, I've got a kid in his sort of early teens."
+    },
+    {
+      "start": 3271.7,
+      "end": 3272.7,
+      "text": "Those questions vary."
+    },
+    {
+      "start": 3272.7,
+      "end": 3281.9,
+      "text": "Then you've got a lot of the questions that were the same before ChatGPT around the collapse of gatekeepers,"
+    },
+    {
+      "start": 3281.9,
+      "end": 3297.3,
+      "text": "\"Should you really believe what that influence on TikTok says?\" \"And where exactly you're getting your understanding of what's going on in Israel?\" And all of those kinds of social media, internety,"
+    },
+    {
+      "start": 3297.3,
+      "end": 3299.7,
+      "text": "media consumption kinds of questions."
+    },
+    {
+      "start": 3299.7,
+      "end": 3300.8,
+      "text": "I don't know."
+    },
+    {
+      "start": 3300.8,
+      "end": 3306.4,
+      "text": "There are people who are super, super intentional about every minute of their child's life."
+    },
+    {
+      "start": 3306.4,
+      "end": 3307.4,
+      "text": "I'm not."
+    },
+    {
+      "start": 3307.4,
+      "end": 3319.4,
+      "text": "I kind of recall the George Carlin line that anyone who drives faster than you is a maniac and anyone who drives slower is an idiot, and that certainly applies to parenting."
+    },
+    {
+      "start": 3319.4,
+      "end": 3331.5,
+      "text": "And everybody thinks they're somewhere in the middle, but I don't have a deeply systematic and widespread and coherent plan for, \"This is what my child is going to be doing in three,"
+    },
+    {
+      "start": 3331.5,
+      "end": 3336.7,
+      "text": "six, 12, 18 months time.\" I'd settle for him not breaking his Chromebook again."
+    },
+    {
+      "start": 3336.7,
+      "end": 3341.1,
+      "text": "I like that you're just general vibe is, \"It's going to be okay, guys."
+    },
+    {
+      "start": 3341.1,
+      "end": 3342.7,
+      "text": "It's going to be okay.\""
+    },
+    {
+      "start": 3342.7,
+      "end": 3343.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 3343.7,
+      "end": 3354.2,
+      "text": "I don't know, maybe this is because I'm British and we haven't had political violence in 500 years, and I think maybe if I came from Iran,"
+    },
+    {
+      "start": 3354.2,
+      "end": 3358.4,
+      "text": "I'd have a different attitude to being calm about the future."
+    },
+    {
+      "start": 3358.4,
+      "end": 3370.2,
+      "text": "I think there's a layer of like, yes, this will change a bunch of stuff and we'll need to worry about it, but that's kind of a constant, we've always had that."
+    },
+    {
+      "start": 3370.2,
+      "end": 3380.7,
+      "text": "I remember in the whole wave of panic around social media, I dug up, so were a whole bunch of books in the late '70s about databases."
+    },
+    {
+      "start": 3380.7,
+      "end": 3383.4,
+      "text": "There was a whole panic about databases."
+    },
+    {
+      "start": 3383.4,
+      "end": 3386.1,
+      "text": "And again, half of it was true."
+    },
+    {
+      "start": 3386.1,
+      "end": 3393.1,
+      "text": "If everybody's police records, and if all police records and all government records are online, then that's different."
+    },
+    {
+      "start": 3393.1,
+      "end": 3405.5,
+      "text": "If you think about, for example, the deep fake needs issue, for example, there's like a dumb reaction to this, which is to say, \"Haven't you heard of Photoshop?\" Which is true,"
+    },
+    {
+      "start": 3405.5,
+      "end": 3416.7,
+      "text": "but a 15-year-old kid couldn't use Photoshop to make hardcore pornographic news of every girl in their high school and send them to the whole school in one afternoon."
+    },
+    {
+      "start": 3416.7,
+      "end": 3417.7,
+      "text": "And tournament the video."
+    },
+    {
+      "start": 3417.7,
+      "end": 3418.7,
+      "text": "Exactly."
+    },
+    {
+      "start": 3418.7,
+      "end": 3419.7,
+      "text": "Even more."
+    },
+    {
+      "start": 3419.7,
+      "end": 3420.7,
+      "text": "Yeah, even more."
+    },
+    {
+      "start": 3420.7,
+      "end": 3421.7,
+      "text": "And now they can."
+    },
+    {
+      "start": 3421.7,
+      "end": 3422.7,
+      "text": "So, that is different."
+    },
+    {
+      "start": 3422.7,
+      "end": 3424.7,
+      "text": "It's kind of like the challenge of social."
+    },
+    {
+      "start": 3424.7,
+      "end": 3427.5,
+      "text": "The thing people would say in the '90s is it's great."
+    },
+    {
+      "start": 3427.5,
+      "end": 3433.2,
+      "text": "You can read the only gay kid in your village, and you can find other gay people, and you can find your tribe."
+    },
+    {
+      "start": 3433.2,
+      "end": 3434.2,
+      "text": "And guess what?"
+    },
+    {
+      "start": 3434.2,
+      "end": 3439.5,
+      "text": "It turned out you could also be the only Nazi in your village, or the only pedophile in your village, or somebody wanted to look at child porn."
+    },
+    {
+      "start": 3439.5,
+      "end": 3444.5,
+      "text": "Yeah, now you can find the other people who like looking at child porn and they'll tell you it's great."
+    },
+    {
+      "start": 3444.5,
+      "end": 3445.7,
+      "text": "So oops, we connected everybody."
+    },
+    {
+      "start": 3445.7,
+      "end": 3451.2,
+      "text": "And unfortunately, that meant we connected all the bad people, and all of our own worst instincts, and every problem in society."
+    },
+    {
+      "start": 3451.2,
+      "end": 3453.2,
+      "text": "And so that will happen again with AI."
+    },
+    {
+      "start": 3453.2,
+      "end": 3456.2,
+      "text": "Deep fake news are like the obvious thing we can see now."
+    },
+    {
+      "start": 3456.2,
+      "end": 3458.7,
+      "text": "There will be a whole bunch more of this stuff."
+    },
+    {
+      "start": 3458.7,
+      "end": 3464.7,
+      "text": "But there's also, and something a kind of technical audience should know about, do you know about the post office scandal in the UK?"
+    },
+    {
+      "start": 3464.7,
+      "end": 3465.7,
+      "text": "Okay."
+    },
+    {
+      "start": 3465.7,
+      "end": 3466.7,
+      "text": "So sidebar here."
+    },
+    {
+      "start": 3466.7,
+      "end": 3471.1,
+      "text": "So in the UK, post offices are mostly franchises run by small business people."
+    },
+    {
+      "start": 3471.1,
+      "end": 3475.8,
+      "text": "So they're run by pharmacies classically, very often Indian, Indian immigrants, second generation Indian people."
+    },
+    {
+      "start": 3475.8,
+      "end": 3480.9,
+      "text": "And the post office 15 years ago rolled out a new point to sell computer system."
+    },
+    {
+      "start": 3480.9,
+      "end": 3484.9,
+      "text": "So they have a separate counter in the back that's a post office."
+    },
+    {
+      "start": 3484.9,
+      "end": 3494.1,
+      "text": "And so the post office rolled out this new computer system built by them by Fujitsu that had a bunch of bugs in it that showed shortfalls in cash."
+    },
+    {
+      "start": 3494.1,
+      "end": 3503.7,
+      "text": "And the post office looks at this and says, \"Aha, we knew these people were stealing from us.\" Hundreds of people get prison, bunch of suicides, bunch of bankruptcies, people lose their homes."
+    },
+    {
+      "start": 3503.7,
+      "end": 3512.3,
+      "text": "Meanwhile, people from the post office and people from Fujitsu are going to court and swearing there's no bugs in the system and nobody else has had this problem."
+    },
+    {
+      "start": 3512.3,
+      "end": 3513.5,
+      "text": "This is 1970s technology."
+    },
+    {
+      "start": 3513.5,
+      "end": 3520.3,
+      "text": "That's really the point, that every wave of technology comes with ways that you can ruin people's lives either deliberately or by accident."
+    },
+    {
+      "start": 3520.3,
+      "end": 3523.0,
+      "text": "The whole thing of Chinese mass surveillance is deliberate."
+    },
+    {
+      "start": 3523.0,
+      "end": 3527.4,
+      "text": "Maybe people should go to prison, maybe not, but we have this with every technology."
+    },
+    {
+      "start": 3527.4,
+      "end": 3535.7,
+      "text": "We have a bunch of ways that you can ruin people's lives, and you have to be conscious of that and also kind of not panic about it."
+    },
+    {
+      "start": 3535.7,
+      "end": 3542.9,
+      "text": "So maybe following that the right and coming back to the kids thing and the jobs thing, is there a job you are steering your kid away from?"
+    },
+    {
+      "start": 3542.9,
+      "end": 3546.7,
+      "text": "And is there a job you kind of think you want to steer them towards?"
+    },
+    {
+      "start": 3546.7,
+      "end": 3548.2,
+      "text": "I don't know about that."
+    },
+    {
+      "start": 3548.2,
+      "end": 3550.4,
+      "text": "It's probably a little bit early yet."
+    },
+    {
+      "start": 3550.4,
+      "end": 3554.7,
+      "text": "He's not quite at the like, \"I want to be a fireman stage,\" but..."
+    },
+    {
+      "start": 3554.7,
+      "end": 3556.7,
+      "text": "That might be a great job."
+    },
+    {
+      "start": 3556.7,
+      "end": 3557.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 3557.7,
+      "end": 3563.6,
+      "text": "And certainly if I look at my career, I started as an equity analyst, and then I went and worked in an industry, and then I was a consultant."
+    },
+    {
+      "start": 3563.6,
+      "end": 3570.4,
+      "text": "The days when you kind of knew what your career was going to be over, there were sickly some people were like, you want to be an architect,"
+    },
+    {
+      "start": 3570.4,
+      "end": 3573.8,
+      "text": "you want to be a software engineer, you want to be X or Y."
+    },
+    {
+      "start": 3573.8,
+      "end": 3574.8,
+      "text": "I don't know."
+    },
+    {
+      "start": 3574.8,
+      "end": 3580.5,
+      "text": "I think the only kind of thinking I have here is that you slowly work out, there's a bunch of skills that you have,"
+    },
+    {
+      "start": 3580.5,
+      "end": 3586.3,
+      "text": "and there's a bunch of jobs that makes you good at, and then there's a bunch of stuff that people will pay you for."
+    },
+    {
+      "start": 3586.3,
+      "end": 3589.7,
+      "text": "And you want to get at least two of those, and preferably all three."
+    },
+    {
+      "start": 3589.7,
+      "end": 3590.7,
+      "text": "Okay."
+    },
+    {
+      "start": 3590.7,
+      "end": 3594.9,
+      "text": "So zooming out a little bit, let me ask you a Meta question."
+    },
+    {
+      "start": 3594.9,
+      "end": 3601.7,
+      "text": "What's a question about AI that you think nobody's asking yet, or not enough people are asking that we should be asking ourselves?"
+    },
+    {
+      "start": 3601.7,
+      "end": 3602.7,
+      "text": "Sure."
+    },
+    {
+      "start": 3602.7,
+      "end": 3604.7,
+      "text": "I mean, we talked about value capture."
+    },
+    {
+      "start": 3604.7,
+      "end": 3610.4,
+      "text": "Obviously this is a whole, everyone is asking like, I'm not sure how many people are asking whether model labs have pricing power."
+    },
+    {
+      "start": 3610.4,
+      "end": 3616.3,
+      "text": "I think a lot of people are just presuming that the situation today will continue, or that of course they will."
+    },
+    {
+      "start": 3616.3,
+      "end": 3619.7,
+      "text": "So I think that's maybe a question that not enough people ask."
+    },
+    {
+      "start": 3619.7,
+      "end": 3626.1,
+      "text": "I think the question I pose towards the end of my presentation, which we talked about earlier, is like, what's the task and what's job?"
+    },
+    {
+      "start": 3626.1,
+      "end": 3631.5,
+      "text": "Or what is just the thing that becomes a button or make SKU versus what are people actually hiring you for?"
+    },
+    {
+      "start": 3631.5,
+      "end": 3634.3,
+      "text": "Is that kind of a useful way of thinking about this?"
+    },
+    {
+      "start": 3634.3,
+      "end": 3639.9,
+      "text": "And clearly there are going to be some jobs where no, that is just a task, and that job gets automated away."
+    },
+    {
+      "start": 3639.9,
+      "end": 3642.7,
+      "text": "But there's a bunch where that kind of isn't the question."
+    },
+    {
+      "start": 3642.7,
+      "end": 3648.8,
+      "text": "The way I actually pulled that together at the end of the deck was a chart of a global recorded music revenue,"
+    },
+    {
+      "start": 3648.8,
+      "end": 3652.7,
+      "text": "which as you may know is kind of a U-shaped curve more or less."
+    },
+    {
+      "start": 3652.7,
+      "end": 3660.6,
+      "text": "And so it's dropped by about half from 2000 to 2015 or so, and since then has come back to about 75% of the peak, adjusted for inflation."
+    },
+    {
+      "start": 3660.6,
+      "end": 3665.0,
+      "text": "And the way that I look at this is to say, and that's driven by streaming."
+    },
+    {
+      "start": 3665.0,
+      "end": 3670.0,
+      "text": "And I kind of looked at this and said, well, the first half of this chart is saying,"
+    },
+    {
+      "start": 3670.0,
+      "end": 3674.8,
+      "text": "what happens if I don't have to pay $15 to get a CD to get that track?"
+    },
+    {
+      "start": 3674.8,
+      "end": 3681.2,
+      "text": "And the second half of the chart is saying, what happens if $15 a month gets you all the music that there is?"
+    },
+    {
+      "start": 3681.2,
+      "end": 3684.0,
+      "text": "So it's kind of a completely different sort of question."
+    },
+    {
+      "start": 3684.0,
+      "end": 3690.7,
+      "text": "And that's a way that you could look at Google, or the way you could look at Airbnb or all these kinds of companies."
+    },
+    {
+      "start": 3690.7,
+      "end": 3699.6,
+      "text": "Is it to begin with you do the old thing but more whether you need technology, you do the old thing, but more of it on the new place."
+    },
+    {
+      "start": 3699.6,
+      "end": 3706.6,
+      "text": "So you put Flickable mobile, you print out Googles, and then you make new things that are only possible with a new thing."
+    },
+    {
+      "start": 3706.6,
+      "end": 3714.2,
+      "text": "And then maybe you go a bit further and you kind of completely redefine the question and you make something that isn't that at all."
+    },
+    {
+      "start": 3714.2,
+      "end": 3716.4,
+      "text": "Spotify is not an online music store."
+    },
+    {
+      "start": 3716.4,
+      "end": 3717.4,
+      "text": "It's something else."
+    },
+    {
+      "start": 3717.4,
+      "end": 3718.9,
+      "text": "And right now, those questions,"
+    },
+    {
+      "start": 3718.9,
+      "end": 3728.9,
+      "text": "you only even know what the question is after it's been asked and you've built a billion dollar thing that lots of people use because obviously Spotify look crazy, and people look crazy,"
+    },
+    {
+      "start": 3728.9,
+      "end": 3730.1,
+      "text": "and Airbnb look crazy."
+    },
+    {
+      "start": 3730.1,
+      "end": 3737.8,
+      "text": "But that's, I think, the way to get at what this means, is you have to get past, we do the old stuff but more,"
+    },
+    {
+      "start": 3737.8,
+      "end": 3742.7,
+      "text": "and you have to get to what do you do that's different that's because of this."
+    },
+    {
+      "start": 3742.7,
+      "end": 3743.9,
+      "text": "What has this change?"
+    },
+    {
+      "start": 3743.9,
+      "end": 3745.1,
+      "text": "What wasn't possible before?"
+    },
+    {
+      "start": 3745.1,
+      "end": 3749.7,
+      "text": "What gets unlocked as opposed to just doing the old thing but more of it?"
+    },
+    {
+      "start": 3749.7,
+      "end": 3750.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 3750.7,
+      "end": 3758.9,
+      "text": "Just to support this kind of general theme you have of it's like we don't know what is going to happen, this is unprecedented, if you're to zoom out a few years ago,"
+    },
+    {
+      "start": 3758.9,
+      "end": 3764.1,
+      "text": "maybe three years ago, four years ago, the last profession you think would be automated is engineering and coding."
+    },
+    {
+      "start": 3764.1,
+      "end": 3769.2,
+      "text": "It's like, that feels like the hardest thing that's like, we're going to need people to build these things."
+    },
+    {
+      "start": 3769.2,
+      "end": 3771.9,
+      "text": "Now it's like the most transformed role of any role."
+    },
+    {
+      "start": 3771.9,
+      "end": 3775.7,
+      "text": "You went from writing all your codes to 0% of your code is AI."
+    },
+    {
+      "start": 3775.7,
+      "end": 3780.2,
+      "text": "It's almost like you didn't realize it was boring manual labor that could be automated."
+    },
+    {
+      "start": 3780.2,
+      "end": 3782.1,
+      "text": "You thought it was something else."
+    },
+    {
+      "start": 3782.1,
+      "end": 3783.1,
+      "text": "It's funny."
+    },
+    {
+      "start": 3783.1,
+      "end": 3790.3,
+      "text": "I mean, I was looking at this, this whole, there's this sort of US government called data set called ONET or something like that,"
+    },
+    {
+      "start": 3790.3,
+      "end": 3799.6,
+      "text": "which tries to analyze every single job and then people try and kind of score it, and they try and say, \"Well, this profession is X or Y percent exposed to AI,"
+    },
+    {
+      "start": 3799.6,
+      "end": 3806.0,
+      "text": "and AI can do Z percent of it today.\" I think this is just the most ridiculous bunch of diluted horseshit."
+    },
+    {
+      "start": 3806.0,
+      "end": 3807.8,
+      "text": "And there's two reasons for this."
+    },
+    {
+      "start": 3807.8,
+      "end": 3813.2,
+      "text": "The first reason is that this is, ironically, this is the logical systems problem, the expert system's problem."
+    },
+    {
+      "start": 3813.2,
+      "end": 3821.7,
+      "text": "The problem with expert systems is, for anyone who doesn't know, you try to recognize a picture of a cat and so you start building up logical steps."
+    },
+    {
+      "start": 3821.7,
+      "end": 3829.1,
+      "text": "So you make an edge detector, and then you make a third detector, and you make an eye detector and you make an ear detector,"
+    },
+    {
+      "start": 3829.1,
+      "end": 3832.7,
+      "text": "and 15 years later you've got 700 steps and it doesn't work."
+    },
+    {
+      "start": 3832.7,
+      "end": 3840.2,
+      "text": "And this is what happens when you try and look at a profession and sort of break it down by which bits can be automated and which can't."
+    },
+    {
+      "start": 3840.2,
+      "end": 3842.1,
+      "text": "You can't describe a profession like that."
+    },
+    {
+      "start": 3842.1,
+      "end": 3843.2,
+      "text": "But anyway, we can't."
+    },
+    {
+      "start": 3843.2,
+      "end": 3849.6,
+      "text": "You can't look at a senior partner at a law firm and say, \"Well, 17% of their work could be automated.\" This is horseshit."
+    },
+    {
+      "start": 3849.6,
+      "end": 3850.7,
+      "text": "You can't do that."
+    },
+    {
+      "start": 3850.7,
+      "end": 3855.6,
+      "text": "I think the other side of the fallacy though is to talk about taxi drivers."
+    },
+    {
+      "start": 3855.6,
+      "end": 3860.1,
+      "text": "So, if we'd been having this conversation in 1997, it's like the Uber test."
+    },
+    {
+      "start": 3860.1,
+      "end": 3863.7,
+      "text": "Imagine we're in 1997, what will be crushed by the internet?"
+    },
+    {
+      "start": 3863.7,
+      "end": 3867.9,
+      "text": "Well, newspapers will be fine because they'll save money on the printing bills."
+    },
+    {
+      "start": 3867.9,
+      "end": 3870.8,
+      "text": "This is like a jake, but people said that."
+    },
+    {
+      "start": 3870.8,
+      "end": 3873.4,
+      "text": "Newspaper, the internet will be great for newspapers."
+    },
+    {
+      "start": 3873.4,
+      "end": 3875.3,
+      "text": "Their printing bills will get down."
+    },
+    {
+      "start": 3875.3,
+      "end": 3876.6,
+      "text": "Well, yes, but no."
+    },
+    {
+      "start": 3876.6,
+      "end": 3882.2,
+      "text": "But the other side is, well, obviously our taxi drivers, you couldn't automate that with the internet."
+    },
+    {
+      "start": 3882.2,
+      "end": 3884.8,
+      "text": "It's got nothing to do with the internet."
+    },
+    {
+      "start": 3884.8,
+      "end": 3889.3,
+      "text": "Maybe you'd have internet booking, but like, no, that's not going to change anything."
+    },
+    {
+      "start": 3889.3,
+      "end": 3892.2,
+      "text": "And of course, it completely changes the whole thing."
+    },
+    {
+      "start": 3892.2,
+      "end": 3897.7,
+      "text": "And so the example I saw the other day was things that won't be affected by AI personal trainers."
+    },
+    {
+      "start": 3897.7,
+      "end": 3898.7,
+      "text": "Okay."
+    },
+    {
+      "start": 3898.7,
+      "end": 3903.9,
+      "text": "I take my iPhone and I balance it on the metal piece with the camera pointed at me,"
+    },
+    {
+      "start": 3903.9,
+      "end": 3910.2,
+      "text": "and I ask an AI to build me a training routine and watch me and tell me if I'm doing it right."
+    },
+    {
+      "start": 3910.2,
+      "end": 3912.2,
+      "text": "Why do I need a personal trainer?"
+    },
+    {
+      "start": 3912.2,
+      "end": 3915.6,
+      "text": "Now, that might be complete nonsense, but that's how these things work."
+    },
+    {
+      "start": 3915.6,
+      "end": 3920.8,
+      "text": "The stuff that you don't think is, you can't predict which things are going to be exposed necessarily."
+    },
+    {
+      "start": 3920.8,
+      "end": 3927.4,
+      "text": "Or a lot of the big companies are things that didn't look like that would work and didn't look like I was exposed."
+    },
+    {
+      "start": 3927.4,
+      "end": 3934.5,
+      "text": "The other side of this, of course, is this is one of the charts at the end of my presentation is comparing Uber and Airbnb,"
+    },
+    {
+      "start": 3934.5,
+      "end": 3941.1,
+      "text": "because this is like the cliche from Mark Andreessen that Uber doesn't sell software to taxi companies, Airbnb doesn't sell software to hotels."
+    },
+    {
+      "start": 3941.1,
+      "end": 3944.0,
+      "text": "Okay, now let's go and look at the market impact."
+    },
+    {
+      "start": 3944.0,
+      "end": 3949.1,
+      "text": "Well, a whole bunch of cities were Uber demolished taxi business, and made it much bigger as well."
+    },
+    {
+      "start": 3949.1,
+      "end": 3951.4,
+      "text": "The TAM became much bigger and everyone switched."
+    },
+    {
+      "start": 3951.4,
+      "end": 3955.7,
+      "text": "Airbnb's impact hotels, if you actually go and look at the numbers, it's pretty marginal."
+    },
+    {
+      "start": 3955.7,
+      "end": 3963.2,
+      "text": "They carved out this whole other business, and maybe they slowed down the growth of hotels a bit, but my wife flies to Milwaukee next week."
+    },
+    {
+      "start": 3963.2,
+      "end": 3965.8,
+      "text": "She's going to land at eight o'clock at night."
+    },
+    {
+      "start": 3965.8,
+      "end": 3975.2,
+      "text": "She wants to go to a hotel, she wants to have a room service, she needs a bath, she needs a gym at 6:00 in the morning, and then 7:00 in the morning,"
+    },
+    {
+      "start": 3975.2,
+      "end": 3977.5,
+      "text": "she's going to drive to the client's site."
+    },
+    {
+      "start": 3977.5,
+      "end": 3979.5,
+      "text": "She's not going to stay in Airbnb."
+    },
+    {
+      "start": 3979.5,
+      "end": 3982.4,
+      "text": "Absolutely zero chance she's going to stay in an Airbnb."
+    },
+    {
+      "start": 3982.4,
+      "end": 3985.0,
+      "text": "And half of the hotel business is business travel."
+    },
+    {
+      "start": 3985.0,
+      "end": 3988.7,
+      "text": "And as soon as you actually get into anything, then it gets complicated."
+    },
+    {
+      "start": 3988.7,
+      "end": 3996.4,
+      "text": "I remember somebody on social media said the problem with Benedict is his answer to everything is it depends."
+    },
+    {
+      "start": 3996.4,
+      "end": 3998.4,
+      "text": "It's like, yeah, it does."
+    },
+    {
+      "start": 3998.4,
+      "end": 3999.4,
+      "text": "It depends."
+    },
+    {
+      "start": 3999.4,
+      "end": 4002.3,
+      "text": "So, it's back to my 1997 point."
+    },
+    {
+      "start": 4002.3,
+      "end": 4007.7,
+      "text": "You can say some of this, but you have to have that humility."
+    },
+    {
+      "start": 4007.7,
+      "end": 4012.8,
+      "text": "Coming back to this phrase you use, presume radical uncertainty is a nice core thesis here."
+    },
+    {
+      "start": 4012.8,
+      "end": 4015.7,
+      "text": "So knowing all this, just it's hard to tell."
+    },
+    {
+      "start": 4015.7,
+      "end": 4018.0,
+      "text": "We don't know exactly where it's going."
+    },
+    {
+      "start": 4018.0,
+      "end": 4022.2,
+      "text": "Things are going to change a lot, but it'll probably be okay broadly."
+    },
+    {
+      "start": 4022.2,
+      "end": 4028.9,
+      "text": "Just a lot of people listening are pretty worried about their jobs and their careers, and how much the world changes."
+    },
+    {
+      "start": 4028.9,
+      "end": 4035.7,
+      "text": "What would be a couple things you recommend people do knowing what you know to be more successful in this future?"
+    },
+    {
+      "start": 4035.7,
+      "end": 4039.5,
+      "text": "Well, I should just wind back on what you just said."
+    },
+    {
+      "start": 4039.5,
+      "end": 4044.0,
+      "text": "It's like, as Kim tells us, in the long run, we're all dead."
+    },
+    {
+      "start": 4044.0,
+      "end": 4047.1,
+      "text": "So on average, nobody died in World War I."
+    },
+    {
+      "start": 4047.1,
+      "end": 4048.1,
+      "text": "Great."
+    },
+    {
+      "start": 4048.1,
+      "end": 4054.3,
+      "text": "But if you're a 19-year-old in 1914, you've got a one in three chances of not coming back."
+    },
+    {
+      "start": 4054.3,
+      "end": 4065.0,
+      "text": "So yes, clearly there's a bunch of professions where this is a major question and particularly if you're an associate, or would've been thinking about being an associate, this is a major question."
+    },
+    {
+      "start": 4065.0,
+      "end": 4069.1,
+      "text": "And it's very unclear how those professions are going to play out."
+    },
+    {
+      "start": 4069.1,
+      "end": 4073.3,
+      "text": "It's very unclear what happens to the pyramid structure of professional services."
+    },
+    {
+      "start": 4073.3,
+      "end": 4079.5,
+      "text": "The only answer I think one can have is, don't stick your head in the sand and say,"
+    },
+    {
+      "start": 4079.5,
+      "end": 4085.0,
+      "text": "\"I hate all of this stuff,\" because that gives you a great feeling of moral superiority."
+    },
+    {
+      "start": 4085.0,
+      "end": 4091.9,
+      "text": "And you can go on Bluesky and shout at everybody, chat at each other about how evil AI is like."
+    },
+    {
+      "start": 4091.9,
+      "end": 4095.7,
+      "text": "Great, I'm happy for you, but that's not going to help."
+    },
+    {
+      "start": 4095.7,
+      "end": 4106.6,
+      "text": "What helps is you diving into this completely submerging yourself in it and coming at understanding what you can do with it, how this changes things, how you can be a great hire."
+    },
+    {
+      "start": 4106.6,
+      "end": 4108.6,
+      "text": "And that may still not help."
+    },
+    {
+      "start": 4108.6,
+      "end": 4117.9,
+      "text": "But if you're going to a law firm and they're like, well, we hired a hundred associates last year and this year we're only going to hire 50,"
+    },
+    {
+      "start": 4117.9,
+      "end": 4125.8,
+      "text": "go into the interview and say, \"Well, I think AI is and I'm never going to use it,\" is probably not the right mood."
+    },
+    {
+      "start": 4125.8,
+      "end": 4136.7,
+      "text": "So, that may not be particularly comforting, but I don't think there's an alternative, is you have to dive into this and absorb it, and internalize it and think about what it means,"
+    },
+    {
+      "start": 4136.7,
+      "end": 4140.7,
+      "text": "just as you and I did with mobile and with the internet."
+    },
+    {
+      "start": 4140.7,
+      "end": 4151.5,
+      "text": "I think that is actually very actionable and very consistent advice on the podcast, is just, do stuff, build it, don't just sit around and pontificate and be pissed at what's happening."
+    },
+    {
+      "start": 4151.5,
+      "end": 4157.6,
+      "text": "To close this out, I'm going to take us to AI Corner, a recurring corner of the podcast."
+    },
+    {
+      "start": 4157.6,
+      "end": 4168.7,
+      "text": "And the question to you is just, what's one way you've used AI and use AI in your work or life that is really interesting, something that other people might be inspired by?"
+    },
+    {
+      "start": 4168.7,
+      "end": 4169.7,
+      "text": "I don't know."
+    },
+    {
+      "start": 4169.7,
+      "end": 4173.6,
+      "text": "I struggle with this question, because I'm thought of the lawyer looking at ChatGPT."
+    },
+    {
+      "start": 4173.6,
+      "end": 4182.0,
+      "text": "So, the stuff that I would do that I would automate are sort of precise information retrieval task, which is precisely the thing that this is kind of worse at."
+    },
+    {
+      "start": 4182.0,
+      "end": 4184.5,
+      "text": "And that's not a criticism, it's just an observation."
+    },
+    {
+      "start": 4184.5,
+      "end": 4193.0,
+      "text": "The kind of stuff that I would want a machine to do for me is the stuff that AI I can't do for me very, very, very well at the moment."
+    },
+    {
+      "start": 4193.0,
+      "end": 4199.4,
+      "text": "I use it for proofreading, I use it for images, I used it redecorating my apartment, that worked fantastic, you're aware at that."
+    },
+    {
+      "start": 4199.4,
+      "end": 4204.1,
+      "text": "Here's a picture of this room, repaint it at this light and this table and this rug."
+    },
+    {
+      "start": 4204.1,
+      "end": 4205.8,
+      "text": "No change color of the rug."
+    },
+    {
+      "start": 4205.8,
+      "end": 4208.6,
+      "text": "There's a kind of class of stuff where it works."
+    },
+    {
+      "start": 4208.6,
+      "end": 4216.7,
+      "text": "But I mean, a couple of years ago, somebody said AI is good at stuff that computers are bad at and bad at stuff that computers are good at."
+    },
+    {
+      "start": 4216.7,
+      "end": 4221.4,
+      "text": "And I struggle to find many examples of those where I need it."
+    },
+    {
+      "start": 4221.4,
+      "end": 4224.7,
+      "text": "But then I'm kind of a unique, weird job."
+    },
+    {
+      "start": 4224.7,
+      "end": 4233.0,
+      "text": "I sit at my desk all day trying to synthesize a whole bunch of other stuff into a whole bunch of new ideas."
+    },
+    {
+      "start": 4233.0,
+      "end": 4237.0,
+      "text": "That's not particularly common way for people to spend their time."
+    },
+    {
+      "start": 4237.0,
+      "end": 4239.5,
+      "text": "I struggle to find AI use cases."
+    },
+    {
+      "start": 4239.5,
+      "end": 4250.7,
+      "text": "I am the accountant looking at the spreadsheet and thinking, \"Well, that's very clever, and this is clearly going to completely transform everything, but I actually don't make spreadsheets every day.\""
+    },
+    {
+      "start": 4250.7,
+      "end": 4255.0,
+      "text": "I went to a standup comedy show of Pete Holmes, I don't know if you know him."
+    },
+    {
+      "start": 4255.0,
+      "end": 4263.1,
+      "text": "And he made this joke that we want AI to clean the poop off the street and do all these hard things that nobody wants to do, but instead it's like, \"Oh,"
+    },
+    {
+      "start": 4263.1,
+      "end": 4264.4,
+      "text": "let me help you write."
+    },
+    {
+      "start": 4264.4,
+      "end": 4266.9,
+      "text": "Let me help you create imagery.\" It's like this bohemian."
+    },
+    {
+      "start": 4266.9,
+      "end": 4269.9,
+      "text": "It's like, \"No, I don't want to do all these ugly things."
+    },
+    {
+      "start": 4269.9,
+      "end": 4271.7,
+      "text": "I want to be creative, make art.\""
+    },
+    {
+      "start": 4271.7,
+      "end": 4272.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 4272.7,
+      "end": 4275.3,
+      "text": "Well, I mean, there's variations of all of this."
+    },
+    {
+      "start": 4275.3,
+      "end": 4279.6,
+      "text": "It's like I don't want the AI to do the stuff I do for fun."
+    },
+    {
+      "start": 4279.6,
+      "end": 4283.7,
+      "text": "I want it to do the boring stuff that I don't do for fun."
+    },
+    {
+      "start": 4283.7,
+      "end": 4284.8,
+      "text": "And finding that mesh."
+    },
+    {
+      "start": 4284.8,
+      "end": 4289.8,
+      "text": "I mean, joking apart, this is going to come back to my chatbot point, that the chatbot is a blank screen in a jagged edge."
+    },
+    {
+      "start": 4289.8,
+      "end": 4292.9,
+      "text": "And what am I supposed to do and what will work?"
+    },
+    {
+      "start": 4292.9,
+      "end": 4294.4,
+      "text": "And that's a big problem."
+    },
+    {
+      "start": 4294.4,
+      "end": 4298.1,
+      "text": "And the solution to that problem is to wrap it in use cases."
+    },
+    {
+      "start": 4298.1,
+      "end": 4300.7,
+      "text": "Part of it is also like AI just disappears."
+    },
+    {
+      "start": 4300.7,
+      "end": 4303.3,
+      "text": "So most of what I write now I dictate."
+    },
+    {
+      "start": 4303.3,
+      "end": 4305.9,
+      "text": "I dictate as a voicemail, and that's automatically transcribed."
+    },
+    {
+      "start": 4305.9,
+      "end": 4308.8,
+      "text": "Is that still AI or is that just voice recognition?"
+    },
+    {
+      "start": 4308.8,
+      "end": 4310.5,
+      "text": "There's probably an LLM in there."
+    },
+    {
+      "start": 4310.5,
+      "end": 4311.5,
+      "text": "Okay."
+    },
+    {
+      "start": 4311.5,
+      "end": 4312.7,
+      "text": "So maybe that's AI."
+    },
+    {
+      "start": 4312.7,
+      "end": 4313.7,
+      "text": "Well, okay."
+    },
+    {
+      "start": 4313.7,
+      "end": 4314.7,
+      "text": "So what?"
+    },
+    {
+      "start": 4314.7,
+      "end": 4316.7,
+      "text": "At a certain point, it's just automation."
+    },
+    {
+      "start": 4316.7,
+      "end": 4318.7,
+      "text": "What do you use for that, for voice transcription?"
+    },
+    {
+      "start": 4318.7,
+      "end": 4322.6,
+      "text": "So, I actually find that Apple Notes, the app or the one built into the iPhone works fine."
+    },
+    {
+      "start": 4322.6,
+      "end": 4326.4,
+      "text": "I mean, I'm conscious of the people want others, but I mean, I dictate it."
+    },
+    {
+      "start": 4326.4,
+      "end": 4327.4,
+      "text": "There it is."
+    },
+    {
+      "start": 4327.4,
+      "end": 4328.4,
+      "text": "It worked."
+    },
+    {
+      "start": 4328.4,
+      "end": 4329.7,
+      "text": "So, I'm happy with that."
+    },
+    {
+      "start": 4329.7,
+      "end": 4330.7,
+      "text": "All right."
+    },
+    {
+      "start": 4330.7,
+      "end": 4332.7,
+      "text": "Final question before we get to our very exciting lightning round."
+    },
+    {
+      "start": 4332.7,
+      "end": 4334.8,
+      "text": "Is there anything else that you wanted to share?"
+    },
+    {
+      "start": 4334.8,
+      "end": 4336.7,
+      "text": "Anything else you want to leave listeners with?"
+    },
+    {
+      "start": 4336.7,
+      "end": 4342.6,
+      "text": "No, I think I've monologued plenty, and I've gone through a bunch of stuff in the deck."
+    },
+    {
+      "start": 4342.6,
+      "end": 4353.5,
+      "text": "Go read the deck, and sign up to my newsletter, and then you will get in many more mags of brilliant Benedict Evans' wisdom, some of which may even be useful."
+    },
+    {
+      "start": 4353.5,
+      "end": 4362.6,
+      "text": "Someone unsubscribed for my newsletter and they said, \"You didn't give me any actionable stock ideas.\" And I'm like, \"Well, on one level, that's completely true."
+    },
+    {
+      "start": 4362.6,
+      "end": 4364.7,
+      "text": "On the other level, maybe not.\""
+    },
+    {
+      "start": 4364.7,
+      "end": 4367.2,
+      "text": "Well, with that, Benedict, we've reached our very exciting lightning round."
+    },
+    {
+      "start": 4367.2,
+      "end": 4368.7,
+      "text": "I've got five questions for you."
+    },
+    {
+      "start": 4368.7,
+      "end": 4369.7,
+      "text": "Are you ready?"
+    },
+    {
+      "start": 4369.7,
+      "end": 4370.7,
+      "text": "Sure."
+    },
+    {
+      "start": 4370.7,
+      "end": 4376.7,
+      "text": "First question, what are two or three books that you find yourself recommending most to other people?"
+    },
+    {
+      "start": 4376.7,
+      "end": 4383.1,
+      "text": "It's a tough one for me, because I just read an enormous amount of books and then I can't remember which ones I've read."
+    },
+    {
+      "start": 4383.1,
+      "end": 4390.3,
+      "text": "I sometimes often joke that there's a classic British comedy from the late 19th century called Three Men in a Boat, which is like my I Ching."
+    },
+    {
+      "start": 4390.3,
+      "end": 4391.9,
+      "text": "We're having trouble hanging a picture."
+    },
+    {
+      "start": 4391.9,
+      "end": 4393.5,
+      "text": "Well, there's a section about that."
+    },
+    {
+      "start": 4393.5,
+      "end": 4394.8,
+      "text": "We're having trouble doing this."
+    },
+    {
+      "start": 4394.8,
+      "end": 4398.0,
+      "text": "Oh, well, there's a story about that, all of which are hilarious."
+    },
+    {
+      "start": 4398.0,
+      "end": 4400.7,
+      "text": "So Three Men in a Boat is my I Ching."
+    },
+    {
+      "start": 4400.7,
+      "end": 4410.8,
+      "text": "There's a book by, I think William Cronon, about the Economic History of Chicago, which is fascinating and actually very relevant to technology, because it's talking basically about standardization and packetization, and logistics,"
+    },
+    {
+      "start": 4410.8,
+      "end": 4413.6,
+      "text": "and channel conflict, and network dynamics, and network neutrality."
+    },
+    {
+      "start": 4413.6,
+      "end": 4421.5,
+      "text": "So, when the meat packers of Chicago reach the point that it's cheaper to ship a cow from New York to Chicago, kill it, pack it,"
+    },
+    {
+      "start": 4421.5,
+      "end": 4430.1,
+      "text": "and then ship it back to New York than to kill it in New York, and the pricing of refrigerator cars, and it's exactly like reading about broadband."
+    },
+    {
+      "start": 4430.1,
+      "end": 4431.9,
+      "text": "It's all the same kind of..."
+    },
+    {
+      "start": 4431.9,
+      "end": 4434.7,
+      "text": "So those kinds of business issues, which is fascinating."
+    },
+    {
+      "start": 4434.7,
+      "end": 4436.1,
+      "text": "What else have I read?"
+    },
+    {
+      "start": 4436.1,
+      "end": 4437.1,
+      "text": "I don't know."
+    },
+    {
+      "start": 4437.1,
+      "end": 4439.9,
+      "text": "Read books, read different books, generally read books for grownups."
+    },
+    {
+      "start": 4439.9,
+      "end": 4444.3,
+      "text": "Please read something other than Lord of the Rings, if you're going to name another company."
+    },
+    {
+      "start": 4444.3,
+      "end": 4447.7,
+      "text": "I saw this one and what was the latest Peter Thiel company."
+    },
+    {
+      "start": 4447.7,
+      "end": 4452.2,
+      "text": "I was like, \"Read another book.\" Everything is named after a character from this one book."
+    },
+    {
+      "start": 4452.2,
+      "end": 4454.5,
+      "text": "There's more than one book in the world."
+    },
+    {
+      "start": 4454.5,
+      "end": 4457.6,
+      "text": "There is more than one book than all about science fiction."
+    },
+    {
+      "start": 4457.6,
+      "end": 4460.7,
+      "text": "Read about different things, read about things you don't know about."
+    },
+    {
+      "start": 4460.7,
+      "end": 4464.7,
+      "text": "Kind of along those lines, you have a favorite recent movie or TV show you've really enjoyed?"
+    },
+    {
+      "start": 4464.7,
+      "end": 4465.7,
+      "text": "I don't know."
+    },
+    {
+      "start": 4465.7,
+      "end": 4471.2,
+      "text": "I've dropped so badly off the current media treadmill, and I just spend most of my time watching classics,"
+    },
+    {
+      "start": 4471.2,
+      "end": 4475.7,
+      "text": "which are always the ones that you're supposed to have seen and that all seem intimidating."
+    },
+    {
+      "start": 4475.7,
+      "end": 4484.2,
+      "text": "And then you watch them and you're like, \"Oh, that was actually really good.\" I watched The Seventh Seal recently, which is one of those Woody Allen, terrifying boring movies,"
+    },
+    {
+      "start": 4484.2,
+      "end": 4485.4,
+      "text": "and it was brilliant."
+    },
+    {
+      "start": 4485.4,
+      "end": 4488.8,
+      "text": "It was really interesting, and it's like it's only like an hour."
+    },
+    {
+      "start": 4488.8,
+      "end": 4493.7,
+      "text": "So, go watch one of those movies that you are supposed to have seen, or hadn't seen."
+    },
+    {
+      "start": 4493.7,
+      "end": 4497.8,
+      "text": "Favorite recent product that you recently discovered that I really love."
+    },
+    {
+      "start": 4497.8,
+      "end": 4500.7,
+      "text": "Could be a gadget, could be an app."
+    },
+    {
+      "start": 4500.7,
+      "end": 4504.4,
+      "text": "I was speaking at a partner meeting for a company earlier this week."
+    },
+    {
+      "start": 4504.4,
+      "end": 4509.0,
+      "text": "Monday, no, last week, and met the founder of the company who has a very famous..."
+    },
+    {
+      "start": 4509.0,
+      "end": 4516.4,
+      "text": "The CEO of the company has a famous name and admired his shoes, and didn't say anything, but then went in Google half an hour later."
+    },
+    {
+      "start": 4516.4,
+      "end": 4518.7,
+      "text": "\"Yeah, okay, I'll buy a pair of this.\""
+    },
+    {
+      "start": 4518.7,
+      "end": 4522.4,
+      "text": "Do you want to share the brand or you want to keep it secret?"
+    },
+    {
+      "start": 4522.4,
+      "end": 4523.7,
+      "text": "Okay, we'll keep it secret."
+    },
+    {
+      "start": 4523.7,
+      "end": 4524.7,
+      "text": "I don't know."
+    },
+    {
+      "start": 4524.7,
+      "end": 4529.6,
+      "text": "I think one comes in waves of new products, and you get into waves of new things."
+    },
+    {
+      "start": 4529.6,
+      "end": 4534.5,
+      "text": "And when's the last time there was a cool app, iPhone apps, all that white space went."
+    },
+    {
+      "start": 4534.5,
+      "end": 4537.9,
+      "text": "I mean, it's partly a function of product ships, a platform chips."
+    },
+    {
+      "start": 4537.9,
+      "end": 4542.2,
+      "text": "All the white space went for cool new apps, and now we haven't quite got..."
+    },
+    {
+      "start": 4542.2,
+      "end": 4549.8,
+      "text": "Actually, this is to the earlier point, we don't have breakout a consumer AI apps yet, but I think because of marginal cost more than anything else,"
+    },
+    {
+      "start": 4549.8,
+      "end": 4554.4,
+      "text": "you can't make it free and get 50 million users and then have a revenue bottle."
+    },
+    {
+      "start": 4554.4,
+      "end": 4556.7,
+      "text": "But we don't have those breakout things yet."
+    },
+    {
+      "start": 4556.7,
+      "end": 4557.7,
+      "text": "For consumer."
+    },
+    {
+      "start": 4557.7,
+      "end": 4558.9,
+      "text": "For consumer, no."
+    },
+    {
+      "start": 4558.9,
+      "end": 4562.0,
+      "text": "I keep getting these ads for voice recorders."
+    },
+    {
+      "start": 4562.0,
+      "end": 4565.6,
+      "text": "Somebody's selling a business card size hardware voice recorder."
+    },
+    {
+      "start": 4565.6,
+      "end": 4567.5,
+      "text": "But I didn't get it."
+    },
+    {
+      "start": 4567.5,
+      "end": 4570.7,
+      "text": "I've got the voice recorder on my phone."
+    },
+    {
+      "start": 4570.7,
+      "end": 4571.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 4571.7,
+      "end": 4573.2,
+      "text": "All kinds of cool stuff coming."
+    },
+    {
+      "start": 4573.2,
+      "end": 4574.2,
+      "text": "Okay."
+    },
+    {
+      "start": 4574.2,
+      "end": 4575.2,
+      "text": "Two more questions."
+    },
+    {
+      "start": 4575.2,
+      "end": 4578.7,
+      "text": "Do you have a favorite life motto that you find yourself coming back to often in work or in life?"
+    },
+    {
+      "start": 4578.7,
+      "end": 4584.7,
+      "text": "I suppose both mentioned earlier, apparently, I mostly say it depends."
+    },
+    {
+      "start": 4584.7,
+      "end": 4587.7,
+      "text": "That's going to be the title."
+    },
+    {
+      "start": 4587.7,
+      "end": 4588.7,
+      "text": "It'll probably be okay."
+    },
+    {
+      "start": 4588.7,
+      "end": 4589.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 4589.7,
+      "end": 4590.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4590.7,
+      "end": 4592.2,
+      "text": "That's the vibe I get."
+    },
+    {
+      "start": 4592.2,
+      "end": 4593.2,
+      "text": "I like that."
+    },
+    {
+      "start": 4593.2,
+      "end": 4594.2,
+      "text": "I like that."
+    },
+    {
+      "start": 4594.2,
+      "end": 4595.7,
+      "text": "It's probably going to be okay."
+    },
+    {
+      "start": 4595.7,
+      "end": 4596.7,
+      "text": "Not for sure."
+    },
+    {
+      "start": 4596.7,
+      "end": 4597.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4597.7,
+      "end": 4598.7,
+      "text": "Final question."
+    },
+    {
+      "start": 4598.7,
+      "end": 4599.7,
+      "text": "I saw someone that you'll own a lot of old phones."
+    },
+    {
+      "start": 4599.7,
+      "end": 4600.7,
+      "text": "Is that true?"
+    },
+    {
+      "start": 4600.7,
+      "end": 4601.7,
+      "text": "It is, yes."
+    },
+    {
+      "start": 4601.7,
+      "end": 4607.3,
+      "text": "I mean, I was a telecoms analyst and mobile analyst and I kept all my phones up to a point."
+    },
+    {
+      "start": 4607.3,
+      "end": 4608.7,
+      "text": "Now they're kind of uninteresting."
+    },
+    {
+      "start": 4608.7,
+      "end": 4617.7,
+      "text": "But as you may remember, before the iPhone, particularly outside the USA, there was this huge creativity and expansion in what phones looked like, because everyone was basically innovating around a little teeny,"
+    },
+    {
+      "start": 4617.7,
+      "end": 4618.7,
+      "text": "tiny gray square."
+    },
+    {
+      "start": 4618.7,
+      "end": 4622.6,
+      "text": "So everyone was trying to differentiate from everything else, before it kind of resulted."
+    },
+    {
+      "start": 4622.6,
+      "end": 4624.3,
+      "text": "It's kind of like cars, actually."
+    },
+    {
+      "start": 4624.3,
+      "end": 4627.6,
+      "text": "It's like cars before street, before wind tunnels, cars all look different."
+    },
+    {
+      "start": 4627.6,
+      "end": 4634.9,
+      "text": "And everyone's trying to innovate around, because you've got the same four wheels, and the same engine, and everyone's trying to differentiate based on the shape."
+    },
+    {
+      "start": 4634.9,
+      "end": 4639.1,
+      "text": "And then everything converges on one shape, and it's kind of the same with phones."
+    },
+    {
+      "start": 4639.1,
+      "end": 4640.5,
+      "text": "Everything converged on one shape."
+    },
+    {
+      "start": 4640.5,
+      "end": 4642.5,
+      "text": "Before that, there was all this innovation."
+    },
+    {
+      "start": 4642.5,
+      "end": 4646.7,
+      "text": "So yeah, I have a whole bunch of PDAs, and smartphones, and things like that."
+    },
+    {
+      "start": 4646.7,
+      "end": 4649.7,
+      "text": "How many phones are we talking about?"
+    },
+    {
+      "start": 4649.7,
+      "end": 4650.7,
+      "text": "I don't know, like 20 or 30."
+    },
+    {
+      "start": 4650.7,
+      "end": 4651.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4651.7,
+      "end": 4652.7,
+      "text": "Okay."
+    },
+    {
+      "start": 4652.7,
+      "end": 4653.7,
+      "text": "It's not so crazy."
+    },
+    {
+      "start": 4653.7,
+      "end": 4654.7,
+      "text": "What's the oldest one?"
+    },
+    {
+      "start": 4654.7,
+      "end": 4655.7,
+      "text": "What's the oldest one you got?"
+    },
+    {
+      "start": 4655.7,
+      "end": 4664.7,
+      "text": "So I have one of those, I should have usually told me I'd have got the box down, I have one of those Ericsson shark fin flip phones from '98 or something,"
+    },
+    {
+      "start": 4664.7,
+      "end": 4665.8,
+      "text": "which is very vogue."
+    },
+    {
+      "start": 4665.8,
+      "end": 4668.2,
+      "text": "Again, hardware design, visual design, trying to differentiate."
+    },
+    {
+      "start": 4668.2,
+      "end": 4673.2,
+      "text": "I've got an iMade phone from 2001, and a JPhone phone from 2001 that has a camera."
+    },
+    {
+      "start": 4673.2,
+      "end": 4678.5,
+      "text": "So I came back from Japan in 2001 and my phone had a color screen and a camera."
+    },
+    {
+      "start": 4678.5,
+      "end": 4684.0,
+      "text": "And I just had endless client meetings and people just wanted to see the phone with a color screen."
+    },
+    {
+      "start": 4684.0,
+      "end": 4685.0,
+      "text": "It's mind-blowing."
+    },
+    {
+      "start": 4685.0,
+      "end": 4686.2,
+      "text": "Didn't work outside Japan."
+    },
+    {
+      "start": 4686.2,
+      "end": 4688.6,
+      "text": "So, I plugged it in the other day."
+    },
+    {
+      "start": 4688.6,
+      "end": 4689.7,
+      "text": "It still charges up."
+    },
+    {
+      "start": 4689.7,
+      "end": 4692.4,
+      "text": "I mean, clearly I can't do anything with it."
+    },
+    {
+      "start": 4692.4,
+      "end": 4699.7,
+      "text": "I mean, there's a little bit of an analogy in there as well in that we thought there'd be all these different shapes and sizes."
+    },
+    {
+      "start": 4699.7,
+      "end": 4704.6,
+      "text": "And before the iPhone, people kind of imagined, \"Well, some people will have a little pocket PC, and some people have a keyboard,"
+    },
+    {
+      "start": 4704.6,
+      "end": 4707.9,
+      "text": "and you have folding...\" There were all these different ideas for what it would look like."
+    },
+    {
+      "start": 4707.9,
+      "end": 4710.7,
+      "text": "And we didn't realize it was all going to converge on one device."
+    },
+    {
+      "start": 4710.7,
+      "end": 4711.8,
+      "text": "Benedict, this was amazing."
+    },
+    {
+      "start": 4711.8,
+      "end": 4712.9,
+      "text": "I learned a ton."
+    },
+    {
+      "start": 4712.9,
+      "end": 4714.5,
+      "text": "I feel better after this conversation."
+    },
+    {
+      "start": 4714.5,
+      "end": 4715.5,
+      "text": "Two final questions."
+    },
+    {
+      "start": 4715.5,
+      "end": 4717.1,
+      "text": "Where can folks find you online?"
+    },
+    {
+      "start": 4717.1,
+      "end": 4718.7,
+      "text": "Where do they find this presentation?"
+    },
+    {
+      "start": 4718.7,
+      "end": 4720.7,
+      "text": "And how can listeners be useful to you?"
+    },
+    {
+      "start": 4720.7,
+      "end": 4724.8,
+      "text": "If you can Google me, as I always say, my parents had good SEO."
+    },
+    {
+      "start": 4724.8,
+      "end": 4726.0,
+      "text": "So, Google Benedict Evans."
+    },
+    {
+      "start": 4726.0,
+      "end": 4730.2,
+      "text": "And so there's a website where I publish all the presentations that I've done."
+    },
+    {
+      "start": 4730.2,
+      "end": 4733.4,
+      "text": "And sign up for my newsletter, which comes out every week."
+    },
+    {
+      "start": 4733.4,
+      "end": 4735.8,
+      "text": "Otherwise, how can they be useful to me?"
+    },
+    {
+      "start": 4735.8,
+      "end": 4739.9,
+      "text": "I'm always trying to understand stuff and I'm always trying to ask different questions."
+    },
+    {
+      "start": 4739.9,
+      "end": 4744.1,
+      "text": "The worst thing in tech is to carry on talking about the same stuff."
+    },
+    {
+      "start": 4744.1,
+      "end": 4749.4,
+      "text": "It's like the moment you really understand something, it's the moment you have to push onto something else."
+    },
+    {
+      "start": 4749.4,
+      "end": 4758.5,
+      "text": "And so I'm always trying to think like, \"No, am I just talking about the same thing over and over again?\" Last year I just spent probably too much time saying,"
+    },
+    {
+      "start": 4758.5,
+      "end": 4760.0,
+      "text": "\"But these models still hallucinate."
+    },
+    {
+      "start": 4760.0,
+      "end": 4762.6,
+      "text": "Stop telling me they don't hallucinate.\" And they do."
+    },
+    {
+      "start": 4762.6,
+      "end": 4763.6,
+      "text": "They still hallucinate."
+    },
+    {
+      "start": 4763.6,
+      "end": 4771.6,
+      "text": "You push them, push them a little bit further, any question and you'll still get like, \"No, that's not true,\" but that doesn't mean they're not useful."
+    },
+    {
+      "start": 4771.6,
+      "end": 4773.7,
+      "text": "So you have to keep pushing myself."
+    },
+    {
+      "start": 4773.7,
+      "end": 4777.1,
+      "text": "So that's always that the challenge for me, is how do I push?"
+    },
+    {
+      "start": 4777.1,
+      "end": 4782.7,
+      "text": "And then yes, if you want me to come and present to your board in the Caribbean, then let me know."
+    },
+    {
+      "start": 4782.7,
+      "end": 4787.9,
+      "text": "And by the way, the domain is bend-evans.com if folks who want to check you out."
+    },
+    {
+      "start": 4787.9,
+      "end": 4788.9,
+      "text": "And evans.com."
+    },
+    {
+      "start": 4788.9,
+      "end": 4791.7,
+      "text": "Benedict, thank you so much for being here."
+    },
+    {
+      "start": 4791.7,
+      "end": 4793.7,
+      "text": "Thanks a lot."
+    },
+    {
+      "start": 4793.7,
+      "end": 4794.7,
+      "text": "Bye, everyone."
+    },
+    {
+      "start": 4794.7,
+      "end": 4796.8,
+      "text": "Thank you so much for listening."
+    },
+    {
+      "start": 4796.8,
+      "end": 4804.0,
+      "text": "If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app."
+    },
+    {
+      "start": 4804.0,
+      "end": 4811.1,
+      "text": "Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast."
+    },
+    {
+      "start": 4816.1,
+      "end": 4818.3,
+      "text": "See you in the next episode."
+    }
+  ],
+  "labels": [
+    {
+      "kind": "host_read",
+      "start": 3052.9,
+      "end": 3080.6,
+      "sponsor": "Asana",
+      "note": "spliced host_read for Asana"
+    }
+  ]
+}

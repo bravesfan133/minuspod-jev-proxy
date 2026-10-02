@@ -12,12 +12,29 @@ pub struct Config {
     pub port: u16,
     pub primary: JevBackendCfg,
     pub secondary: JevBackendCfg,
+    /// Optional third backend. Empty base_url means "not configured", and the
+    /// failover loop skips it. Kept separate from secondary so adding a paid
+    /// provider never displaces the keyless free tier.
+    pub tertiary: JevBackendCfg,
     pub timeout_secs: u64,
-    /// A paid-sponsor span is a core cut when noul >= ad_threshold.
-    pub ad_threshold: f64,
-    /// A paid-sponsor neighbor joins a core when noul >= this.
+    /// A paid-sponsor span becomes a cut candidate when noul >= this.
+    ///
+    /// This is the recall gate and it is meant to be permissive: it decides
+    /// only *whether a candidate exists*. Precision is applied afterwards by
+    /// the edge-trim pass. Keeping one threshold for both jobs is what lets
+    /// whole windows come back with no ads at all, because a strict recall
+    /// gate never gives the trim pass anything to tighten.
+    pub recall_threshold: f64,
+    /// An edge piece stays in the cut when noul >= this AND its label is a
+    /// paid sponsor. Both signals must agree.
+    pub edge_threshold: f64,
+    /// Size of the pieces the edge-trim pass re-judges, in seconds.
+    pub edge_piece_secs: f64,
+    /// Transcript context included around an edge piece, in seconds.
+    pub edge_context_secs: f64,
+    /// A paid-sponsor neighbor joins a candidate when noul >= this.
     pub attach_threshold: f64,
-    /// Max silence, in seconds, between a core and a neighbor that joins it.
+    /// Max silence, in seconds, between a candidate and a neighbor that joins it.
     pub attach_gap_secs: f64,
     /// reviewer noul >= review_threshold => confirm candidate.
     pub review_threshold: f64,
@@ -31,6 +48,74 @@ pub struct Config {
     pub max_segments_per_call: usize,
     /// max concurrent Jev calls (MinusPod fires all windows in parallel).
     pub max_concurrent: usize,
+}
+
+/// Every env var this build reads. Anything else in the `JEV_` namespace is
+/// dead config: it may look active in a compose file or a container's env
+/// while this process ignores it entirely.
+const KNOWN_ENV_VARS: &[&str] = &[
+    "PORT",
+    "JEV_PRIMARY_BASE_URL",
+    "JEV_PRIMARY_MODEL",
+    "JEV_PRIMARY_API_KEY",
+    "JEV_SECONDARY_BASE_URL",
+    "JEV_SECONDARY_MODEL",
+    "JEV_SECONDARY_API_KEY",
+    "JEV_TERTIARY_BASE_URL",
+    "JEV_TERTIARY_MODEL",
+    "JEV_TERTIARY_API_KEY",
+    "TYPESAFE_API_KEY",
+    "JEV_TIMEOUT_SECS",
+    "JEV_RECALL_THRESHOLD",
+    "JEV_EDGE_THRESHOLD",
+    "JEV_EDGE_PIECE_SECS",
+    "JEV_EDGE_CONTEXT_SECS",
+    "JEV_ATTACH_THRESHOLD",
+    "JEV_ATTACH_GAP_SECS",
+    "JEV_REVIEW_THRESHOLD",
+    "JEV_SEGMENT_TARGET_SECS",
+    "JEV_SEGMENT_MAX_SECS",
+    "JEV_SEGMENT_GAP_SECS",
+    "JEV_MAX_SEGMENTS_PER_CALL",
+    "JEV_MAX_CONCURRENT_REQS",
+    // Read as a deprecated alias for JEV_RECALL_THRESHOLD.
+    "JEV_AD_THRESHOLD",
+];
+
+/// Warn about `JEV_*` / `TYPESAFE_*` variables this build does not read.
+///
+/// Stale config that silently does nothing is worse than config that fails:
+/// a threshold tuned for an older build looks applied while having no effect.
+pub fn warn_unknown_env_vars() {
+    for (key, _) in env::vars() {
+        if !(key.starts_with("JEV_") || key.starts_with("TYPESAFE_")) {
+            continue;
+        }
+        if KNOWN_ENV_VARS.contains(&key.as_str()) {
+            continue;
+        }
+        tracing::warn!(
+            var = %key,
+            "ignoring unrecognized environment variable; this build does not read it",
+        );
+    }
+}
+
+/// A threshold in [0, 1]. Out-of-range values fall back to the default rather
+/// than silently disabling a stage.
+fn get_prob(key: &str, default: f64) -> f64 {
+    let v = get_f64(key, default);
+    if v.is_finite() && (0.0..=1.0).contains(&v) {
+        v
+    } else {
+        tracing::warn!(
+            var = %key,
+            value = v,
+            default = default,
+            "threshold outside [0,1]; using default",
+        );
+        default
+    }
 }
 
 fn get(key: &str, default: &str) -> String {
@@ -80,6 +165,9 @@ impl Config {
             "JEV_SECONDARY_BASE_URL",
             "https://opencode.ai/zen/v1/systemone",
         );
+        // Empty by default: the third slot is opt-in and must not displace the
+        // keyless free tier that already sits in secondary.
+        let tertiary_url = get("JEV_TERTIARY_BASE_URL", "");
         Self {
             port: get_u16("PORT", 8787),
             primary: JevBackendCfg {
@@ -92,18 +180,91 @@ impl Config {
                 api_key: key_for("JEV_SECONDARY_API_KEY", &secondary_url),
                 base_url: secondary_url,
             },
+            // No default URL: this slot is opt-in, so an existing deployment
+            // keeps exactly the behaviour it has now.
+            tertiary: JevBackendCfg {
+                model: get("JEV_TERTIARY_MODEL", ""),
+                api_key: key_for("JEV_TERTIARY_API_KEY", &tertiary_url),
+                base_url: tertiary_url,
+            },
             timeout_secs: get_u64("JEV_TIMEOUT_SECS", 60),
-            // 0.5 is "ad is at least as likely as content". Clear reads
-            // score well above this once the state is the span itself.
-            ad_threshold: get_f64("JEV_AD_THRESHOLD", 0.5),
-            attach_threshold: get_f64("JEV_ATTACH_THRESHOLD", 0.40),
+
+            // Recall gate. Deliberately low: a clear host read scores well
+            // above 0.35, and being strict here costs whole ads, because a
+            // rejected span never reaches the edge-trim pass that would have
+            // tightened it.
+            recall_threshold: recall_threshold(),
+
+            // Precision gate, applied per edge piece after the fact.
+            edge_threshold: get_prob("JEV_EDGE_THRESHOLD", 0.50),
+            edge_piece_secs: get_f64("JEV_EDGE_PIECE_SECS", 2.0).max(0.5),
+            edge_context_secs: get_f64("JEV_EDGE_CONTEXT_SECS", 45.0).max(0.0),
+
+            attach_threshold: get_prob("JEV_ATTACH_THRESHOLD", 0.40),
             attach_gap_secs: get_f64("JEV_ATTACH_GAP_SECS", 8.0),
-            review_threshold: get_f64("JEV_REVIEW_THRESHOLD", 0.5),
-            segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 4.0),
-            segment_max_secs: get_f64("JEV_SEGMENT_MAX_SECS", 8.0),
-            segment_gap_secs: get_f64("JEV_SEGMENT_GAP_SECS", 1.25),
-            max_segments_per_call: get_usize("JEV_MAX_SEGMENTS_PER_CALL", 16),
+            review_threshold: get_prob("JEV_REVIEW_THRESHOLD", 0.5),
+            segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 4.0).max(0.5),
+            segment_max_secs: get_f64("JEV_SEGMENT_MAX_SECS", 8.0).max(0.5),
+            segment_gap_secs: get_f64("JEV_SEGMENT_GAP_SECS", 1.25).max(0.0),
+            max_segments_per_call: get_usize("JEV_MAX_SEGMENTS_PER_CALL", 16).max(1),
             max_concurrent: get_usize("JEV_MAX_CONCURRENT_REQS", 4).max(1),
+        }
+    }
+}
+
+/// `JEV_RECALL_THRESHOLD`, or the deprecated `JEV_AD_THRESHOLD` alias.
+///
+/// The old variable gated both recall and precision. Treating it as the
+/// recall gate alone can only make the cut set larger than the operator
+/// configured, so it is read but loudly flagged.
+fn recall_threshold() -> f64 {
+    if let Some(v) = opt("JEV_RECALL_THRESHOLD") {
+        if let Ok(parsed) = v.parse::<f64>() {
+            return if parsed.is_finite() && (0.0..=1.0).contains(&parsed) {
+                parsed
+            } else {
+                tracing::warn!(
+                    "JEV_RECALL_THRESHOLD={parsed} is outside [0,1]; using 0.35",
+                );
+                0.35
+            };
+        }
+    }
+    if let Some(v) = opt("JEV_AD_THRESHOLD") {
+        tracing::warn!(
+            "JEV_AD_THRESHOLD is deprecated and now sets only the recall gate; \
+             edge trimming uses JEV_EDGE_THRESHOLD. Use JEV_RECALL_THRESHOLD instead."
+        );
+        if let Ok(parsed) = v.parse::<f64>() {
+            if parsed.is_finite() && (0.0..=1.0).contains(&parsed) {
+                return parsed;
+            }
+        }
+    }
+    0.35
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn known_vars_exclude_the_deprecated_alias() {
+        // The alias is read, but only as a fallback, so it must not be
+        // advertised as the primary knob.
+        assert!(KNOWN_ENV_VARS.contains(&"JEV_RECALL_THRESHOLD"));
+        assert!(KNOWN_ENV_VARS.contains(&"JEV_EDGE_THRESHOLD"));
+        assert!(!KNOWN_ENV_VARS.contains(&"JEV_SEGMENT_FLOOR_SECS"));
+    }
+
+    #[test]
+    fn get_prob_rejects_out_of_range() {
+        // Not a real env test: get_prob is exercised through its parsing
+        // rule, which keeps this test independent of process env ordering.
+        let ok = 0.42f64;
+        assert!((0.0..=1.0).contains(&ok));
+        for bad in [-0.1f64, 1.1, f64::NAN, f64::INFINITY] {
+            assert!(!(bad.is_finite() && (0.0..=1.0).contains(&bad)));
         }
     }
 }

@@ -16,8 +16,8 @@ use crate::config::Config;
 use crate::jev::{JevError, Question, decide, questions_map};
 use crate::openai::{ChatRequest, chat_response};
 use crate::transcript::{
-    ClassifiedSpan, collect_sponsor_ads, detection_state, parse_transcript, round3,
-    to_segments,
+    Ad, ClassifiedSpan, Line, Segment, collect_sponsor_ads, detection_state, end_text_for,
+    parse_transcript, round3, shrink_bounds, split_into_pieces, to_segments,
 };
 
 #[derive(Clone)]
@@ -32,24 +32,69 @@ static REVIEW_BOUNDS_RE: LazyLock<Regex> = LazyLock::new(|| {
 });
 
 /// Jev choice options for segment classification.
+///
+/// These descriptions are the model's definition of each label, not hints.
+/// A decision model scores the state against every option's text in parallel
+/// and splits probability across all of them, so anything not named here has
+/// nothing to match against and lands in whatever label is closest by
+/// accident. Write them for a schema, not for a reader: each one says what
+/// belongs in that label, what does not, and how it differs from its
+/// neighbours.
+///
+/// `self_promo` in particular covers the show's own app, community, and
+/// notification plugs, not just Patreon and merch. A narrow description here
+/// caused a real miss: Jev read "subscribe, join the community, get push
+/// notifications for live streams" as `content` at 0.97, because an app
+/// subscribe was not in the list.
 fn detection_criteria() -> HashMap<String, String> {
     [
-        ("content", "Editorial speech: news, interview, opinion, story, or a brand mentioned with no ask to buy, visit, or use a code."),
-        ("paid_ad", "A paid sponsor read or produced commercial that asks the listener to buy, visit, or use a code."),
-        ("host_read_sponsor", "The host reads a sponsor pitch with a call to action, URL, or promo code."),
-        ("inserted_ad", "A commercial break that is not the host's editorial topic."),
-        ("self_promo", "The show promotes its own Patreon, merch, mailing list, or live event."),
-        ("cross_promo", "A pitch for a different show or network."),
+        (
+            "content",
+            "The episode talking: news, interview, opinion, story, analysis, or \
+             banter. Also a brand discussed as a subject, with no ask to subscribe, \
+             download, visit, or buy.",
+        ),
+        (
+            "host_read_sponsor",
+            "The host reads a paid sponsor's pitch: the sponsor is named as the \
+             thing being sold, and the listener is asked to go somewhere, buy \
+             something, or enter a promo code.",
+        ),
+        (
+            "inserted_ad",
+            "A produced or dynamically inserted commercial: someone other than the \
+             host selling, reading a script, or a break where the topic abruptly \
+             changes to an advertiser.",
+        ),
+        (
+            "self_promo",
+            "The show or network asking the listener for their own stuff: its app, \
+             Patreon or membership, merch, newsletter or mailing list, community \
+             or group chat, notification bell, live stream, event, or back \
+             catalogue. Also a link to the show's own site, show notes, or feed. \
+             Trigger words: subscribe, join the community, sign up, get the app, \
+             tap the bell, support us, member.",
+        ),
+        (
+            "cross_promo",
+            "A pitch for someone else's show, podcast, newsletter, or video, rather \
+             than a paid sponsor and not this show's own material.",
+        ),
     ]
     .into_iter()
     .map(|(k, v)| (k.to_string(), v.to_string()))
     .collect()
 }
 
-/// Paid sponsor reads are the only cuts. The show promoting itself,
-/// a sign-off, or ordinary talk is not a sponsor.
+/// Labels that count as removable.
+///
+/// `self_promo` is included deliberately: the show's own Patreon, merch, and
+/// community plugs are cuts here, matching how MinusPod treats that category
+/// and how this proxy behaved before the detection rewrite. `content` and
+/// `cross_promo` are not cuts: ordinary editorial talk stays, and a pitch for
+/// a different show is left alone.
 fn is_paid_sponsor(choice: &str) -> bool {
-    matches!(choice, "paid_ad" | "host_read_sponsor" | "inserted_ad")
+    matches!(choice, "paid_ad" | "host_read_sponsor" | "inserted_ad" | "self_promo")
 }
 
 fn err(status: StatusCode, msg: String) -> Response {
@@ -147,24 +192,33 @@ async fn handle_detection(
         let state_value = detection_state(&segments, offset, chunk);
         let mut qs = Vec::new();
         for j in 0..chunk.len() {
-            let path = format!("segments[{j}]");
+            // No path references and no repeated target text. The state already
+            // carries the segment under `segments[j].text`, and a decision
+            // model scores the state against each option rather than
+            // dereferencing a pointer inside the instruction. Naming the path
+            // adds characters and buys nothing.
             qs.push((
                 format!("seg{j}"),
                 Question::choice(
-                    format!(
-                        "Which label best describes `{path}.text`? `{path}.before` and `{path}.after` are only the adjacent speech."
-                    ),
+                    format!("What kind of speech is segments[{j}].text?"),
                     criteria.clone(),
                 ),
             ));
             qs.push((
                 format!("ad{j}"),
                 Question::noul_with(
+                    // Direct and positive. The old phrasing leaned on
+                    // "judge this segment itself" and "are only the adjacent
+                    // speech", which is scaffolding that helps a chat model and
+                    // only dilutes schema scoring.
                     format!(
-                        "Is `{path}.text` a paid advertisement that should be cut? `{path}.before` and `{path}.after` are only the adjacent speech, to show whether this stretch sits inside a pitch. Judge `{path}.text` itself.{verify_note}"
+                        "Should segments[{j}].text be cut from the episode as \
+                         advertising or self-promotion?{verify_note}"
                     ),
-                    "A paid sponsor read, host-read ad, or inserted commercial with a call to action, URL, or promo code",
-                    "Show talk that should stay: news, interview, opinion, a sign-off, the show promoting itself, or a brand mentioned with no call to action",
+                    "A sponsor pitch, an inserted commercial, or the show plugging \
+                     its own app, membership, community, or event",
+                    "Episode talk that should stay: discussion, interview, opinion, \
+                     or a brand mentioned without an ask",
                 ),
             ));
         }
@@ -203,23 +257,256 @@ async fn handle_detection(
     let ads = collect_sponsor_ads(
         &lines,
         &spans,
-        cfg.ad_threshold,
+        cfg.recall_threshold,
         cfg.attach_threshold,
         cfg.attach_gap_secs,
     );
-    let content = serde_json::to_string(&ads).unwrap_or_else(|_| "[]".to_string());
+
+    // Precision pass. Detection spans are ~4s, so a cut tends to start and
+    // end mid-sentence: the read's first clause gets left in, and a bit of
+    // show talk gets taken out with it. Re-judge just the head and tail of
+    // each cut at finer granularity and pull the bounds inward.
+    let trim = edge_trim(state, &lines, ads, verification).await;
+
+    let content = serde_json::to_string(&trim.ads).unwrap_or_else(|_| "[]".to_string());
     tracing::info!(
         kind = "detection",
         verification,
         backend = backend_used,
         span_secs = round3(span_secs),
         segments = spans.len(),
-        ads = ads.len(),
+        candidates = trim.candidates,
+        ads = trim.ads.len(),
+        edge_pieces = trim.pieces,
+        trimmed_secs = round3(trim.trimmed_secs),
         jev_ms = jev_ms_total,
         total_ms = t0.elapsed().as_millis() as u64,
         "detection request served"
     );
     Json(chat_response(model, content)).into_response()
+}
+
+/// Outcome of the edge-trim pass, plus counters for the log line.
+#[derive(Debug, Default)]
+struct TrimOutcome {
+    ads: Vec<Ad>,
+    /// Candidate cuts that came out of the detection pass, before trimming.
+    candidates: usize,
+    /// Pieces re-judged by the classifier.
+    pieces: usize,
+    /// Total seconds removed from cut edges.
+    trimmed_secs: f64,
+}
+
+/// One piece of a cut edge that needs a decision.
+struct TrimPiece {
+    /// Index of the ad this piece belongs to.
+    ad: usize,
+    /// Which end of that ad: 0 = head, 1 = tail.
+    end_idx: usize,
+    /// Position of this piece within its own end, so flags can be reassembled
+    /// in the same order they were requested.
+    slot: usize,
+    start: f64,
+    end: f64,
+}
+
+/// Re-judge the first and last seconds of each cut, then pull the bounds in.
+///
+/// Detection spans are ~4s, so a cut tends to start and end mid-sentence: the
+/// read's opening clause is left in, and a little show talk is taken out with
+/// it. This pass re-asks about just those ends at finer granularity.
+///
+/// Shrink-only. A piece the classifier calls content is evidence the cut was
+/// too wide, so bounds only ever move inward. This can therefore improve a
+/// cut but can never invent one, and can never grow a cut into show talk.
+/// Neither end moves unless at least one of its own pieces was kept, so a
+/// uniformly-rejected end is left alone rather than collapsing the cut.
+///
+/// A failure here must not cost the caller confirmed cuts: on error the
+/// untrimmed cuts are returned.
+async fn edge_trim(
+    state: &AppState,
+    lines: &[Line],
+    ads: Vec<Ad>,
+    verification: bool,
+) -> TrimOutcome {
+    let cfg = &state.cfg;
+    let mut out = TrimOutcome {
+        candidates: ads.len(),
+        ..Default::default()
+    };
+    if ads.is_empty() {
+        return out;
+    }
+
+    let verify_note = if verification {
+        " This audio was already edited. [transition tone] is an edit marker, not an ad."
+    } else {
+        ""
+    };
+    let criteria = detection_criteria();
+
+    // Re-judge a few pieces' worth of each end.
+    let depth = (cfg.edge_piece_secs * 3.0).max(cfg.edge_piece_secs);
+
+    // Per ad, per end: the pieces we asked about and their keep flags. The
+    // pieces are retained so bounds can be reassembled from the exact
+    // intervals the classifier saw, rather than by re-splitting and hoping
+    // the second split matches the first. Flags start false so a piece whose
+    // answer never arrives cannot be mistaken for "kept".
+    let mut head: Vec<(Vec<Segment>, Vec<bool>)> = Vec::with_capacity(ads.len());
+    let mut tail: Vec<(Vec<Segment>, Vec<bool>)> = Vec::with_capacity(ads.len());
+    for ad in &ads {
+        let head_end = (ad.start + depth).min(ad.end);
+        let tail_start = (ad.end - depth).max(ad.start);
+        let h = split_into_pieces(lines, ad.start, head_end, cfg.edge_piece_secs);
+        let t = split_into_pieces(lines, tail_start, ad.end, cfg.edge_piece_secs);
+        head.push((h.clone(), vec![false; h.len()]));
+        tail.push((t.clone(), vec![false; t.len()]));
+    }
+
+    // Build the work list, grouped by context so each Decisions call carries
+    // one state. Context differs between ads and between the two ends of a
+    // long cut, so group on the exact window rather than assuming.
+    struct Group {
+        context: String,
+        pieces: Vec<TrimPiece>,
+    }
+    let mut groups: Vec<Group> = Vec::new();
+
+    for (i, ad) in ads.iter().enumerate() {
+        let head_end = (ad.start + depth).min(ad.end);
+        let tail_start = (ad.end - depth).max(ad.start);
+        for (end, (lo, hi)) in [(0usize, (ad.start, head_end)), (1usize, (tail_start, ad.end))] {
+            if hi - lo <= 0.0 {
+                continue;
+            }
+            let pieces = split_into_pieces(lines, lo, hi, cfg.edge_piece_secs);
+            if pieces.is_empty() {
+                continue;
+            }
+            let context = lines
+                .iter()
+                .filter(|l| {
+                    l.end > lo - cfg.edge_context_secs && l.start < hi + cfg.edge_context_secs
+                })
+                .map(|l| format!("[{:.1}s - {:.1}s] {}", l.start, l.end, l.text))
+                .collect::<Vec<_>>()
+                .join("\n");
+            groups.push(Group {
+                context,
+                pieces: pieces
+                    .iter()
+                    .enumerate()
+                    .map(|(slot, p)| TrimPiece {
+                        ad: i,
+                        end_idx: end,
+                        slot,
+                        start: p.start,
+                        end: p.end,
+                    })
+                    .collect(),
+            });
+        }
+    }
+    out.pieces = groups.iter().map(|g| g.pieces.len()).sum();
+
+    for group in &groups {
+        for batch in group.pieces.chunks(cfg.max_segments_per_call.max(1)) {
+let mut qs = Vec::new();
+            for (j, piece) in batch.iter().enumerate() {
+                // The state for this group is the surrounding transcript and
+                // the piece text is already inside it, so the instruction names
+                // the position without repeating the words. The old phrasing
+                // embedded the whole piece here as well, which duplicated it.
+                let label =
+                    format!("[{:.1}s - {:.1}s]", piece.start, piece.end);
+                qs.push((
+                    format!("p{j}"),
+                    Question::noul_with(
+                        format!(
+                            "Should the text at {label} be cut from the episode as \
+                             advertising or self-promotion?{verify_note}"
+                        ),
+                        "A sponsor pitch, an inserted commercial, or the show plugging \
+                         its own app, membership, community, or event",
+                        "Episode talk that should stay: discussion, interview, opinion, \
+                         or a brand mentioned without an ask",
+                    ),
+                ));
+                qs.push((
+                    format!("c{j}"),
+                    Question::choice(
+                        format!("What kind of speech is the text at {label}?"),
+                        criteria.clone(),
+                    ),
+                ));
+            }
+
+            let outcome =
+                match decide(&state.client, cfg, &state.sem, &Value::String(group.context.clone()), &questions_map(qs))
+                    .await
+                {
+                    Ok(o) => o,
+                    Err(e) => {
+                        tracing::warn!("edge trim decide failed, keeping untrimmed cuts: {e}");
+                        out.ads = ads;
+                        return out;
+                    }
+                };
+
+            for (j, piece) in batch.iter().enumerate() {
+                let noul = outcome
+                    .answers
+                    .get(&format!("p{j}"))
+                    .and_then(|a| a.noul)
+                    .unwrap_or(0.0);
+                let choice = outcome
+                    .answers
+                    .get(&format!("c{j}"))
+                    .and_then(|a| a.choice.clone())
+                    .unwrap_or_default();
+                // Both signals must agree, same rule as the detection gate.
+                let keep = noul >= cfg.edge_threshold && is_paid_sponsor(&choice);
+                let ends: &mut [(Vec<Segment>, Vec<bool>)] = if piece.end_idx == 0 {
+                    &mut head
+                } else {
+                    &mut tail
+                };
+                if let Some((_, flags)) = ends.get_mut(piece.ad) {
+                    if let Some(slot) = flags.get_mut(piece.slot) {
+                        *slot = keep;
+                    }
+                }
+            }
+        }
+    }
+
+    for (i, ad) in ads.iter().enumerate() {
+        let (head_pieces, head_flags) = &head[i];
+        let (tail_pieces, tail_flags) = &tail[i];
+
+        let (new_start, new_end) =
+            shrink_bounds(ad, head_pieces, head_flags, tail_pieces, tail_flags);
+
+        if new_start > ad.start || new_end < ad.end {
+            out.trimmed_secs += (new_start - ad.start).max(0.0) + (ad.end - new_end).max(0.0);
+            let mut trimmed = ad.clone();
+            trimmed.start = new_start;
+            trimmed.end = new_end;
+            // end_text is a required field and must describe the span actually
+            // cut, not the pre-trim bounds.
+            if let Some(t) = end_text_for(lines, new_start, new_end) {
+                trimmed.end_text = t;
+            }
+            out.ads.push(trimmed);
+        } else {
+            out.ads.push(ad.clone());
+        }
+    }
+
+    out
 }
 
 async fn handle_review(
@@ -427,6 +714,9 @@ pub async fn health(State(state): State<AppState>) -> impl IntoResponse {
         "status": "ok",
         "primary": {"base_url": state.cfg.primary.base_url, "model": state.cfg.primary.model},
         "secondary": {"base_url": state.cfg.secondary.base_url, "model": state.cfg.secondary.model},
+        // Reported so it is visible whether the third slot is configured.
+        // base_url is empty when the slot is unused.
+        "tertiary": {"base_url": state.cfg.tertiary.base_url, "model": state.cfg.tertiary.model},
     }))
 }
 
@@ -454,10 +744,12 @@ mod tests {
 
     #[test]
     fn choice_mapping() {
+        // Paid sponsors and the show's own plugs are all removable.
         assert!(is_paid_sponsor("paid_ad"));
         assert!(is_paid_sponsor("host_read_sponsor"));
         assert!(is_paid_sponsor("inserted_ad"));
-        assert!(!is_paid_sponsor("self_promo"));
+        assert!(is_paid_sponsor("self_promo"));
+        // Editorial talk and someone else's show are left alone.
         assert!(!is_paid_sponsor("cross_promo"));
         assert!(!is_paid_sponsor("content"));
         assert!(!is_paid_sponsor("uncertain"));

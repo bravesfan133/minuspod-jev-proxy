@@ -247,6 +247,79 @@ fn ad_from_spans(lines: &[Line], spans: &[ClassifiedSpan]) -> Ad {
     }
 }
 
+/// Split the transcript inside [start, end] into ~`piece_secs` segments.
+///
+/// Used by the edge-trim pass to re-judge the first and last few seconds of
+/// a cut at finer granularity than the 4s detection segments. Lines that
+/// only partially overlap the range are included whole: there is no finer
+/// timestamp to cut on, so a line is either in or out.
+pub fn split_into_pieces(
+    lines: &[Line],
+    start: f64,
+    end: f64,
+    piece_secs: f64,
+) -> Vec<Segment> {
+    let owned: Vec<Line> = lines
+        .iter()
+        .filter(|l| l.end > start && l.start < end)
+        .cloned()
+        .collect();
+    if owned.is_empty() {
+        return Vec::new();
+    }
+    // to_segments flushes on target_secs and pauses. A very small gap limit
+    // keeps edge pieces even, so boundary decisions stay comparable.
+    to_segments(&owned, piece_secs.max(0.5), piece_secs.max(1.0) * 4.0, 10_000.0)
+}
+
+/// Tighten [ad.start, ad.end] from per-piece keep decisions on its two ends.
+///
+/// `head`/`tail` are the pieces produced by `split_into_pieces` over the first
+/// and last few seconds of the cut, each paired with a keep flag of the same
+/// length. The middle of the cut is never re-judged and never moves.
+///
+/// An end moves inward to its first (head) or last (tail) kept piece. An end
+/// with no kept piece is left exactly where it was: a uniformly-rejected end
+/// is not evidence that the whole cut is content, and collapsing it would
+/// throw away a confirmed read.
+///
+/// **Shrink-only**: the result is always inside `[ad.start, ad.end]`. Edge
+/// trimming may tighten a cut but must never grow it, because a piece the
+/// classifier rejected is evidence for *not* cutting there.
+pub fn shrink_bounds(
+    ad: &Ad,
+    head: &[Segment],
+    head_keep: &[bool],
+    tail: &[Segment],
+    tail_keep: &[bool],
+) -> (f64, f64) {
+    // Only consume the prefix of flags that pairs with a real piece, so a
+    // malformed length cannot index past the slice.
+    let kept_start = head
+        .iter()
+        .zip(head_keep)
+        .find(|(_, &k)| k)
+        .map(|(p, _)| p.start);
+    let kept_end = tail
+        .iter()
+        .zip(tail_keep)
+        .filter(|(_, &k)| k)
+        .next_back()
+        .map(|(p, _)| p.end);
+
+    let start = kept_start.unwrap_or(ad.start).max(ad.start);
+    let end = kept_end.unwrap_or(ad.end).min(ad.end);
+
+    // An inverted or collapsed result means the classifier rejected the whole
+    // cut. Fall back to the original bounds rather than emitting a cut that is
+    // backwards or zero-length.
+    if end > start {
+        (start, end)
+    } else {
+        (ad.start, ad.end)
+    }
+}
+
 /// Last words of transcript lines fully inside [start, end].
 /// Used for the REQUIRED `end_text` field so it reflects the actual span.
 pub fn end_text_for(lines: &[Line], start: f64, end: f64) -> Option<String> {
@@ -384,6 +457,129 @@ mod tests {
         assert_eq!(ads[0].end_text, "n o p q r");
         assert_eq!(ads[1].start, 80.0);
         assert_eq!(ads[1].end, 90.0);
+    }
+
+    fn ad(start: f64, end: f64) -> Ad {
+        Ad {
+            start,
+            end,
+            confidence: 0.9,
+            category: "sponsor".into(),
+            reason: "test".into(),
+            end_text: "x".into(),
+        }
+    }
+
+    #[test]
+    fn split_into_pieces_partitions_the_span() {
+        let lines = vec![
+            Line { start: 0.0, end: 2.0, text: "one two".into() },
+            Line { start: 2.0, end: 4.0, text: "three four".into() },
+            Line { start: 4.0, end: 6.0, text: "five six".into() },
+            Line { start: 20.0, end: 22.0, text: "far away".into() },
+        ];
+        let pieces = split_into_pieces(&lines, 0.0, 6.0, 2.0);
+        assert_eq!(pieces.first().unwrap().start, 0.0);
+        assert_eq!(pieces.last().unwrap().end, 6.0);
+        // The line outside the range is excluded entirely.
+        assert!(!pieces.iter().any(|p| p.text.contains("far away")));
+        // Coverage is contiguous: no gaps between consecutive pieces.
+        for w in pieces.windows(2) {
+            assert_eq!(w[0].end, w[1].start, "gap between pieces");
+        }
+    }
+
+    #[test]
+    fn split_into_pieces_is_empty_outside_all_lines() {
+        let lines = vec![Line { start: 0.0, end: 5.0, text: "a".into() }];
+        assert!(split_into_pieces(&lines, 100.0, 200.0, 2.0).is_empty());
+    }
+
+    #[test]
+    fn split_into_pieces_includes_partially_overlapping_lines() {
+        // A line straddling the boundary has no finer cut available.
+        let lines = vec![
+            Line { start: 0.0, end: 3.0, text: "straddle".into() },
+            Line { start: 9.0, end: 12.0, text: "also straddle".into() },
+        ];
+        let pieces = split_into_pieces(&lines, 2.0, 10.0, 2.0);
+        assert_eq!(pieces.len(), 2);
+    }
+
+    /// [a b c d] over [10,18]: head=(a b), tail=(c d)
+    fn edge_pieces() -> (Vec<Segment>, Vec<bool>, Vec<Segment>, Vec<bool>) {
+        let head = vec![
+            Segment { start: 10.0, end: 12.0, text: "a".into() },
+            Segment { start: 12.0, end: 14.0, text: "b".into() },
+        ];
+        let tail = vec![
+            Segment { start: 14.0, end: 16.0, text: "c".into() },
+            Segment { start: 16.0, end: 18.0, text: "d".into() },
+        ];
+        (head, vec![false, true], tail, vec![true, false])
+    }
+
+    #[test]
+    fn shrink_bounds_drops_leading_and_trailing_rejects() {
+        let (head, hk, tail, tk) = edge_pieces();
+        assert_eq!(shrink_bounds(&ad(10.0, 18.0), &head, &hk, &tail, &tk), (12.0, 16.0));
+    }
+
+    #[test]
+    fn shrink_bounds_is_shrink_only_under_adversarial_pieces() {
+        // Pieces claim to extend past the ad on both sides. Bounds must not move.
+        let head = vec![Segment { start: 5.0, end: 12.0, text: "a".into() }];
+        let tail = vec![Segment { start: 13.0, end: 40.0, text: "b".into() }];
+        let got = shrink_bounds(&ad(11.0, 13.0), &head, &[true], &tail, &[true]);
+        assert_eq!(got, (11.0, 13.0));
+    }
+
+    #[test]
+    fn shrink_bounds_keeps_end_when_no_piece_is_kept() {
+        let (head, _, tail, _) = edge_pieces();
+        // Both ends uniformly rejected: the cut is left alone, not collapsed.
+        assert_eq!(
+            shrink_bounds(&ad(10.0, 18.0), &head, &[false, false], &tail, &[false, false]),
+            (10.0, 18.0)
+        );
+    }
+
+    #[test]
+    fn shrink_bounds_moves_only_the_rejected_end() {
+        let (head, _, tail, _) = edge_pieces();
+        // Head rejected, tail accepted: start stays, end tightens.
+        assert_eq!(
+            shrink_bounds(&ad(10.0, 18.0), &head, &[false, false], &tail, &[true, false]),
+            (10.0, 16.0)
+        );
+        assert_eq!(
+            shrink_bounds(&ad(10.0, 18.0), &head, &[false, true], &tail, &[false, false]),
+            (12.0, 18.0)
+        );
+    }
+
+    #[test]
+    fn shrink_bounds_ignores_extra_flags() {
+        // More flags than pieces must not be read past the piece list.
+        let (head, _, tail, _) = edge_pieces();
+        assert_eq!(
+            shrink_bounds(&ad(10.0, 18.0), &head, &[false, true], &tail, &[true, false, true]),
+            (12.0, 16.0)
+        );
+    }
+
+    #[test]
+    fn shrink_bounds_survives_empty_pieces() {
+        assert_eq!(shrink_bounds(&ad(10.0, 18.0), &[], &[], &[], &[]), (10.0, 18.0));
+    }
+
+    #[test]
+    fn shrink_bounds_falls_back_when_result_would_invert() {
+        // Kept tail ends before kept head starts: an impossible, inverted cut.
+        let head = vec![Segment { start: 15.0, end: 17.0, text: "a".into() }];
+        let tail = vec![Segment { start: 11.0, end: 12.0, text: "b".into() }];
+        let got = shrink_bounds(&ad(10.0, 18.0), &head, &[true], &tail, &[true]);
+        assert_eq!(got, (10.0, 18.0), "inverted result must fall back to the original");
     }
 
     #[test]
