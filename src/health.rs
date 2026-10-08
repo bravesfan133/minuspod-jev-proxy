@@ -5,7 +5,7 @@
 //! `FreeUsageLimitError`) parks it until the next 00:00 UTC. Nothing here
 //! polls upstream: the next real request after unpause is the probe.
 
-use serde_json::{Value, json};
+use serde_json::{json, Value};
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
@@ -120,7 +120,9 @@ impl BackendHealth {
         }
         let g = self.inner.lock().await;
         let now = SystemTime::now();
-        names.iter().all(|n| g.dead.get(*n).is_some_and(|m| m.until > now))
+        names
+            .iter()
+            .all(|n| g.dead.get(*n).is_some_and(|m| m.until > now))
     }
 
     pub async fn revival(&self) -> bool {
@@ -149,9 +151,23 @@ impl BackendHealth {
     }
 
     pub async fn note_success(&self) {
-        let mut g = self.inner.lock().await;
-        g.revival = false;
-        g.probe_spent = false;
+        let should_unpause = self.log.lock().unwrap_or_else(|e| e.into_inner()).paused;
+        {
+            let mut g = self.inner.lock().await;
+            g.revival = false;
+            g.probe_spent = false;
+        }
+        if should_unpause
+            && self
+                .unpause("a backend accepted a request; MinusPod can run", false)
+                .await
+                .is_ok()
+        {
+            // Drop the armed deadline only after the container actually thawed,
+            // then wake the scheduler so it does not sleep until the old time.
+            self.inner.lock().await.next_unpause = None;
+            self.notify.notify_one();
+        }
     }
 
     pub fn budget(&self, started: Instant) -> Duration {
@@ -193,9 +209,7 @@ impl BackendHealth {
             .await
             .map(rfc3339)
             .unwrap_or_else(|| "unknown".into());
-        format!(
-            "all Jev backends are out of credit or daily quota; MinusPod paused until {when}"
-        )
+        format!("all Jev backends are out of credit or daily quota; MinusPod paused until {when}")
     }
 
     /// Freeze MinusPod and arm the scheduler for the earliest dead window.
@@ -203,7 +217,7 @@ impl BackendHealth {
         if let Some(until) = self.earliest().await {
             self.inner.lock().await.next_unpause = Some(until);
         }
-        self.notify.notify_waiters();
+        self.notify.notify_one();
         let container = &self.cfg.minuspod_container;
         tracing::warn!(container = %container, reason, "pausing MinusPod");
         let result = self.ctl.pause().await;
@@ -213,7 +227,7 @@ impl BackendHealth {
     /// `fresh_probe` clears the spent flag so the next real request may call
     /// upstream once. The in-request hold passes false: it is about to probe
     /// itself and must not open a second wave.
-    pub async fn unpause(&self, reason: &str, fresh_probe: bool) {
+    pub async fn unpause(&self, reason: &str, fresh_probe: bool) -> Result<(), String> {
         let container = &self.cfg.minuspod_container;
         tracing::warn!(container = %container, reason, fresh_probe, "unpausing MinusPod");
         let result = self.ctl.unpause().await;
@@ -229,8 +243,46 @@ impl BackendHealth {
                 g.revival = true;
             }
         }
-        self.notify.notify_waiters();
-        self.record("unpause", reason, result, false).await;
+        self.notify.notify_one();
+        self.record("unpause", reason, result.clone(), false).await;
+        result
+    }
+
+    /// MinusPod was paused before this process started (a manual pause, or a
+    /// proxy restart). Arm the scheduler for the sooner of the billing TTL
+    /// and the next 00:00 UTC. Do not call upstream to find out which.
+    pub async fn adopt_if_paused(&self) {
+        match self.ctl.inspect_paused().await {
+            Ok(true) => {
+                let until = adopt_deadline(SystemTime::now(), self.cfg.billing_dead_secs);
+                let reason = format!(
+                    "MinusPod was already paused at startup; unpause scheduled for {} without probing upstream",
+                    rfc3339(until)
+                );
+                {
+                    let mut g = self.inner.lock().await;
+                    if g.next_unpause.is_none() {
+                        g.next_unpause = Some(until);
+                    }
+                }
+                tracing::warn!(
+                    container = %self.cfg.minuspod_container,
+                    next_unpause = %rfc3339(until),
+                    "adopting an existing MinusPod pause",
+                );
+                self.notify.notify_one();
+                self.record("pause", &reason, Ok(()), true).await;
+            }
+            Ok(false) => {
+                tracing::info!(
+                    container = %self.cfg.minuspod_container,
+                    "MinusPod is running",
+                );
+            }
+            Err(e) => {
+                tracing::warn!(error = %e, "could not inspect MinusPod pause state at startup");
+            }
+        }
     }
 
     pub async fn unpause_if_due(&self) {
@@ -241,11 +293,12 @@ impl BackendHealth {
             .next_unpause
             .is_some_and(|t| t <= SystemTime::now());
         if due {
-            self.unpause(
-                "scheduled: a backend dead window ended; the next request is the probe",
-                true,
-            )
-            .await;
+            let _ = self
+                .unpause(
+                    "scheduled: a backend dead window ended; the next request is the probe",
+                    true,
+                )
+                .await;
         }
     }
 
@@ -351,9 +404,7 @@ pub async fn run_scheduler(health: Arc<BackendHealth>) {
         tokio::pin!(notified);
         notified.as_mut().enable();
         if let Some(when) = health.next_unpause().await {
-            let delay = when
-                .duration_since(SystemTime::now())
-                .unwrap_or_default();
+            let delay = when.duration_since(SystemTime::now()).unwrap_or_default();
             tokio::select! {
                 _ = tokio::time::sleep(delay) => health.unpause_if_due().await,
                 _ = notified => {}
@@ -364,6 +415,14 @@ pub async fn run_scheduler(health: Arc<BackendHealth>) {
     }
 }
 
+/// Soonest a parked backend might accept work again when this process has
+/// not yet seen a 402 or a quota error: a billing window can end after
+/// `billing_secs`, and a daily quota cannot end before the next UTC midnight.
+pub fn adopt_deadline(now: SystemTime, billing_secs: u64) -> SystemTime {
+    let billing = now + Duration::from_secs(billing_secs.max(1));
+    billing.min(next_utc_midnight(now))
+}
+
 pub fn dead_until(kind: DeadKind, now: SystemTime, billing_secs: u64) -> SystemTime {
     match kind {
         DeadKind::Billing => now + Duration::from_secs(billing_secs.max(1)),
@@ -372,10 +431,7 @@ pub fn dead_until(kind: DeadKind, now: SystemTime, billing_secs: u64) -> SystemT
 }
 
 pub fn next_utc_midnight(now: SystemTime) -> SystemTime {
-    let secs = now
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_default()
-        .as_secs();
+    let secs = now.duration_since(UNIX_EPOCH).unwrap_or_default().as_secs();
     UNIX_EPOCH + Duration::from_secs((secs / 86_400 + 1) * 86_400)
 }
 
@@ -451,19 +507,36 @@ mod tests {
     #[test]
     fn midnight_and_billing_deadlines() {
         let t0 = UNIX_EPOCH + Duration::from_secs(10);
-        assert_eq!(next_utc_midnight(t0), UNIX_EPOCH + Duration::from_secs(86_400));
+        assert_eq!(
+            next_utc_midnight(t0),
+            UNIX_EPOCH + Duration::from_secs(86_400)
+        );
         assert_eq!(
             next_utc_midnight(UNIX_EPOCH + Duration::from_secs(86_400)),
             UNIX_EPOCH + Duration::from_secs(172_800)
         );
         assert_eq!(rfc3339(UNIX_EPOCH), "1970-01-01T00:00:00Z");
-        assert_eq!(rfc3339(UNIX_EPOCH + Duration::from_secs(86_400)), "1970-01-02T00:00:00Z");
+        assert_eq!(
+            rfc3339(UNIX_EPOCH + Duration::from_secs(86_400)),
+            "1970-01-02T00:00:00Z"
+        );
         // 2023-11-14 22:13:20 UTC.
-        assert_eq!(rfc3339(UNIX_EPOCH + Duration::from_secs(1_700_000_000)), "2023-11-14T22:13:20Z");
+        assert_eq!(
+            rfc3339(UNIX_EPOCH + Duration::from_secs(1_700_000_000)),
+            "2023-11-14T22:13:20Z"
+        );
         let billing = dead_until(DeadKind::Billing, t0, 1800);
         assert_eq!(billing, t0 + Duration::from_secs(1800));
         let quota = dead_until(DeadKind::Quota, t0, 1800);
         assert_eq!(quota, UNIX_EPOCH + Duration::from_secs(86_400));
+        // Far from midnight, the billing TTL is sooner.
+        assert_eq!(adopt_deadline(t0, 1800), t0 + Duration::from_secs(1800));
+        // Inside the last half hour of the UTC day, midnight is sooner.
+        let late = UNIX_EPOCH + Duration::from_secs(86_400 - 60);
+        assert_eq!(
+            adopt_deadline(late, 1800),
+            UNIX_EPOCH + Duration::from_secs(86_400)
+        );
     }
 
     #[tokio::test]
@@ -479,10 +552,7 @@ mod tests {
         let log = health.pause_log();
         let (saw_unpause, paused) = {
             let g = log.lock().unwrap();
-            (
-                g.events.iter().any(|e| e.action == "unpause"),
-                g.paused,
-            )
+            (g.events.iter().any(|e| e.action == "unpause"), g.paused)
         };
         assert!(saw_unpause, "scheduler should unpause");
         assert!(!paused);

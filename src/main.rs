@@ -1,6 +1,6 @@
 use axum::{
-    Router,
     routing::{get, post},
+    Router,
 };
 use std::sync::Arc;
 use std::time::Duration;
@@ -70,6 +70,7 @@ async fn main() {
     );
 
     let health = BackendHealth::with_docker(cfg.clone());
+    health.adopt_if_paused().await;
     tokio::spawn(health::run_scheduler(health.clone()));
     tracing::info!(
         container = %cfg.minuspod_container,
@@ -79,7 +80,12 @@ async fn main() {
         "minuspod pause control: all-dead backends pause the container until the next dead window ends",
     );
 
-    let state = AppState { cfg, client, sem, health };
+    let state = AppState {
+        cfg,
+        client,
+        sem,
+        health,
+    };
     let app = Router::new()
         .route("/v1/models", get(handlers::models))
         .route("/v1/chat/completions", post(handlers::completions))

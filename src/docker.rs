@@ -89,19 +89,37 @@ async fn docker_req(socket: &str, method: &str, path: &str) -> Result<(u16, Stri
         let mut stream = UnixStream::connect(socket)
             .await
             .map_err(|e| format!("connect {socket}: {e}"))?;
-        let req = format!("{method} {path} HTTP/1.0\r\nHost: docker\r\n\r\n");
+        // Connection: close plus a write shutdown. Without both, the engine
+        // keeps the socket open and a read-to-end waits until the timeout.
+        let req = format!(
+            "{method} {path} HTTP/1.0\r\nHost: docker\r\nConnection: close\r\nContent-Length: 0\r\n\r\n"
+        );
         stream
             .write_all(req.as_bytes())
             .await
             .map_err(|e| format!("write docker socket: {e}"))?;
-        let mut buf = Vec::new();
         stream
-            .read_to_end(&mut buf)
+            .shutdown()
             .await
-            .map_err(|e| format!("read docker socket: {e}"))?;
+            .map_err(|e| format!("shutdown docker socket: {e}"))?;
+        let mut buf = Vec::new();
+        let mut tmp = [0u8; 8192];
+        loop {
+            let n = stream
+                .read(&mut tmp)
+                .await
+                .map_err(|e| format!("read docker socket: {e}"))?;
+            if n == 0 {
+                break;
+            }
+            buf.extend_from_slice(&tmp[..n]);
+            if response_complete(&buf) {
+                break;
+            }
+        }
         Ok(buf)
     };
-    let buf = tokio::time::timeout(Duration::from_secs(3), request)
+    let buf = tokio::time::timeout(Duration::from_secs(10), request)
         .await
         .map_err(|_| "docker socket timed out".to_string())?
         .map_err(|e: String| e)?;
@@ -110,13 +128,41 @@ async fn docker_req(socket: &str, method: &str, path: &str) -> Result<(u16, Stri
         .split_whitespace()
         .nth(1)
         .and_then(|s| s.parse().ok())
-        .ok_or_else(|| format!("bad docker response: {}", text.chars().take(80).collect::<String>()))?;
+        .ok_or_else(|| {
+            format!(
+                "bad docker response: {}",
+                text.chars().take(80).collect::<String>()
+            )
+        })?;
     let body = text
         .split_once("\r\n\r\n")
         .or_else(|| text.split_once("\n\n"))
         .map(|(_, b)| b.to_string())
         .unwrap_or_default();
     Ok((status, body))
+}
+
+/// True once the status line, headers, and Content-Length body are in hand.
+fn response_complete(buf: &[u8]) -> bool {
+    let text = String::from_utf8_lossy(buf);
+    let Some((head, body)) = text
+        .split_once("\r\n\r\n")
+        .or_else(|| text.split_once("\n\n"))
+    else {
+        return false;
+    };
+    let len = head.lines().find_map(|line| {
+        let (name, value) = line.split_once(':')?;
+        if name.eq_ignore_ascii_case("content-length") {
+            value.trim().parse::<usize>().ok()
+        } else {
+            None
+        }
+    });
+    match len {
+        Some(n) => body.len() >= n,
+        None => true,
+    }
 }
 
 fn paused_from_body(body: &str) -> Option<bool> {
@@ -137,7 +183,16 @@ mod tests {
     use tokio::io::{AsyncReadExt, AsyncWriteExt};
     use tokio::net::UnixListener;
 
-    async fn serve_once(status: u16, body: &str) -> (String, tokio::task::JoinHandle<String>) {
+    /// Answers once and then holds the socket open. The client must finish
+    /// from Content-Length; waiting for EOF is the hang this guards against.
+    async fn serve_once(
+        status: u16,
+        body: &str,
+    ) -> (
+        String,
+        tokio::sync::oneshot::Receiver<String>,
+        tokio::task::JoinHandle<()>,
+    ) {
         static N: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
         let n = N.fetch_add(1, std::sync::atomic::Ordering::SeqCst);
         let path = std::env::temp_dir().join(format!("jev-docker-{}-{n}.sock", std::process::id()));
@@ -145,41 +200,50 @@ mod tests {
         let listener = UnixListener::bind(&path).unwrap();
         let path_s = path.to_string_lossy().to_string();
         let body = body.to_string();
+        let (tx, rx) = tokio::sync::oneshot::channel();
         let handle = tokio::spawn(async move {
             let (mut sock, _) = listener.accept().await.unwrap();
-            let mut buf = vec![0u8; 1024];
+            let mut buf = vec![0u8; 2048];
             let n = sock.read(&mut buf).await.unwrap();
             let req = String::from_utf8_lossy(&buf[..n]).to_string();
-            let resp = format!("HTTP/1.0 {status} X\r\nContent-Length: {}\r\n\r\n{body}", body.len());
+            let _ = tx.send(req);
+            let resp = format!(
+                "HTTP/1.0 {status} X\r\nContent-Length: {}\r\n\r\n{body}",
+                body.len()
+            );
             sock.write_all(resp.as_bytes()).await.unwrap();
-            let _ = path;
-            req
+            std::future::pending::<()>().await;
         });
-        (path_s, handle)
+        (path_s, rx, handle)
     }
 
     #[tokio::test]
     async fn pause_treats_204_and_409_as_success() {
-        let (path, srv) = serve_once(204, "").await;
+        let (path, rx, srv) = serve_once(204, "").await;
         let ctl = PauseCtl::docker(&path, "minuspod");
         ctl.pause().await.expect("204");
-        let req = srv.await.unwrap();
+        let req = rx.await.unwrap();
         assert!(req.contains("POST /v1.41/containers/minuspod/pause"));
+        assert!(req.contains("Connection: close"));
+        srv.abort();
         let _ = std::fs::remove_file(&path);
 
-        let (path, srv) = serve_once(409, "already paused").await;
+        let (path, rx, srv) = serve_once(409, "already paused").await;
         let ctl = PauseCtl::docker(&path, "minuspod");
         ctl.pause().await.expect("409 is already paused");
-        let _ = srv.await;
+        let _ = rx.await;
+        srv.abort();
         let _ = std::fs::remove_file(&path);
     }
 
     #[tokio::test]
     async fn inspect_reads_paused_flag() {
-        let (path, srv) = serve_once(200, r#"{"State":{"Paused":true,"Status":"paused"}}"#).await;
+        let (path, rx, srv) =
+            serve_once(200, r#"{"State":{"Paused":true,"Status":"paused"}}"#).await;
         let ctl = PauseCtl::docker(&path, "minuspod");
         assert!(ctl.inspect_paused().await.unwrap());
-        let _ = srv.await;
+        let _ = rx.await;
+        srv.abort();
         let _ = std::fs::remove_file(&path);
     }
 }

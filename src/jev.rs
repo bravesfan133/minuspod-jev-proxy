@@ -294,7 +294,7 @@ pub async fn decide(
                 if let Some(t) = until {
                     health.wait_until(t).await;
                 }
-                health
+                let _ = health
                     .unpause(
                         "dead window ended; retrying the held request as the probe",
                         false,

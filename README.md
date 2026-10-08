@@ -81,7 +81,10 @@ Otherwise the request is HTTP 503 with no `Retry-After`, the container stays
 paused, and the first real request after the scheduled unpause is the probe.
 If that probe is 402 or quota again, the backend is parked and MinusPod is
 paused again. `GET /status` reports each backend, whether MinusPod is
-paused, and the next unpause time. Connection failures are still HTTP 502.
+paused, and the next unpause time. If MinusPod is already paused when this
+process starts, that pause is adopted and an unpause is scheduled for the
+sooner of the billing TTL and the next 00:00 UTC, still without calling
+upstream. Connection failures are still HTTP 502.
 All other MinusPod stages degrade gracefully on their own (reviewer keeps
 candidates, verification keeps pass-1 cuts, repair defaults to `sponsor`,
 chapters go generic, trim keeps the span).
