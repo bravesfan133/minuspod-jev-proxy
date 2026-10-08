@@ -6,8 +6,13 @@ services:
   minuspod-jev-proxy:
     build: .
     container_name: minuspod-jev-proxy
+    # Root so the mounted Docker socket can pause and unpause MinusPod.
+    # The process only calls pause, unpause, and inspect on JEV_MINUSPOD_CONTAINER.
+    user: "0:0"
     ports:
       - "8787:8787"
+    volumes:
+      - ${JEV_DOCKER_SOCKET:-/var/run/docker.sock}:/var/run/docker.sock
     env_file:
       - path: .env
         required: false
@@ -41,4 +46,14 @@ services:
       - JEV_SEGMENT_GAP_SECS=${JEV_SEGMENT_GAP_SECS:-1.25}
       - JEV_MAX_SEGMENTS_PER_CALL=${JEV_MAX_SEGMENTS_PER_CALL:-16}
       - JEV_MAX_CONCURRENT_REQS=${JEV_MAX_CONCURRENT_REQS:-4}
+      # 402/billing parks that backend for this long. Daily quota (Clef 4006,
+      # Zen free-tier caps) parks it until the next 00:00 UTC instead.
+      - JEV_BILLING_DEAD_SECS=${JEV_BILLING_DEAD_SECS:-1800}
+      # MinusPod's openai-compatible client times out at 600s unless
+      # llm_timeout_seconds is set. A held request is only kept open when
+      # the wait fits inside this.
+      - JEV_CLIENT_TIMEOUT_SECS=${JEV_CLIENT_TIMEOUT_SECS:-600}
+      - JEV_HOLD_MARGIN_SECS=${JEV_HOLD_MARGIN_SECS:-30}
+      - JEV_MINUSPOD_CONTAINER=${JEV_MINUSPOD_CONTAINER:-minuspod}
+      - JEV_DOCKER_SOCKET=${JEV_DOCKER_SOCKET:-/var/run/docker.sock}
     restart: unless-stopped

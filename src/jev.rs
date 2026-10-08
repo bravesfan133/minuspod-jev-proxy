@@ -3,10 +3,12 @@ use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 use std::collections::HashMap;
 use std::sync::Arc;
-use std::time::{Duration, Instant};
-use tokio::sync::Semaphore;
+use std::time::{Duration, Instant, SystemTime};
+use tokio::sync::{OwnedMutexGuard, Semaphore};
 
 use crate::config::{Config, JevBackendCfg};
+use crate::health::{BackendHealth, DeadKind};
+use crate::openai::TokenUsage;
 
 /// Jev question types. See https://docs.typesafe.ai/api
 #[derive(Debug, Clone, Serialize)]
@@ -45,7 +47,6 @@ pub struct DecideResponse {
     pub model: String,
     #[serde(default)]
     pub answers: HashMap<String, Answer>,
-    #[allow(dead_code)]
     #[serde(default)]
     pub usage: Value,
 }
@@ -70,24 +71,33 @@ pub struct Answer {
 #[derive(Debug)]
 pub struct DecideOutcome {
     pub answers: HashMap<String, Answer>,
-    /// "primary" or "secondary".
+    /// "primary", "secondary", or "tertiary".
     pub backend: &'static str,
     pub latency_ms: u64,
+    pub usage: TokenUsage,
 }
 
 /// RateLimited must reach MinusPod as HTTP 429 (it defers + retries the
 /// episode) — never as 502 (windows get dropped as failed).
+///
+/// Dead is one backend's billing or daily quota. AllBackendsDead means every
+/// configured backend is in that state: MinusPod has been paused (when Docker
+/// is reachable) and the HTTP answer is 503 with no Retry-After.
 #[derive(Debug)]
 pub enum JevError {
     RateLimited { retry_after_secs: Option<u64>, message: String },
+    Dead { kind: DeadKind, message: String },
+    AllBackendsDead { message: String },
     Failed { message: String },
 }
 
 impl std::fmt::Display for JevError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            JevError::RateLimited { message, .. } => write!(f, "{message}"),
-            JevError::Failed { message } => write!(f, "{message}"),
+            JevError::RateLimited { message, .. }
+            | JevError::Dead { message, .. }
+            | JevError::AllBackendsDead { message }
+            | JevError::Failed { message } => write!(f, "{message}"),
         }
     }
 }
@@ -128,6 +138,21 @@ fn classify_status(
     retry_after: Option<u64>,
     body_head: String,
 ) -> JevError {
+    // Billing and daily quota are checked before the 429/503 bucket. A Clef
+    // 4006 or a Zen FreeUsageLimitError is not a short rate limit, and must
+    // not carry Retry-After back to MinusPod.
+    if is_billing(status, &body_head) {
+        return JevError::Dead {
+            kind: DeadKind::Billing,
+            message: format!("HTTP {status}: {body_head}"),
+        };
+    }
+    if is_daily_quota(&body_head) {
+        return JevError::Dead {
+            kind: DeadKind::Quota,
+            message: format!("HTTP {status}: {body_head}"),
+        };
+    }
     if status == reqwest::StatusCode::TOO_MANY_REQUESTS
         || status.as_u16() == 529
         || status == reqwest::StatusCode::SERVICE_UNAVAILABLE
@@ -141,6 +166,33 @@ fn classify_status(
             message: format!("HTTP {status}: {body_head}"),
         }
     }
+}
+
+/// HTTP 402, or a body that says the account has no credits left.
+pub fn is_billing(status: reqwest::StatusCode, body: &str) -> bool {
+    if status == reqwest::StatusCode::PAYMENT_REQUIRED {
+        return true;
+    }
+    let l = body.to_ascii_lowercase();
+    l.contains("billing_error")
+        || l.contains("insufficient_quota")
+        || l.contains("payment required")
+        || (l.contains("credit")
+            && (l.contains("no available") || l.contains("insufficient") || l.contains("exhausted")))
+}
+
+/// Clef's daily neuron cap (code 4006) and Zen's daily free-tier cap.
+/// A plain 429 without these markers stays a short rate limit.
+pub fn is_daily_quota(body: &str) -> bool {
+    let l = body.to_ascii_lowercase();
+    if l.contains("freeusagelimiterror")
+        || l.contains("free usage limit")
+        || l.contains("daily free allocation")
+        || l.contains("used up your daily")
+    {
+        return true;
+    }
+    l.contains("4006") && (l.contains("neuron") || l.contains("daily") || l.contains("allocation"))
 }
 
 /// POST a Decisions request to one backend. No API keys are logged.
@@ -180,93 +232,209 @@ async fn decide_once(
     })
 }
 
-/// Try primary, fall back to secondary. Each backend gets bounded retries
-/// with backoff on rate limiting (per TypeSafe guidance). Calls are gated
-/// by a semaphore so MinusPod's parallel windows don't burst the quota.
-/// Returns Err only if every configured backend fails; RateLimited if the
-/// failure was quota/overload on all of them (MinusPod must defer, not drop).
+fn configured(cfg: &Config) -> Vec<(&'static str, &JevBackendCfg)> {
+    [
+        ("primary", &cfg.primary),
+        ("secondary", &cfg.secondary),
+        ("tertiary", &cfg.tertiary),
+    ]
+    .into_iter()
+    .filter(|(_, b)| !b.base_url.trim().is_empty())
+    .collect()
+}
+
+/// Try primary, then secondary, then tertiary.
+///
+/// A billing or daily-quota answer marks that backend dead and is not retried.
+/// Transient 429/529/503 still get bounded backoff. When every configured
+/// backend is dead, MinusPod is paused. The in-flight request is held and
+/// retried only when the wait fits inside MinusPod's client timeout; otherwise
+/// it returns [`JevError::AllBackendsDead`] (HTTP 503, no Retry-After).
 /// Unconfigured slots (empty base_url) are skipped entirely.
 pub async fn decide(
     client: &Client,
     cfg: &Config,
+    health: &BackendHealth,
     sem: &Arc<Semaphore>,
+    started: Instant,
+    state: &Value,
+    questions: &Map<String, Value>,
+) -> Result<DecideOutcome, JevError> {
+    let backends = configured(cfg);
+    let names: Vec<&str> = backends.iter().map(|(n, _)| *n).collect();
+    if names.is_empty() {
+        return Err(JevError::Failed {
+            message: "no Jev backends configured".to_string(),
+        });
+    }
+
+    let mut guard: Option<OwnedMutexGuard<()>> = None;
+    let mut held_once = false;
+
+    loop {
+        if health.all_dead(&names).await {
+            if guard.is_none() {
+                guard = Some(health.lock_serial().await);
+                continue;
+            }
+            let until = health.earliest().await;
+            let wait = until
+                .and_then(|t| t.duration_since(SystemTime::now()).ok())
+                .unwrap_or_default();
+            let budget = health.budget(started);
+            let why = health.summary().await;
+            if !held_once && !health.probe_spent().await && wait <= budget {
+                held_once = true;
+                health.set_probe_spent(true).await;
+                health
+                    .pause(&format!(
+                        "holding the in-flight request until a backend should be available; {why}"
+                    ))
+                    .await;
+                if let Some(t) = until {
+                    health.wait_until(t).await;
+                }
+                health
+                    .unpause(
+                        "dead window ended; retrying the held request as the probe",
+                        false,
+                    )
+                    .await;
+                continue;
+            }
+            health.set_probe_spent(true).await;
+            health
+                .pause(&format!(
+                    "wait {wait:?} exceeds the remaining client budget {budget:?}; {why}"
+                ))
+                .await;
+            return Err(JevError::AllBackendsDead {
+                message: health.exhausted_message().await,
+            });
+        }
+
+        if health.revival().await && guard.is_none() {
+            guard = Some(health.lock_serial().await);
+            continue;
+        }
+        if guard.is_some() && !health.revival().await && !health.all_dead(&names).await {
+            guard = None;
+        }
+
+        let mut last_rate: Option<JevError> = None;
+        let mut saw_retry_after: Option<u64> = None;
+        let mut last_failed: Option<JevError> = None;
+
+        for (name, backend) in &backends {
+            if health.is_dead(name).await {
+                continue;
+            }
+            match try_backend(client, cfg, sem, backend, name, state, questions).await {
+                Ok(outcome) => {
+                    health.note_success().await;
+                    return Ok(outcome);
+                }
+                Err(JevError::Dead { kind, message }) => {
+                    tracing::warn!("jev {name} backend dead ({kind:?}): {message}");
+                    health
+                        .mark_dead(name, kind, &message, cfg.billing_dead_secs)
+                        .await;
+                }
+                Err(JevError::RateLimited {
+                    retry_after_secs,
+                    message,
+                }) => {
+                    saw_retry_after = Some(
+                        saw_retry_after
+                            .unwrap_or(u64::MAX)
+                            .min(retry_after_secs.unwrap_or(u64::MAX)),
+                    );
+                    last_rate = Some(JevError::RateLimited {
+                        retry_after_secs,
+                        message,
+                    });
+                }
+                Err(e) => {
+                    tracing::warn!("jev {name} backend failed: {e}");
+                    last_failed = Some(e);
+                }
+            }
+        }
+
+        if health.all_dead(&names).await {
+            continue;
+        }
+
+        if let Some(JevError::RateLimited { message, .. }) = last_rate {
+            return Err(JevError::RateLimited {
+                retry_after_secs: saw_retry_after.filter(|&s| s != u64::MAX),
+                message,
+            });
+        }
+        return Err(last_failed.unwrap_or(JevError::Failed {
+            message: "no Jev backends configured".to_string(),
+        }));
+    }
+}
+
+/// Bounded retries for a short rate limit. Billing and daily quota return
+/// immediately so the caller can skip this backend.
+async fn try_backend(
+    client: &Client,
+    cfg: &Config,
+    sem: &Arc<Semaphore>,
+    backend: &JevBackendCfg,
+    name: &'static str,
     state: &Value,
     questions: &Map<String, Value>,
 ) -> Result<DecideOutcome, JevError> {
     const MAX_ATTEMPTS: u32 = 3;
     let timeout = Duration::from_secs(cfg.timeout_secs.max(5));
-    let backends = [
-        (&cfg.primary, "primary"),
-        (&cfg.secondary, "secondary"),
-        (&cfg.tertiary, "tertiary"),
-    ];
-    let mut last_err: Option<JevError> = None;
-    let mut saw_rate_limited: Option<u64> = None;
-
-    for (backend, name) in backends {
-        // An unset slot is skipped rather than attempted, so an unconfigured
-        // third backend cannot turn a working two-backend setup into a failure.
-        if backend.base_url.trim().is_empty() {
-            continue;
-        }
-        for attempt in 0..MAX_ATTEMPTS {
-            let result = {
-                let _permit = sem.acquire().await.map_err(|_| JevError::Failed {
-                    message: "semaphore closed".to_string(),
-                })?;
-                let t0 = Instant::now();
-                let r = decide_once(client, backend, state, questions, timeout).await;
-                r.map(|resp| (resp, t0.elapsed().as_millis() as u64))
-            };
-            match result {
-                Ok((resp, latency_ms)) => {
-                    return Ok(DecideOutcome {
-                        answers: resp.answers,
-                        backend: name,
-                        latency_ms,
-                    })
-                }
-                Err(JevError::RateLimited { retry_after_secs, message }) => {
-                    tracing::warn!(
-                        "jev {name} backend rate-limited (attempt {}/{MAX_ATTEMPTS}), backing off",
-                        attempt + 1,
-                    );
-                    saw_rate_limited = Some(
-                        saw_rate_limited
-                            .unwrap_or(u64::MAX)
-                            .min(retry_after_secs.unwrap_or(u64::MAX)),
-                    );
-                    last_err = Some(JevError::RateLimited {
-                        retry_after_secs,
-                        message,
-                    });
-                    if attempt + 1 < MAX_ATTEMPTS {
-                        let sleep =
-                            backoff_secs(attempt, retry_after_secs) * 1000 + jitter_ms();
-                        tokio::time::sleep(Duration::from_millis(sleep)).await;
-                        continue;
-                    }
-                    break;
-                }
-                Err(e) => {
-                    tracing::warn!("jev {name} backend failed: {e}");
-                    last_err = Some(e);
-                    break;
-                }
+    let mut last_rate: Option<JevError> = None;
+    for attempt in 0..MAX_ATTEMPTS {
+        let result = {
+            let _permit = sem.acquire().await.map_err(|_| JevError::Failed {
+                message: "semaphore closed".to_string(),
+            })?;
+            let t0 = Instant::now();
+            let r = decide_once(client, backend, state, questions, timeout).await;
+            r.map(|resp| (resp, t0.elapsed().as_millis() as u64))
+        };
+        match result {
+            Ok((resp, latency_ms)) => {
+                return Ok(DecideOutcome {
+                    answers: resp.answers,
+                    backend: name,
+                    latency_ms,
+                    usage: TokenUsage::from_upstream(&resp.usage),
+                })
             }
+            Err(e @ JevError::Dead { .. }) => return Err(e),
+            Err(JevError::RateLimited {
+                retry_after_secs,
+                message,
+            }) => {
+                tracing::warn!(
+                    "jev {name} backend rate-limited (attempt {}/{MAX_ATTEMPTS}), backing off",
+                    attempt + 1,
+                );
+                last_rate = Some(JevError::RateLimited {
+                    retry_after_secs,
+                    message,
+                });
+                if attempt + 1 < MAX_ATTEMPTS {
+                    let sleep = backoff_secs(attempt, retry_after_secs) * 1000 + jitter_ms();
+                    tokio::time::sleep(Duration::from_millis(sleep)).await;
+                    continue;
+                }
+                return Err(last_rate.expect("rate limit recorded"));
+            }
+            Err(e) => return Err(e),
         }
     }
-
-    match (last_err, saw_rate_limited) {
-        (Some(JevError::RateLimited { message, .. }), _) => Err(JevError::RateLimited {
-            retry_after_secs: saw_rate_limited.filter(|&s| s != u64::MAX),
-            message,
-        }),
-        (Some(e), _) => Err(e),
-        (None, _) => Err(JevError::Failed {
-            message: "no Jev backends configured".to_string(),
-        }),
-    }
+    Err(last_rate.unwrap_or(JevError::Failed {
+        message: format!("jev {name} produced no result"),
+    }))
 }
 
 pub fn questions_map(qs: Vec<(String, Question)>) -> Map<String, Value> {
@@ -331,6 +499,40 @@ mod tests {
         assert!(matches!(
             classify_status(reqwest::StatusCode::BAD_REQUEST, None, "x".into()),
             JevError::Failed { .. }
+        ));
+        assert!(matches!(
+            classify_status(
+                reqwest::StatusCode::PAYMENT_REQUIRED,
+                None,
+                r#"{"error":"billing_error","message":"no available TypeSafe API credits"}"#.into(),
+            ),
+            JevError::Dead { kind: DeadKind::Billing, .. }
+        ));
+        assert!(matches!(
+            classify_status(
+                reqwest::StatusCode::TOO_MANY_REQUESTS,
+                Some(300),
+                r#"{"code":4006,"message":"you have used up your daily free allocation of 10,000 neurons"}"#.into(),
+            ),
+            JevError::Dead { kind: DeadKind::Quota, .. }
+        ));
+        assert!(matches!(
+            classify_status(
+                reqwest::StatusCode::TOO_MANY_REQUESTS,
+                Some(300),
+                r#"{"type":"FreeUsageLimitError","message":"daily limit"}"#.into(),
+            ),
+            JevError::Dead { kind: DeadKind::Quota, .. }
+        ));
+        // A short 429 is still a rate limit, and its Retry-After is kept
+        // here. It is dropped only when every backend is dead.
+        assert!(matches!(
+            classify_status(
+                reqwest::StatusCode::TOO_MANY_REQUESTS,
+                Some(3),
+                "slow down".into(),
+            ),
+            JevError::RateLimited { retry_after_secs: Some(3), .. }
         ));
     }
 

@@ -65,13 +65,26 @@ Watch the rate limit: Clef is documented at 2000 req/min and a sustained
 sweep will hit 429s.
 
 Rate limiting is handled, not hidden: concurrent Jev calls are capped
-(`JEV_MAX_CONCURRENT_REQS`, default 4), each backend gets bounded retries
-with backoff honoring `Retry-After`, and if both backends are limited the
-proxy answers HTTP 429 so MinusPod defers + retries the episode instead of
-dropping windows. Other total failures return 502. All other MinusPod
-stages degrade gracefully on their own (reviewer keeps candidates,
-verification keeps pass-1 cuts, repair defaults to `sponsor`, chapters go
-generic, trim keeps the span).
+(`JEV_MAX_CONCURRENT_REQS`, default 4). A short 429/529/503 gets bounded
+retries with backoff. A 402 or other billing failure parks that backend for
+`JEV_BILLING_DEAD_SECS` (default 30 minutes). Daily quota (Clef code 4006,
+Zen `FreeUsageLimitError`) parks it until the next 00:00 UTC. Those answers
+are not retried and their `Retry-After` is not forwarded.
+
+When every configured backend is parked, the proxy `docker pause`s the
+MinusPod container (`JEV_MINUSPOD_CONTAINER`, Docker socket mounted into
+this service) and arms an unpause at the earliest deadline. It does not
+poll. The in-flight request is held and retried only when that wait fits
+inside `JEV_CLIENT_TIMEOUT_SECS` (MinusPod's openai-compatible default is
+600s, and `docker pause` does not stop the monotonic clock the client uses).
+Otherwise the request is HTTP 503 with no `Retry-After`, the container stays
+paused, and the first real request after the scheduled unpause is the probe.
+If that probe is 402 or quota again, the backend is parked and MinusPod is
+paused again. `GET /status` reports each backend, whether MinusPod is
+paused, and the next unpause time. Connection failures are still HTTP 502.
+All other MinusPod stages degrade gracefully on their own (reviewer keeps
+candidates, verification keeps pass-1 cuts, repair defaults to `sponsor`,
+chapters go generic, trim keeps the span).
 
 ### Prompts are written for a decision model, not a chat model
 

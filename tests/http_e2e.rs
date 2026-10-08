@@ -312,12 +312,17 @@ impl Harness {
             segment_gap_secs: 1.25,
             max_segments_per_call: 16,
             max_concurrent: 4,
+            billing_dead_secs: 1800,
+            client_timeout_secs: 600,
+            hold_margin_secs: 30,
+            minuspod_container: "minuspod".into(),
+            docker_socket: String::new(),
         };
-        AppState {
-            cfg: Arc::new(cfg),
-            client: reqwest::Client::new(),
-            sem: Arc::new(tokio::sync::Semaphore::new(4)),
-        }
+        AppState::for_tests(
+            Arc::new(cfg),
+            reqwest::Client::new(),
+            Arc::new(tokio::sync::Semaphore::new(4)),
+        )
     }
 }
 
@@ -356,6 +361,16 @@ async fn detection_emits_a_cut_for_the_sponsor_read() {
     assert_eq!(resp["object"], "chat.completion");
     assert!(resp["id"].as_str().is_some(), "missing id");
     assert_eq!(resp["model"], "jev-ad-detection");
+    // Upstream usage is copied through. The stub reports 100/10 per Decisions
+    // call, and a window with an ad also runs edge trim, so the total is at
+    // least one call.
+    let prompt = resp["usage"]["prompt_tokens"].as_u64().unwrap_or(0);
+    let completion = resp["usage"]["completion_tokens"].as_u64().unwrap_or(0);
+    assert!(prompt >= 100, "prompt tokens were not copied: {prompt}");
+    assert!(completion >= 10, "completion tokens were not copied: {completion}");
+    assert_eq!(resp["usage"]["input_tokens"].as_u64(), Some(prompt));
+    assert_eq!(resp["usage"]["output_tokens"].as_u64(), Some(completion));
+    assert_eq!(resp["usage"]["total_tokens"].as_u64(), Some(prompt + completion));
 
     let ads = ads_from(&resp);
     assert_eq!(ads.len(), 1, "expected exactly one cut, got {ads:#?}");
@@ -504,12 +519,17 @@ async fn backend_failure_surfaces_as_bad_gateway() {
         segment_gap_secs: 1.25,
         max_segments_per_call: 16,
         max_concurrent: 1,
+        billing_dead_secs: 1800,
+        client_timeout_secs: 600,
+        hold_margin_secs: 30,
+        minuspod_container: "minuspod".into(),
+        docker_socket: String::new(),
     };
-    let state = AppState {
-        cfg: StdArc::new(cfg),
-        client: reqwest::Client::new(),
-        sem: StdArc::new(tokio::sync::Semaphore::new(1)),
-    };
+    let state = AppState::for_tests(
+        StdArc::new(cfg),
+        reqwest::Client::new(),
+        StdArc::new(tokio::sync::Semaphore::new(1)),
+    );
 
     let resp = minuspod_jev_proxy::handlers::completions(
         axum::extract::State(state),

@@ -13,8 +13,9 @@ use tokio::sync::Semaphore;
 
 use crate::classify::{RequestKind, classify};
 use crate::config::Config;
+use crate::health::BackendHealth;
 use crate::jev::{JevError, Question, decide, questions_map};
-use crate::openai::{ChatRequest, chat_response};
+use crate::openai::{ChatRequest, TokenUsage, chat_response};
 use crate::transcript::{
     Ad, ClassifiedSpan, Line, Segment, collect_sponsor_ads, detection_state, end_text_for,
     parse_transcript, round3, shrink_bounds, split_into_pieces, to_segments,
@@ -25,6 +26,16 @@ pub struct AppState {
     pub cfg: Arc<Config>,
     pub client: reqwest::Client,
     pub sem: Arc<Semaphore>,
+    pub health: Arc<BackendHealth>,
+}
+
+impl AppState {
+    /// Pause and unpause are recorded in memory. Integration tests use this
+    /// so they never talk to a Docker daemon.
+    pub fn for_tests(cfg: Arc<Config>, client: reqwest::Client, sem: Arc<Semaphore>) -> Self {
+        let health = BackendHealth::recording(cfg.clone());
+        Self { cfg, client, sem, health }
+    }
 }
 
 static REVIEW_BOUNDS_RE: LazyLock<Regex> = LazyLock::new(|| {
@@ -118,6 +129,13 @@ fn jev_err(e: JevError) -> Response {
             (StatusCode::TOO_MANY_REQUESTS, headers, Json(body)).into_response()
         }
         JevError::Failed { message } => err(StatusCode::BAD_GATEWAY, message),
+        // No Retry-After. A 429 here makes MinusPod defer for at most 300s
+        // and try again, which is the loop this pause exists to stop.
+        // Dead is internal: decide() turns it into failover or AllBackendsDead
+        // before a handler sees it. If one leaks, it is still not retryable.
+        JevError::Dead { message, .. } | JevError::AllBackendsDead { message } => {
+            err(StatusCode::SERVICE_UNAVAILABLE, message)
+        }
     }
 }
 
@@ -137,11 +155,16 @@ pub async fn completions(
         RequestKind::Review => handle_review(&state, &req, &model, t0).await,
         RequestKind::CategoryRepair => handle_repair(&state, &req, &model, t0).await,
         RequestKind::TrimRecovery => {
-            Json(chat_response(&model, r#"{"ad_start": null, "ad_end": null}"#.into()))
-                .into_response()
+            Json(chat_response(
+                &model,
+                r#"{"ad_start": null, "ad_end": null}"#.into(),
+                TokenUsage::default(),
+            ))
+            .into_response()
         }
         RequestKind::Probe => {
-            Json(chat_response(&model, r#"{"ok": true}"#.into())).into_response()
+            Json(chat_response(&model, r#"{"ok": true}"#.into(), TokenUsage::default()))
+                .into_response()
         }
         RequestKind::Chapters => err(
             StatusCode::INTERNAL_SERVER_ERROR,
@@ -183,6 +206,7 @@ async fn handle_detection(
 
     let mut spans: Vec<ClassifiedSpan> = Vec::new();
     let mut jev_ms_total: u64 = 0;
+    let mut usage = TokenUsage::default();
     let mut backend_used = "primary";
     let criteria = detection_criteria();
 
@@ -222,13 +246,22 @@ async fn handle_detection(
                 ),
             ));
         }
-        let outcome =
-            match decide(&state.client, cfg, &state.sem, &state_value, &questions_map(qs)).await
-            {
-                Ok(o) => o,
-                Err(e) => return jev_err(e),
-            };
+        let outcome = match decide(
+            &state.client,
+            cfg,
+            &state.health,
+            &state.sem,
+            t0,
+            &state_value,
+            &questions_map(qs),
+        )
+        .await
+        {
+            Ok(o) => o,
+            Err(e) => return jev_err(e),
+        };
         jev_ms_total += outcome.latency_ms;
+        usage.add(outcome.usage);
         backend_used = outcome.backend;
         for (j, seg) in chunk.iter().enumerate() {
             let noul = outcome
@@ -262,11 +295,14 @@ async fn handle_detection(
         cfg.attach_gap_secs,
     );
 
-    // Precision pass. Detection spans are ~4s, so a cut tends to start and
-    // end mid-sentence: the read's first clause gets left in, and a bit of
-    // show talk gets taken out with it. Re-judge just the head and tail of
+    // Precision pass. Detection spans flush around the target, so a cut can
+    // still start or end mid-sentence. Re-judge just the head and tail of
     // each cut at finer granularity and pull the bounds inward.
-    let trim = edge_trim(state, &lines, ads, verification).await;
+    let trim = match edge_trim(state, &lines, ads, verification, t0).await {
+        Ok(t) => t,
+        Err(e) => return jev_err(e),
+    };
+    usage.add(trim.usage);
 
     let content = serde_json::to_string(&trim.ads).unwrap_or_else(|_| "[]".to_string());
     tracing::info!(
@@ -283,7 +319,7 @@ async fn handle_detection(
         total_ms = t0.elapsed().as_millis() as u64,
         "detection request served"
     );
-    Json(chat_response(model, content)).into_response()
+    Json(chat_response(model, content, usage)).into_response()
 }
 
 /// Outcome of the edge-trim pass, plus counters for the log line.
@@ -296,6 +332,7 @@ struct TrimOutcome {
     pieces: usize,
     /// Total seconds removed from cut edges.
     trimmed_secs: f64,
+    usage: TokenUsage,
 }
 
 /// One piece of a cut edge that needs a decision.
@@ -324,20 +361,22 @@ struct TrimPiece {
 /// uniformly-rejected end is left alone rather than collapsing the cut.
 ///
 /// A failure here must not cost the caller confirmed cuts: on error the
-/// untrimmed cuts are returned.
+/// untrimmed cuts are returned. The exception is every backend being dead:
+/// publishing the cuts would look like success and keep MinusPod running.
 async fn edge_trim(
     state: &AppState,
     lines: &[Line],
     ads: Vec<Ad>,
     verification: bool,
-) -> TrimOutcome {
+    started: Instant,
+) -> Result<TrimOutcome, JevError> {
     let cfg = &state.cfg;
     let mut out = TrimOutcome {
         candidates: ads.len(),
         ..Default::default()
     };
     if ads.is_empty() {
-        return out;
+        return Ok(out);
     }
 
     let verify_note = if verification {
@@ -444,17 +483,26 @@ let mut qs = Vec::new();
                 ));
             }
 
-            let outcome =
-                match decide(&state.client, cfg, &state.sem, &Value::String(group.context.clone()), &questions_map(qs))
-                    .await
-                {
-                    Ok(o) => o,
-                    Err(e) => {
-                        tracing::warn!("edge trim decide failed, keeping untrimmed cuts: {e}");
-                        out.ads = ads;
-                        return out;
-                    }
-                };
+            let outcome = match decide(
+                &state.client,
+                cfg,
+                &state.health,
+                &state.sem,
+                started,
+                &Value::String(group.context.clone()),
+                &questions_map(qs),
+            )
+            .await
+            {
+                Ok(o) => o,
+                Err(e @ JevError::AllBackendsDead { .. }) => return Err(e),
+                Err(e) => {
+                    tracing::warn!("edge trim decide failed, keeping untrimmed cuts: {e}");
+                    out.ads = ads;
+                    return Ok(out);
+                }
+            };
+            out.usage.add(outcome.usage);
 
             for (j, piece) in batch.iter().enumerate() {
                 let noul = outcome
@@ -506,7 +554,7 @@ let mut qs = Vec::new();
         }
     }
 
-    out
+    Ok(out)
 }
 
 async fn handle_review(
@@ -536,7 +584,16 @@ async fn handle_review(
             "The span should stay: show talk, a sign-off, or the show promoting itself",
         ),
     )]);
-    let outcome = match decide(&state.client, cfg, &state.sem, &Value::String(user), &qs).await
+    let outcome = match decide(
+        &state.client,
+        cfg,
+        &state.health,
+        &state.sem,
+        t0,
+        &Value::String(user),
+        &qs,
+    )
+    .await
     {
         Ok(o) => o,
         Err(e) => return jev_err(e),
@@ -564,7 +621,7 @@ async fn handle_review(
         total_ms = t0.elapsed().as_millis() as u64,
         "review request served"
     );
-    Json(chat_response(model, content)).into_response()
+    Json(chat_response(model, content, outcome.usage)).into_response()
 }
 
 #[derive(Debug, serde::Deserialize)]
@@ -668,7 +725,9 @@ async fn handle_repair(
     let outcome = match decide(
         &state.client,
         cfg,
+        &state.health,
         &state.sem,
+        t0,
         &Value::String(excerpt),
         &questions_map(qs),
     )
@@ -694,7 +753,7 @@ async fn handle_repair(
         total_ms = t0.elapsed().as_millis() as u64,
         "repair request served"
     );
-    Json(chat_response(model, Value::Array(out).to_string())).into_response()
+    Json(chat_response(model, Value::Array(out).to_string(), outcome.usage)).into_response()
 }
 
 pub async fn models() -> impl IntoResponse {
@@ -707,6 +766,10 @@ pub async fn models() -> impl IntoResponse {
             "owned_by": "minuspod-jev-proxy",
         }],
     }))
+}
+
+pub async fn status(State(state): State<AppState>) -> impl IntoResponse {
+    Json(state.health.status().await)
 }
 
 pub async fn health(State(state): State<AppState>) -> impl IntoResponse {
