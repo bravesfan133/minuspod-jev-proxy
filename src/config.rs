@@ -48,6 +48,21 @@ pub struct Config {
     pub max_segments_per_call: usize,
     /// max concurrent Jev calls (MinusPod fires all windows in parallel).
     pub max_concurrent: usize,
+    /// How long a 402 / billing failure parks that backend.
+    pub billing_dead_secs: u64,
+    /// MinusPod's per-request client timeout. A held request is only kept
+    /// open when the wait fits inside this, minus `hold_margin_secs`.
+    /// openai-compatible MinusPod defaults to 600s when `llm_timeout_seconds`
+    /// is unset.
+    pub client_timeout_secs: u64,
+    /// Seconds reserved so the probe after unpause can finish before the
+    /// client gives up.
+    pub hold_margin_secs: u64,
+    /// Container `docker pause` / `docker unpause` acts on.
+    pub minuspod_container: String,
+    /// Docker Engine socket. Empty disables pause/unpause (requests still
+    /// fail fast once every backend is dead).
+    pub docker_socket: String,
 }
 
 /// Every env var this build reads. Anything else in the `JEV_` namespace is
@@ -78,6 +93,11 @@ const KNOWN_ENV_VARS: &[&str] = &[
     "JEV_SEGMENT_GAP_SECS",
     "JEV_MAX_SEGMENTS_PER_CALL",
     "JEV_MAX_CONCURRENT_REQS",
+    "JEV_BILLING_DEAD_SECS",
+    "JEV_CLIENT_TIMEOUT_SECS",
+    "JEV_HOLD_MARGIN_SECS",
+    "JEV_MINUSPOD_CONTAINER",
+    "JEV_DOCKER_SOCKET",
     // Read as a deprecated alias for JEV_RECALL_THRESHOLD.
     "JEV_AD_THRESHOLD",
 ];
@@ -168,6 +188,7 @@ impl Config {
         // Empty by default: the third slot is opt-in and must not displace the
         // keyless free tier that already sits in secondary.
         let tertiary_url = get("JEV_TERTIARY_BASE_URL", "");
+        let bounds = segment_bounds();
         Self {
             port: get_u16("PORT", 8787),
             primary: JevBackendCfg {
@@ -203,12 +224,53 @@ impl Config {
             attach_threshold: get_prob("JEV_ATTACH_THRESHOLD", 0.40),
             attach_gap_secs: get_f64("JEV_ATTACH_GAP_SECS", 8.0),
             review_threshold: get_prob("JEV_REVIEW_THRESHOLD", 0.5),
-            segment_target_secs: get_f64("JEV_SEGMENT_TARGET_SECS", 4.0).max(0.5),
-            segment_max_secs: get_f64("JEV_SEGMENT_MAX_SECS", 8.0).max(0.5),
             segment_gap_secs: get_f64("JEV_SEGMENT_GAP_SECS", 1.25).max(0.0),
             max_segments_per_call: get_usize("JEV_MAX_SEGMENTS_PER_CALL", 16).max(1),
             max_concurrent: get_usize("JEV_MAX_CONCURRENT_REQS", 4).max(1),
+            billing_dead_secs: get_u64("JEV_BILLING_DEAD_SECS", 1800).max(1),
+            client_timeout_secs: get_u64("JEV_CLIENT_TIMEOUT_SECS", 600).max(1),
+            hold_margin_secs: get_u64("JEV_HOLD_MARGIN_SECS", 30),
+            minuspod_container: get("JEV_MINUSPOD_CONTAINER", "minuspod"),
+            docker_socket: get("JEV_DOCKER_SOCKET", "/var/run/docker.sock"),
+            segment_target_secs: bounds.segment_target_secs,
+            segment_max_secs: bounds.segment_max_secs,
         }
+    }
+}
+
+/// `JEV_SEGMENT_TARGET_SECS` is the span length operators set. If max is
+/// smaller, spans flush on max and the target is silently ignored. Raise max
+/// to the target and say so.
+fn segment_bounds() -> SegmentBounds {
+    let target = get_f64("JEV_SEGMENT_TARGET_SECS", 4.0).max(0.5);
+    let configured_max = get_f64("JEV_SEGMENT_MAX_SECS", 8.0).max(0.5);
+    let (segment_target_secs, segment_max_secs, raised) =
+        reconcile_segment_bounds(target, configured_max);
+    if raised {
+        tracing::warn!(
+            configured_max,
+            target = segment_target_secs,
+            effective_max = segment_max_secs,
+            "JEV_SEGMENT_MAX_SECS is below JEV_SEGMENT_TARGET_SECS; raising max to the target so spans are not capped shorter than the target",
+        );
+    }
+    SegmentBounds {
+        segment_target_secs,
+        segment_max_secs,
+    }
+}
+
+struct SegmentBounds {
+    segment_target_secs: f64,
+    segment_max_secs: f64,
+}
+
+/// Returns `(target, max, raised)`.
+pub fn reconcile_segment_bounds(target: f64, max: f64) -> (f64, f64, bool) {
+    if max < target {
+        (target, target, true)
+    } else {
+        (target, max, false)
     }
 }
 
@@ -255,6 +317,13 @@ mod tests {
         assert!(KNOWN_ENV_VARS.contains(&"JEV_RECALL_THRESHOLD"));
         assert!(KNOWN_ENV_VARS.contains(&"JEV_EDGE_THRESHOLD"));
         assert!(!KNOWN_ENV_VARS.contains(&"JEV_SEGMENT_FLOOR_SECS"));
+    }
+
+    #[test]
+    fn target_longer_than_max_raises_max() {
+        assert_eq!(reconcile_segment_bounds(20.0, 8.0), (20.0, 20.0, true));
+        assert_eq!(reconcile_segment_bounds(4.0, 8.0), (4.0, 8.0, false));
+        assert_eq!(reconcile_segment_bounds(8.0, 8.0), (8.0, 8.0, false));
     }
 
     #[test]

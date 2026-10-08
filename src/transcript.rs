@@ -303,8 +303,7 @@ pub fn shrink_bounds(
     let kept_end = tail
         .iter()
         .zip(tail_keep)
-        .filter(|(_, &k)| k)
-        .next_back()
+        .rfind(|(_, &k)| k)
         .map(|(p, _)| p.end);
 
     let start = kept_start.unwrap_or(ad.start).max(ad.start);
@@ -399,6 +398,23 @@ mod tests {
         assert_eq!(segs.len(), 2);
         assert_eq!(segs[0].end, 6.0);
         assert_eq!(segs[1].text, "c");
+    }
+
+    #[test]
+    fn a_20s_target_is_honored_when_max_is_at_least_the_target() {
+        let lines: Vec<Line> = (0..10)
+            .map(|i| Line {
+                start: i as f64 * 4.0,
+                end: i as f64 * 4.0 + 3.5,
+                text: "talk".into(),
+            })
+            .collect();
+        // The old bug: max 8s flushes long before a 20s target.
+        let capped = to_segments(&lines, 20.0, 8.0, 100.0);
+        let honored = to_segments(&lines, 20.0, 20.0, 100.0);
+        assert!(capped.len() > honored.len());
+        assert!(honored.len() <= 3, "expected ~20s spans, got {}", honored.len());
+        assert!(honored[0].end - honored[0].start >= 15.0);
     }
 
     #[test]

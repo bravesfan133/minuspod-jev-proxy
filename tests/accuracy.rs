@@ -730,7 +730,7 @@ fn recall_is_perfect_across_fixtures() {
         totals.merge(score(&trimmed, &labels));
     }
     assert_eq!(totals.misses, 0, "{} labeled ad(s) were left in", totals.misses);
-    assert_eq!(totals.hits as usize, totals.hits as usize);
+    assert!(totals.hits > 0, "fixtures contained no labeled ads to recall");
 }
 
 #[test]

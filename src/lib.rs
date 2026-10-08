@@ -6,7 +6,9 @@
 
 pub mod classify;
 pub mod config;
+mod docker;
 pub mod handlers;
+pub mod health;
 pub mod jev;
 pub mod openai;
 pub mod transcript;

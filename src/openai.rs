@@ -117,12 +117,57 @@ pub struct ChatMessageOut {
 
 #[derive(Debug, Serialize)]
 pub struct Usage {
-    pub prompt_tokens: u32,
-    pub completion_tokens: u32,
-    pub total_tokens: u32,
+    /// OpenAI names. MinusPod's client reads these into its token ledger.
+    pub prompt_tokens: u64,
+    pub completion_tokens: u64,
+    pub total_tokens: u64,
+    /// Upstream Jev names, copied through so a caller that reads them
+    /// directly sees the same counts.
+    pub input_tokens: u64,
+    pub output_tokens: u64,
 }
 
-pub fn chat_response(model: &str, content: String) -> ChatResponse {
+/// Token counts taken from an upstream `usage` object.
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+pub struct TokenUsage {
+    pub input_tokens: u64,
+    pub output_tokens: u64,
+}
+
+impl TokenUsage {
+    pub fn add(&mut self, other: Self) {
+        self.input_tokens = self.input_tokens.saturating_add(other.input_tokens);
+        self.output_tokens = self.output_tokens.saturating_add(other.output_tokens);
+    }
+
+    /// Accept either Jev (`input_tokens`) or OpenAI (`prompt_tokens`) names.
+    pub fn from_upstream(v: &Value) -> Self {
+        if !v.is_object() {
+            return Self::default();
+        }
+        Self {
+            input_tokens: json_u64(v, &["input_tokens", "prompt_tokens"]),
+            output_tokens: json_u64(v, &["output_tokens", "completion_tokens"]),
+        }
+    }
+}
+
+fn json_u64(v: &Value, keys: &[&str]) -> u64 {
+    for key in keys {
+        let Some(raw) = v.get(*key) else { continue };
+        if let Some(n) = raw.as_u64() {
+            return n;
+        }
+        if let Some(n) = raw.as_f64() {
+            if n.is_finite() && n >= 0.0 {
+                return n as u64;
+            }
+        }
+    }
+    0
+}
+
+pub fn chat_response(model: &str, content: String, usage: TokenUsage) -> ChatResponse {
     ChatResponse {
         id: format!("chatcmpl-jev-{}", now_secs()),
         object: "chat.completion".to_string(),
@@ -137,9 +182,11 @@ pub fn chat_response(model: &str, content: String) -> ChatResponse {
             finish_reason: "stop".to_string(),
         }],
         usage: Usage {
-            prompt_tokens: 0,
-            completion_tokens: 0,
-            total_tokens: 0,
+            prompt_tokens: usage.input_tokens,
+            completion_tokens: usage.output_tokens,
+            total_tokens: usage.input_tokens.saturating_add(usage.output_tokens),
+            input_tokens: usage.input_tokens,
+            output_tokens: usage.output_tokens,
         },
     }
 }

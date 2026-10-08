@@ -1,12 +1,13 @@
 use axum::{
-    Router,
     routing::{get, post},
+    Router,
 };
 use std::sync::Arc;
 use std::time::Duration;
 
 use minuspod_jev_proxy::config::{self, Config};
 use minuspod_jev_proxy::handlers::{self, AppState};
+use minuspod_jev_proxy::health::{self, BackendHealth};
 
 #[tokio::main]
 async fn main() {
@@ -68,11 +69,28 @@ async fn main() {
         cfg.max_segments_per_call,
     );
 
-    let state = AppState { cfg, client, sem };
+    let health = BackendHealth::with_docker(cfg.clone());
+    health.adopt_if_paused().await;
+    tokio::spawn(health::run_scheduler(health.clone()));
+    tracing::info!(
+        container = %cfg.minuspod_container,
+        socket = %cfg.docker_socket,
+        billing_dead_secs = cfg.billing_dead_secs,
+        client_timeout_secs = cfg.client_timeout_secs,
+        "minuspod pause control: all-dead backends pause the container until the next dead window ends",
+    );
+
+    let state = AppState {
+        cfg,
+        client,
+        sem,
+        health,
+    };
     let app = Router::new()
         .route("/v1/models", get(handlers::models))
         .route("/v1/chat/completions", post(handlers::completions))
         .route("/health", get(handlers::health))
+        .route("/status", get(handlers::status))
         // Bare paths for base URLs configured without /v1.
         .route("/models", get(handlers::models))
         .route("/chat/completions", post(handlers::completions))

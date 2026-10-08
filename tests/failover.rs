@@ -9,7 +9,13 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering};
 
-use axum::{Json, Router, extract::State, response::IntoResponse, routing::post};
+use axum::{
+    Json, Router,
+    extract::State,
+    http::{HeaderMap, StatusCode},
+    response::IntoResponse,
+    routing::post,
+};
 use serde_json::{Value, json};
 
 use minuspod_jev_proxy::config::{Config, JevBackendCfg};
@@ -155,15 +161,25 @@ fn config(primary: JevBackendCfg, secondary: JevBackendCfg, tertiary: JevBackend
         segment_gap_secs: 1.25,
         max_segments_per_call: 16,
         max_concurrent: 4,
+        billing_dead_secs: 1800,
+        client_timeout_secs: 600,
+        hold_margin_secs: 30,
+        minuspod_container: "minuspod".into(),
+        docker_socket: String::new(),
     }
 }
 
+fn state_for(cfg: Config) -> AppState {
+    let slots = cfg.max_concurrent;
+    AppState::for_tests(
+        Arc::new(cfg),
+        reqwest::Client::new(),
+        Arc::new(tokio::sync::Semaphore::new(slots)),
+    )
+}
+
 async fn run(cfg: Config, transcript: &str) -> (axum::http::StatusCode, String) {
-    let state = AppState {
-        cfg: Arc::new(cfg),
-        client: reqwest::Client::new(),
-        sem: Arc::new(tokio::sync::Semaphore::new(4)),
-    };
+    let state = state_for(cfg);
     let resp = minuspod_jev_proxy::handlers::completions(
         axum::extract::State(state),
         Json(detection_request(transcript)),
@@ -241,11 +257,7 @@ async fn health_reports_all_three_slots() {
         model: "clef".into(),
         api_key: None,
     });
-    let state = AppState {
-        cfg: Arc::new(cfg),
-        client: reqwest::Client::new(),
-        sem: Arc::new(tokio::sync::Semaphore::new(1)),
-    };
+    let state = state_for(cfg);
 
     let resp = minuspod_jev_proxy::handlers::health(axum::extract::State(state))
         .await
@@ -267,4 +279,220 @@ async fn health_reports_all_three_slots() {
 
 fn bytes_text(v: &Value) -> String {
     v.to_string()
+}
+
+#[derive(Clone)]
+struct Script {
+    hits: Arc<AtomicUsize>,
+    /// How many calls return the error before a normal answer.
+    fail_for: usize,
+    status: u16,
+    body: Value,
+    retry_after: Option<String>,
+}
+
+async fn scripted(State(script): State<Script>, Json(body): Json<Value>) -> impl IntoResponse {
+    let n = script.hits.fetch_add(1, Ordering::SeqCst);
+    if n < script.fail_for {
+        let mut headers = HeaderMap::new();
+        if let Some(ra) = &script.retry_after {
+            headers.insert("retry-after", ra.parse().unwrap());
+        }
+        let status = StatusCode::from_u16(script.status).unwrap();
+        return (status, headers, Json(script.body)).into_response();
+    }
+    let questions = body.get("questions").and_then(|q| q.as_object()).cloned().unwrap_or_default();
+    let mut answers = serde_json::Map::new();
+    for (key, q) in &questions {
+        match q.get("type").and_then(|t| t.as_str()).unwrap_or("") {
+            "noul" => {
+                answers.insert(key.clone(), json!({"type": "noul", "noul": 0.95}));
+            }
+            "choice" => {
+                answers.insert(key.clone(), json!({"type": "choice", "choice": "host_read_sponsor"}));
+            }
+            _ => {}
+        }
+    }
+    (
+        StatusCode::OK,
+        HeaderMap::new(),
+        Json(json!({
+            "model": "stub",
+            "answers": answers,
+            "usage": {"input_tokens": 10, "output_tokens": 1},
+        })),
+    )
+        .into_response()
+}
+
+async fn spawn_script(script: Script) -> String {
+    let app = Router::new()
+        .route("/v1/systemone", post(scripted))
+        .with_state(script);
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        let _ = axum::serve(listener, app).await;
+    });
+    format!("http://{addr}/v1/systemone")
+}
+
+fn url_backend(url: String) -> JevBackendCfg {
+    JevBackendCfg { base_url: url, model: "stub".into(), api_key: None }
+}
+
+async fn exchange(state: &AppState, transcript: &str) -> (StatusCode, HeaderMap, String) {
+    let resp = minuspod_jev_proxy::handlers::completions(
+        axum::extract::State(state.clone()),
+        Json(detection_request(transcript)),
+    )
+    .await;
+    let status = resp.status();
+    let headers = resp.headers().clone();
+    let bytes = axum::body::to_bytes(resp.into_body(), 1 << 20).await.unwrap();
+    (status, headers, String::from_utf8_lossy(&bytes).into_owned())
+}
+
+#[tokio::test]
+async fn billing_failure_is_skipped_on_the_next_request() {
+    let primary_hits = Arc::new(AtomicUsize::new(0));
+    let primary = spawn_script(Script {
+        hits: primary_hits.clone(),
+        fail_for: usize::MAX,
+        status: 402,
+        body: json!({"error": "billing_error", "message": "no available TypeSafe API credits"}),
+        retry_after: None,
+    })
+    .await;
+    let secondary = spawn_stub().await;
+    let mut cfg = config(
+        url_backend(primary),
+        url_backend(secondary.base_url.clone()),
+        empty_backend(),
+    );
+    cfg.billing_dead_secs = 3600;
+    cfg.client_timeout_secs = 30;
+    let state = state_for(cfg);
+
+    let (status, _, body) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 200, "secondary should answer after primary billing failure: {body}");
+    assert_eq!(primary_hits.load(Ordering::SeqCst), 1, "primary was retried");
+
+    let primary_before = primary_hits.load(Ordering::SeqCst);
+    let secondary_before = secondary.hits.load(Ordering::SeqCst);
+    let (status, _, body) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 200, "{body}");
+    assert_eq!(
+        primary_hits.load(Ordering::SeqCst),
+        primary_before,
+        "a dead primary must be skipped",
+    );
+    assert!(secondary.hits.load(Ordering::SeqCst) > secondary_before);
+}
+
+#[tokio::test]
+async fn all_dead_is_503_without_retry_after_and_pauses() {
+    let hits = Arc::new(AtomicUsize::new(0));
+    let url = spawn_script(Script {
+        hits: hits.clone(),
+        fail_for: usize::MAX,
+        status: 402,
+        body: json!({"error": "billing_error", "message": "no available credits"}),
+        retry_after: Some("300".into()),
+    })
+    .await;
+    let mut cfg = config(url_backend(url), empty_backend(), empty_backend());
+    // 30 min is longer than the client budget, so the request must not be held.
+    cfg.billing_dead_secs = 1800;
+    cfg.client_timeout_secs = 30;
+    cfg.hold_margin_secs = 30;
+    let state = state_for(cfg);
+
+    let (status, headers, body) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 503, "{body}");
+    assert!(headers.get("retry-after").is_none(), "Retry-After must not be forwarded: {headers:?}");
+    assert!(!body.to_lowercase().contains("rate limit"));
+    assert_eq!(hits.load(Ordering::SeqCst), 1, "billing is not retried");
+
+    let log = state.health.pause_log();
+    {
+        let g = log.lock().unwrap();
+        assert!(g.events.iter().any(|e| e.action == "pause"), "{:?}", g.events);
+        assert!(
+            !g.events.iter().any(|e| e.action == "unpause"),
+            "must not unpause inside the timeout"
+        );
+        assert!(g.paused);
+    }
+
+    let (status, headers, _) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 503);
+    assert!(headers.get("retry-after").is_none());
+    assert_eq!(hits.load(Ordering::SeqCst), 1, "a second request must not call upstream");
+}
+
+#[tokio::test]
+async fn daily_quota_stays_dead_until_utc_midnight() {
+    let hits = Arc::new(AtomicUsize::new(0));
+    let url = spawn_script(Script {
+        hits: hits.clone(),
+        fail_for: usize::MAX,
+        status: 429,
+        body: json!({
+            "code": 4006,
+            "message": "you have used up your daily free allocation of 10,000 neurons"
+        }),
+        retry_after: Some("300".into()),
+    })
+    .await;
+    let mut cfg = config(empty_backend(), url_backend(url), empty_backend());
+    cfg.client_timeout_secs = 30;
+    cfg.hold_margin_secs = 30;
+    let state = state_for(cfg);
+
+    let (status, headers, body) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 503, "{body}");
+    assert!(headers.get("retry-after").is_none(), "Zen/Clef Retry-After must not be forwarded");
+
+    let snap = state.health.status().await;
+    let until = snap["backends"]["secondary"]["dead_until"].as_str().unwrap_or("");
+    assert!(until.ends_with("T00:00:00Z"), "quota should last until midnight, got {until}");
+    assert_eq!(snap["backends"]["secondary"]["kind"], "quota");
+    assert_eq!(snap["backends"]["secondary"]["state"], "dead");
+    assert_eq!(snap["minuspod_paused"], true);
+    assert!(snap["next_unpause"].as_str().unwrap_or("").ends_with("T00:00:00Z"));
+
+    let _ = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(hits.load(Ordering::SeqCst), 1);
+}
+
+#[tokio::test]
+async fn short_outage_holds_then_retries_the_same_request() {
+    let hits = Arc::new(AtomicUsize::new(0));
+    let url = spawn_script(Script {
+        hits: hits.clone(),
+        fail_for: 1,
+        status: 402,
+        body: json!({"error": "billing_error", "message": "no available credits"}),
+        retry_after: None,
+    })
+    .await;
+    let mut cfg = config(url_backend(url), empty_backend(), empty_backend());
+    cfg.billing_dead_secs = 1;
+    cfg.client_timeout_secs = 600;
+    cfg.hold_margin_secs = 30;
+    // One span, so the hold is the whole request.
+    cfg.segment_target_secs = 600.0;
+    cfg.segment_max_secs = 600.0;
+    let state = state_for(cfg);
+
+    let (status, _, body) = exchange(&state, &transcript_with_ad()).await;
+    assert_eq!(status, 200, "held request should succeed after the dead window: {body}");
+    assert!(hits.load(Ordering::SeqCst) >= 2, "the retry after unpause is the probe");
+    let log = state.health.pause_log();
+    let g = log.lock().unwrap();
+    assert!(g.events.iter().any(|e| e.action == "pause"));
+    assert!(g.events.iter().any(|e| e.action == "unpause"));
+    assert!(!g.paused);
 }
