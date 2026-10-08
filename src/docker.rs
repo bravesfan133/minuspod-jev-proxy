@@ -123,45 +123,105 @@ async fn docker_req(socket: &str, method: &str, path: &str) -> Result<(u16, Stri
         .await
         .map_err(|_| "docker socket timed out".to_string())?
         .map_err(|e: String| e)?;
-    let text = String::from_utf8_lossy(&buf).to_string();
-    let status = text
-        .split_whitespace()
+    let status = parse_status(&buf)?;
+    let body = decode_body(&buf)?;
+    Ok((status, body))
+}
+
+/// True once headers and a full body are in hand.
+///
+/// The engine answers with chunked HTTP/1.1 even when the request is HTTP/1.0.
+/// Stopping at the header block leaves `State.Paused` unread.
+fn response_complete(buf: &[u8]) -> bool {
+    let Some((head, body)) = split_http(buf) else {
+        return false;
+    };
+    if header_is(head, "transfer-encoding", "chunked") {
+        return decode_chunked(body).is_ok();
+    }
+    if let Some(n) = content_length(head) {
+        return body.len() >= n;
+    }
+    false
+}
+
+fn split_http(buf: &[u8]) -> Option<(&[u8], &[u8])> {
+    let sep = buf.windows(4).position(|w| w == b"\r\n\r\n")?;
+    Some((&buf[..sep], &buf[sep + 4..]))
+}
+
+fn header_is(head: &[u8], name: &str, needle: &str) -> bool {
+    let Ok(text) = std::str::from_utf8(head) else {
+        return false;
+    };
+    text.lines().any(|line| {
+        let Some((n, v)) = line.split_once(':') else {
+            return false;
+        };
+        n.eq_ignore_ascii_case(name) && v.to_ascii_lowercase().contains(needle)
+    })
+}
+
+fn content_length(head: &[u8]) -> Option<usize> {
+    let text = std::str::from_utf8(head).ok()?;
+    text.lines().find_map(|line| {
+        let (name, value) = line.split_once(':')?;
+        if name.eq_ignore_ascii_case("content-length") {
+            value.trim().parse().ok()
+        } else {
+            None
+        }
+    })
+}
+
+fn parse_status(buf: &[u8]) -> Result<u16, String> {
+    let line_end = buf.iter().position(|b| *b == b'\n').unwrap_or(buf.len());
+    let line = std::str::from_utf8(&buf[..line_end]).unwrap_or("");
+    line.split_whitespace()
         .nth(1)
         .and_then(|s| s.parse().ok())
         .ok_or_else(|| {
             format!(
                 "bad docker response: {}",
-                text.chars().take(80).collect::<String>()
+                line.chars().take(80).collect::<String>()
             )
-        })?;
-    let body = text
-        .split_once("\r\n\r\n")
-        .or_else(|| text.split_once("\n\n"))
-        .map(|(_, b)| b.to_string())
-        .unwrap_or_default();
-    Ok((status, body))
+        })
 }
 
-/// True once the status line, headers, and Content-Length body are in hand.
-fn response_complete(buf: &[u8]) -> bool {
-    let text = String::from_utf8_lossy(buf);
-    let Some((head, body)) = text
-        .split_once("\r\n\r\n")
-        .or_else(|| text.split_once("\n\n"))
-    else {
-        return false;
+fn decode_body(buf: &[u8]) -> Result<String, String> {
+    let Some((head, body)) = split_http(buf) else {
+        return Err("docker response had no header terminator".into());
     };
-    let len = head.lines().find_map(|line| {
-        let (name, value) = line.split_once(':')?;
-        if name.eq_ignore_ascii_case("content-length") {
-            value.trim().parse::<usize>().ok()
-        } else {
-            None
+    let bytes = if header_is(head, "transfer-encoding", "chunked") {
+        decode_chunked(body)?
+    } else if let Some(n) = content_length(head) {
+        body.get(..n).unwrap_or(body).to_vec()
+    } else {
+        body.to_vec()
+    };
+    Ok(String::from_utf8_lossy(&bytes).into_owned())
+}
+
+fn decode_chunked(mut body: &[u8]) -> Result<Vec<u8>, String> {
+    let mut out = Vec::new();
+    loop {
+        let Some(nl) = body.windows(2).position(|w| w == b"\r\n") else {
+            return Err("truncated chunk size".into());
+        };
+        let line =
+            std::str::from_utf8(&body[..nl]).map_err(|_| "chunk size is not utf-8".to_string())?;
+        let size_hex = line.split(';').next().unwrap_or("").trim();
+        let size = usize::from_str_radix(size_hex, 16)
+            .map_err(|_| format!("bad chunk size {size_hex}"))?;
+        body = body.get(nl + 2..).ok_or("truncated chunk")?;
+        if size == 0 {
+            return Ok(out);
         }
-    });
-    match len {
-        Some(n) => body.len() >= n,
-        None => true,
+        if body.len() < size + 2 {
+            return Err("truncated chunk data".into());
+        }
+        out.extend_from_slice(&body[..size]);
+        body = &body[size + 2..];
     }
 }
 
@@ -236,6 +296,20 @@ mod tests {
         let _ = std::fs::remove_file(&path);
     }
 
+    #[test]
+    fn chunked_body_decodes_to_the_paused_flag() {
+        let payload = r#"{"State":{"Paused":true,"Status":"paused"}}"#;
+        let raw = format!(
+            "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nConnection: close\r\n\r\n{:x}\r\n{payload}\r\n0\r\n\r\n",
+            payload.len()
+        );
+        assert!(response_complete(raw.as_bytes()));
+        let body = decode_body(raw.as_bytes()).unwrap();
+        assert_eq!(paused_from_body(&body), Some(true));
+        let partial = b"HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n5\r\nhello";
+        assert!(!response_complete(partial));
+    }
+
     #[tokio::test]
     async fn inspect_reads_paused_flag() {
         let (path, rx, srv) =
@@ -243,6 +317,32 @@ mod tests {
         let ctl = PauseCtl::docker(&path, "minuspod");
         assert!(ctl.inspect_paused().await.unwrap());
         let _ = rx.await;
+        srv.abort();
+        let _ = std::fs::remove_file(&path);
+    }
+
+    #[tokio::test]
+    async fn inspect_reads_a_chunked_body_without_waiting_for_eof() {
+        static N: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
+        let n = N.fetch_add(1, std::sync::atomic::Ordering::SeqCst);
+        let path = std::env::temp_dir().join(format!("jev-docker-chunk-{n}.sock"));
+        let _ = std::fs::remove_file(&path);
+        let listener = UnixListener::bind(&path).unwrap();
+        let path_s = path.to_string_lossy().to_string();
+        let srv = tokio::spawn(async move {
+            let (mut sock, _) = listener.accept().await.unwrap();
+            let mut buf = vec![0u8; 2048];
+            let _ = sock.read(&mut buf).await.unwrap();
+            let payload = r#"{"State":{"Paused":false}}"#;
+            let resp = format!(
+                "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n{:x}\r\n{payload}\r\n0\r\n\r\n",
+                payload.len()
+            );
+            sock.write_all(resp.as_bytes()).await.unwrap();
+            std::future::pending::<()>().await;
+        });
+        let ctl = PauseCtl::docker(&path_s, "minuspod");
+        assert!(!ctl.inspect_paused().await.unwrap());
         srv.abort();
         let _ = std::fs::remove_file(&path);
     }
